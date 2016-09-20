@@ -23,7 +23,7 @@ If you don't have cookiecutter installed yet, use
 to install cookiecutter.
 
 Once cookiecutter is installed you can use  
-    `cookiecutter https://github.com/benvanwerkhoven/cookie_python.git`  
+    `cookiecutter git@github.com:benvanwerkhoven/cookie-python.git`  
 to create a new Python project.
 
 After this command you will be prompted with a number of questions,
