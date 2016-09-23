@@ -1,21 +1,27 @@
-# http://editorconfig.org
+# EditorConfig is awesome: http://EditorConfig.org
 
+# top-most EditorConfig file
 root = true
 
+# Unix-style newlines with a newline ending every file
 [*]
-indent_style = space
-indent_size = 4
-trim_trailing_whitespace = true
-insert_final_newline = true
-charset = utf-8
 end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
 
-[*.bat]
-indent_style = tab
-end_of_line = crlf
+# Matches multiple files with brace expansion notation
+# Set default charset
+[*.{js,py,java,r,R,html}]
+indent_style = space
 
-[LICENSE]
-insert_final_newline = false
+# 4 space indentation
+[*.{py,java,r,R}]
+indent_size = 4
 
-[Makefile]
-indent_style = tab
+# 2 space indentation
+[*.{js,json,yml,html}]
+indent_size = 2
+
+[*.{md,Rmd}]
+trim_trailing_whitespace = false
