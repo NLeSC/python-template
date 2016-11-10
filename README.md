@@ -26,16 +26,22 @@ Once cookiecutter is installed you can use
     `cookiecutter git@github.com:benvanwerkhoven/cookie-python.git`  
 to create a new Python project.
 
-After this command you will be prompted with a number of questions,
-including your name, email, name for the project, small description,
-license and so on. This information will be used to fill out the
-template as the new project directory structure is created for you.
+After this command you will be prompted with a number of questions. This information will be used to fill out the
+template as the new project directory structure is created for you. Below is a short explanation of what exactly will be asked from you.
 
+ * *full_name []:* Please fill in your full name. e.g. 'John Smith'
+ * *email [yourname@esciencecenter.nl]:* Your work email adress
+ * *github_username []:* Please enter the GitHub username that will be the owner of the repository for this project.
+ * *project_name [Python Boilerplate]:* Please write the name of your project out in full.
+ * *project_slug []:* This will be the name of the directory to be created and the git repository.
+ * *project_short_description []:* The information that you enter here will end up in the README.md, the License and the setup.py files, so it may be a good idea to have a short description of the project ready.
+ * *version [0.1.0]:* The first version for your project, NLeSC preference is using semantic versioning
+ * *Select open_source_license:* The intended license, NLeSC preference is Apache 2.0  
 
 How to contribute
 =================
 Suggestions/improvements/edits are most welcome. You can create a pull
-request if you like.
+request if you like or just send Carlos or Ben an email.
 
 Contributing authors so far:
  * Carlos Martinez Ortiz
