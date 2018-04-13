@@ -3,8 +3,7 @@ NLeSC Cookiecutter template for Python
 
 This repository can be used to create empty Python projects for newly
 started Python projects within the Netherlands eScience Center, being
-compliant for as much as possible with the [eStep
-checklist](https://nlesc.gitbooks.io/guide/content/software/software_overview.html).
+compliant for as much as possible with the [Software Development Guide](https://guide.esciencecenter.nl/).
 
 This repository is intended for use with cookiecutter. Cookiecutter is a
 command-line utility that creates projects from project templates. For
