@@ -20,8 +20,7 @@ How to use
 The easiest way to develop for python is to setup a virtual environment for your project; we also recommend using python3:
 ```bash
 $ virtualenv -p python3 env
-$ . ./bin/activate
-$ pip install -r requirements.txt
+$ . env/bin/activate
 ```
 
 If you don't have cookiecutter installed yet, use  
