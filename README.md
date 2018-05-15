@@ -17,6 +17,13 @@ project, but if you feel something essential is missing let us know.
 
 How to use
 ==========
+The easiest way to develop for python is to setup a virtual environment for your project; we also recommend using python3:
+```bash
+$ virtualenv -p python3 env
+$ . ./bin/activate
+$ pip install -r requirements.txt
+```
+
 If you don't have cookiecutter installed yet, use  
     `pip install cookiecutter`  
 to install cookiecutter.
@@ -36,6 +43,7 @@ template as the new project directory structure is created for you. Below is a s
  * *project_short_description []:* The information that you enter here will end up in the README.md, the License and the setup.py files, so it may be a good idea to have a short description of the project ready.
  * *version [0.1.0]:* The first version for your project, NLeSC preference is using semantic versioning
  * *Select open_source_license:* The intended license, NLeSC preference is Apache 2.0  
+
 
 How to contribute
 =================
