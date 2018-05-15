@@ -53,5 +53,5 @@ request if you like or just send Carlos or Ben an email.
 Contributing authors so far:
  * Carlos Martinez Ortiz
  * Ben van Werkhoven
-
+ * Jisk Attema
 
