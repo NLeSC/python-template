@@ -20,6 +20,16 @@ Run tests (including coverage) with:
 python setup.py test
 ```
 
+Check code style using:
+```
+prospector
+```
+(You may need to `pip install prospector[with_pyroma]` first.)
+
+To automatically fix code style errors, run `yapf -i yourfile.py`.
+Run `yapf -d yourfile.py` to preview what would be changed.
+Run `pip install --upgrade yapf` to install the latest version of yapf.
+
 Dependencies
 ------------
  * Python 2.7 or Python 3.5
