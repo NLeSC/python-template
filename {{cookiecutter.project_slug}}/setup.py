@@ -49,4 +49,13 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
     test_suite='tests',
+    setup_requires=[
+        # dependency for `python setup.py test`
+        'pytest-runner'
+    ],
+    tests_require=[
+        'pytest',
+        'pytest-cov',
+        'pycodestyle',
+    ],
 )
