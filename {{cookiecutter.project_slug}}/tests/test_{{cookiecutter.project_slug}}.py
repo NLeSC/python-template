@@ -8,13 +8,13 @@ import pytest
 from {{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
 
 
-def_test_without_test_object():
+def test_without_test_object():
     assert False
 
 
 class Test{{ cookiecutter.project_slug|title }}(object):
     @pytest.fixture
-    def {{ cookiecutter.project_slug }}(self):
+    def return_a_test_object(self):
         pass
 
     def test_{{ cookiecutter.project_slug }}(self, {{ cookiecutter.project_slug }}):
