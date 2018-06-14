@@ -1,30 +1,25 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""Tests for the {{ cookiecutter.project_slug }} module.
 """
-test_{{ cookiecutter.project_slug }}
-----------------------------------
-
-Tests for `{{ cookiecutter.project_slug }}` module.
-"""
-
-import sys
-import unittest
+import pytest
 
 from {{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
 
 
-class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
+def_test_without_test_object():
+    assert False
 
-    def setUp(self):
+
+class Test{{ cookiecutter.project_slug|title }}(object):
+    @pytest.fixture
+    def {{ cookiecutter.project_slug }}(self):
         pass
 
-    def tearDown(self):
-        pass
+    def test_{{ cookiecutter.project_slug }}(self, {{ cookiecutter.project_slug }}):
+        assert False
 
-    def test_000_something(self):
-        pass
-
-
-if __name__ == '__main__':
-    sys.exit(unittest.main())
+    def test_with_error(self, {{ cookiecutter.project_slug }}):
+        with pytest.raises(ValueError):
+            pass
