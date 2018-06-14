@@ -15,6 +15,11 @@ change into the top-level directory
 install using  
     `pip install .`
 
+Run tests (including coverage) with:
+```
+python setup.py test
+```
+
 Dependencies
 ------------
  * Python 2.7 or Python 3.5
@@ -29,5 +34,3 @@ Contributing
 ------------
 Contributing authors so far:
 * {{ cookiecutter.full_name }}
-
-
