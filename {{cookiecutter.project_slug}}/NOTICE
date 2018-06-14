@@ -1,0 +1,2 @@
+{{ cookiecutter.project_name }}
+Copyright {% now 'local', '%Y' %}, {{ cookiecutter.full_name }}
