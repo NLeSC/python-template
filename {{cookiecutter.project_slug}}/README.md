@@ -5,7 +5,20 @@
 Project Setup
 -------------
 
-Here we provide some details about the project setup. Most of the choices are explained in the guide. Here we list what was done. An example can be found [here](https://github.com/multiscale/muscle3/pull/10/files). Most of this text can be removed once the development of the software package takes off.
+Here we provide some details about the project setup. Most of the choices are explained in the [guide](https://guide.esciencecenter.nl). Links to the relevant sections are included below. Most of this text can be removed once the development of the software package takes off.
+
+For a quick reference on software development, we refer to [the software guide checklist](https://guide.esciencecenter.nl/software/checklist.html).
+
+### Version control
+
+Once your Python package is created, put it under version control!
+
+```
+cd {{ cookiecutter.project_slug }}
+git init
+git add -A
+git commit
+```
 
 ### Python versions
 
@@ -42,11 +55,44 @@ You can distribute your code using pipy or conda. Again, the project template do
   - [Restructured Text (reST) and Sphinx CheatSheet](http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html)
 * To put the documentation on [Read the Docs](https://readthedocs.org), log in to your Read the Docs account, and import the repository (under 'My Projects').
 
+### Coding style conventions and code quality
+
+* Check your code style with `prospector`
+* You may need run `pip install {{ cookiecutter.project_slug }}[dev]` first, to install the required dependencies
+* You can use `yapf` to fix the readability of your code style and `isort` to format and group your imports
+* [Relevant section in the guide](https://guide.esciencecenter.nl/languages/python.html#coding-style-conventions)
+
+### CHANGELOG.md
+
+* Document changes to your software package
+* [Relevant section in the guide](https://guide.esciencecenter.nl/software/releases.html#changelogmd)
+
 ### CITATION.cff
 
 * To allow others to cite your software, add a `CITATION.cff` file
 * It only makes sense to do this once there is something to cite (e.g., a software release with a DOI).
 * To generate a CITATION.cff file given a DOI, use [doi2cff](https://github.com/citation-file-format/doi2cff).
+* * [Relevant section in the guide](https://guide.esciencecenter.nl/software/documentation.html#citation-file)
+
+### CODE_OF_CONDUCT.md
+
+* Information about how to behave professionally
+* [Relevant section in the guide](https://guide.esciencecenter.nl/software/documentation.html#code-of-conduct)
+*
+### CONTRIBUTING.md
+
+* Information about how to contribute to this software package
+* [Relevant section in the guide](https://guide.esciencecenter.nl/software/documentation.html#contribution-guidelines)
+
+### MANIFEST.in
+
+* List non-Python files that should be included in a source distribution
+* [Relevant section in the guide](https://guide.esciencecenter.nl/languages/python.html#building-and-packaging-code)
+
+### NOTICE
+
+* List of licenses of the project and dependencies
+* [Relevant section in the guide](https://guide.esciencecenter.nl/software/licensing.html#noticetxtmd)
 
 Documentation
 -------------
