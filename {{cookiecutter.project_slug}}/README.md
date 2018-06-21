@@ -7,6 +7,30 @@ Project Setup
 
 Here we provide some details about the project setup. Most of the choices are explained in the guide. Here we list what was done. An example can be found [here](https://github.com/multiscale/muscle3/pull/10/files). Most of this text can be removed once the development of the software package takes off.
 
+### Python versions
+
+This repository is set up with Python versions: 2.7, 3.4, 3.5, and 3.6. Add or remove Python versions based on project requirements. [The guide](https://guide.esciencecenter.nl/languages/python.html) contains more information about Python versions and writing Python 2 and 3 compatible code.
+
+### Package management
+
+You can use either `pip` or `conda` for installing dependencies and package management. This repository does not force you to use one or the other, as project requirements differ. For advice on what to use, please check [the relevant section of the guide](https://guide.esciencecenter.nl/languages/python.html#dependencies-and-package-management).
+
+### Packaging/One command install
+
+You can distribute your code using pipy or conda. Again, the project template does not enforce the use of either one. [The guide](https://guide.esciencecenter.nl/languages/python.html#building-and-packaging-code) can help you decide which tool to use for packaging.
+
+### Testing and code coverage
+
+* Tests should be put in the `tests` folder.
+* The testing framework used is [PyTest](https://pytest.org)
+  - [PyTest introduction](http://pythontesting.net/framework/pytest/pytest-introduction/)
+* Tests can be run with `python setup.py test`
+  - This is configured in `setup.py` and `setup.cfg`
+* Use [Travis CI](https://travis-ci.com/) to automatically run tests and to test using multiple Python versions
+  - Configuration can be found in `.travis.yml`
+  - [Getting started with Travis CI](https://docs.travis-ci.com/user/getting-started/)
+* TODO: add something about code quality/coverage tool?
+
 ### Documentation
 
 * Documentation should be put in the `docs` folder. The contents have been generated using `sphinx-quickstart` (Sphinx version 1.6.5).
