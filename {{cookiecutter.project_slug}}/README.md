@@ -7,8 +7,6 @@ Project Setup
 
 Here we provide some details about the project setup. Most of the choices are explained in the guide. Here we list what was done. An example can be found [here](https://github.com/multiscale/muscle3/pull/10/files). Most of this text can be removed once the development of the software package takes off.
 
-Also mention that a CITATION file (or CITATION.cff) still needs to be made. It only makes sense to do this, once there is something to cite (e.g., a software release with a DOI). To generate a CITATION.cff file given a DOI, use [doi2cff](https://github.com/citation-file-format/doi2cff).
-
 ### Documentation
 
 * Documentation should be put in the `docs` folder. The contents have been generated using `sphinx-quickstart` (Sphinx version 1.6.5).
@@ -19,6 +17,12 @@ Also mention that a CITATION file (or CITATION.cff) still needs to be made. It o
 * We recommend writing the documentation using Restructured Text (reST)
   - [Restructured Text (reST) and Sphinx CheatSheet](http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html)
 * To put the documentation on [Read the Docs](https://readthedocs.org), log in to your Read the Docs account, and import the repository (under 'My Projects').
+
+### CITATION.cff
+
+* To allow others to cite your software, add a `CITATION.cff` file
+* It only makes sense to do this once there is something to cite (e.g., a software release with a DOI).
+* To generate a CITATION.cff file given a DOI, use [doi2cff](https://github.com/citation-file-format/doi2cff).
 
 Documentation
 -------------
