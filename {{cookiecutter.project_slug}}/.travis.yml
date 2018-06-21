@@ -11,11 +11,4 @@ install:
   - pip install -r requirements.txt
 
 # command to run tests
-script: nosetests -v
-branches:
-  only:
-    - master
-notifications:
-  email:
-    on_failure: change
-    on_succes: never
+script: python setup.py test
