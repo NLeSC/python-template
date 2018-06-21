@@ -36,6 +36,7 @@ template as the new project directory structure is created for you. Below is a s
 
  * *full_name []:* Please fill in your full name. e.g. 'John Smith'
  * *email [yourname@esciencecenter.nl]:* Your work email adress
+ * *coc_email [yourname@esciencecenter.nl]:* Email address of the person who should be contacted in case of violations of the Code of Conduct (could be the PI)
  * *github_username []:* Please enter the GitHub username that will be the owner of the repository for this project.
  * *project_name [Python Boilerplate]:* Please write the name of your project out in full.
  * *project_slug []:* This will be the name of the directory to be created and the git repository.
@@ -53,4 +54,3 @@ Contributing authors so far:
  * Carlos Martinez Ortiz
  * Ben van Werkhoven
  * Jisk Attema
-
