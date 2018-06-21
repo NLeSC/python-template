@@ -1,10 +1,10 @@
 # Config file for automatic testing at travis-ci.org
-# This file will be regenerated if you run travis_pypi_setup.py
-
 language: python
 python:
   - "2.7"
+  - "3.4"
   - "3.5"
+  - "3.6"
 
 # command to install dependencies
 install:
