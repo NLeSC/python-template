@@ -2,6 +2,7 @@
   "full_name": "",
   "email": "yourname@esciencecenter.nl",
   "code_of_conduct_email": "{{ cookiecutter.email }}",
+  "copyright_holder": "",
   "github_username": "",
   "project_name": "My Python Project",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",

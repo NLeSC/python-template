@@ -128,7 +128,7 @@ Dependencies
 
 License
 -------
-Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.full_name }}
+Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.copyright_holder }}
 
 {{ cookiecutter.open_source_license }}
 
