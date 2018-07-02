@@ -24,7 +24,6 @@ To do the same using conda, type:
 ```bash
 $ conda create -n env python=3.4
 $ source activate env
-
 ```
 
 (On windows use `activate env` to activate the conda environment.)
