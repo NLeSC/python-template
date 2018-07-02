@@ -1,7 +1,7 @@
 {
   "full_name": "",
   "email": "yourname@esciencecenter.nl",
-  "coc_email": "{{ cookiecutter.email }}",
+  "code_of_conduct_email": "{{ cookiecutter.email }}",
   "github_username": "",
   "project_name": "My Python Project",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
