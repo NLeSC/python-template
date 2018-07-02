@@ -101,7 +101,7 @@ You could include a link to the full documentation of your project here.
 Installation
 ------------
 clone the repository  
-    `git clone git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git`  
+    `git clone git@github.com:{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}.git`
 change into the top-level directory  
     `cd {{ cookiecutter.project_slug }}`  
 install using  

@@ -37,8 +37,8 @@ template as the new project directory structure is created for you. Below is a s
  * *full_name []:* Please fill in your full name. e.g. 'John Smith'
  * *email [yourname@esciencecenter.nl]:* Your work email adress
  * *code_of_conduct_email [yourname@esciencecenter.nl]:* Email address of the person who should be contacted in case of violations of the Code of Conduct (could be the PI)
- * *copyright_holder:* Name(s) of the organization(s) or person(s) who hold the copyright of the software (e.g., Netherlands eScience Center) 
- * *github_username []:* Please enter the GitHub username that will be the owner of the repository for this project.
+ * *copyright_holder:* Name(s) of the organization(s) or person(s) who hold the copyright of the software (e.g., Netherlands eScience Center)
+ * *github_organization []:* Please enter the GitHub organization that will contain this project's repository. This can also be your github user name.
  * *project_name [Python Boilerplate]:* Please write the name of your project out in full.
  * *project_slug []:* This will be the name of the directory to be created and the git repository.
  * *project_short_description []:* The information that you enter here will end up in the README.md, the License and the setup.py files, so it may be a good idea to have a short description of the project ready.

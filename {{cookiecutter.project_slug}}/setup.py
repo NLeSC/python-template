@@ -24,7 +24,7 @@ setup(
     long_description=readme + '\n\n',
     author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
     author_email='{{ cookiecutter.email }}',
-    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
+    url='https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}',
     packages=[
         '{{ cookiecutter.project_slug }}',
     ],
