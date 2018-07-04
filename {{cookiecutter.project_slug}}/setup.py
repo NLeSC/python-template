@@ -6,9 +6,6 @@ from setuptools import setup
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
-with open('VERSION') as version_file:
-    project_version = version_file.read()
-
 {%- set license_classifiers = {
     'MIT license': 'License :: OSI Approved :: MIT License',
     'BSD license': 'License :: OSI Approved :: BSD License',
@@ -19,7 +16,7 @@ with open('VERSION') as version_file:
 
 setup(
     name='{{ cookiecutter.project_slug }}',
-    version=project_version,
+    version='{{ cookiecutter.version }}',
     description="{{ cookiecutter.project_short_description }}",
     long_description=readme + '\n\n',
     author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
