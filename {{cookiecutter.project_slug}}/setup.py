@@ -50,7 +50,10 @@ setup(
     test_suite='tests',
     setup_requires=[
         # dependency for `python setup.py test`
-        'pytest-runner'
+        'pytest-runner',
+        # dependencies for `python setup.py build_sphinx`
+        'sphinx',
+        'recommonmark'
     ],
     tests_require=[
         'pytest',
