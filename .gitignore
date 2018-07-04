@@ -1,0 +1,12 @@
+*.py[cod]
+*.egg-info
+*.eggs
+
+dist
+.cache
+
+htmlcov
+.coverage
+
+docs/_build
+docs/apidoc
