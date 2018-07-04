@@ -58,6 +58,7 @@ You can distribute your code using pipy or conda. Again, the project template do
   - Alternatively, run `make html` in the `docs` folder.
 * The `docs/_static` and `docs/_templates` contain an (empty) `.gitignore` file, to be able to add them to the repository. These two files can be safely removed (or you can just leave them there).
 * To put the documentation on [Read the Docs](https://readthedocs.org), log in to your Read the Docs account, and import the repository (under 'My Projects').
+  - Include the link to the documentation in this [README](#documentation).
 
 ### Coding style conventions and code quality
 
@@ -113,6 +114,11 @@ Run tests (including coverage) with:
 ```
 python setup.py test
 ```
+
+Documentation
+-------------
+
+Include a link to your project's full documentation here.
 
 Contributing
 ------------
