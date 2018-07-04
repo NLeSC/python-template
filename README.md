@@ -54,7 +54,8 @@ You will be asked to supply the following information about your project:
 * *project_slug []:* This will be the name of the directory to be created and the git repository.
 * *project_short_description []:* The information that you enter here will end up in the README.md, the License and the setup.py files, so it may be a good idea to have a short description of the project ready.
 * *version [0.1.0]:* The first version for your project, NLeSC preference is using semantic versioning
-* *Select open_source_license:* The intended license, NLeSC preference is Apache 2.0  
+* *Select open_source_license:* The intended license, NLeSC preference is Apache 2.0
+* *apidoc:* Add support for automatically generating apidocs, default is no apidocs
 
 How to contribute
 =================

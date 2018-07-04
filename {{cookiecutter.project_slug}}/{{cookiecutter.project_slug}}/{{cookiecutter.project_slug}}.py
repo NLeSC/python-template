@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-"""Documentation about the {{ cookiecutter.project_name }} module."""
+{% if cookiecutter.apidoc == 'yes' %}"""Documentation about the {{ cookiecutter.project_name }} module."""{% endif %}

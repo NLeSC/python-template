@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
-"""Documentation about {{ cookiecutter.project_name }}"""
+{% if cookiecutter.apidoc == 'yes' %}"""Documentation about {{ cookiecutter.project_name }}"""{% endif %}
 __author__ = '{{ cookiecutter.full_name }}'
 __email__ = '{{ cookiecutter.email }}'

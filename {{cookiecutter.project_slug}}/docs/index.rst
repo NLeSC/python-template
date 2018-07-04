@@ -10,7 +10,7 @@ Welcome to {{ cookiecutter.project_name }}'s documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+{% if cookiecutter.apidoc == 'yes' %}
 API Reference
 =============
 
@@ -18,7 +18,7 @@ API Reference
   :maxdepth: 2
 
   {{ cookiecutter.project_slug }} <apidocs/{{ cookiecutter.project_slug }}.rst>
-
+{% endif %}
 
 Indices and tables
 ==================
