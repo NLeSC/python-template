@@ -114,6 +114,12 @@ Run tests (including coverage) with:
 python setup.py test
 ```
 
+Contributing
+------------
+
+If you want to contribute to the development of {{ cookiecutter.project_name }},
+have a look at the [contribution guidelines](CONTRIBUTING.md).
+
 License
 -------
 Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.copyright_holder }}
