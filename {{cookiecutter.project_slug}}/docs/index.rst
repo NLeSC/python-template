@@ -11,6 +11,14 @@ Welcome to {{ cookiecutter.project_name }}'s documentation!
    :caption: Contents:
 
 
+API Reference
+=============
+
+.. toctree::
+  :maxdepth: 2
+
+  {{ cookiecutter.project_slug }} <apidocs/{{ cookiecutter.project_slug }}.rst>
+
 
 Indices and tables
 ==================
