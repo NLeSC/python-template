@@ -59,4 +59,4 @@ You will be asked to supply the following information about your project:
 
 How to contribute
 =================
-Suggestions/improvements/edits are most welcome. Please create an issue or a pull request.
+Suggestions/improvements/edits are most welcome. Please read the [contribution guidelines](CONTRIBUTING.md) before creating an issue or a pull request.
