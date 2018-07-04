@@ -1,7 +1,7 @@
 Netherlands eScience Center Python Template
 ===========================================
 
-Spend less time setting up and configuring your new Python projects and comply with the
+Spend less time setting up and configuring your new Python packages and comply with the
 [Netherlands eScience Center Software Development Guide](https://guide.esciencecenter.nl/)
 from the start.
 
@@ -45,17 +45,19 @@ cookiecutter https://github.com/nlesc/python-template.git
 
 You will be asked to supply the following information about your project:
 
-* *full_name []:* Please fill in your full name. e.g. 'John Smith'
-* *email [yourname@esciencecenter.nl]:* Your work email address
-* *code_of_conduct_email [yourname@esciencecenter.nl]:* Email address of the person who should be contacted in case of violations of the Code of Conduct (could be the PI)
-* *copyright_holder:* Name(s) of the organization(s) or person(s) who hold the copyright of the software (e.g., Netherlands eScience Center)
-* *github_organization []:* Please enter the GitHub organization that will contain this project's repository. This can also be your github user name.
-* *project_name [Python Boilerplate]:* Please write the name of your project out in full.
-* *project_slug []:* This will be the name of the directory to be created and the git repository.
-* *project_short_description []:* The information that you enter here will end up in the README.md, the License and the setup.py files, so it may be a good idea to have a short description of the project ready.
-* *version [0.1.0]:* The first version for your project, NLeSC preference is using semantic versioning
-* *Select open_source_license:* The intended license, NLeSC preference is Apache 2.0
-* *apidoc:* Add support for automatically generating a module index from the `docstrings` in your Python package (look at the [scriptcwl package](http://scriptcwl.readthedocs.io/en/latest/apidocs/scriptcwl.html) for an example); the default is no apidocs
+| Name                      | Default value | Explanation |
+| ------------------------- | ------------- | ----------- |
+| full_name                 |   | Your full name, e.g. 'John Smith'.   |
+| email                     | yourname@esciencecenter.nl | Your (work) email address  |
+| code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct.  |
+| copyright_holder          |   | Name(s) of the organization(s) or person(s) who hold the copyright of the software (e.g., Netherlands eScience Center).  |
+| github_organization       |   | GitHub organization that will contain this project's repository. This can also be your github user name. |
+| project_name              | My Python Project  | Full project/package name.  |
+| project_slug              | my_python_project  | This will be the name of the directory to be created and the git repository.  |
+| project_short_description |   | The information that you enter here will end up in the README, documentation, license, and setup.py, so it may be a good idea to prepare something in advance. |
+| version                   | 0.1.0  |   |
+| open_source_license       | Apache 2.0 (1)  | The software license under which the code is made available.  |
+| apidoc                    | no (1)  | Add support for automatically generating a module index from the `docstrings` in your Python package (look at the [scriptcwl package](http://scriptcwl.readthedocs.io/en/latest/apidocs/scriptcwl.html) for an example). |
 
 How to contribute
 =================
