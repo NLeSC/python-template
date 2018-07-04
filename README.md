@@ -1,5 +1,5 @@
-NLeSC Cookiecutter template for Python
-======================================
+Netherlands eScience Center Python Template
+===========================================
 
 Spend less time setting up and configuring your new Python projects and comply with the
 [Netherlands eScience Center Software Development Guide](https://guide.esciencecenter.nl/)
@@ -40,7 +40,7 @@ conda install -c conda-forge cookiecutter
 
 To generate the files and directory structure for a new Python project, type:
 ```bash
-cookiecutter https://github.com/nlesc/cookie-python.git
+cookiecutter https://github.com/nlesc/python-template.git
 ```
 
 You will be asked to supply the following information about your project:
