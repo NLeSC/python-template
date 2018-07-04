@@ -55,7 +55,7 @@ You will be asked to supply the following information about your project:
 * *project_short_description []:* The information that you enter here will end up in the README.md, the License and the setup.py files, so it may be a good idea to have a short description of the project ready.
 * *version [0.1.0]:* The first version for your project, NLeSC preference is using semantic versioning
 * *Select open_source_license:* The intended license, NLeSC preference is Apache 2.0
-* *apidoc:* Add support for automatically generating apidocs, default is no apidocs
+* *apidoc:* Add support for automatically generating a module index from the `docstrings` in your Python package (look at the [scriptcwl package](http://scriptcwl.readthedocs.io/en/latest/apidocs/scriptcwl.html) for an example); the default is no apidocs
 
 How to contribute
 =================
