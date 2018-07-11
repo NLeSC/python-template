@@ -87,7 +87,7 @@ Coding style conventions and code quality
 * You can use ``yapf`` to fix the readability of your code style and ``isort`` to format and group your imports
 * `Relevant section in the guide <https://guide.esciencecenter.nl/languages/python.html#coding-style-conventions>`_
 
-CHANGELOG.md
+CHANGELOG.rst
 ------------
 
 * Document changes to your software package
@@ -101,13 +101,13 @@ CITATION.cff
 * To generate a CITATION.cff file given a DOI, use `doi2cff <https://github.com/citation-file-format/doi2cff>`_.
 * `Relevant section in the guide <https://guide.esciencecenter.nl/software/documentation.html#citation-file>`_
 
-CODE_OF_CONDUCT.md
+CODE_OF_CONDUCT.rst
 ------------------
 
 * Information about how to behave professionally
 * `Relevant section in the guide <https://guide.esciencecenter.nl/software/documentation.html#code-of-conduct>`_
 
-CONTRIBUTING.md
+CONTRIBUTING.rst
 ---------------
 
 * Information about how to contribute to this software package
@@ -155,7 +155,7 @@ Contributing
 ************
 
 If you want to contribute to the development of {{ cookiecutter.project_name }},
-have a look at the `contribution guidelines <CONTRIBUTING.md>`_.
+have a look at the `contribution guidelines <CONTRIBUTING.rst>`_.
 
 License
 *******
