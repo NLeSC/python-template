@@ -34,12 +34,12 @@ This repository is set up with Python versions: 2.7, 3.4, 3.5, and 3.6. Add or r
 Package management
 ------------------
 
-You can use either `pip` or `conda` for installing dependencies and package management. This repository does not force you to use one or the other, as project requirements differ. For advice on what to use, please check `the relevant section of the guide <https://guide.esciencecenter.nl/languages/python.html#dependencies-and-package-management>`_.
+You can use either `pip` or `conda` for installing dependencies and package management. This repository does not force you to use one or the other, as project requirements differ. For advice on what to use, please check `the relevant section of the guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#dependencies-and-package-management>`_.
 
 Packaging/One command install
 -----------------------------
 
-You can distribute your code using pipy or conda. Again, the project template does not enforce the use of either one. `The guide <https://guide.esciencecenter.nl/languages/python.html#building-and-packaging-code>`_ can help you decide which tool to use for packaging.
+You can distribute your code using pipy or conda. Again, the project template does not enforce the use of either one. `The guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#building-and-packaging-code>`_ can help you decide which tool to use for packaging.
 
 Testing and code coverage
 -------------------------
@@ -59,6 +59,7 @@ Testing and code coverage
   - `Getting started with Travis CI <https://docs.travis-ci.com/user/getting-started/>`_
 
 * TODO: add something about code quality/coverage tool?
+* `Relevant section in the guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#testing>`_
 
 Documentation
 -------------
@@ -79,13 +80,15 @@ Documentation
 
   - Include the link to the documentation in this README_.
 
+* `Relevant section in the guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#writingdocumentation>`_
+
 Coding style conventions and code quality
 -----------------------------------------
 
 * Check your code style with ``prospector``
 * You may need run ``pip install .[dev]`` first, to install the required dependencies
 * You can use ``yapf`` to fix the readability of your code style and ``isort`` to format and group your imports
-* `Relevant section in the guide <https://guide.esciencecenter.nl/languages/python.html#coding-style-conventions>`_
+* `Relevant section in the guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#coding-style-conventions>`_
 
 CHANGELOG.rst
 ------------
@@ -117,13 +120,13 @@ MANIFEST.in
 -----------
 
 * List non-Python files that should be included in a source distribution
-* `Relevant section in the guide <https://guide.esciencecenter.nl/languages/python.html#building-and-packaging-code>`_
+* `Relevant section in the guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#building-and-packaging-code>`_
 
 NOTICE
 ------
 
 * List of licenses of the project and dependencies
-* `Relevant section in the guide <https://guide.esciencecenter.nl/software/licensing.html#noticetxtmd>`_
+* `Relevant section in the guide <https://guide.esciencecenter.nl/best_practices/licensing.html#notice>`_
 
 Installation
 ------------
