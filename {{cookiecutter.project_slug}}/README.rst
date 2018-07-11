@@ -91,7 +91,7 @@ Coding style conventions and code quality
 * `Relevant section in the guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#coding-style-conventions>`_
 
 CHANGELOG.rst
-------------
+-------------
 
 * Document changes to your software package
 * `Relevant section in the guide <https://guide.esciencecenter.nl/software/releases.html#changelogmd>`_
@@ -105,13 +105,13 @@ CITATION.cff
 * `Relevant section in the guide <https://guide.esciencecenter.nl/software/documentation.html#citation-file>`_
 
 CODE_OF_CONDUCT.rst
-------------------
+-------------------
 
 * Information about how to behave professionally
 * `Relevant section in the guide <https://guide.esciencecenter.nl/software/documentation.html#code-of-conduct>`_
 
 CONTRIBUTING.rst
----------------
+----------------
 
 * Information about how to contribute to this software package
 * `Relevant section in the guide <https://guide.esciencecenter.nl/software/documentation.html#contribution-guidelines>`_
