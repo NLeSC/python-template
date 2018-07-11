@@ -64,9 +64,10 @@ Documentation
 -------------
 
 * Documentation should be put in the ``docs`` folder. The contents have been generated using ``sphinx-quickstart`` (Sphinx version 1.6.5).
-* We recommend writing the documentation using Restructured Text (reST)
+* We recommend writing the documentation using Restructured Text (reST) and Google style docstrings.
 
   - `Restructured Text (reST) and Sphinx CheatSheet <http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html>`_
+  - `Google style docstring examples <http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html>`_.
 
 * To generate html documentation run ``python setup.py build_sphinx``
 
