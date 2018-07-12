@@ -6,7 +6,7 @@
 
 ### Added
 
-* Empty Python project templates that follow the Netherlands eScience Center software development guide, containing
+* First version of the Python project template that follows the Netherlands eScience Center software development guide, containing:
 	- Tests,
 	- Documentation,
 	- Code style checking
