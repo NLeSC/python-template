@@ -14,7 +14,7 @@ is documented extensively in the [README]({{cookiecutter.project_slug}}/README.m
 How to use
 ==========
 We recommend developing your software in an isolated Python environment. You can
-use virualenv + pip or conda.
+use virtualenv + pip or conda.
 
 For example, to create a virtual environment with Python 3, do:
 ```bash
