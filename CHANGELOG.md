@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## 0.1.0
+
 ### Added
 
 * Empty Python project templates that follow the Netherlands eScience Center software development guide, containing
