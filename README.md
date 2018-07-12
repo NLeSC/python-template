@@ -9,7 +9,7 @@ from the start.
 
 Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generate
 an empty Python package set up with documentation and testing. The project setup
-is documented extensively in the [README]({{cookiecutter.project_slug}}/README.md).
+is documented extensively in the [README]({{cookiecutter.project_slug}}/README.rst).
 
 How to use
 ==========
