@@ -1,6 +1,8 @@
 Netherlands eScience Center Python Template
 ===========================================
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310752.svg)](https://doi.org/10.5281/zenodo.1310752)
+
 Spend less time setting up and configuring your new Python packages and comply with the
 [Netherlands eScience Center Software Development Guide](https://guide.esciencecenter.nl/)
 from the start.
