@@ -12,7 +12,7 @@ an empty Python package set up with:
 
 - Boilerplate tests and documentation,
 - Setup configuration,
-- Requirements.txt
+- Requirements.txt,
 - README,
 - License,
 - Manifest.in,
