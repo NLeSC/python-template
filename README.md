@@ -8,7 +8,22 @@ Spend less time setting up and configuring your new Python packages and comply w
 from the start.
 
 Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generate
-an empty Python package set up with documentation and testing. The project setup
+an empty Python package set up with:
+
+- Boilerplate tests and documentation,
+- Setup configuration,
+- Requirements.txt
+- README,
+- License,
+- Manifest.in,
+- Default Travis configuration,
+- Code style checking,
+- Editorconfig,
+- Change log,
+- Code of Conduct, and
+- Contributing guidelines
+
+The project setup
 is documented extensively in the [README]({{cookiecutter.project_slug}}/README.rst).
 
 How to use
