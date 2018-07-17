@@ -19,6 +19,10 @@ authors:
     affiliation: "Netherlands eScience Center"
     family-names: Bakker
     given-names: Tom
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Andela
+    given-names: Bouwe
 cff-version: "1.0.3"
 date-released: 2018-07-17
 doi: 10.5281/zenodo.1310751

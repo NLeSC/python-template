@@ -40,6 +40,15 @@
             },
             "familyName": "Bakker",
             "givenName": "Tom"
+        },
+        {
+            "@type": "Person",
+            "affiliation": {
+                "@type": "Organization",
+                "legalName": "Netherlands eScience Center"
+            },
+            "familyName": "Andela",
+            "givenName": "Bouwe"
         }
     ],
     "codeRepository": "https://github.com/NLeSC/python-template",
