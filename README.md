@@ -11,7 +11,7 @@ an empty Python package. Features include:
 
 - Boilerplate tests and documentation,
 - [Python setup configuration]({{cookiecutter.project_slug}}/setup.py),
-- Software license
+- Open source software license,
 - [Default Travis configuration]({{cookiecutter.project_slug}}/.travis.yml),
 - Code style checking,
 - [Editorconfig]({{cookiecutter.project_slug}}/.editorconfig),
