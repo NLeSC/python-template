@@ -1,0 +1,37 @@
+# YAML 1.2
+---
+authors:
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Zwaan
+    given-names: Janneke
+    name-particle: "van der"
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Werkhoven
+    given-names: Ben
+    name-particle: van
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Andela
+    given-names: Bouwe
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Attema
+    given-names: Jisk
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Bakker
+    given-names: Tom
+cff-version: "1.0.3"
+date-released: 2018-07-17
+doi: 10.5281/zenodo.1310751
+keywords:
+  - cookiecutter
+  - template
+  - Python
+license: Apache-2.0
+message: "If you use this software, please cite it using these metadata."
+repository-code: "https://github.com/NLeSC/python-template"
+title: "Netherlands eScience Center Python Template"
+version: "0.1.0"

@@ -1,0 +1,33 @@
+{
+    "creators": [
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "van der Zwaan, Janneke"
+        },
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "van Werkhoven, Ben"
+        },
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "Andela, Bouwe"
+        },
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "Attema, Jisk"
+        },
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "Bakker, Tom"
+        }
+    ],
+    "keywords": [
+        "cookiecutter",
+        "template",
+        "Python"
+    ],
+    "license": {
+        "id": "Apache-2.0"
+    },
+    "title": "Netherlands eScience Center Python Template"
+}
