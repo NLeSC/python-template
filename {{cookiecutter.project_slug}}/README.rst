@@ -26,6 +26,8 @@ We recommend using `git <http://git-scm.com/>`_ and `github <https://github.com/
   git add -A
   git commit
 
+To put your code on github, follow `this tutorial <https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/>`_.
+
 Python versions
 ---------------
 

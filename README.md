@@ -1,5 +1,4 @@
-Netherlands eScience Center Python Template
-===========================================
+# Netherlands eScience Center Python Template
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310752.svg)](https://doi.org/10.5281/zenodo.1310752)
 
@@ -8,59 +7,87 @@ Spend less time setting up and configuring your new Python packages and comply w
 from the start.
 
 Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generate
-an empty Python package set up with:
+an empty Python package. Features include:
 
 - Boilerplate tests and documentation,
-- Setup configuration,
-- Requirements.txt,
-- README,
-- License,
-- Manifest.in,
-- Default Travis configuration,
+- [Python setup configuration]({{cookiecutter.project_slug}}/setup.py),
+- Software license
+- [Default Travis configuration]({{cookiecutter.project_slug}}/.travis.yml),
 - Code style checking,
-- Editorconfig,
-- Change log,
-- Code of Conduct, and
-- Contributing guidelines
+- [Editorconfig]({{cookiecutter.project_slug}}/.editorconfig),
+- Miscellaneous files, such as [Change log]({{cookiecutter.project_slug}}/CHANGELOG.rst), [Code of Conduct]({{cookiecutter.project_slug}}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{cookiecutter.project_slug}}/CONTRIBUTING.rst),
+- [README]({{cookiecutter.project_slug}}/README.rst) with extensive documentation about project setup.
 
-The project setup
-is documented extensively in the [README]({{cookiecutter.project_slug}}/README.rst).
+The file structure of the generated package looks like:
 
-How to use
-==========
-We recommend developing your software in an isolated Python environment. You can
-use virtualenv + pip or conda.
-
-For example, to create a virtual environment with Python 3, do:
 ```bash
-$ virtualenv -p python3 env
-$ . env/bin/activate
+path/to/package/
+├── CHANGELOG.rst
+├── CODE_OF_CONDUCT.rst
+├── CONTRIBUTING.rst
+├── docs
+│   ├── conf.py
+│   ├── index.rst
+│   └── ...
+├── LICENSE
+├── MANIFEST.in
+├── NOTICE
+├── package
+│   ├── __init__.py
+│   └── package.py
+├── README.rst
+├── requirements.txt
+├── setup.cfg
+├── setup.py
+└── tests
+    ├── __init__.py
+    └── test_package.py
 ```
 
-To do the same using conda, type:
-```bash
-$ conda create -n env python=3.4
-$ source activate env
-```
+* Code (existing or new) should be placed in `path/to/package/package` (please choose a better name for your software!).
+* Add documentation by editing `path/to/package/docs/index.rst`
+* Tests go in the `path/to/package/tests/` directory
+* The generated [README]({{cookiecutter.project_slug}}/README.rst) contains extensive documentation about the project setup and provides further instructions on what to do.
 
-(On windows use `activate env` to activate the conda environment.)
+## How to use
 
-If you don't have cookiecutter installed yet, install it with
-```bash
-pip install cookiecutter
-```
+We recommend developing your software in an isolated Python environment and
+assume you are familiar with either `virtualenv + pip` or `conda` (check the
+[guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#dependencies-and-package-management)
+if you are not).
 
-If you use conda, you can also type:
-```bash
-conda install -c conda-forge cookiecutter
-```
+### Step 1: Create and activate a Python environment
 
-To generate the files and directory structure for a new Python project, type:
+* If you are using `virtualenv + pip`, do:
+	 ```bash
+	 $ virtualenv -p python3 env
+	 $ . env/bin/activate
+	 ```
+* If you are using `conda`, type:
+	```bash
+	$ conda create -n env python=3
+	$ source activate env
+	```
+	(On windows use `activate env` to activate the conda environment.)
+
+### Step 2: Install `cookiecutter`
+* Using `virtualenv + pip`:
+	```bash
+	pip install cookiecutter
+	```
+* Using `conda`:
+	```bash
+	conda install -c conda-forge cookiecutter
+	```
+
+### Step 3: Generate the files and directory structure
+
+To create a new package, type:
 ```bash
 cookiecutter https://github.com/nlesc/python-template.git
 ```
 
-You will be asked to supply the following information about your project:
+You will be asked to supply the following information:
 
 | Name                      | Default value | Explanation |
 | ------------------------- | ------------- | ----------- |
@@ -76,6 +103,6 @@ You will be asked to supply the following information about your project:
 | open_source_license       | Apache 2.0 (1)  | The software license under which the code is made available.  |
 | apidoc                    | no (1)  | Add support for automatically generating a module index from the `docstrings` in your Python package (look at the [scriptcwl package](http://scriptcwl.readthedocs.io/en/latest/apidocs/scriptcwl.html) for an example). |
 
-How to contribute
-=================
+## How to contribute
+
 Suggestions/improvements/edits are most welcome. Please read the [contribution guidelines](CONTRIBUTING.md) before creating an issue or a pull request.
