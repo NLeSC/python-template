@@ -52,18 +52,18 @@ path/to/package/
 ## How to use
 
 We recommend developing your software in an isolated Python environment and
-assume you are familiar with either `virtualenv + pip` or `conda` (check the
+assume you are familiar with either **virtualenv + pip** or **conda** (check the
 [guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#dependencies-and-package-management)
 if you are not).
 
 ### Step 1: Create and activate a Python environment
 
-* If you are using `virtualenv + pip`, do:
+* If you are using **virtualenv + pip**, do:
 	 ```bash
 	 $ virtualenv -p python3 env
 	 $ . env/bin/activate
 	 ```
-* If you are using `conda`, type:
+* If you are using **conda**, type:
 	```bash
 	$ conda create -n env python=3
 	$ source activate env
@@ -71,11 +71,11 @@ if you are not).
 	(On windows use `activate env` to activate the conda environment.)
 
 ### Step 2: Install `cookiecutter`
-* Using `virtualenv + pip`:
+* Using **virtualenv + pip**:
 	```bash
 	pip install cookiecutter
 	```
-* Using `conda`:
+* Using **conda**:
 	```bash
 	conda install -c conda-forge cookiecutter
 	```
