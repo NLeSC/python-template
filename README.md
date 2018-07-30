@@ -44,7 +44,7 @@ path/to/package/
     └── test_package.py
 ```
 
-* Code (existing or new) should be placed in `path/to/package/package` (please choose a better name for your software!).
+* Code (existing or new) should be placed in `path/to/package/package/` (please choose a better name for your software!).
 * Add documentation by editing `path/to/package/docs/index.rst`
 * Tests go in the `path/to/package/tests/` directory
 * The generated [README]({{cookiecutter.project_slug}}/README.rst) contains extensive documentation about the project setup and provides further instructions on what to do.
