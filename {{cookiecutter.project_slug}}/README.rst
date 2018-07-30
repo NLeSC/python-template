@@ -137,7 +137,7 @@ To install {{ cookiecutter.project_slug }}, do:
 
 .. code-block:: console
 
-  git clone git@github.com:{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}.git
+  git clone https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}.git
   cd {{ cookiecutter.project_slug }}
   pip install .
 
