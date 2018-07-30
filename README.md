@@ -56,31 +56,24 @@ assume you are familiar with either **virtualenv + pip** or **conda** (check the
 [guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#dependencies-and-package-management)
 if you are not).
 
-### Step 1: Create and activate a Python environment
+### Step 1: Install `cookiecutter`
 
-* If you are using **virtualenv + pip**, do:
-	 ```bash
-	 $ virtualenv -p python3 env
-	 $ . env/bin/activate
-	 ```
-* If you are using **conda**, type:
-	```bash
-	$ conda create -n env python=3
-	$ source activate env
-	```
-	(On windows use `activate env` to activate the conda environment.)
+We recommend installing cookiecutter outside the virtual environment you will
+be using for developing your software. This way, you don't have to install
+cookiecutter for every new project.
 
-### Step 2: Install `cookiecutter`
-* Using **virtualenv + pip**:
+* If you are using **virtualenv + pip**:
 	```bash
-	pip install cookiecutter
+	pip install --user cookiecutter
 	```
-* Using **conda**:
+
+
+* If you are using **conda**:
 	```bash
 	conda install -c conda-forge cookiecutter
 	```
 
-### Step 3: Generate the files and directory structure
+### Step 2: Generate the files and directory structure
 
 To create a new package, type:
 ```bash
@@ -102,6 +95,20 @@ You will be asked to supply the following information:
 | version                   | 0.1.0  |   |
 | open_source_license       | Apache 2.0 (1)  | The software license under which the code is made available.  |
 | apidoc                    | no (1)  | Add support for automatically generating a module index from the `docstrings` in your Python package (look at the [scriptcwl package](http://scriptcwl.readthedocs.io/en/latest/apidocs/scriptcwl.html) for an example). |
+
+### Step 3: Create and activate a Python environment
+
+* If you are using **virtualenv + pip**, do:
+	 ```bash
+	 $ virtualenv -p python3 env
+	 $ . env/bin/activate
+	 ```
+* If you are using **conda**, type:
+	```bash
+	$ conda create -n env python=3
+	$ source activate env
+	```
+	(On windows use `activate env` to activate the conda environment.)
 
 ## How to contribute
 
