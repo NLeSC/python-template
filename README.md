@@ -94,6 +94,7 @@ You will be asked to supply the following information:
 | project_short_description |   | The information that you enter here will end up in the README, documentation, license, and setup.py, so it may be a good idea to prepare something in advance. |
 | version                   | 0.1.0  |   |
 | open_source_license       | Apache 2.0 (1)  | The software license under which the code is made available.  |
+| Python_version            | Python 3 (1)    | The Python version(s) supported by your package. |
 | apidoc                    | no (1)  | Add support for automatically generating a module index from the `docstrings` in your Python package (look at the [scriptcwl package](http://scriptcwl.readthedocs.io/en/latest/apidocs/scriptcwl.html) for an example). |
 
 ### Step 3: Create and activate a Python environment
