@@ -47,6 +47,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
+    install_requires=[]  # FIXME: add dependencies of your package to this list
     test_suite='tests',
     setup_requires=[
         # dependency for `python setup.py test`

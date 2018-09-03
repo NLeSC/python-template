@@ -33,10 +33,12 @@ Python versions
 
 This repository is set up with Python versions: 2.7, 3.4, 3.5, and 3.6. Add or remove Python versions based on project requirements. `The guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html>`_ contains more information about Python versions and writing Python 2 and 3 compatible code.
 
-Package management
-------------------
+Package management and dependencies
+-----------------------------------
 
 You can use either `pip` or `conda` for installing dependencies and package management. This repository does not force you to use one or the other, as project requirements differ. For advice on what to use, please check `the relevant section of the guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#dependencies-and-package-management>`_.
+
+* Dependencies should be added to `setup.py` in the `install_requires` list.
 
 Packaging/One command install
 -----------------------------
