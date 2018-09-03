@@ -84,18 +84,17 @@ You will be asked to supply the following information:
 
 | Name                      | Default value | Explanation |
 | ------------------------- | ------------- | ----------- |
-| full_name                 |   | Your full name, e.g. 'John Smith'.   |
-| email                     | yourname@esciencecenter.nl | Your (work) email address  |
-| code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct.  |
-| copyright_holder          |   | Name(s) of the organization(s) or person(s) who hold the copyright of the software (e.g., Netherlands eScience Center).  |
-| github_organization       |   | GitHub organization that will contain this project's repository. This can also be your github user name. |
 | project_name              | My Python Project  | Full project/package name.  |
 | project_slug              | my_python_project  | This will be the name of the directory to be created and the git repository.  |
 | project_short_description |   | The information that you enter here will end up in the README, documentation, license, and setup.py, so it may be a good idea to prepare something in advance. |
 | version                   | 0.1.0  |   |
-| open_source_license       | Apache 2.0 (1)  | The software license under which the code is made available.  |
+| github_organization       |   | GitHub organization that will contain this project's repository. This can also be your github user name. || open_source_license       | Apache 2.0 (1)  | The software license under which the code is made available.  |
 | Python_version            | Python 3 (1)    | The Python version(s) supported by your package. |
 | apidoc                    | no (1)  | Add support for automatically generating a module index from the `docstrings` in your Python package (look at the [scriptcwl package](http://scriptcwl.readthedocs.io/en/latest/apidocs/scriptcwl.html) for an example). |
+| full_name                 | John Smith  | Your full name, e.g. 'John Smith'.   |
+| email                     | yourname@esciencecenter.nl | Your (work) email address  |
+| copyright_holder          |   | Name(s) of the organization(s) or person(s) who hold the copyright of the software (e.g., Netherlands eScience Center).  |
+| code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct.  |
 
 ### Step 3: Create and activate a Python environment
 
