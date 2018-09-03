@@ -31,7 +31,18 @@ To put your code on github, follow `this tutorial <https://help.github.com/artic
 Python versions
 ---------------
 
-This repository is set up with Python versions: 2.7, 3.4, 3.5, and 3.6. Add or remove Python versions based on project requirements. `The guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html>`_ contains more information about Python versions and writing Python 2 and 3 compatible code.
+This repository is set up with Python versions:
+
+{%- if cookiecutter.Python_version == 'Python 2 and 3' or cookiecutter.Python_version == 'Python 2' %}
+* 2.7
+{%- endif %}
+{%- if cookiecutter.Python_version == 'Python 3' or cookiecutter.Python_version == 'Python 2 and 3' %}
+* 3.4
+* 3.5
+* 3.6
+{%- endif %}
+
+Add or remove Python versions based on project requirements. `The guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html>`_ contains more information about Python versions and writing Python 2 and 3 compatible code.
 
 Package management and dependencies
 -----------------------------------
