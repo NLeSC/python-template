@@ -7,6 +7,15 @@ dist
 
 htmlcov
 .coverage
+coverage.xml
+.pytest_cache
 
 docs/_build
-docs/apidoc
+docs/apidocs
+
+# ide
+.idea
+.eclipse
+.vscode
+
+
