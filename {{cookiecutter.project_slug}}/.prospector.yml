@@ -9,6 +9,9 @@ doc-warnings: true
 test-warnings: true
 member-warnings: false
 
+ignore-paths:
+  - docs
+
 pyroma:
     run: true
 
