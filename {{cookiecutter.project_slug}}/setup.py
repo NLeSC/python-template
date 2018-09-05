@@ -51,8 +51,8 @@ setup(
         'Programming Language :: Python :: 3.6',
 {%- endif %}
     ],
-    install_requires=[],  # FIXME: add your package's dependencies to this list
     test_suite='tests',
+    install_requires=[],  # FIXME: add your package's dependencies to this list
     setup_requires=[
         # dependency for `python setup.py test`
         'pytest-runner',
