@@ -4,8 +4,8 @@
 
 output-format: grouped
 
-strictness: veryhigh
-doc-warnings: true
+strictness: medium
+doc-warnings: false
 test-warnings: true
 member-warnings: false
 
