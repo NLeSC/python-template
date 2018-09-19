@@ -1,0 +1,7 @@
+cookiecutter==1.6.0
+sh
+
+# Testing
+pytest
+pytest-cookies
+pycodestyle

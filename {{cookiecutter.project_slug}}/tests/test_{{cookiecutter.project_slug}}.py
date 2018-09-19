@@ -8,18 +8,21 @@ import pytest
 from {{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
 
 
-def test_without_test_object():
-    assert False
+def test_something():
+    assert True
 
 
-class Test{{ cookiecutter.project_slug|title }}(object):
-    @pytest.fixture
-    def return_a_test_object(self):
-        pass
+def test_with_error():
+    with pytest.raises(ValueError):
+        # Do something that raises a ValueError
+        raise(ValueError)
 
-    def test_{{ cookiecutter.project_slug }}(self, {{ cookiecutter.project_slug }}):
-        assert False
 
-    def test_with_error(self, {{ cookiecutter.project_slug }}):
-        with pytest.raises(ValueError):
-            pass
+# Fixture example
+@pytest.fixture
+def an_object():
+    return {}
+
+
+def test_{{ cookiecutter.project_slug }}(an_object):
+    assert an_object == {}
