@@ -1,5 +1,6 @@
 # Netherlands eScience Center Python Template
 
+[![Build Status](https://travis-ci.org/NLeSC/python-template.svg?branch=master)](https://travis-ci.org/NLeSC/python-template)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310752.svg)](https://doi.org/10.5281/zenodo.1310752)
 
 Spend less time setting up and configuring your new Python packages and comply with the
