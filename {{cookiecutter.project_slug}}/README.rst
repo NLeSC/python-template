@@ -60,6 +60,11 @@ Testing and code coverage
 -------------------------
 
 * Tests should be put in the ``tests`` folder.
+* The ``tests`` folder contains:
+
+  - Example tests that you should replace with your own meaningful tests (file: ``test_{{ cookiecutter.project_slug }}``)
+  - A test that checks whether your code conforms to the Python style guide (PEP 8) (file: ``test_lint.py``)
+
 * The testing framework used is `PyTest <https://pytest.org>`_
 
   - `PyTest introduction <http://pythontesting.net/framework/pytest/pytest-introduction/>`_
