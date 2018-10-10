@@ -11,7 +11,7 @@ with open('README.rst') as readme_file:
     'BSD license': 'License :: OSI Approved :: BSD License',
     'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
     'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
-    'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License'
+    'GNU General Public License v3 or later': 'License :: OSI Approved :: GNU General Public License'
 } %}
 
 setup(

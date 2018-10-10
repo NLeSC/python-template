@@ -1,2 +1,2 @@
-{{ cookiecutter.project_name }}
-Copyright {% now 'local', '%Y' %}, {{ cookiecutter.copyright_holder }}
+This product includes {{ cookiecutter.project_name }}, software developed by
+{{ cookiecutter.copyright_holder }}.
