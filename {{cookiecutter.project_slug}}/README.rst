@@ -140,7 +140,7 @@ MANIFEST.in
 NOTICE
 ------
 
-* List of licenses of the project and dependencies
+* List of attributions of this project and Apache-license dependencies
 * `Relevant section in the guide <https://guide.esciencecenter.nl/best_practices/licensing.html#notice>`_
 
 Installation
