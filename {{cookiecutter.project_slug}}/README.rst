@@ -90,6 +90,10 @@ Documentation
   - `Restructured Text (reST) and Sphinx CheatSheet <http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html>`_
   - `Google style docstring examples <http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html>`_.
 
+* The documentation is set up with the Read the Docs Sphinx Theme.
+
+  - Check out the `configuration options <https://sphinx-rtd-theme.readthedocs.io/en/latest/>`_.
+
 * To generate html documentation run ``python setup.py build_sphinx``
 
   - This is configured in ``setup.cfg``
