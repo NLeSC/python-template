@@ -11,7 +11,6 @@ trim_trailing_whitespace = true
 charset = utf-8
 
 # Matches multiple files with brace expansion notation
-# Set default charset
 [*.{js,py,java,r,R,html}]
 indent_style = space
 
