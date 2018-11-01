@@ -15,14 +15,14 @@ The sections below outline the steps in each case.
 You have a question
 *******************
 
-1. use the search functionality `here <https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/issues>`_ to see if someone already filed the same issue;
+1. use the search functionality `here <https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/issues>`__ to see if someone already filed the same issue;
 1. if your issue search did not yield any relevant results, make a new issue;
 1. apply the "Question" label; apply other labels when relevant.
 
 You think you may have found a bug
 **********************************
 
-1. use the search functionality `here <https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/issues>`_ to see if someone already filed the same issue;
+1. use the search functionality `here <https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/issues>`__ to see if someone already filed the same issue;
 1. if your issue search did not yield any relevant results, make a new issue, making sure to provide enough information to the rest of the community to understand the cause and context of the problem. Depending on the issue, you may want to include:
     - the `SHA hashcode <https://help.github.com/articles/autolinked-references-and-urls/#commit-shas>`_ of the commit that is causing your problem;
     - some identifying information (name and version number) for dependencies you're using;
@@ -34,11 +34,11 @@ You want to make some kind of change to the code base
 
 1. (**important**) announce your plan to the rest of the community *before you start working*. This announcement should be in the form of a (new) issue;
 1. (**important**) wait until some kind of consensus is reached about your idea being a good idea;
-1. if needed, fork the repository to your own Github profile and create your own feature branch off of the latest master commit. While working on your feature branch, make sure to stay up to date with the master branch by pulling in changes, possibly from the 'upstream' repository (follow the instructions `here <https://help.github.com/articles/configuring-a-remote-for-a-fork/>`_ and `here <https://help.github.com/articles/syncing-a-fork/>`_);
+1. if needed, fork the repository to your own Github profile and create your own feature branch off of the latest master commit. While working on your feature branch, make sure to stay up to date with the master branch by pulling in changes, possibly from the 'upstream' repository (follow the instructions `here <https://help.github.com/articles/configuring-a-remote-for-a-fork/>`__ and `here <https://help.github.com/articles/syncing-a-fork/>`__);
 1. make sure the existing tests still work by running ``python setup.py test``;
 1. add your own tests (if necessary);
 1. update or expand the documentation;
 1. `push <http://rogerdudler.github.io/git-guide/>`_ your feature branch to (your fork of) the {{ cookiecutter.project_name }} repository on GitHub;
-1. create the pull request, e.g. following the instructions `here <https://help.github.com/articles/creating-a-pull-request/>`_.
+1. create the pull request, e.g. following the instructions `here <https://help.github.com/articles/creating-a-pull-request/>`__.
 
 In case you feel like you've made a valuable contribution, but you don't know how to write or run tests for it, or how to generate the documentation: don't let this discourage you from making the pull request; we can help you! Just go ahead and submit the pull request, but keep in mind that you might be asked to append additional commits to your pull request.
