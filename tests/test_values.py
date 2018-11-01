@@ -1,0 +1,47 @@
+import pytest
+import sh
+import os
+
+
+def test_double_quotes_in_name_and_description(cookies):
+    ctx = {'project_short_description': '"double quotes"',
+           'full_name': '"name"name'}
+    project = cookies.bake(extra_context=ctx)
+
+    assert project.exit_code == 0
+
+    with open(os.path.join(str(project.project), 'setup.py')) as f:
+        setup = f.read()
+    print(setup)
+
+    cwd = os.getcwd()
+    os.chdir(str(project.project))
+
+    try:
+        sh.python(['setup.py', 'install'])
+    except sh.ErrorReturnCode as e:
+        pytest.fail(e)
+    finally:
+        os.chdir(cwd)
+
+
+def test_single_quotes_in_name_and_description(cookies):
+    ctx = {'project_short_description': "'single quotes'",
+           'full_name': "Mr. O'Keeffe"}
+    project = cookies.bake(extra_context=ctx)
+
+    assert project.exit_code == 0
+
+    with open(os.path.join(str(project.project), 'setup.py')) as f:
+        setup = f.read()
+    print(setup)
+
+    cwd = os.getcwd()
+    os.chdir(str(project.project))
+
+    try:
+        sh.python(['setup.py', 'install'])
+    except sh.ErrorReturnCode as e:
+        pytest.fail(e)
+    finally:
+        os.chdir(cwd)
