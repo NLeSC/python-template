@@ -125,8 +125,7 @@ CITATION.cff
 
 * To allow others to cite your software, add a ``CITATION.cff`` file
 * It only makes sense to do this once there is something to cite (e.g., a software release with a DOI).
-* To generate a CITATION.cff file given a DOI, use `doi2cff <https://github.com/citation-file-format/doi2cff>`_.
-* `Relevant section in the guide <https://guide.esciencecenter.nl/software/documentation.html#citation-file>`_
+* Follow the `making software citable <https://guide.esciencecenter.nl/citable_software/making_software_citable.html>`_ section in the guide.
 
 CODE_OF_CONDUCT.rst
 -------------------
