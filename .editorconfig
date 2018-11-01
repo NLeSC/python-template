@@ -11,7 +11,7 @@ trim_trailing_whitespace = true
 charset = utf-8
 
 # Matches multiple files with brace expansion notation
-[*.{js,py,java,r,R,html}]
+[*.{js,py,java,r,R,html,y{a,}ml,cwl}]
 indent_style = space
 
 # 4 space indentation
@@ -19,7 +19,7 @@ indent_style = space
 indent_size = 4
 
 # 2 space indentation
-[*.{js,json,yml,html}]
+[*.{js,json,y{a,}ml,html,cwl}]
 indent_size = 2
 
 [*.{md,Rmd}]
