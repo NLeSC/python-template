@@ -93,7 +93,7 @@ You will be asked to supply the following information:
 | open_source_license       | Apache 2.0 (1)  | The software license under which the code is made available.  |
 | Python_version            | Python 3 (1)    | The Python version(s) supported by your package. |
 | apidoc                    | no (1)  | Add support for automatically generating a module index from the `docstrings` in your Python package (look at the [scriptcwl package](http://scriptcwl.readthedocs.io/en/latest/apidocs/scriptcwl.html) for an example). |
-| full_name                 | John Smith  | Your full name, e.g. 'John Smith'.   |
+| full_name                 | John Smith  | Your full name, e.g. _John Smith_.   |
 | email                     | yourname@esciencecenter.nl | Your (work) email address  |
 | copyright_holder          |   | Name(s) of the organization(s) or person(s) who hold the copyright of the software (e.g., Netherlands eScience Center).  |
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct.  |
