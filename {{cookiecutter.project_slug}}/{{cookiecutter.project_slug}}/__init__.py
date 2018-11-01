@@ -3,5 +3,5 @@
 
 __version__ = '{{ cookiecutter.version }}'
 
-__author__ = '{{ cookiecutter.full_name }}'
+__author__ = "{{ cookiecutter.full_name.replace('\"', '\\\"') }}"
 __email__ = '{{ cookiecutter.email }}'
