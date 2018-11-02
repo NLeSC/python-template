@@ -35,6 +35,7 @@ path/to/package/
 ├── NOTICE
 ├── package
 │   ├── __init__.py
+|   ├── __version__.py
 │   └── package.py
 ├── README.rst
 ├── requirements.txt

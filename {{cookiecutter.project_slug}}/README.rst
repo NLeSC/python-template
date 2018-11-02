@@ -114,6 +114,13 @@ Coding style conventions and code quality
 * You can use ``yapf`` to fix the readability of your code style and ``isort`` to format and group your imports
 * `Relevant section in the guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#coding-style-conventions>`_
 
+Package version number
+----------------------
+
+* We recommend using `semantic versioning <https://guide.esciencecenter.nl/best_practices/releases.html#semantic-versioning>`_.
+* For convenience, the package version is stored in a single place: ``{{ cookiecutter.project_slug }}/__version__.py``. For updating the version number, you only have to change this file.
+* Don't forget to update the version number before `making a release <https://guide.esciencecenter.nl/best_practices/releases.html>`_!
+
 CHANGELOG.rst
 -------------
 
