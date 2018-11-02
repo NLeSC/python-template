@@ -1,7 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os
 
 from setuptools import setup
+
+here = os.path.abspath(os.path.dirname(__file__))
+
+# To update the package version number, edit {{ cookiecutter.project_slug }}/__version__.py
+version = {}
+with open(os.path.join(here, '{{ cookiecutter.project_slug }}', '__version__.py')) as f:
+    exec(f.read(), version)
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -16,7 +24,7 @@ with open('README.rst') as readme_file:
 
 setup(
     name='{{ cookiecutter.project_slug }}',
-    version='{{ cookiecutter.version }}',
+    version=version['__version__'],
     description="{{ cookiecutter.project_short_description.replace('\"', '\\\"') }}",
     long_description=readme + '\n\n',
     author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
