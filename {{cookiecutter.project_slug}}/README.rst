@@ -99,7 +99,7 @@ Documentation
   - This is configured in ``setup.cfg``
   - Alternatively, run ``make html`` in the ``docs`` folder.
 
-* The ``docs/_static`` and ``docs/_templates`` contain an (empty) ``.gitignore`` file, to be able to add them to the repository. These two files can be safely removed (or you can just leave them there).
+* The ``docs/_templates`` directory contains an (empty) ``.gitignore`` file, to be able to add it to the repository. This file can be safely removed (or you can just leave it there).
 * To put the documentation on `Read the Docs <https://readthedocs.org>`_, log in to your Read the Docs account, and import the repository (under 'My Projects').
 
   - Include the link to the documentation in this README_.
