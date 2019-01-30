@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+* Support for pypi deployment using travis (#36)
+
 ## 0.1.0
 
 ### Added
