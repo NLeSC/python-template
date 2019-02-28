@@ -6,6 +6,10 @@
 
 * Support for pypi deployment using travis (#36)
 
+### Changed
+
+* Fix numbered lists in .rst files (#40)
+
 ## 0.1.0
 
 ### Added
