@@ -1,8 +1,15 @@
 import pytest
-import sh
 import os
+import sys
+
+try:
+    import sh
+except ImportError:
+    pass
 
 
+@pytest.mark.skipif(sys.platform.startswith('win'),
+                    reason='Skipping test with sh-module on Windows')
 def test_double_quotes_in_name_and_description(cookies):
     ctx = {'project_short_description': '"double quotes"',
            'full_name': '"name"name'}
@@ -25,6 +32,8 @@ def test_double_quotes_in_name_and_description(cookies):
         os.chdir(cwd)
 
 
+@pytest.mark.skipif(sys.platform.startswith('win'),
+                    reason='Skipping test with sh-module on Windows')
 def test_single_quotes_in_name_and_description(cookies):
     ctx = {'project_short_description': "'single quotes'",
            'full_name': "Mr. O'Keeffe"}

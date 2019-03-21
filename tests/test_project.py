@@ -1,9 +1,14 @@
 import pytest
-import sh
 import os
 import sys
 
 from ruamel import yaml
+
+try:
+    import sh
+except ImportError:
+    pass
+
 
 def load_yaml(filename):
     """Return object in yaml file."""
@@ -22,6 +27,8 @@ def test_project(cookies):
     assert project.project.isdir()
 
 
+@pytest.mark.skipif(sys.platform.startswith('win'),
+                    reason='Skipping test with sh-module on Windows')
 def test_install(cookies):
     project = cookies.bake()
 
@@ -39,6 +46,8 @@ def test_install(cookies):
         os.chdir(cwd)
 
 
+@pytest.mark.skipif(sys.platform.startswith('win'),
+                    reason='Skipping test with sh-module on Windows')
 def test_running_tests(cookies):
     project = cookies.bake()
 
@@ -56,6 +65,8 @@ def test_running_tests(cookies):
         os.chdir(cwd)
 
 
+@pytest.mark.skipif(sys.platform.startswith('win'),
+                    reason='Skipping test with sh-module on Windows')
 def test_building_documentation_no_apidocs(cookies):
     project = cookies.bake()
 
@@ -73,6 +84,8 @@ def test_building_documentation_no_apidocs(cookies):
         os.chdir(cwd)
 
 
+@pytest.mark.skipif(sys.platform.startswith('win'),
+                    reason='Skipping test with sh-module on Windows')
 def test_building_documentation_apidocs(cookies):
     project = cookies.bake(extra_context={'apidoc': 'yes'})
 
