@@ -1,0 +1,49 @@
+build: false
+
+environment:
+
+  matrix:
+    - PYTHON_VERSION: 2.7
+      MINICONDA: C:\Miniconda
+    - PYTHON_VERSION: 3.4
+      MINICONDA: C:\Miniconda3
+    - PYTHON_VERSION: 3.5
+      MINICONDA: C:\Miniconda3
+    - PYTHON_VERSION: 3.6
+      MINICONDA: C:\Miniconda3
+
+init:
+  - "ECHO %PYTHON_VERSION% %MINICONDA%"
+
+install:
+  # Issues have been encountered with installing numpy and scipy on
+  # AppVeyor e.g.
+  # http://tjelvarolsson.com/blog/how-to-continuously-test-your-python-code-on-windows-using-appveyor/
+  # Miniconda is recommended as the way to install these. See also:
+  # https://github.com/appveyor/ci/issues/359
+  # The following adopts approaches suggested in the above links.
+  - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
+  - conda config --set always_yes yes --set changeps1 no
+  - conda config --prepend channels conda-forge
+  - conda update -q conda
+  - conda info -a
+  - "conda create -q -n test-environment python=%PYTHON_VERSION%
+    pytest
+    cookiecutter==1.6.0
+    pytest
+    pytest-cookies
+    pycodestyle
+    ruamel.yaml"
+  - activate test-environment
+  # Print the environment.
+  - which python
+  - which pip
+  - which py.test
+  - pytest --version
+  - python --version
+  - pip freeze
+
+test_script:
+  # Run py.test with 'v' (verbose) to show test function names and
+  # 'rs' to show reasons for skipped tests
+- pytest -v -rs
