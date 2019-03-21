@@ -17,7 +17,7 @@ install:
 # command to run tests
 script: python setup.py test
 
-{%- if cookiecutter.pypi_user != 'no_travis_pypi_deployment' %}
+{%- if cookiecutter.pypi_user != 'no_pypi_travis_deployment' %}
 # deploy automatically to pypi when a release is made
 deploy:
   provider: pypi
