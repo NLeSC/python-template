@@ -5,3 +5,4 @@ sh
 pytest
 pytest-cookies
 pycodestyle
+ruamel.yaml

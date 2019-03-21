@@ -56,6 +56,21 @@ Packaging/One command install
 
 You can distribute your code using pipy or conda. Again, the project template does not enforce the use of either one. `The guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#building-and-packaging-code>`_ can help you decide which tool to use for packaging.
 
+If you decide to use pypi for distributing you code, you can configure travis to upload to pypi when you make a release. If you specified your pypi user name during generation of this package, the ``.travis.yml`` file contains a section that looks like:
+
+.. code-block:: yaml
+
+  deploy:
+    provider: pypi
+    user: {{ cookiecutter.pypi_user }}
+    password:
+      secure: FIXME; see README for more info
+   on:
+      tags: true
+      branch: master
+
+Before this actually works, you need to add an encrypted password for your pypi account. The `travis documentation<https://docs.travis-ci.com/user/deployment/pypi/>_` specifies how to do this.
+
 Testing and code coverage
 -------------------------
 
@@ -99,7 +114,7 @@ Documentation
   - This is configured in ``setup.cfg``
   - Alternatively, run ``make html`` in the ``docs`` folder.
 
-* The ``docs/_static`` and ``docs/_templates`` contain an (empty) ``.gitignore`` file, to be able to add them to the repository. These two files can be safely removed (or you can just leave them there).
+* The ``docs/_templates`` directory contains an (empty) ``.gitignore`` file, to be able to add it to the repository. This file can be safely removed (or you can just leave it there).
 * To put the documentation on `Read the Docs <https://readthedocs.org>`_, log in to your Read the Docs account, and import the repository (under 'My Projects').
 
   - Include the link to the documentation in this README_.

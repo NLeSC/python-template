@@ -13,6 +13,7 @@
 
 ### Changed
 
+* Fix numbered lists in .rst files (#40)
 * Added rst, y(a)ml and cwl to .editorconfig (#35)
 * Default documentation theme is `sphinx_rtd_theme` (#34)
 * Improve licensing
