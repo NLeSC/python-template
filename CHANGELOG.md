@@ -10,6 +10,7 @@
 * Linter test for the generated project
 * CITATION.cff
 * Support for choosing Python versions (2 and 3) (#20)
+* Support for pypi deployment using travis (#36)
 
 ### Changed
 
