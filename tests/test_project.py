@@ -18,6 +18,7 @@ def load_yaml(filename):
             content = content.replace("\\", "/")
         return yaml.safe_load(content)
 
+
 def test_project(cookies):
     project = cookies.bake()
 
@@ -106,6 +107,7 @@ def test_building_documentation_apidocs(cookies):
 
     assert apidocs.join('my_python_project.html').isfile()
     assert apidocs.join('my_python_project.my_python_project.html').isfile()
+
 
 def test_no_travis_pypi_deployment(cookies):
     project = cookies.bake()
