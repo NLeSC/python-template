@@ -16,3 +16,15 @@ install:
 
 # command to run tests
 script: python setup.py test
+
+{%- if cookiecutter.pypi_user != 'no_travis_pypi_deployment' %}
+# deploy automatically to pypi when a release is made
+deploy:
+  provider: pypi
+  user: {{ cookiecutter.pypi_user }}
+  password:
+    secure: FIXME; see README for more info
+  on:
+    tags: true
+    branch: master
+{%- endif %}

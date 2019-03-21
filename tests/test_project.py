@@ -1,7 +1,17 @@
 import pytest
 import sh
 import os
+import sys
 
+from ruamel import yaml
+
+def load_yaml(filename):
+    """Return object in yaml file."""
+    with open(filename) as myfile:
+        content = myfile.read()
+        if "win" in sys.platform:
+            content = content.replace("\\", "/")
+        return yaml.safe_load(content)
 
 def test_project(cookies):
     project = cookies.bake()
@@ -83,3 +93,30 @@ def test_building_documentation_apidocs(cookies):
 
     assert apidocs.join('my_python_project.html').isfile()
     assert apidocs.join('my_python_project.my_python_project.html').isfile()
+
+def test_no_travis_pypi_deployment(cookies):
+    project = cookies.bake(extra_context={'apidoc': 'yes'})
+
+    assert project.exit_code == 0
+    assert project.exception is None
+
+    cwd = os.getcwd()
+    os.chdir(str(project.project))
+
+    conf = load_yaml('.travis.yml')
+
+    assert conf.get('deploy') is None
+
+
+def test_no_travis_pypi_deployment(cookies):
+    project = cookies.bake(extra_context={'pypi_user': 'user'})
+
+    assert project.exit_code == 0
+    assert project.exception is None
+
+    cwd = os.getcwd()
+    os.chdir(str(project.project))
+
+    conf = load_yaml('.travis.yml')
+
+    assert conf.get('deploy').get('user') == 'user'

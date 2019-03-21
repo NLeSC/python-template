@@ -4,6 +4,7 @@
 
 ### Added
 
+<<<<<<< HEAD
 * Fix for displaying wide tables in the documentation (#37)
 * Single source version number (+ documentation) (#29)
 * Cookiecutter tests (#15)
@@ -27,6 +28,13 @@
 	- Project setup
 	- Setup instructions
 	- NOTICE file
+=======
+* Support for pypi deployment using travis (#36)
+
+### Changed
+
+* Fix numbered lists in .rst files (#40)
+>>>>>>> bc3fbc08164a6039816b74b997cbd16ce2f99f3c
 
 ## 0.1.0
 
