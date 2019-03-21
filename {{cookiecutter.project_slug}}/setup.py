@@ -23,7 +23,7 @@ with open('README.rst') as readme_file:
 } %}
 
 setup(
-    name='{{ cookiecutter.project_slug }}',
+    name='{{ cookiecutter.project_slug.lower().replace(' ', '_').replace('-', '_')}}',
     version=version['__version__'],
     description="{{ cookiecutter.project_short_description.replace('\"', '\\\"') }}",
     long_description=readme + '\n\n',
@@ -31,7 +31,7 @@ setup(
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}',
     packages=[
-        '{{ cookiecutter.project_slug }}',
+        '{{ cookiecutter.project_slug.lower().replace(' ', '_').replace('-', '_')}}',
     ],
     package_dir={'{{ cookiecutter.project_slug }}':
                  '{{ cookiecutter.project_slug }}'},
