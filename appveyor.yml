@@ -29,7 +29,7 @@ install:
   - conda info -a
   - "conda create -q -n test-environment python=%PYTHON_VERSION%
     pytest
-    cookiecutter==1.6.0
+    cookiecutter
     pytest
     pytest-cookies
     pycodestyle
