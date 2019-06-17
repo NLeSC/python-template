@@ -1,4 +1,5 @@
 # Config file for automatic testing at travis-ci.org
+dist: xenial   # required for Python >= 3.7
 language: python
 python:
 {%- if cookiecutter.Python_version == 'Python 2 and 3' or cookiecutter.Python_version == 'Python 2' %}
