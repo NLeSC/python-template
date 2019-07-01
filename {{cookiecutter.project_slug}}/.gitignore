@@ -20,3 +20,6 @@ docs/apidocs
 .idea
 .eclipse
 .vscode
+
+# Mac
+.DS_Store
