@@ -2,7 +2,7 @@
 
 [![Travis-CI Build Status](https://travis-ci.org/NLeSC/python-template.svg?branch=master)](https://travis-ci.org/NLeSC/python-template)
 [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/a99ph5fv1carejrr/branch/master?svg=true)](https://ci.appveyor.com/project/jvdzwaan/python-template/branch/master)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310752.svg)](https://doi.org/10.5281/zenodo.1310752)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310751.svg)](https://doi.org/10.5281/zenodo.1310751)
 
 Spend less time setting up and configuring your new Python packages and comply with the
 [Netherlands eScience Center Software Development Guide](https://guide.esciencecenter.nl/)
