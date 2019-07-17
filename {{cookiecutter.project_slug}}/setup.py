@@ -8,7 +8,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 
 # To update the package version number, edit {{ cookiecutter.project_slug }}/__version__.py
 version = {}
-with open(os.path.join(here, '{{ cookiecutter.project_slug }}', '__version__.py')) as f:
+with open(os.path.join(here, '{{ cookiecutter.project_slug.lower().replace(' ', '_').replace('-', '_') }}', '__version__.py')) as f:
     exec(f.read(), version)
 
 with open('README.rst') as readme_file:
@@ -33,8 +33,6 @@ setup(
     packages=[
         '{{ cookiecutter.project_slug.lower().replace(' ', '_').replace('-', '_')}}',
     ],
-    package_dir={'{{ cookiecutter.project_slug }}':
-                 '{{ cookiecutter.project_slug }}'},
     include_package_data=True,
 {%- if cookiecutter.open_source_license in license_classifiers %}
     license="{{ cookiecutter.open_source_license }}",
