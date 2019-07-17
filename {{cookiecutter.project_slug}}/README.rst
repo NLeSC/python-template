@@ -36,7 +36,7 @@ This repository is set up with Python versions:
 * 3.6
 * 3.7
 
-Add or remove Python versions based on project requirements. `The guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html>`_ contains more information about Python versions and writing Python 2 and 3 compatible code.
+Add or remove Python versions based on project requirements. See `the guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html>`_ for more information about Python versions.
 
 Package management and dependencies
 -----------------------------------
