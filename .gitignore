@@ -18,4 +18,5 @@ docs/apidocs
 .eclipse
 .vscode
 
-
+# Mac
+.DS_Store
