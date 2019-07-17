@@ -48,15 +48,9 @@ setup(
         '{{ license_classifiers[cookiecutter.open_source_license] }}',
 {%- endif %}
         'Natural Language :: English',
-{%- if cookiecutter.Python_version == 'Python 2 and 3' or cookiecutter.Python_version == 'Python 2' %}
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.7',
-{%- endif %}
-{%- if cookiecutter.Python_version == 'Python 3' or cookiecutter.Python_version == 'Python 2 and 3' %}
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
-{%- endif %}
     ],
     test_suite='tests',
     install_requires=[],  # FIXME: add your package's dependencies to this list
