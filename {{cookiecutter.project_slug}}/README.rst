@@ -63,7 +63,7 @@ If you decide to use pypi for distributing you code, you can configure travis to
       tags: true
       branch: master
 
-Before this actually works, you need to add an encrypted password for your pypi account. The `travis documentation<https://docs.travis-ci.com/user/deployment/pypi/>_` specifies how to do this.
+Before this actually works, you need to add an encrypted password for your pypi account. The `travis documentation <https://docs.travis-ci.com/user/deployment/pypi/>`_ specifies how to do this.
 
 Testing and code coverage
 -------------------------
