@@ -124,6 +124,14 @@ Package version number
 * For convenience, the package version is stored in a single place: ``{{ cookiecutter.project_slug }}/__version__.py``. For updating the version number, you only have to change this file.
 * Don't forget to update the version number before `making a release <https://guide.esciencecenter.nl/best_practices/releases.html>`_!
 
+
+Logging
+-------
+
+* We recommend using the `logging` module for getting useful information from your module (instead of using `print`).
+* The project is set up with a logging example.
+* `Relevant section in the guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#logging>`_
+
 CHANGELOG.rst
 -------------
 
