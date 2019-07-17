@@ -88,7 +88,7 @@ You will be asked to supply the following information:
 | Name                      | Default value | Explanation |
 | ------------------------- | ------------- | ----------- |
 | project_name              | My Python Project  | Full project/package name.  |
-| project_slug              | my_python_project  | This will be the name of the directory to be created and the git repository.  |
+| project_slug              | my_python_project  | This will be the name of the directory to be created and the git repository. It is safest not to use dashes (-) or spaces in this name. |
 | project_short_description |   | The information that you enter here will end up in the README, documentation, license, and setup.py, so it may be a good idea to prepare something in advance. |
 | version                   | 0.1.0  |   |
 | github_organization       |   | GitHub organization that will contain this project's repository. This can also be your github user name. |
