@@ -5,8 +5,9 @@ environment:
   matrix:
     - PYTHON_VERSION: 3.6
       MINICONDA: C:\Miniconda3
-    - PYTHON_VERSION: 3.7
-      MINICONDA: C:\Miniconda3
+# cookiecutter does not yet support Python 3.7
+#    - PYTHON_VERSION: 3.7
+#      MINICONDA: C:\Miniconda3
 
 init:
   - "ECHO %PYTHON_VERSION% %MINICONDA%"
