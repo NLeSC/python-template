@@ -1,8 +1,9 @@
 # Config file for automatic testing at travis-ci.org
-#dist: xenial   # required for Python >= 3.7   # cookiecutter does not yet support Python 3.7
+dist: xenial   # required for Python >= 3.7
 language: python
 python:
   - "3.6"
+  - "3.7"
 
 # command to install dependencies
 install:
