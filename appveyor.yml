@@ -28,7 +28,8 @@ install:
     cookiecutter
     pytest
     pytest-cookies
-    pycodestyle"
+    pycodestyle
+    ruamel.yaml"
   - activate test-environment
   # Print the environment.
   - which python
