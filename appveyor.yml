@@ -3,10 +3,13 @@ build: false
 environment:
 
   matrix:
+    - PYTHON_VERSION: 3.5
+      MINICONDA: C:\Miniconda3
     - PYTHON_VERSION: 3.6
       MINICONDA: C:\Miniconda3
-    - PYTHON_VERSION: 3.7
-      MINICONDA: C:\Miniconda3
+    # Fails because of unsatisfiable requirements
+    #- PYTHON_VERSION: 3.7
+    #  MINICONDA: C:\Miniconda3
 
 init:
   - "ECHO %PYTHON_VERSION% %MINICONDA%"
