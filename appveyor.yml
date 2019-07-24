@@ -1,48 +1,21 @@
-build: false
+build: off
 
 environment:
 
   matrix:
-    - PYTHON_VERSION: 3.5
-      MINICONDA: C:\Miniconda3
-    - PYTHON_VERSION: 3.6
-      MINICONDA: C:\Miniconda3
-    # Fails because of unsatisfiable requirements
-    #- PYTHON_VERSION: 3.7
-    #  MINICONDA: C:\Miniconda3
+
+    - PYTHON: C:\Python35
+    - PYTHON: C:\Python36
+    - PYTHON: C:\Python37
 
 init:
-  - "ECHO %PYTHON_VERSION% %MINICONDA%"
+  - "ECHO %PYTHON%"
 
 install:
-  # Issues have been encountered with installing numpy and scipy on
-  # AppVeyor e.g.
-  # http://tjelvarolsson.com/blog/how-to-continuously-test-your-python-code-on-windows-using-appveyor/
-  # Miniconda is recommended as the way to install these. See also:
-  # https://github.com/appveyor/ci/issues/359
-  # The following adopts approaches suggested in the above links.
-  - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
-  - conda config --set always_yes yes --set changeps1 no
-  - conda config --prepend channels conda-forge
-  - conda update -q conda
-  - conda info -a
-  - "conda create -q -n test-environment python=%PYTHON_VERSION%
-    pytest
-    cookiecutter
-    pytest
-    pytest-cookies
-    pycodestyle
-    ruamel.yaml"
-  - activate test-environment
-  # Print the environment.
-  - which python
-  - which pip
-  - which py.test
-  - pytest --version
-  - python --version
-  - pip freeze
+  - "%PYTHON%\\python.exe -m pip install -r requirements.txt"
 
 test_script:
+  - set PATH=%PYTHON%\\Scripts
   # Run py.test with 'v' (verbose) to show test function names and
   # 'rs' to show reasons for skipped tests
-- pytest -v -rs
+  - "pytest -v -rs"
