@@ -1,5 +1,16 @@
 # Change Log
 
+## Unreleased
+
+### Added
+
+* Python 3.5 support in the generated project
+* Run template tests for Python 3.7 on appveyor
+
+### Changed
+
+* Use pip setup on appveyor (instead of conda)
+
 ## 0.2.0
 
 Released on July 17, 2019
