@@ -24,6 +24,10 @@ The file structure of the generated package looks like:
 
 ```bash
 path/to/package/
+├── .editorconfig
+├── .gitignore
+├── .prospector.yml
+├── .travis.yml
 ├── CHANGELOG.rst
 ├── CODE_OF_CONDUCT.rst
 ├── CONTRIBUTING.rst
@@ -36,14 +40,16 @@ path/to/package/
 ├── NOTICE
 ├── package
 │   ├── __init__.py
-|   ├── __version__.py
+│   ├── __version__.py
 │   └── package.py
 ├── README.rst
+├── project_setup.rst
 ├── requirements.txt
 ├── setup.cfg
 ├── setup.py
 └── tests
     ├── __init__.py
+    ├── test_lint.py
     └── test_package.py
 ```
 
