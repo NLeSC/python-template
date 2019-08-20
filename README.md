@@ -18,7 +18,7 @@ an empty Python package. Features include:
 - Code style checking,
 - [Editorconfig]({{cookiecutter.project_slug}}/.editorconfig),
 - Miscellaneous files, such as [Change log]({{cookiecutter.project_slug}}/CHANGELOG.rst), [Code of Conduct]({{cookiecutter.project_slug}}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{cookiecutter.project_slug}}/CONTRIBUTING.rst),
-- [README]({{cookiecutter.project_slug}}/README.rst) with extensive documentation about project setup.
+- A [README]({{cookiecutter.project_slug}}/README.rst) and [a separate document]({{cookiecutter.project_slug}}/project_setup.rst) with extensive documentation about project setup.
 
 The file structure of the generated package looks like:
 
@@ -56,7 +56,7 @@ path/to/package/
 * Code (existing or new) should be placed in `path/to/package/package/` (please choose a better name for your software!).
 * Add documentation by editing `path/to/package/docs/index.rst`
 * Tests go in the `path/to/package/tests/` directory
-* The generated [README]({{cookiecutter.project_slug}}/README.rst) contains extensive documentation about the project setup and provides further instructions on what to do.
+* The generated [project setup document]({{cookiecutter.project_slug}}/project_setup.rst) contains extensive documentation about the project setup and provides further instructions on what to do.
 
 ## How to use
 
