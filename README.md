@@ -1,5 +1,6 @@
 # Netherlands eScience Center Python Template
 
+[![RSD](https://img.shields.io/badge/rsd-python--template-00a3e3.svg)](https://research-software.nl/software/nlesc-python-template)
 [![Travis-CI Build Status](https://travis-ci.org/NLeSC/python-template.svg?branch=master)](https://travis-ci.org/NLeSC/python-template)
 [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/a99ph5fv1carejrr/branch/master?svg=true)](https://ci.appveyor.com/project/jvdzwaan/python-template/branch/master)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310751.svg)](https://doi.org/10.5281/zenodo.1310751)
