@@ -1,4 +1,4 @@
-.. list-table:: Title
+.. list-table::
    :widths: 25 25
    :header-rows: 1
 
