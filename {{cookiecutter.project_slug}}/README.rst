@@ -2,7 +2,7 @@
    :widths: 25 25
    :header-rows: 1
 
-   * - Fair-Software.nl Recommendations
+   * - fair-software.nl recommendations
      - Badges
    * - \1. Code repository
      - |GitHub Badge|
