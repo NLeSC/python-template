@@ -40,6 +40,8 @@ jobs:
         pip install pytest
         pytest
 
+  {%- if cookiecutter.pypi_user != 'no_pypi_travis_deployment' %}
+  # deploy automatically to pypi when a release is made
   deploy:
     runs-on: ubuntu-latest
     strategy:
