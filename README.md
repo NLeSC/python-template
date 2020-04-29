@@ -26,6 +26,10 @@ The file structure of the generated package looks like:
 ```bash
 path/to/package/
 ├── .editorconfig
+├── .github/
+└── workflows
+├── ├── build.yml
+├── └── pypi_deploy.yml
 ├── .gitignore
 ├── .prospector.yml
 ├── .travis.yml
@@ -120,6 +124,21 @@ You will be asked to supply the following information:
 	$ source activate env
 	```
 	(On windows use `activate env` to activate the conda environment.)
+
+## Continuous integration with Github Actions
+
+The template has two Ci workflows. They can be found in **.github/workflows** folder.
+
+1. **build.yml**
+
+This workflow install the dependencies, builds the package and runs tests.
+
+2. **pypi_deploy.yml**
+
+This workflow pushes the package to [PYPI](https://pypi.org/). This action will require PYPI token to be stored as [Github secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets).
+
+You can learn more about Python packaging at [this link](https://packaging.python.org/tutorials/packaging-projects/).
+
 
 ## How to contribute
 
