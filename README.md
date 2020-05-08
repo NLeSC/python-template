@@ -26,10 +26,10 @@ The file structure of the generated package looks like:
 ```bash
 path/to/package/
 ├── .editorconfig
-├── .github/
-└── workflows
-├── ├── build.yml
-├── └── pypi_deploy.yml
+└── .github/
+    └── workflows
+        ├── build.yml
+        └── pypi_deploy.yml
 ├── .gitignore
 ├── .prospector.yml
 ├── CHANGELOG.rst
