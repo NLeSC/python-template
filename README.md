@@ -131,9 +131,9 @@ The template has two Ci workflows. They can be found in **.github/workflows** fo
 
 This workflow install the dependencies, builds the package and runs tests.
 
-2. **pypi_deploy.yml**
+2. **pypi.yml**
 
-This workflow pushes the package to [PYPI](https://pypi.org/). This action will require PYPI token to be stored as [Github secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets).
+This workflow pushes the package to [PYPI](https://pypi.org/). This action will require PYPI token to be stored as [Github secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). The workflow uses secret with a name of `PYPI_TOKEN`.
 
 You can learn more about Python packaging at [this link](https://packaging.python.org/tutorials/packaging-projects/).
 
