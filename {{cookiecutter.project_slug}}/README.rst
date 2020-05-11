@@ -42,7 +42,7 @@
 
 ..
     A CII Best Practices project can be created at https://bestpractices.coreinfrastructure.org/en/projects/new
-.. |CII Best Practices Badge| image:: https://bestpractices.coreinfrastructure.org/projects/<CII idenifier>/badge
+.. |CII Best Practices Badge| image:: https://bestpractices.coreinfrastructure.org/projects/<CII identifier>/badge
    :target: https://bestpractices.coreinfrastructure.org/projects/<CII idenifier>
    :alt: CII Best Practices Badge
 
