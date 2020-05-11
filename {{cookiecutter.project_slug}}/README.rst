@@ -44,7 +44,7 @@
    :target: https://bestpractices.coreinfrastructure.org/projects/1811
    :alt: CII Best Practices Badge
 
-.. |Python Build| image:: https://github.com/matchms/matchms/workflows/Python/badge.svg
+.. |Python Build| image:: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/workflows/Python/badge.svg
    :target: https://github.com/matchms/matchms/actions?query=workflow%3A%22Python%22
    :alt: Python Build
 
