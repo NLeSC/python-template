@@ -35,15 +35,15 @@
 ..
     Goto https://zenodo.org/account/settings/github/ to enable Zenodo/GitHub integration.
     After creation of a GitHub release at https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/releases
-    the will be a Zenodo upload created at https://zenodo.org/deposit with a DOI, this DOI can be put in the Zenodo badge urls
-.. |Zenodo Badge| image:: https://zenodo.org/badge/DOI/<DOI>.svg
-   :target: https://doi.org/<DOI>
+    there will be a Zenodo upload created at https://zenodo.org/deposit with a DOI, this DOI can be put in the Zenodo badge urls
+.. |Zenodo Badge| image:: https://zenodo.org/badge/DOI/< replace with created DOI >.svg
+   :target: https://doi.org/<replace with created DOI>
    :alt: Zenodo Badge
 
 ..
     A CII Best Practices project can be created at https://bestpractices.coreinfrastructure.org/en/projects/new
-.. |CII Best Practices Badge| image:: https://bestpractices.coreinfrastructure.org/projects/<CII identifier>/badge
-   :target: https://bestpractices.coreinfrastructure.org/projects/<CII identifier>
+.. |CII Best Practices Badge| image:: https://bestpractices.coreinfrastructure.org/projects/< replace with created project identifier >/badge
+   :target: https://bestpractices.coreinfrastructure.org/projects/< replace with created project identifier >
    :alt: CII Best Practices Badge
 
 ################################################################################
