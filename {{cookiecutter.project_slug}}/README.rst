@@ -32,11 +32,19 @@
    :target: https://www.research-software.nl/software/{{ cookiecutter.project_slug }}
    :alt: Research Software Directory Badge
 
-.. |Zenodo Badge| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.1162057.svg
-   :target: https://doi.org/10.5281/zenodo.1162057
+..
+    Goto https://zenodo.org/account/settings/github/ to enable Zenodo/GitHub integration.
+    After creation of a GitHub release at https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/releases
+    the will be a Zenodo upload created at https://zenodo.org/deposit with a DOI, this DOI can be put in the Zenodo badge urls
+.. |Zenodo Badge| image:: https://zenodo.org/badge/DOI/{{ doi }}.svg
+   :target: https://doi.org/{{ doi }}
+   :alt: Zenodo Badge
 
-.. |CII Best Practices Badge| image:: https://bestpractices.coreinfrastructure.org/projects/1811/badge
-   :target: https://bestpractices.coreinfrastructure.org/projects/1811
+..
+    A CII Best Practices project can be created at https://bestpractices.coreinfrastructure.org/en/projects/new
+.. |CII Best Practices Badge| image:: https://bestpractices.coreinfrastructure.org/projects/{{ cii_id }}/badge
+   :target: https://bestpractices.coreinfrastructure.org/projects/{{ cii_id }}
+   :alt: CII Best Practices Badge
 
 ################################################################################
 {{ cookiecutter.project_name }}
