@@ -48,7 +48,7 @@
    :target: https://github.com/matchms/matchms/actions?query=workflow%3A%22Python%22
    :alt: Python Build
 
-.. |PyPI Publish| image:: https://github.com/matchms/matchms/workflows/PyPI/badge.svg
+.. |PyPI Publish| image:: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/workflows/PyPI/badge.svg
    :target: https://github.com/matchms/matchms/actions?query=workflow%3A%22PyPI%22
    :alt: PyPI Publish
 
