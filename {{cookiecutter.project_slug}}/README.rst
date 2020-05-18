@@ -18,7 +18,7 @@
 (Customize these badges with your own links, and check https://shields.io/ or https://badgen.net/ to see which other badges are available.)
 
 .. |GitHub Badge| image:: https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue
-   :target: https://github.com{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}
+   :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}
    :alt: GitHub Badge
 
 .. |License Badge| image:: https://img.shields.io/github/license/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}
@@ -26,7 +26,7 @@
    :alt: License Badge
 
 .. |PyPI Badge| image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg?colorB=blue
-   :target: https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}/
+   :target: https://pypi.python.org/project/{{ cookiecutter.project_slug }}/
    :alt: PyPI Badge
 .. |Research Software Directory Badge| image:: https://img.shields.io/badge/rsd-{{ cookiecutter.project_slug }}-00a3e3.svg
    :target: https://www.research-software.nl/software/{{ cookiecutter.project_slug }}
@@ -35,7 +35,8 @@
 ..
     Goto https://zenodo.org/account/settings/github/ to enable Zenodo/GitHub integration.
     After creation of a GitHub release at https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/releases
-    there will be a Zenodo upload created at https://zenodo.org/deposit with a DOI, this DOI can be put in the Zenodo badge urls
+    there will be a Zenodo upload created at https://zenodo.org/deposit with a DOI, this DOI can be put in the Zenodo badge urls.
+    In the README, we prefer to use the concept DOI over versioned DOI, see https://help.zenodo.org/#versioning.
 .. |Zenodo Badge| image:: https://zenodo.org/badge/DOI/< replace with created DOI >.svg
    :target: https://doi.org/<replace with created DOI>
    :alt: Zenodo Badge
