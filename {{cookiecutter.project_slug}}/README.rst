@@ -18,26 +18,33 @@
 (Customize these badges with your own links, and check https://shields.io/ or https://badgen.net/ to see which other badges are available.)
 
 .. |GitHub Badge| image:: https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue
-   :target: https://github.com/citation-file-format/cff-converter-python
+   :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}
    :alt: GitHub Badge
 
-.. |License Badge| image:: https://img.shields.io/github/license/citation-file-format/cff-converter-python
-   :target: https://github.com/citation-file-format/cff-converter-python
+.. |License Badge| image:: https://img.shields.io/github/license/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}
+   :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}
    :alt: License Badge
 
-.. |PyPI Badge| image:: https://img.shields.io/pypi/v/cffconvert.svg?colorB=blue
-   :target: https://pypi.python.org/pypi/cffconvert/
+.. |PyPI Badge| image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg?colorB=blue
+   :target: https://pypi.python.org/project/{{ cookiecutter.project_slug }}/
    :alt: PyPI Badge
-.. |Research Software Directory Badge| image:: https://img.shields.io/badge/rsd-cffconvert-00a3e3.svg
-   :target: https://www.research-software.nl/software/cff-converter-python
+.. |Research Software Directory Badge| image:: https://img.shields.io/badge/rsd-{{ cookiecutter.project_slug }}-00a3e3.svg
+   :target: https://www.research-software.nl/software/{{ cookiecutter.project_slug }}
    :alt: Research Software Directory Badge
 
-.. |Zenodo Badge| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.1162057.svg
-   :target: https://doi.org/10.5281/zenodo.1162057
+..
+    Goto https://zenodo.org/account/settings/github/ to enable Zenodo/GitHub integration.
+    After creation of a GitHub release at https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/releases
+    there will be a Zenodo upload created at https://zenodo.org/deposit with a DOI, this DOI can be put in the Zenodo badge urls.
+    In the README, we prefer to use the concept DOI over versioned DOI, see https://help.zenodo.org/#versioning.
+.. |Zenodo Badge| image:: https://zenodo.org/badge/DOI/< replace with created DOI >.svg
+   :target: https://doi.org/<replace with created DOI>
    :alt: Zenodo Badge
 
-.. |CII Best Practices Badge| image:: https://bestpractices.coreinfrastructure.org/projects/1811/badge
-   :target: https://bestpractices.coreinfrastructure.org/projects/1811
+..
+    A CII Best Practices project can be created at https://bestpractices.coreinfrastructure.org/en/projects/new
+.. |CII Best Practices Badge| image:: https://bestpractices.coreinfrastructure.org/projects/< replace with created project identifier >/badge
+   :target: https://bestpractices.coreinfrastructure.org/projects/< replace with created project identifier >
    :alt: CII Best Practices Badge
 
 ################################################################################
