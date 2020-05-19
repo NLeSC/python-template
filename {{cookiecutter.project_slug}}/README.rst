@@ -14,6 +14,10 @@
      - |Zenodo Badge|
    * - \5. Checklist
      - |CII Best Practices Badge|
+   * - **Other best practices**
+     -
+   * - Continuous integration
+     - |Python Build| |PyPI Publish|
 
 (Customize these badges with your own links, and check https://shields.io/ or https://badgen.net/ to see which other badges are available.)
 
@@ -46,6 +50,14 @@
 .. |CII Best Practices Badge| image:: https://bestpractices.coreinfrastructure.org/projects/< replace with created project identifier >/badge
    :target: https://bestpractices.coreinfrastructure.org/projects/< replace with created project identifier >
    :alt: CII Best Practices Badge
+
+.. |Python Build| image:: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/workflows/Python/badge.svg
+   :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/actions?query=workflow%3A%22Python%22
+   :alt: Python Build
+
+.. |PyPI Publish| image:: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/workflows/PyPI/badge.svg
+   :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/actions?query=workflow%3A%22PyPI%22
+   :alt: PyPI Publish
 
 ################################################################################
 {{ cookiecutter.project_name }}
