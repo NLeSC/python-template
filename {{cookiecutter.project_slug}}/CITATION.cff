@@ -1,0 +1,17 @@
+# YAML 1.2
+---
+cff-version: "1.1.0"
+title: "{{ cookiecutter.project_name }}"
+authors:
+  -
+    family-names: "{{ cookiecutter.full_name }}"
+    given-names:
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+date-released: 20??-MM-DD
+doi: <insert your DOI here>
+version: "{{ cookiecutter.version }}"
+repository-code: "https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}"
+identifiers:
+keywords:
+message: "If you use this software, please cite it using these metadata."
+license: "{{ cookiecutter.open_source_license }}"
