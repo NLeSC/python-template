@@ -1,6 +1,7 @@
 {
   "project_name": "My Python Project",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "_copy_without_render": [".github/*"],
   "project_short_description": "",
   "version": "0.1.0",
   "github_organization": "",
