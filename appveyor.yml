@@ -12,7 +12,7 @@ init:
   - "ECHO %PYTHON%"
 
 install:
-  - "%PYTHON%\\python.exe -m pip install -r requirements.txt"
+  - "%PYTHON%\\python.exe -m pip install ."
 
 test_script:
   - set PATH=%PYTHON%\\Scripts

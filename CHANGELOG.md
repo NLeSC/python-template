@@ -7,6 +7,7 @@
 * Python 3.5 support in the generated project
 * Run template tests for Python 3.7 on appveyor
 * Badge table (#52 and #57)
+* Remove requirements.txt (discussion: https://github.com/NLeSC/guide/issues/156)
 
 ### Changed
 
