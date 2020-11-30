@@ -1,0 +1,37 @@
+---
+name: Linting
+
+on: [push, pull_request]
+
+jobs:
+  linting:
+    name: Lint the code base
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: lint .github/ directory
+        uses: docker://github/super-linter:v3
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          FILTER_REGEX_INCLUDE: /github/workspace/.github/.*
+      - name: lint the code
+        uses: docker://github/super-linter:v3
+        env:
+          VALIDATE_BASH: true
+          VALIDATE_BASH_EXEC: true
+          VALIDATE_CSS: true
+          VALIDATE_DOCKERFILE: true
+          VALIDATE_EDITORCONFIG: true
+          VALIDATE_HTML: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JSON: true
+          VALIDATE_JSX: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_PYTHON: true
+          VALIDATE_PYTHON_ISORT: true
+          VALIDATE_PYTHON_PYLINT: true
+          VALIDATE_TSX: true
+          VALIDATE_TYPESCRIPT_ES: true
+          VALIDATE_YAML: true
+          FILTER_REGEX_INCLUDE: /github/workspace/.*
