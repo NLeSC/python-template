@@ -6,6 +6,12 @@ from setuptools import setup
 
 here = os.path.abspath(os.path.dirname(__file__))
 
+test_deps = [
+    'pytest',
+    'pytest-cov',
+    'pycodestyle',
+]
+
 # To update the package version number, edit CITATION.cff
 with open('CITATION.cff', 'r') as cff:
     for line in cff:
@@ -62,13 +68,9 @@ setup(
         'sphinx_rtd_theme',
         'recommonmark'
     ],
-    tests_require=[
-        'pytest',
-        'pytest-cov',
-        'pycodestyle',
-    ],
+    tests_require=test_deps,
     extras_require={
-        'dev':  ['prospector[with_pyroma]', 'yapf', 'isort'],
+        'dev':  ['prospector[with_pyroma]', 'yapf', 'isort'] + test_deps,
     },
     data_files=[('citation/{{ cookiecutter.project_slug.lower().replace(' ', '_').replace('-', '_')}}', ['CITATION.cff'])]
 )
