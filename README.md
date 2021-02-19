@@ -106,6 +106,7 @@ You will be asked to supply the following information:
 | apidoc                    | no (1)  | Add support for automatically generating a module index from the `docstrings` in your Python package (look at the [scriptcwl package](http://scriptcwl.readthedocs.io/en/latest/apidocs/scriptcwl.html) for an example).
 | full_name                 | John Smith  | Your full name, e.g. _John Smith_.   |
 | email                     | yourname@esciencecenter.nl | Your (work) email address  |
+| tweet_releases            | no (1) | Enable GitHub Action to tweet new releases of your package. |
 | copyright_holder          |   | Name(s) of the organization(s) or person(s) who hold the copyright of the software (e.g., Netherlands eScience Center).  |
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct.  |
 

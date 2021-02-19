@@ -144,7 +144,15 @@ CITATION.cff
 * To allow others to cite your software, add a ``CITATION.cff`` file
 * It only makes sense to do this once there is something to cite (e.g., a software release with a DOI).
 * Follow the `making software citable <https://guide.esciencecenter.nl/citable_software/making_software_citable.html>`_ section in the guide.
+{% if cookiecutter.tweet_releases == 'yes' %}
+Tweet package releases
+----------------------
 
+* We use `m1ner79/Github-Twittction <https://github.com/marketplace/actions/github-twittction>`_ to generate tweets
+* If you would like to customise the text of your tweets, change the `twitter_status` variable in `.github/workflows/tweet-release.yml`
+* Make sure to set `TWITTER_CONSUMER_KEY`, `TWITTER_CONSUMER_SECRET`, `TWITTER_ACCESS_TOKEN_KEY` and `TWITTER_ACCESS_TOKEN_SECRET` in your repository settings. See `the documentation <https://github.com/marketplace/actions/github-twittction#what-do-you-need>`_ for more information
+* Automated tweeting is not enough to engage with your users! See the `relevant section in the guide <https://guide.esciencecenter.nl/>`_ for more information.
+{% endif %}
 CODE_OF_CONDUCT.rst
 -------------------
 

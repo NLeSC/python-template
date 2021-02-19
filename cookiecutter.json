@@ -10,6 +10,7 @@
   "pypi_user": "no_pypi_travis_deployment",
   "full_name": "John Smith",
   "email": "yourname@esciencecenter.nl",
+  "tweet_releases": ["no", "yes"],
   "copyright_holder": "",
   "code_of_conduct_email": "{{ cookiecutter.email }}"
 }

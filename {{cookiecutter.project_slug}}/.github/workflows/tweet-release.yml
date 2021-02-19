@@ -1,0 +1,23 @@
+name: Tweet release
+# Tweets will happen when a new release is published
+on:
+  release:
+    types:
+      - published
+jobs:
+  tweet:
+    runs-on: ubuntu-latest
+    steps:
+    - name: GitHub Twittction
+      uses: m1ner79/Github-Twittction@v1.0.1
+      with:
+        # Message posted on twitter
+        twitter_status: "Release ${{github.event.release.tag_name}} of ${{github.event.repository.full_name}} is out! Check out the release notes ${{github.event.release.html_url}}"
+        # Twitter Consumer Key is referenced here
+        twitter_consumer_key: ${{ secrets.TWITTER_CONSUMER_KEY }}
+        # Twitter Consumer Secret is referenced here
+        twitter_consumer_secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+        # Twitter Access Token Key is referenced here
+        twitter_access_token_key: ${{ secrets.TWITTER_ACCESS_TOKEN_KEY }}
+        # Twitter Access Token Secret is referenced here
+        twitter_access_token_secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
