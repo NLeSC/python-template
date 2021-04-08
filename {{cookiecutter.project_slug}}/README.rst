@@ -77,7 +77,7 @@ To install {{ cookiecutter.project_slug }}, do:
 
   git clone https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}.git
   cd {{ cookiecutter.project_slug }}
-  pip install .
+  pip3 install .
 
 
 Run tests (including coverage) with:
