@@ -45,8 +45,8 @@ templates_path = ['_templates']
 # source_suffix = ['.rst', '.md']
 source_suffix = '.rst'
 
-# The master toctree document.
-master_doc = 'index'
+# The main toctree document.
+main_doc = 'index'
 
 # General information about the project.
 project = u'{{ cookiecutter.project_name }}'
@@ -180,7 +180,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, '{{ cookiecutter.project_slug }}.tex', u'{{ cookiecutter.project_name }} Documentation',
+    (main_doc, '{{ cookiecutter.project_slug }}.tex', u'{{ cookiecutter.project_name }} Documentation',
      u"{{ cookiecutter.full_name.replace('\"', '\\\"') }}", 'manual'),
 ]
 
@@ -190,7 +190,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, '{{ cookiecutter.project_slug }}', u'{{ cookiecutter.project_name }} Documentation',
+    (main_doc, '{{ cookiecutter.project_slug }}', u'{{ cookiecutter.project_name }} Documentation',
      [author], 1)
 ]
 
@@ -201,7 +201,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, '{{ cookiecutter.project_slug }}', u'{{ cookiecutter.project_name }} Documentation',
+    (main_doc, '{{ cookiecutter.project_slug }}', u'{{ cookiecutter.project_name }} Documentation',
      author, '{{ cookiecutter.project_slug }}', "{{ cookiecutter.project_short_description.replace('\"', '\\\"') }}",
      'Miscellaneous'),
 ]
