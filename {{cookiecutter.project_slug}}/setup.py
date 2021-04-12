@@ -1,16 +1,10 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+
 import os
 
 from setuptools import setup
 
 here = os.path.abspath(os.path.dirname(__file__))
-
-test_deps = [
-    'pytest',
-    'pytest-cov',
-    'pycodestyle',
-]
 
 # To update the package version number, edit CITATION.cff
 with open('CITATION.cff', 'r') as cff:
@@ -54,23 +48,29 @@ setup(
 {%- endif %}
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9'
     ],
     test_suite='tests',
     install_requires=[],  # FIXME: add your package's dependencies to this list
-    setup_requires=[
-        # dependency for `python setup.py test`
-        'pytest-runner',
-        # dependencies for `python setup.py build_sphinx`
-        'sphinx',
-        'sphinx_rtd_theme',
-        'recommonmark'
-    ],
-    tests_require=test_deps,
+    setup_requires=[],
+    tests_require=[],
     extras_require={
-        'dev':  ['prospector[with_pyroma]', 'yapf', 'isort'] + test_deps,
+        'dev': [
+            'prospector[with_pyroma]',
+            'yapf',
+            'isort',
+            'pytest',
+            'pytest-cov',
+            'pycodestyle',
+            'docutils',
+            'pytest-runner',
+            'sphinx',
+            'sphinx_rtd_theme',
+            'recommonmark'
+        ],
     },
     data_files=[('citation/{{ cookiecutter.project_slug.lower().replace(' ', '_').replace('-', '_')}}', ['CITATION.cff'])]
 )
