@@ -66,7 +66,7 @@ path/to/package/
 
 We recommend developing your software in an isolated Python environment and
 assume you are familiar with either **virtualenv + pip3** or **conda** (check the
-[guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#dependencies-and-package-management)
+[guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=dependencies-and-package-management)
 if you are not).
 
 ### Step 1: Install `cookiecutter`
