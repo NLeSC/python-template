@@ -7,7 +7,6 @@
   "github_organization": "",
   "open_source_license": ["Apache Software License 2.0", "MIT license", "BSD license", "ISC license", "GNU General Public License v3 or later", "Not open source"],
   "apidoc": ["no", "yes"],
-  "pypi_user": "no_pypi_travis_deployment",
   "full_name": "John Smith",
   "email": "yourname@esciencecenter.nl",
   "copyright_holder": "",
