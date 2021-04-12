@@ -65,7 +65,7 @@ path/to/package/
 ## How to use
 
 We recommend developing your software in an isolated Python environment and
-assume you are familiar with either **virtualenv + pip** or **conda** (check the
+assume you are familiar with either **virtualenv + pip3** or **conda** (check the
 [guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#dependencies-and-package-management)
 if you are not).
 
@@ -75,9 +75,9 @@ We recommend installing cookiecutter outside the virtual environment you will
 be using for developing your software. This way, you don't have to install
 cookiecutter for every new project.
 
-* If you are using **virtualenv + pip**:
+* If you are using **virtualenv + pip3**:
 	```bash
-	pip install --user cookiecutter
+	pip3 install --user cookiecutter
 	```
 
 
@@ -111,7 +111,7 @@ You will be asked to supply the following information:
 
 ### Step 3: Create and activate a Python environment
 
-* If you are using **virtualenv + pip**, do:
+* If you are using **virtualenv + pip3**, do:
 	 ```bash
 	 $ virtualenv -p python3 env
 	 $ . env/bin/activate
