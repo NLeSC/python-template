@@ -60,7 +60,6 @@ path/to/package/
 │   └── package.py
 ├── README.rst
 ├── project_setup.rst
-├── requirements.txt
 ├── setup.cfg
 ├── setup.py
 └── tests
