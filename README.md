@@ -15,7 +15,6 @@ an empty Python package. Features include:
 - [Python setup configuration]({{cookiecutter.project_slug}}/setup.py),
 - Open source software license,
 - [Default Github actions]({{cookiecutter.project_slug}}/.github/workflows) for building, testing and deployment
-
 - Code style checking,
 - [Editorconfig]({{cookiecutter.project_slug}}/.editorconfig),
 - Miscellaneous files, such as [Change log]({{cookiecutter.project_slug}}/CHANGELOG.rst), [Code of Conduct]({{cookiecutter.project_slug}}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{cookiecutter.project_slug}}/CONTRIBUTING.rst),
