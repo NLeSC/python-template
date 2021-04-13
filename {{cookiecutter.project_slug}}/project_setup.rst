@@ -13,14 +13,24 @@ Once your Python package is created, put it under
 `version control <https://guide.esciencecenter.nl/best_practices/version_control.html>`_!
 We recommend using `git <http://git-scm.com/>`_ and `github <https://github.com/>`_.
 
+On GitHub, make a new, empty repository.
+
 .. code-block:: console
 
+  # change into the generated directory
   cd {{ cookiecutter.project_slug }}
-  git init
-  git add -A
-  git commit
 
-To put your code on github, follow `this tutorial <https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/>`_.
+  # make that directory a git repository
+  git init
+
+  # tell your local repository where its online counterpart is
+  git remote add origin <url to your new repo>
+
+  # now check what files could be committed, then add, commit and push like normal
+  git status
+  git add <files you want to commit>
+  git commit -m "initial commit"
+  git push origin main
 
 Python versions
 ---------------
