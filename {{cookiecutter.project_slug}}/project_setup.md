@@ -5,12 +5,12 @@ Here we provide some details about the project setup. Most of the choices are ex
 text when the development of the software package takes off.
 
 For a quick reference on software development, we refer to [the software guide
-checklist](https://guide.esciencecenter.nl/best_practices/checklist.html).
+checklist](https://guide.esciencecenter.nl/#/best_practices/checklist).
 
 ## Version control
 
 Once your Python package is created, put it under [version
-control](https://guide.esciencecenter.nl/best_practices/version_control.html)! We recommend using
+control](https://guide.esciencecenter.nl/#/best_practices/version_control)! We recommend using
 [git](http://git-scm.com/) and [github](https://github.com/).
 
 ```shell
@@ -33,7 +33,7 @@ This repository is set up with Python versions:
 - 3.9
 
 Add or remove Python versions based on project requirements. See [the
-guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html) for more information about Python
+guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python) for more information about Python
 versions.
 
 ## Package management and dependencies
@@ -41,14 +41,14 @@ versions.
 You can use either pip or conda for installing dependencies and package management. This repository does not force you
 to use one or the other, as project requirements differ. For advice on what to use, please check [the relevant section
 of the
-guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#dependencies-and-package-management).
+guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=dependencies-and-package-management).
 
 -   Dependencies should be added to `setup.py` in the `install\_requires` list.
 
 ## Packaging/One command install
 
 You can distribute your code using pipy or conda. Again, the project template does not enforce the use of either one.
-[The guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#building-and-packaging-code) can
+[The guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=building-and-packaging-code) can
 help you decide which tool to use for packaging.
 
 ## Testing and code coverage
@@ -66,7 +66,7 @@ help you decide which tool to use for packaging.
     -   Configuration can be found in `.travis.yml`
     -   [Getting started with Travis
         CI](https://docs.travis-ci.com/user/getting-started/)
--   [Relevant section in the guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#testing)
+-   [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=testing)
 
 ## Documentation
 
@@ -92,7 +92,7 @@ help you decide which tool to use for packaging.
     account, and import the repository (under 'My Projects').
     -   Include the link to the documentation in this [README]().
 -   [Relevant section in the
-    guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#writingdocumentation)
+    guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=writingdocumentation)
 
 ## Coding style conventions and code quality
 
@@ -102,17 +102,17 @@ help you decide which tool to use for packaging.
 -   You can use `yapf` to fix the readability of your code style and
     `isort` to format and group your imports
 -   [Relevant section in the
-    guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#coding-style-conventions)
+    guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=coding-style-conventions)
 
 ## Package version number
 
 -   We recommend using [semantic
-    versioning](https://guide.esciencecenter.nl/best_practices/releases.html#semantic-versioning).
+    versioning](https://guide.esciencecenter.nl/#/best_practices/releases?id=semantic-versioning).
 -   For convenience, the package version is stored in a single place:
     `{{ cookiecutter.project_slug }}/__version__.py`. For updating the
     version number, you only have to change this file.
 -   Don't forget to update the version number before [making a
-    release](https://guide.esciencecenter.nl/best_practices/releases.html)!
+    release](https://guide.esciencecenter.nl/#/best_practices/releases)!
 
 ## Logging
 
@@ -120,13 +120,13 @@ help you decide which tool to use for packaging.
     from your module (instead of using print).
 -   The project is set up with a logging example.
 -   [Relevant section in the
-    guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#logging)
+    guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=logging)
 
 ## CHANGELOG.rst
 
 -   Document changes to your software package
 -   [Relevant section in the
-    guide](https://guide.esciencecenter.nl/software/releases.html#changelogmd)
+    guide](https://guide.esciencecenter.nl/#/software/releases?id=changelogmd)
 
 ## CITATION.cff
 
@@ -134,27 +134,27 @@ help you decide which tool to use for packaging.
 -   It only makes sense to do this once there is something to cite
     (e.g., a software release with a DOI).
 -   Follow the [making software
-    citable](https://guide.esciencecenter.nl/citable_software/making_software_citable.html)
+    citable](https://guide.esciencecenter.nl/#/citable_software/making_software_citable)
     section in the guide.
 
 ## CODE\_OF\_CONDUCT.rst
 
 -   Information about how to behave professionally
 -   [Relevant section in the
-    guide](https://guide.esciencecenter.nl/software/documentation.html#code-of-conduct)
+    guide](https://guide.esciencecenter.nl/#/software/documentation?id=code-of-conduct)
 
 ## CONTRIBUTING.rst
 
 -   Information about how to contribute to this software package
 -   [Relevant section in the
-    guide](https://guide.esciencecenter.nl/software/documentation.html#contribution-guidelines)
+    guide](https://guide.esciencecenter.nl/#/software/documentation?id=contribution-guidelines)
 
 ## MANIFEST.in
 
 -   List non-Python files that should be included in a source distribution
--   [Relevant section in the guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#building-and-packaging-code)
+-   [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=building-and-packaging-code)
 
 ## NOTICE
 
 -   List of attributions of this project and Apache-license dependencies
--   [Relevant section in the guide](https://guide.esciencecenter.nl/best_practices/licensing.html#notice)
+-   [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/licensing?id=notice)
