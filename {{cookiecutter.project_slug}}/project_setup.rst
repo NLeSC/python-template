@@ -13,8 +13,6 @@ Once your Python package is created, put it under
 `version control <https://guide.esciencecenter.nl/best_practices/version_control.html>`_!
 We recommend using `git <http://git-scm.com/>`_ and `github <https://github.com/>`_.
 
-On GitHub, make a new, empty repository.
-
 .. code-block:: console
 
   # change into the generated directory
@@ -22,6 +20,10 @@ On GitHub, make a new, empty repository.
 
   # make that directory a git repository
   git init
+  
+On GitHub, make a new, empty repository.
+
+.. code-block:: console
 
   # tell your local repository where its online counterpart is
   git remote add origin <url to your new repo>
