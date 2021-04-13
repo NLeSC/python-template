@@ -4,6 +4,18 @@ Spend less time setting up and configuring your new Python packages and comply w
 [Netherlands eScience Center Software Development Guide](https://guide.esciencecenter.nl/)
 from the start.
 
+Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generate
+an empty Python package. Features include:
+
+- Boilerplate tests and documentation,
+- [Python setup configuration]({{cookiecutter.project_slug}}/setup.py),
+- Open source software license,
+- [Default Github actions]({{cookiecutter.project_slug}}/.github/workflows) for building, testing and deployment
+- Code style checking,
+- [Editorconfig]({{cookiecutter.project_slug}}/.editorconfig),
+- Miscellaneous files, such as [Change log]({{cookiecutter.project_slug}}/CHANGELOG.rst), [Code of Conduct]({{cookiecutter.project_slug}}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{cookiecutter.project_slug}}/CONTRIBUTING.rst),
+- A [README]({{cookiecutter.project_slug}}/README.rst) and [a separate document]({{cookiecutter.project_slug}}/project_setup.rst) with extensive documentation about project setup.
+
 ## Badges
 
 | fair-software.nl recommendations | |
@@ -21,92 +33,28 @@ from the start.
 | Citation metadata consistency      | [![workflow cffconvert badge](https://github.com/nlesc/python-template/workflows/cffconvert/badge.svg)](https://github.com/nlesc/python-template/actions?query=workflow%3A%22cffconvert%22) |
 | Unit tests                         | [![workflow tests badge](https://github.com/nlesc/python-template/workflows/tests/badge.svg)](https://github.com/nlesc/python-template/actions?query=workflow%3Atests) |
 
-Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generate
-an empty Python package. Features include:
-
-- Boilerplate tests and documentation,
-- [Python setup configuration]({{cookiecutter.project_slug}}/setup.py),
-- Open source software license,
-- [Default Github actions]({{cookiecutter.project_slug}}/.github/workflows) for building, testing and deployment
-
-- Code style checking,
-- [Editorconfig]({{cookiecutter.project_slug}}/.editorconfig),
-- Miscellaneous files, such as [Change log]({{cookiecutter.project_slug}}/CHANGELOG.rst), [Code of Conduct]({{cookiecutter.project_slug}}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{cookiecutter.project_slug}}/CONTRIBUTING.rst),
-- A [README]({{cookiecutter.project_slug}}/README.rst) and [a separate document]({{cookiecutter.project_slug}}/project_setup.rst) with extensive documentation about project setup.
-
-The file structure of the generated package looks like:
-
-```bash
-path/to/package/
-├── .editorconfig
-└── .github/
-    └── workflows
-        ├── build.yml
-        └── pypi_deploy.yml
-├── .gitignore
-├── .prospector.yml
-├── CHANGELOG.rst
-├── CODE_OF_CONDUCT.rst
-├── CONTRIBUTING.rst
-├── docs
-│   ├── conf.py
-│   ├── index.rst
-│   └── ...
-├── LICENSE
-├── MANIFEST.in
-├── NOTICE
-├── package
-│   ├── __init__.py
-│   ├── __version__.py
-│   └── package.py
-├── README.rst
-├── project_setup.rst
-├── requirements.txt
-├── setup.cfg
-├── setup.py
-└── tests
-    ├── __init__.py
-    ├── test_lint.py
-    └── test_package.py
-```
-
-* Code (existing or new) should be placed in `path/to/package/package/` (please choose a better name for your software!).
-* Add documentation by editing `path/to/package/docs/index.rst`
-* Tests go in the `path/to/package/tests/` directory
-* The generated [project setup document]({{cookiecutter.project_slug}}/project_setup.rst) contains extensive documentation about the project setup and provides further instructions on what to do.
 
 ## How to use
 
-We recommend developing your software in an isolated Python environment and
-assume you are familiar with either **virtualenv + pip3** or **conda** (check the
-[guide](https://guide.esciencecenter.nl/best_practices/language_guides/python.html#dependencies-and-package-management)
-if you are not).
+### Step 1/3: Install `cookiecutter`
 
-### Step 1: Install `cookiecutter`
+We recommend installing `cookiecutter` in user space as per `cookiecutter`'s instructions. This way, you don't have to
+install `cookiecutter` for every new project.
 
-We recommend installing cookiecutter outside the virtual environment you will
-be using for developing your software. This way, you don't have to install
-cookiecutter for every new project.
-
-* If you are using **virtualenv + pip3**:
-	```bash
-	pip3 install --user cookiecutter
-	```
-
-
-* If you are using **conda**:
-	```bash
-	conda install -c conda-forge cookiecutter
-	```
-
-### Step 2: Generate the files and directory structure
-
-To create a new package, type:
-```bash
-cookiecutter https://github.com/nlesc/python-template.git
+```shell
+python3 -m pip install --user --upgrade cookiecutter
 ```
 
-You will be asked to supply the following information:
+### Step 2/3: Generate the files and directory structure
+
+Run `cookiecutter` with the template:
+
+```shell
+# Notes:
+#   1. See table below for explanation of each question
+#   2. The files will be generated in a new directory
+cookiecutter https://github.com/nlesc/python-template.git
+```
 
 | Name                      | Default value | Explanation |
 | ------------------------- | ------------- | ----------- |
@@ -122,33 +70,26 @@ You will be asked to supply the following information:
 | copyright_holder          |   | Name(s) of the organization(s) or person(s) who hold the copyright of the software (e.g., Netherlands eScience Center).  |
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct.  |
 
-### Step 3: Create and activate a Python environment
+### Step 3/3: Read about what was just generated
 
-* If you are using **virtualenv + pip3**, do:
-	 ```bash
-	 $ virtualenv -p python3 env
-	 $ . env/bin/activate
-	 ```
-* If you are using **conda**, type:
-	```bash
-	$ conda create -n env python=3
-	$ source activate env
-	```
-	(On windows use `activate env` to activate the conda environment.)
+Good job! You have now generated the skeleton for your package. For an explanation of what's there, read on in the [project_setup.rst]({{cookiecutter.project_slug}}project_setup.rst) file.
 
-## Continuous integration with Github Actions
+## Examples
 
-The template has two Ci workflows. They can be found in **.github/workflows** folder.
+Many developers have gone before you in using this template to get started quickly. Check out their projects in the
+list below:
 
-1. **build.yml**
-
-This workflow install the dependencies, builds the package and runs tests.
-
-2. **pypi.yml**
-
-This workflow pushes the package to [PYPI](https://pypi.org/). This action will require PYPI token to be stored as [Github secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). The workflow uses secret with a name of `PYPI_TOKEN`.
-
-You can learn more about Python packaging at [this link](https://packaging.python.org/tutorials/packaging-projects/).
+1. Cerise: [https://github.com/MD-Studio/cerise](https://github.com/MD-Studio/cerise)
+1. cerulean: [https://github.com/MD-Studio/cerulean](https://github.com/MD-Studio/cerulean)
+1. cffconvert: [https://github.com/citation-file-format/cff-converter-python](https://github.com/citation-file-format/cff-converter-python)
+1. fairtally: [https://github.com/fair-software/fairtally](https://github.com/fair-software/fairtally)
+1. howfairis: [https://github.com/fair-software/howfairis](https://github.com/fair-software/howfairis)
+1. matchms: [https://github.com/matchms/matchms](https://github.com/matchms/matchms)
+1. MUSCLE 3: [https://github.com/multiscale/muscle3](https://github.com/multiscale/muscle3)
+1. pycff: [https://github.com/citation-file-format/pycff](https://github.com/citation-file-format/pycff)
+1. spec2vec: [https://github.com/iomega/spec2vec](https://github.com/iomega/spec2vec)
+1. yatiml: [https://github.com/yatiml/yatiml](https://github.com/yatiml/yatiml)
+1. _... And many more. Make a PR to add your project here!_
 
 
 ## How to contribute
