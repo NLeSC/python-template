@@ -107,35 +107,3 @@ def test_building_documentation_apidocs(cookies):
 
     assert apidocs.join('my_python_project.html').isfile()
     assert apidocs.join('my_python_project.my_python_project.html').isfile()
-
-
-def test_no_travis_pypi_deployment(cookies):
-    project = cookies.bake()
-
-    assert project.exit_code == 0
-    assert project.exception is None
-
-    cwd = os.getcwd()
-    os.chdir(str(project.project))
-
-    conf = load_yaml('.travis.yml')
-
-    os.chdir(cwd)
-
-    assert conf.get('deploy') is None
-
-
-def test_yes_travis_pypi_deployment(cookies):
-    project = cookies.bake(extra_context={'pypi_user': 'user'})
-
-    assert project.exit_code == 0
-    assert project.exception is None
-
-    cwd = os.getcwd()
-    os.chdir(str(project.project))
-
-    conf = load_yaml('.travis.yml')
-
-    os.chdir(cwd)
-
-    assert conf.get('deploy').get('user') == 'user'

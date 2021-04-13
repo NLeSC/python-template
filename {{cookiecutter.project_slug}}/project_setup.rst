@@ -42,22 +42,7 @@ You can use either `pip` or `conda` for installing dependencies and package mana
 Packaging/One command install
 -----------------------------
 
-You can distribute your code using pipy or conda. Again, the project template does not enforce the use of either one. `The guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#building-and-packaging-code>`_ can help you decide which tool to use for packaging.
-
-If you decide to use pypi for distributing you code, you can configure travis to upload to pypi when you make a release. If you specified your pypi user name during generation of this package, the ``.travis.yml`` file contains a section that looks like:
-
-.. code-block:: yaml
-
-  deploy:
-    provider: pypi
-    user: {{ cookiecutter.pypi_user }}
-    password:
-      secure: FIXME; see README for more info
-   on:
-      tags: true
-      branch: master
-
-Before this actually works, you need to add an encrypted password for your pypi account. The `travis documentation <https://docs.travis-ci.com/user/deployment/pypi/>`_ specifies how to do this.
+You can distribute your code using pypi or conda. Again, the project template does not enforce the use of either one. `The guide <https://guide.esciencecenter.nl/best_practices/language_guides/python.html#building-and-packaging-code>`_ can help you decide which tool to use for packaging.
 
 Testing and code coverage
 -------------------------

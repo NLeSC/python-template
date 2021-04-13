@@ -8,12 +8,12 @@ import pycodestyle  # formerly known as pep8
 def test_pep8_conformance():
     """Test that we conform to PEP-8."""
     check_paths = [
-        '{{ cookiecutter.project_slug }}',
-        'tests',
+        "{{ cookiecutter.project_slug }}",
+        "tests",
     ]
     exclude_paths = []
 
-    print("PEP8 check of directories: {}\n".format(', '.join(check_paths)))
+    print("PEP8 check of directories: {}\n".format(", ".join(check_paths)))
 
     # Get paths wrt package root
     package_root = os.path.dirname(os.path.dirname(__file__))
