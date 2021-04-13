@@ -126,7 +126,8 @@ help you decide which tool to use for packaging.
 
 -   Document changes to your software package
 -   [Relevant section in the
-    guide](https://guide.esciencecenter.nl/#/software/releases?id=changelogmd)
+    guide](https://guide.esciencecenter.nl/#/best_practices/releases?id=changelogmd)
+           
 
 ## CITATION.cff
 
@@ -141,13 +142,13 @@ help you decide which tool to use for packaging.
 
 -   Information about how to behave professionally
 -   [Relevant section in the
-    guide](https://guide.esciencecenter.nl/#/software/documentation?id=code-of-conduct)
+    guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=code-of-conduct)
 
 ## CONTRIBUTING.rst
 
 -   Information about how to contribute to this software package
 -   [Relevant section in the
-    guide](https://guide.esciencecenter.nl/#/software/documentation?id=contribution-guidelines)
+    guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=contribution-guidelines)
 
 ## MANIFEST.in
 
