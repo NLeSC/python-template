@@ -1,12 +1,25 @@
 # Netherlands eScience Center Python Template
 
-[![RSD](https://img.shields.io/badge/rsd-python--template-00a3e3.svg)](https://research-software.nl/software/nlesc-python-template)
-[![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/a99ph5fv1carejrr/branch/main?svg=true)](https://ci.appveyor.com/project/jvdzwaan/python-template/branch/main)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310751.svg)](https://doi.org/10.5281/zenodo.1310751)
-
 Spend less time setting up and configuring your new Python packages and comply with the
 [Netherlands eScience Center Software Development Guide](https://guide.esciencecenter.nl/)
 from the start.
+
+## Badges
+
+| fair-software.nl recommendations | |
+| :-- | :--  |
+| (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)](https://github.com/nlesc/python-template) |
+| (2/5) license                      | [![github license badge](https://img.shields.io/github/license/nlesc/python-template)](https://github.com/nlesc/python-template) |
+| (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-python--template-00a3e3.svg)](https://research-software.nl/software/nlesc-python-template) |
+| (4/5) citation                     | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310751.svg)](https://doi.org/10.5281/zenodo.1310751) |
+| (5/5) checklist                    | &nbsp; |
+| overall                            | [![fair-software badge](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu) |
+| **Other best practices**           | &nbsp; |
+| Appveyor                           | [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/a99ph5fv1carejrr/branch/main?svg=true)](https://ci.appveyor.com/project/jvdzwaan/python-template/branch/main)
+| **GitHub Actions**                 | &nbsp; |
+| MarkDown link checker              | [![workflow mlc badge](https://github.com/nlesc/python-template/workflows/markdown-link-checker/badge.svg)](https://github.com/nlesc/python-template/actions?query=workflow%3A%22markdown-link-checker%22) |
+| Citation metadata consistency      | [![workflow cffconvert badge](https://github.com/nlesc/python-template/workflows/cffconvert/badge.svg)](https://github.com/nlesc/python-template/actions?query=workflow%3A%22cffconvert%22) |
+| Unit tests                         | [![workflow tests badge](https://github.com/nlesc/python-template/workflows/tests/badge.svg)](https://github.com/nlesc/python-template/actions?query=workflow%3Atests) |
 
 Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generate
 an empty Python package. Features include:
