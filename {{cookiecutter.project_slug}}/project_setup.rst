@@ -55,7 +55,7 @@ If you decide to use pypi for distributing you code, you can configure travis to
       secure: FIXME; see README for more info
    on:
       tags: true
-      branch: master
+      branch: main
 
 Before this actually works, you need to add an encrypted password for your pypi account. The `travis documentation <https://docs.travis-ci.com/user/deployment/pypi/>`_ specifies how to do this.
 

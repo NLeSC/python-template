@@ -18,6 +18,8 @@
      -
    * - Continuous integration
      - |Python Build| |PyPI Publish|
+   * - Metadata consistency
+     - |metadata consistency|
 
 (Customize these badges with your own links, and check https://shields.io/ or https://badgen.net/ to see which other badges are available.)
 
@@ -59,6 +61,10 @@
    :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/actions?query=workflow%3A%22PyPI%22
    :alt: PyPI Publish
 
+.. |metadata consistency| image:: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/workflows/cffconvert/badge.svg
+   :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/actions?query=workflow%3A%22cffconvert%22
+   :alt: metadata consistency badge
+
 ################################################################################
 {{ cookiecutter.project_name }}
 ################################################################################
@@ -77,7 +83,7 @@ To install {{ cookiecutter.project_slug }}, do:
 
   git clone https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}.git
   cd {{ cookiecutter.project_slug }}
-  pip install .
+  pip3 install .
 
 
 Run tests (including coverage) with:
