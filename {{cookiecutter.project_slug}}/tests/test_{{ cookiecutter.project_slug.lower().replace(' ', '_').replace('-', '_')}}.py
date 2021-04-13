@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 """Tests for the {{ cookiecutter.project_slug.lower().replace(' ', '_').replace('-', '_')}} module.
 """
