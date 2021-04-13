@@ -72,7 +72,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 
 ### Step 3/3: Read about what was just generated
 
-Good job! You have now generated the skeleton for your package. For an explanation of what's there, read on in the [project_setup.rst]({{cookiecutter.project_slug}}project_setup.rst) file.
+Good job! You have now generated the skeleton for your package. For an explanation of what's there, read on in the [project_setup.rst]({{cookiecutter.project_slug}}/project_setup.rst) file.
 
 ## Examples
 
