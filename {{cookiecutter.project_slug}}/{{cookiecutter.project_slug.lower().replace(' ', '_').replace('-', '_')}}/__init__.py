@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 {% if cookiecutter.apidoc == 'yes' %}"""Documentation about {{ cookiecutter.project_name }}"""{% endif %}
 import logging
 
