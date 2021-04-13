@@ -15,7 +15,7 @@ from the start.
 | (5/5) checklist                    | &nbsp; |
 | overall                            | [![fair-software badge](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu) |
 | **Other best practices**           | &nbsp; |
-| Appveyor                           | [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/a99ph5fv1carejrr/branch/main?svg=true)](https://ci.appveyor.com/project/jvdzwaan/python-template/branch/main)
+| &nbsp;                             | &nbsp; |
 | **GitHub Actions**                 | &nbsp; |
 | MarkDown link checker              | [![workflow mlc badge](https://github.com/nlesc/python-template/workflows/markdown-link-checker/badge.svg)](https://github.com/nlesc/python-template/actions?query=workflow%3A%22markdown-link-checker%22) |
 | Citation metadata consistency      | [![workflow cffconvert badge](https://github.com/nlesc/python-template/workflows/cffconvert/badge.svg)](https://github.com/nlesc/python-template/actions?query=workflow%3A%22cffconvert%22) |
