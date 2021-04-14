@@ -78,7 +78,8 @@ def test_building_documentation_no_apidocs(cookies):
     os.chdir(str(project.project))
 
     try:
-        sh.build_sphinx()
+        sh.python(['setup.py', 'install'])
+        sh.python(['setup.py', 'build_sphinx'])
     except sh.ErrorReturnCode as e:
         pytest.fail(e)
     finally:
