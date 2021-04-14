@@ -39,6 +39,22 @@ authors:
     orcid: "https://orcid.org/0000-0002-7064-4069"
   -
     affiliation: "Netherlands eScience Center"
+    family-names: Kuppevelt
+    given-names: Dafne
+    name-particle: van
+    orcid: "https://orcid.org/0000-0002-2662-1994"
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Veen
+    given-names: Lourens
+    orcid: "https://orcid.org/0000-0002-6311-1168"
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Rol
+    given-names: Evert
+    orcid: "https://orcid.org/0000-0001-8357-4453"
+  -
+    affiliation: "Netherlands eScience Center"
     family-names: Verhoeven
     given-names: Stefan
     orcid: "https://orcid.org/0000-0002-5821-2060"
