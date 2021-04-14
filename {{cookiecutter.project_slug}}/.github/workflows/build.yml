@@ -23,10 +23,13 @@ jobs:
         run: |
           which python
           python --version
-      - name: Install dependencies
+      - name: Install package and its dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install .[dev]
+      - name: Check style against standards using prospector
+        shell: bash -l {0}
+        run: prospector -o grouped -o pylint:pylint-report.txt
       - name: Build
         shell: bash -l {0}
         run: |
