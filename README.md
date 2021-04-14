@@ -14,7 +14,7 @@ an empty Python package. Features include:
 - Code style checking,
 - [Editorconfig]({{ cookiecutter.project_name }}/.editorconfig),
 - Miscellaneous files, such as [Change log]({{ cookiecutter.project_name }}/CHANGELOG.rst), [Code of Conduct]({{ cookiecutter.project_name }}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{ cookiecutter.project_name }}/CONTRIBUTING.rst),
-- A [README]({{ cookiecutter.project_name }}/README.rst) and [a separate document]({{ cookiecutter.project_name }}/project_setup.rst) with extensive documentation about project setup.
+- A [README]({{ cookiecutter.project_name }}/README.rst) and [a separate document]({{ cookiecutter.project_name }}/project_setup.md) with extensive documentation about project setup.
 
 ## Badges
 
@@ -71,7 +71,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 
 ### Step 3/3: Read about what was just generated
 
-Good job! You have now generated the skeleton for your package. For an explanation of what's there, read on in the [project_setup.rst]({{ cookiecutter.project_name }}/project_setup.rst) file.
+Good job! You have now generated the skeleton for your package. For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.project_slug}}/project_setup.md) file.
 
 ## Examples
 

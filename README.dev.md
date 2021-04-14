@@ -37,9 +37,7 @@ path/to/package/
 * Code (existing or new) should be placed in `path/to/package/package/` (please choose a better name for your software!).
 * Add documentation by editing `path/to/package/docs/index.rst`
 * Tests go in the `path/to/package/tests/` directory
-* The generated [project setup document]({{cookiecutter.project_slug}}/project_setup.rst) contains extensive documentation about the project setup and provides further instructions on what to do.
-
-
+* The generated [project setup document]({{cookiecutter.project_slug}}/project_setup.md) contains extensive documentation about the project setup and provides further instructions on what to do.
 
 ### Step 3: Create and activate a Python environment
 
