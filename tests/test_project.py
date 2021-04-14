@@ -59,7 +59,7 @@ def test_running_tests(cookies):
     os.chdir(str(project.project))
 
     try:
-        sh.pytest()
+        sh.pytest(["tests"])
     except sh.ErrorReturnCode as e:
         pytest.fail(e)
     finally:
