@@ -60,7 +60,7 @@ def test_running_tests(cookies):
 
     try:
         sh.python(['setup.py', 'install'])
-        sh.python(['setup.py', 'test'])
+        sh.python(['pytest'])
     except sh.ErrorReturnCode as e:
         pytest.fail(e)
     finally:
