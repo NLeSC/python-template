@@ -6,28 +6,53 @@ authors:
     family-names: Zwaan
     given-names: Janneke
     name-particle: "van der"
+    orcid: "https://orcid.org/0000-0002-8329-7000"
   -
     affiliation: "Netherlands eScience Center"
     family-names: Werkhoven
     given-names: Ben
     name-particle: van
+    orcid: "https://orcid.org/0000-0002-7508-3272"
   -
     affiliation: "Netherlands eScience Center"
     family-names: Andela
     given-names: Bouwe
+    orcid: "https://orcid.org/0000-0001-9005-8940"
   -
     affiliation: "Netherlands eScience Center"
     family-names: Bos
     given-names: Patrick
+    orcid: "https://orcid.org/0000-0002-6033-960X"
   -
     affiliation: "Netherlands eScience Center"
     family-names: Attema
     given-names: Jisk
+    orcid: "https://orcid.org/0000-0002-0948-1176"
   -
     affiliation: "Netherlands eScience Center"
     family-names: Bakker
     given-names: Tom
-cff-version: "1.0.3"
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Spaaks
+    given-names: Jurriaan H.
+    orcid: "https://orcid.org/0000-0002-7064-4069"
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Verhoeven
+    given-names: Stefan
+    orcid: "https://orcid.org/0000-0002-5821-2060"
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Diblen
+    given-names: Faruk
+    orcid: "https://orcid.org/0000-0002-0989-929X"
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Tjong Kim Sang
+    given-names: Erik
+    orcid: "https://orcid.org/0000-0002-8431-081X"
+cff-version: "1.1.0"
 date-released: 2018-07-17
 doi: 10.5281/zenodo.1310751
 keywords:
