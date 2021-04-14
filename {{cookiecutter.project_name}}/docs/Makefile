@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = {{ cookiecutter.project_slug }}
+SPHINXPROJ    = {{ cookiecutter.derived.project_name }}
 SOURCEDIR     = .
 BUILDDIR      = _build
 

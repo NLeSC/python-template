@@ -8,13 +8,13 @@ Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generat
 an empty Python package. Features include:
 
 - Boilerplate tests and documentation,
-- [Python setup configuration]({{cookiecutter.project_slug}}/setup.py),
+- [Python setup configuration]({{ cookiecutter.derived.project_name }}/setup.py),
 - Open source software license,
-- [Default Github actions]({{cookiecutter.project_slug}}/.github/workflows) for building, testing and deployment
+- [Default Github actions]({{ cookiecutter.derived.project_name }}/.github/workflows) for building, testing and deployment
 - Code style checking,
-- [Editorconfig]({{cookiecutter.project_slug}}/.editorconfig),
-- Miscellaneous files, such as [Change log]({{cookiecutter.project_slug}}/CHANGELOG.rst), [Code of Conduct]({{cookiecutter.project_slug}}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{cookiecutter.project_slug}}/CONTRIBUTING.rst),
-- A [README]({{cookiecutter.project_slug}}/README.rst) and [a separate document]({{cookiecutter.project_slug}}/project_setup.rst) with extensive documentation about project setup.
+- [Editorconfig]({{ cookiecutter.derived.project_name }}/.editorconfig),
+- Miscellaneous files, such as [Change log]({{ cookiecutter.derived.project_name }}/CHANGELOG.rst), [Code of Conduct]({{ cookiecutter.derived.project_name }}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{ cookiecutter.derived.project_name }}/CONTRIBUTING.rst),
+- A [README]({{ cookiecutter.derived.project_name }}/README.rst) and [a separate document]({{ cookiecutter.derived.project_name }}/project_setup.rst) with extensive documentation about project setup.
 
 ## Badges
 
@@ -71,7 +71,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 
 ### Step 3/3: Read about what was just generated
 
-Good job! You have now generated the skeleton for your package. For an explanation of what's there, read on in the [project_setup.rst]({{cookiecutter.project_slug}}/project_setup.rst) file.
+Good job! You have now generated the skeleton for your package. For an explanation of what's there, read on in the [project_setup.rst]({{ cookiecutter.derived.project_name }}/project_setup.rst) file.
 
 ## Examples
 

@@ -1,4 +1,4 @@
-{%-if cookiecutter.apidoc == "yes" %}"""Documentation about the {{ cookiecutter.project_name }} module."""{% endif %}
+{%-if cookiecutter.apidoc == "yes" %}"""Documentation about the {{ cookiecutter.derived.package_name }} module."""{% endif %}
 import logging
 
 logger = logging.getLogger(__name__)

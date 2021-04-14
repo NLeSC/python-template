@@ -8,7 +8,7 @@ import pycodestyle  # formerly known as pep8
 def test_pep8_conformance():
     """Test that we conform to PEP-8."""
     check_paths = [
-        "{{ cookiecutter.project_slug }}",
+        "{{ cookiecutter.derived.project_name }}",
         "tests",
     ]
     exclude_paths = []

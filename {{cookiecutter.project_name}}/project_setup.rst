@@ -16,7 +16,7 @@ We recommend using `git <http://git-scm.com/>`_ and `github <https://github.com/
 .. code-block:: console
 
   # change into the generated directory
-  cd {{ cookiecutter.project_slug }}
+  cd {{ cookiecutter.derived.project_name }}
 
   # make that directory a git repository
   git init
@@ -62,7 +62,7 @@ Testing and code coverage
 * Tests should be put in the ``tests`` folder.
 * The ``tests`` folder contains:
 
-  - Example tests that you should replace with your own meaningful tests (file: ``test_{{ cookiecutter.project_slug.lower().replace(' ', '_').replace('-', '_')}}``)
+  - Example tests that you should replace with your own meaningful tests (file: ``test_{{ cookiecutter.derived.project_name }}``)
   - A test that checks whether your code conforms to the Python style guide (PEP 8) (file: ``test_lint.py``)
 
 * The testing framework used is `PyTest <https://pytest.org>`_
@@ -118,7 +118,7 @@ Package version number
 ----------------------
 
 * We recommend using `semantic versioning <https://guide.esciencecenter.nl/best_practices/releases.html#semantic-versioning>`_.
-* For convenience, the package version is stored in a single place: ``{{ cookiecutter.project_slug }}/__version__.py``. For updating the version number, you only have to change this file.
+* For convenience, the package version is stored in a single place: ``{{ cookiecutter.derived.project_name }}/__version__.py``. For updating the version number, you only have to change this file.
 * Don't forget to update the version number before `making a release <https://guide.esciencecenter.nl/best_practices/releases.html>`_!
 
 

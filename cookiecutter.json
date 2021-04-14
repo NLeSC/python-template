@@ -1,6 +1,6 @@
 {
-  "project_name": "My Python Project",
-  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "project_name": "my-python-project",
+  "package_name": "my_python_package",
   "_copy_without_render": [".github/*"],
   "project_short_description": "",
   "version": "0.1.0",
