@@ -59,8 +59,7 @@ def test_running_tests(cookies):
     os.chdir(str(project.project))
 
     try:
-        sh.python(['setup.py', 'install'])
-        sh.python(['pytest'])
+        sh.pytest()
     except sh.ErrorReturnCode as e:
         pytest.fail(e)
     finally:
