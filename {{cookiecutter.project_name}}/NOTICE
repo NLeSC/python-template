@@ -1,2 +1,2 @@
-This product includes {{ cookiecutter.derived.package_name }}, software developed by
+This product includes {{ cookiecutter.package_name }}, software developed by
 {{ cookiecutter.copyright_holder }}.

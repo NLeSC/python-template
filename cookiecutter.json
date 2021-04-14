@@ -1,5 +1,5 @@
 {
-  "project_name": "my-python-project",
+  "project_name": "my-python-projecT",
   "package_name": "my_python_package",
   "_copy_without_render": [".github/*"],
   "project_short_description": "",

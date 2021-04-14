@@ -1,7 +1,7 @@
 # YAML 1.2
 ---
 cff-version: "1.1.0"
-title: "{{ cookiecutter.derived.project_name }}"
+title: "{{ cookiecutter.project_name }}"
 authors:
   -
     family-names: "{{ cookiecutter.full_name }}"
@@ -10,7 +10,7 @@ authors:
 date-released: 20??-MM-DD
 doi: <insert your DOI here>
 version: "{{ cookiecutter.version }}"
-repository-code: "{{ cookiecutter.derived.repository }}"
+repository-code: "{{ cookiecutter.repository }}"
 identifiers:
 keywords:
 message: "If you use this software, please cite it using these metadata."
