@@ -59,7 +59,7 @@ def test_running_tests(cookies):
     os.chdir(str(project.project))
 
     try:
-        sh.pytest(["tests"])
+        sh.pytest()
     except sh.ErrorReturnCode as e:
         pytest.fail(e)
     finally:
@@ -78,7 +78,7 @@ def test_building_documentation_no_apidocs(cookies):
     os.chdir(str(project.project))
 
     try:
-        sh.python(['setup.py', 'build_sphinx'])
+        sh.build_sphinx()
     except sh.ErrorReturnCode as e:
         pytest.fail(e)
     finally:
