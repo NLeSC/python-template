@@ -57,8 +57,8 @@ cookiecutter https://github.com/nlesc/python-template.git
 
 | Name                      | Default value | Explanation |
 | ------------------------- | ------------- | ----------- |
-| project_name              | My Python Project  | Full project/package name.  |
-| project_slug              | my_python_project  | This will be the name of the directory to be created and the git repository. It is safest not to use dashes (-) or spaces in this name. |
+| project_name              | my-python-project  | Full project name.  |
+| package_slug              | my_python_package  | This will be the name of the directory to be created and the git repository. It is safest not to use dashes (-) or spaces in this name. |
 | project_short_description |   | The information that you enter here will end up in the README, documentation, license, and setup.py, so it may be a good idea to prepare something in advance. |
 | version                   | 0.1.0  |   |
 | github_organization       |   | GitHub organization that will contain this project's repository. This can also be your github user name. |
@@ -71,7 +71,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 
 ### Step 3/3: Read about what was just generated
 
-Good job! You have now generated the skeleton for your package. For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.project_slug}}/project_setup.md) file.
+Good job! You have now generated the skeleton for your package. For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.project_name}}/project_setup.md) file.
 
 ## Examples
 
