@@ -4,5 +4,6 @@ sh
 # Testing
 pytest<5.0.0,>=3.3.0
 pytest-cookies
+pytest-cov
 pycodestyle
 ruamel.yaml

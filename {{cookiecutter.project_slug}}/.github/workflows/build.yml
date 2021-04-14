@@ -41,4 +41,4 @@ jobs:
         shell: bash -l {0}
         run: |
           pytest tests
-          # pytest --cov --cov-report term --cov-report xml --junitxml=xunit-result.xml
+          pytest --cov --cov-report term --cov-report xml --junitxml=xunit-result.xml
