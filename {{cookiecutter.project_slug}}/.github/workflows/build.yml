@@ -14,6 +14,9 @@ jobs:
         python-version: ['3.6', '3.7', '3.8']
     steps:
       - uses: actions/checkout@v2
+      - uses: ammaraskar/sphinx-action@master
+        with:
+          docs-folder: "docs/"
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
         with:
