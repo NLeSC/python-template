@@ -79,7 +79,6 @@ def test_building_documentation_no_apidocs(cookies):
 
     try:
         sh.sphinx_build(["-a", "-b", "html", "docs", "docs/_build"])
-        # sh.python(['setup.py', 'build_sphinx'])
     except sh.ErrorReturnCode as e:
         pytest.fail(e)
     finally:
@@ -98,13 +97,13 @@ def test_building_documentation_apidocs(cookies):
     os.chdir(str(project.project))
 
     try:
-        sh.python(['setup.py', 'build_sphinx'])
+        sh.sphinx_build(["-a", "-b", "html", "docs", "docs/_build"])
     except sh.ErrorReturnCode as e:
         pytest.fail(e)
     finally:
         os.chdir(cwd)
 
-    apidocs = project.project.join('docs', '_build', 'html', 'apidocs')
+    apidocs = project.project.join('docs', '_build', 'apidocs')
 
     assert apidocs.join('my_python_project.html').isfile()
     assert apidocs.join('my_python_project.my_python_project.html').isfile()

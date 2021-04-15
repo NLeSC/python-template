@@ -72,8 +72,7 @@ def test_dash_in_project_slug(cookies):
     os.chdir(str(project.project))
 
     try:
-        sh.python(['setup.py', 'install'])
-        sh.python(['setup.py', 'build_sphinx'])
+        sh.sphinx_build(["-a", "-b", "html", "docs", "docs/_build"])
     except sh.ErrorReturnCode as e:
         pytest.fail(e)
     finally:
@@ -96,8 +95,7 @@ def test_space_in_project_slug(cookies):
     os.chdir(str(project.project))
 
     try:
-        sh.python(['setup.py', 'install'])
-        sh.python(['setup.py', 'build_sphinx'])
+        sh.sphinx_build(["-a", "-b", "html", "docs", "docs/_build"])
     except sh.ErrorReturnCode as e:
         pytest.fail(e)
     finally:

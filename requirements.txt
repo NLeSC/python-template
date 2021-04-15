@@ -7,3 +7,4 @@ pytest-cookies
 pytest-cov
 pycodestyle
 ruamel.yaml
+sphinx_rtd_theme
