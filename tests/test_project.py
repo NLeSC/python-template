@@ -24,7 +24,7 @@ def test_project(cookies):
 
     assert project.exit_code == 0
     assert project.exception is None
-    assert project.project.basename == 'my_python_project'
+    assert project.project.basename == 'my-python-project'
     assert project.project.isdir()
 
 
@@ -105,5 +105,5 @@ def test_building_documentation_apidocs(cookies):
 
     apidocs = project.project.join('docs', '_build', 'html', 'apidocs')
 
-    assert apidocs.join('my_python_project.html').isfile()
-    assert apidocs.join('my_python_project.my_python_project.html').isfile()
+    assert apidocs.join('my-python-project.html').isfile()
+    assert apidocs.join('my-python-project.my-python-package.html').isfile()
