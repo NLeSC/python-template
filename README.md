@@ -71,7 +71,39 @@ cookiecutter https://github.com/nlesc/python-template.git
 
 ### Step 3/3: Read about what was just generated
 
-Good job! You have now generated the skeleton for your package. For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.project_name}}/project_setup.md) file.
+Good job! You have now generated the skeleton for your package:
+
+```text
+my-python-project/
+├── CHANGELOG.rst
+├── CITATION.cff
+├── CODE_OF_CONDUCT.rst
+├── CONTRIBUTING.rst
+├── docs
+│   ├── conf.py
+│   ├── index.rst
+│   ├── make.bat
+│   ├── Makefile
+│   ├── _static
+│   │   └── theme_overrides.css
+│   └── _templates
+├── LICENSE
+├── MANIFEST.in
+├── my_python_package
+│   ├── __init__.py
+│   ├── my_module.py
+│   └── __version__.py
+├── NOTICE
+├── project_setup.md
+├── README.rst
+├── setup.cfg
+├── setup.py
+└── tests
+    ├── __init__.py
+    └── test_my_module.py
+```
+
+For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.project_name}}/project_setup.md) file.
 
 ## Examples
 
