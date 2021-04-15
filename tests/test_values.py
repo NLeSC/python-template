@@ -59,7 +59,7 @@ def test_single_quotes_in_name_and_description(cookies):
 @pytest.mark.skipif(sys.platform.startswith('win'),
                     reason='Skipping test with sh-module on Windows')
 def test_dash_in_project_name(cookies):
-    ctx = {'project_name': "my-package"}
+    ctx = {'project_name': "my-project"}
     project = cookies.bake(extra_context=ctx)
 
     assert project.exit_code == 0
@@ -83,7 +83,7 @@ def test_dash_in_project_name(cookies):
 @pytest.mark.skipif(sys.platform.startswith('win'),
                     reason='Skipping test with sh-module on Windows')
 def test_space_in_project_name(cookies):
-    ctx = {'project_name': "my package"}
+    ctx = {'project_name': "my project"}
     project = cookies.bake(extra_context=ctx)
 
     assert project.exit_code == 0
