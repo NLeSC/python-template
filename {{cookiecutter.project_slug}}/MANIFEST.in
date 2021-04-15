@@ -1,2 +1,4 @@
+include CITATION.cff
 include LICENSE
+include NOTICE
 include README.rst

@@ -2,27 +2,67 @@
     "creators": [
         {
             "affiliation": "Netherlands eScience Center",
-            "name": "van der Zwaan, Janneke"
+            "name": "van der Zwaan, Janneke",
+            "orcid": "0000-0002-8329-7000"
         },
         {
             "affiliation": "Netherlands eScience Center",
-            "name": "van Werkhoven, Ben"
+            "name": "van Werkhoven, Ben",
+            "orcid": "0000-0002-7508-3272"
         },
         {
             "affiliation": "Netherlands eScience Center",
-            "name": "Andela, Bouwe"
-        },
-        {
-          "affiliation": "Netherlands eScience Center",
-          "name": "Bos, Patrick"
+            "name": "Andela, Bouwe",
+            "orcid": "0000-0001-9005-8940"
         },
         {
             "affiliation": "Netherlands eScience Center",
-            "name": "Attema, Jisk"
+            "name": "Bos, Patrick",
+            "orcid": "0000-0002-6033-960X"
+        },
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "Attema, Jisk",
+            "orcid": "0000-0002-0948-1176"
         },
         {
             "affiliation": "Netherlands eScience Center",
             "name": "Bakker, Tom"
+        },
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "Spaaks, Jurriaan H.",
+            "orcid": "0000-0002-7064-4069"
+        },
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "van Kuppevelt, Dafne",
+            "orcid": "0000-0002-2662-1994"
+        },
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "Veen, Lourens",
+            "orcid": "0000-0002-6311-1168"
+        },
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "Rol, Evert",
+            "orcid": "0000-0001-8357-4453"
+        },
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "Verhoeven, Stefan",
+            "orcid": "0000-0002-5821-2060"
+        },
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "Diblen, Faruk",
+            "orcid": "0000-0002-0989-929X"
+        },
+        {
+            "affiliation": "Netherlands eScience Center",
+            "name": "Tjong Kim Sang, Erik",
+            "orcid": "0000-0002-8431-081X"
         }
     ],
     "keywords": [
