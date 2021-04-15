@@ -58,14 +58,14 @@ cookiecutter https://github.com/nlesc/python-template.git
 | Name                      | Default value | Explanation |
 | ------------------------- | ------------- | ----------- |
 | package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. |
-| project_name              | my-python-project | Name of the project that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems |
+| project_name              | my-python-project | Name of the project that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. |
 | package_short_description | &nbsp;            | The information that you enter here will end up in the README, documentation, license, and setup.cfg, so it may be a good idea to prepare something in advance. |
 | version                   | 0.1.0             | &nbsp; |
 | github_organization       | &lt;my-github-organization&gt; | GitHub organization that will contain this project's repository. This can also be your GitHub user name. |
 | license                   | Apache Software License 2.0 | The software license under which the code is made available.  |
 | apidoc                    | no                | Add support for automatically generating a module index from the `docstrings` in your Python package (look at the [scriptcwl package](http://scriptcwl.readthedocs.io/en/latest/apidocs/scriptcwl.html) for an example).
 | full_name                 | John Smith        | Your full name, e.g. _John Smith_. |
-| email                     | yourname@esciencecenter.nl | Your (work) email address |
+| email                     | yourname@esciencecenter.nl | Your (work) email address. |
 | copyright_holder          | &nbsp;            | Name(s) of the organization(s) or person(s) who hold the copyright of the software (e.g., Netherlands eScience Center). |
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
 
