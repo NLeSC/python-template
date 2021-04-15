@@ -66,7 +66,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 | apidoc                    | no                | Add support for automatically generating a module index from the `docstrings` in your Python package (look at the [scriptcwl package](http://scriptcwl.readthedocs.io/en/latest/apidocs/scriptcwl.html) for an example).
 | full_name                 | John Smith        | Your full name, e.g. _John Smith_. |
 | email                     | yourname@esciencecenter.nl | Your (work) email address. |
-| copyright_holder          | &nbsp;            | Name(s) of the organization(s) or person(s) who hold the copyright of the software (e.g., Netherlands eScience Center). |
+| copyright_holder          | Netherlands eScience Center | Name(s) of the organization(s) or person(s) who hold the copyright of the software. |
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
 
 ### Step 3/3: Read about what was just generated
