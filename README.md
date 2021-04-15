@@ -8,13 +8,13 @@ Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generat
 an empty Python package. Features include:
 
 - Boilerplate tests and documentation,
-- [Python setup configuration]({{ cookiecutter.project_name }}/setup.py),
+- [Python setup configuration]({{cookiecutter.project_name}}/setup.py),
 - Open source software license,
-- [Default Github actions]({{ cookiecutter.project_name }}/.github/workflows) for building, testing and deployment
+- [Default Github actions]({{cookiecutter.project_name}}/.github/workflows) for building, testing and deployment
 - Code style checking,
-- [Editorconfig]({{ cookiecutter.project_name }}/.editorconfig),
-- Miscellaneous files, such as [Change log]({{ cookiecutter.project_name }}/CHANGELOG.rst), [Code of Conduct]({{ cookiecutter.project_name }}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{ cookiecutter.project_name }}/CONTRIBUTING.rst),
-- A [README]({{ cookiecutter.project_name }}/README.rst) and [a separate document]({{ cookiecutter.project_name }}/project_setup.md) with extensive documentation about project setup.
+- [Editorconfig]({{cookiecutter.project_name}}/.editorconfig),
+- Miscellaneous files, such as [Change log]({{cookiecutter.project_name}}/CHANGELOG.rst), [Code of Conduct]({{cookiecutter.project_name}}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{ cookiecutter.project_name }}/CONTRIBUTING.rst),
+- A [README]({{cookiecutter.project_name}}/README.rst) and [a separate document]({{cookiecutter.project_name}}/project_setup.md) with extensive documentation about project setup.
 
 ## Badges
 
