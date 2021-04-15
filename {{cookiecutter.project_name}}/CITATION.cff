@@ -14,4 +14,4 @@ repository-code: "{{ cookiecutter.repository }}"
 identifiers:
 keywords:
 message: "If you use this software, please cite it using these metadata."
-license: "{{ cookiecutter.open_source_license }}"
+license: "{{ cookiecutter.license }}"

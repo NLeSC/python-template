@@ -5,7 +5,7 @@
   "package_short_description": "",
   "version": "0.1.0",
   "github_organization": "<my-github-organization>",
-  "open_source_license": ["Apache Software License 2.0", "MIT license", "BSD license", "ISC license", "GNU General Public License v3 or later", "Not open source"],
+  "license": ["Apache Software License 2.0", "MIT license", "BSD license", "ISC license", "GNU General Public License v3 or later", "Not open source"],
   "apidoc": ["no", "yes"],
   "full_name": "John Smith",
   "email": "yourname@esciencecenter.nl",
