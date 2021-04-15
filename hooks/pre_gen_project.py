@@ -1,7 +1,7 @@
 import sys
 
 # Note: cookiecutter first makes the main level directory using
-# _project_name from cookiecutter.json before running this hook
+# project_name from cookiecutter.json before running this hook
 
 {{ cookiecutter.update({
     "package_name": cookiecutter.package_name.lower().replace(" ", "_").replace("-", "_"),
