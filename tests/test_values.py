@@ -11,7 +11,7 @@ except ImportError:
 @pytest.mark.skipif(sys.platform.startswith('win'),
                     reason='Skipping test with sh-module on Windows')
 def test_double_quotes_in_name_and_description(cookies):
-    ctx = {'project_short_description': '"double quotes"',
+    ctx = {'package_short_description': '"double quotes"',
            'full_name': '"name"name'}
     project = cookies.bake(extra_context=ctx)
 
@@ -35,8 +35,8 @@ def test_double_quotes_in_name_and_description(cookies):
 @pytest.mark.skipif(sys.platform.startswith('win'),
                     reason='Skipping test with sh-module on Windows')
 def test_single_quotes_in_name_and_description(cookies):
-    ctx = {'project_short_description': "'single quotes'",
-           'full_name': "Mr. O'Keeffe"}
+    ctx = {'package_short_description': "'single quotes'",
+           'full_name': "Mr. O'Keefe"}
     project = cookies.bake(extra_context=ctx)
 
     assert project.exit_code == 0

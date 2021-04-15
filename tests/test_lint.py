@@ -7,15 +7,15 @@ import pycodestyle  # formerly known as pep8
 def test_pep8_conformance(cookies):
     """Test that we conform to PEP-8."""
     check_paths = [
-        'my_python_project',
-        'tests',
+        "my_python_project",
+        "tests",
     ]
     exclude_paths = []
 
     project = cookies.bake(extra_context={
-        'project_short_description': 'short description'})
+        "package_short_description": "short description"})
 
-    print("PEP8 check of directories: {}\n".format(', '.join(check_paths)))
+    print("PEP8 check of directories: {}\n".format(", ".join(check_paths)))
 
     # Get paths wrt package root
     package_root = str(project.project)

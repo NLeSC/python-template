@@ -70,7 +70,7 @@
 {{ cookiecutter.project_name }}
 ################################################################################
 
-{{ cookiecutter.project_short_description }}
+{{ cookiecutter.package_short_description }}
 
 
 The project setup is documented in `a separate document <project_setup.rst>`_. Feel free to remove this document (and/or the link to this document) if you don't need it.

@@ -200,6 +200,6 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (main_doc, "{{ cookiecutter.project_name }}", u"{{ cookiecutter.project_name }} Documentation",
-     author, "{{ cookiecutter.project_name }}", "{{ cookiecutter.project_short_description }}",
+     author, "{{ cookiecutter.project_name }}", "{{ cookiecutter.package_short_description }}",
      "Miscellaneous"),
 ]
