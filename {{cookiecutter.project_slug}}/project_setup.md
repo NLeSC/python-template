@@ -114,6 +114,14 @@ help you decide which tool to use for packaging.
 -   Don't forget to update the version number before [making a
     release](https://guide.esciencecenter.nl/#/best_practices/releases)!
 
+## Publish on Python Package Index (PyPI)
+
+To publish your package on PyPI, you need to create a [PyPI API token](https://pypi.org/help#apitoken) and
+save it as a secret called `PYPI_TOKEN` on [Settings page](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/settings/secrets/actions)
+
+[Creating a release](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/releases/new) on GitHub
+will trigger a [GitHub action workflow](.github/workflows/pypi.yml) to publish the release on PyPI for you.
+
 ## Logging
 
 -   We recommend using the logging module for getting useful information
