@@ -69,11 +69,11 @@
    :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/actions?query=workflow%3A%22cffconvert%22
    :alt: metadata consistency badge
 
-.. |sonarcloud quality badge| image:: https://sonarcloud.io/api/project_badges/measure?project=fair-software_howfairis&metric=alert_status
+.. |sonarcloud quality badge| image:: https://sonarcloud.io/api/project_badges/measure?project={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}&metric=alert_status
    :target: https://sonarcloud.io/dashboard?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}
    :alt: Quality Gate Status
 
-.. |sonarcloud coverage badge| image:: https://sonarcloud.io/api/project_badges/measure?project=fair-software_howfairis&metric=coverage
+.. |sonarcloud coverage badge| image:: https://sonarcloud.io/api/project_badges/measure?project={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}&metric=coverage
    :target: https://sonarcloud.io/dashboard?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}
    :alt: Coverage
 
