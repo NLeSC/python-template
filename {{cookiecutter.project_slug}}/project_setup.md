@@ -116,7 +116,7 @@ help you decide which tool to use for packaging.
 
 ## Publish on Python Package Index (PyPI)
 
-To make the publishing to PyPI you need to create a [PyPI API token](https://pypi.org/help#apitoken) and
+To publish your package on PyPI, you need to create a [PyPI API token](https://pypi.org/help#apitoken) and
 save it as a secret called `PYPI_TOKEN` on [Settings page](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/settings/secrets/actions)
 
 [Creating a release](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/releases/new) on GitHub
