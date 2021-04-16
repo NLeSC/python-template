@@ -107,9 +107,11 @@ help you decide which tool to use for packaging.
 ## Continuous code quality
 
 -   [Sonarcloud](https://sonarcloud.io/) is used to perform quality analysis and code coverage report on each push
--   The GitHub organization and repository must be added Sonarcloud for analysis to work by going to
-    [Sonarcloud](https://sonarcloud.io/projects/create), login with your GitHub account,
-    add organization or reuse existing and setup repository
+-   The GitHub organization and repository must be added Sonarcloud for analysis to work
+    1. go to [Sonarcloud](https://sonarcloud.io/projects/create)
+    2. login with your GitHub account
+    3. add organization or reuse existing
+    4. setup repository
 -   Analysis is run in [GH action workflow](.github/workflows/quality.yml)
 -   To run analysis a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/)
     and token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/settings/secrets/actions)
