@@ -112,7 +112,7 @@ help you decide which tool to use for packaging.
     2. login with your GitHub account
     3. add organization or reuse existing
     4. setup repository
--   Analysis is run in [GH action workflow](.github/workflows/quality.yml)
+-   The analysis will be run by [GitHub Action workflow](.github/workflows/quality.yml)
 -   To run analysis a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/)
     and token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/settings/secrets/actions)
 
