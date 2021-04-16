@@ -20,6 +20,10 @@
      - |Python Build| |PyPI Publish|
    * - Metadata consistency
      - |metadata consistency|
+   * - Code quality
+     - |sonarcloud quality badge|
+   * - Code coverage of unit tests
+     - |sonarcloud coverage badge|
 
 (Customize these badges with your own links, and check https://shields.io/ or https://badgen.net/ to see which other badges are available.)
 
@@ -64,6 +68,14 @@
 .. |metadata consistency| image:: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/workflows/cffconvert/badge.svg
    :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/actions?query=workflow%3A%22cffconvert%22
    :alt: metadata consistency badge
+
+.. |sonarcloud quality badge| image:: https://sonarcloud.io/api/project_badges/measure?project=fair-software_howfairis&metric=alert_status
+   :target: https://sonarcloud.io/dashboard?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}
+   :alt: Quality Gate Status
+
+.. |sonarcloud coverage badge| image:: https://sonarcloud.io/api/project_badges/measure?project=fair-software_howfairis&metric=coverage
+   :target: https://sonarcloud.io/dashboard?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}
+   :alt: Coverage
 
 ################################################################################
 {{ cookiecutter.project_name }}

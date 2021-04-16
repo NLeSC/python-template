@@ -104,6 +104,16 @@ help you decide which tool to use for packaging.
 -   [Relevant section in the
     guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=coding-style-conventions)
 
+## Continuous code quality
+
+-   [Sonarcloud](https://sonarcloud.io/) is used to perform quality analysis and code coverage report on each push
+-   The GitHub organization and repository must be added Sonarcloud for analysis to work by going to
+    [Sonarcloud](https://sonarcloud.io/projects/create), login with your GitHub account,
+    add organization or reuse existing and setup repository
+-   Analysis is run in [GH action workflow](.github/workflows/quality.yml)
+-   To run analysis a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/)
+    and token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/settings/secrets/actions)
+
 ## Package version number
 
 -   We recommend using [semantic

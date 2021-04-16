@@ -1,0 +1,30 @@
+name: quality
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: python -m pip install .[dev]
+      - name: Check style against standards using prospector
+        run: prospector --zero-exit -o grouped -o pylint:pylint-report.txt
+      - name: Run unit tests with coverage
+        run: pytest --cov --cov-report term --cov-report xml --junitxml=xunit-result.xml tests/
+      - name: Correct coverage paths
+        run: sed -i "s+$PWD/++g" coverage.xml
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
