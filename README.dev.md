@@ -8,6 +8,7 @@ path/to/package/
         ├── build.yml
         └── pypi_deploy.yml
 ├── .gitignore
+├── pyproject.toml
 ├── .prospector.yml
 ├── CHANGELOG.rst
 ├── CODE_OF_CONDUCT.rst
