@@ -81,7 +81,7 @@ help you decide which tool to use for packaging.
   file can be safely removed (or you can just leave it there).
 - To put the documentation on [ReadTheDocs](https://readthedocs.org), log in to your ReadTheDocs account, and import
   the repository (under 'My Projects').
-    - Include the link to the documentation in your project's [README.md](README.md).
+    - Include the link to the documentation in your project's [README.rst](README.rst).
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=writingdocumentation)
 
 ## Coding style conventions and code quality
