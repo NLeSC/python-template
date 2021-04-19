@@ -28,23 +28,24 @@
 (Customize these badges with your own links, and check https://shields.io/ or https://badgen.net/ to see which other badges are available.)
 
 .. |GitHub Badge| image:: https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue
-   :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}
+   :target: {{ cookiecutter.repository }}
    :alt: GitHub Badge
 
-.. |License Badge| image:: https://img.shields.io/github/license/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}
-   :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}
+.. |License Badge| image:: https://img.shields.io/github/license/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_name }}
+   :target: {{ cookiecutter.repository }}
    :alt: License Badge
 
-.. |PyPI Badge| image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg?colorB=blue
-   :target: https://pypi.python.org/project/{{ cookiecutter.project_slug }}/
+.. |PyPI Badge| image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_name }}.svg?colorB=blue
+   :target: https://pypi.python.org/project/{{ cookiecutter.project_name }}/
    :alt: PyPI Badge
-.. |Research Software Directory Badge| image:: https://img.shields.io/badge/rsd-{{ cookiecutter.project_slug }}-00a3e3.svg
-   :target: https://www.research-software.nl/software/{{ cookiecutter.project_slug }}
+
+.. |Research Software Directory Badge| image:: https://img.shields.io/badge/rsd-{{ cookiecutter.project_name }}-00a3e3.svg
+   :target: https://www.research-software.nl/software/{{ cookiecutter.project_name }}
    :alt: Research Software Directory Badge
 
 ..
     Goto https://zenodo.org/account/settings/github/ to enable Zenodo/GitHub integration.
-    After creation of a GitHub release at https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/releases
+    After creation of a GitHub release at {{ cookiecutter.repository }}/releases
     there will be a Zenodo upload created at https://zenodo.org/deposit with a DOI, this DOI can be put in the Zenodo badge urls.
     In the README, we prefer to use the concept DOI over versioned DOI, see https://help.zenodo.org/#versioning.
 .. |Zenodo Badge| image:: https://zenodo.org/badge/DOI/< replace with created DOI >.svg
@@ -57,31 +58,31 @@
    :target: https://bestpractices.coreinfrastructure.org/projects/< replace with created project identifier >
    :alt: CII Best Practices Badge
 
-.. |Python Build| image:: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/workflows/Python/badge.svg
-   :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/actions?query=workflow%3A%22Python%22
+.. |Python Build| image:: {{ cookiecutter.repository }}/workflows/Python/badge.svg
+   :target: {{ cookiecutter.repository }}/actions?query=workflow%3A%22Python%22
    :alt: Python Build
 
-.. |PyPI Publish| image:: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/workflows/PyPI/badge.svg
-   :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/actions?query=workflow%3A%22PyPI%22
+.. |PyPI Publish| image:: {{ cookiecutter.repository }}/workflows/PyPI/badge.svg
+   :target: {{ cookiecutter.repository }}/actions?query=workflow%3A%22PyPI%22
    :alt: PyPI Publish
 
-.. |metadata consistency| image:: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/workflows/cffconvert/badge.svg
-   :target: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/actions?query=workflow%3A%22cffconvert%22
+.. |metadata consistency| image:: {{ cookiecutter.repository }}/workflows/cffconvert/badge.svg
+   :target: {{ cookiecutter.repository }}/actions?query=workflow%3A%22cffconvert%22
    :alt: metadata consistency badge
 
-.. |sonarcloud quality badge| image:: https://sonarcloud.io/api/project_badges/measure?project={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}&metric=alert_status
-   :target: https://sonarcloud.io/dashboard?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}
+.. |sonarcloud quality badge| image:: https://sonarcloud.io/api/project_badges/measure?project={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}&metric=alert_status
+   :target: https://sonarcloud.io/dashboard?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}
    :alt: Quality Gate Status
 
-.. |sonarcloud coverage badge| image:: https://sonarcloud.io/api/project_badges/measure?project={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}&metric=coverage
-   :target: https://sonarcloud.io/dashboard?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}
+.. |sonarcloud coverage badge| image:: https://sonarcloud.io/api/project_badges/measure?project={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}&metric=coverage
+   :target: https://sonarcloud.io/dashboard?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}
    :alt: Coverage
 
 ################################################################################
 {{ cookiecutter.project_name }}
 ################################################################################
 
-{{ cookiecutter.project_short_description }}
+{{ cookiecutter.package_short_description }}
 
 
 The project setup is documented in `a separate document <project_setup.rst>`_. Feel free to remove this document (and/or the link to this document) if you don't need it.
@@ -89,20 +90,20 @@ The project setup is documented in `a separate document <project_setup.rst>`_. F
 Installation
 ------------
 
-To install {{ cookiecutter.project_slug }}, do:
+To install {{ cookiecutter.package_name }}, do:
 
 .. code-block:: console
 
-  git clone https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}.git
-  cd {{ cookiecutter.project_slug }}
-  pip3 install .
+  git clone {{ cookiecutter.repository }}.git
+  cd {{ cookiecutter.project_name }}
+  python3 -m pip install .
 
 
 Run tests (including coverage) with:
 
 .. code-block:: console
 
-  python setup.py test
+  python3 setup.py test
 
 
 Documentation
@@ -122,7 +123,7 @@ License
 *******
 
 Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.copyright_holder }}
-{% if cookiecutter.open_source_license == 'MIT license' %}
+{% if cookiecutter.license == 'MIT license' %}
 Licensed under the MIT License.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -130,7 +131,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-{% elif cookiecutter.open_source_license == 'BSD license' %}
+{% elif cookiecutter.license == 'BSD license' %}
 Licensed under the 3-clause BSD License.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -157,13 +158,13 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
 OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
 OF THE POSSIBILITY OF SUCH DAMAGE.
-{% elif cookiecutter.open_source_license == 'ISC license' %}
+{% elif cookiecutter.license == 'ISC license' %}
 Licensed under the ISC License.
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 
 THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-{% elif cookiecutter.open_source_license == 'Apache Software License 2.0' %}
+{% elif cookiecutter.license == 'Apache Software License 2.0' %}
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -176,7 +177,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-{% elif cookiecutter.open_source_license == 'GNU General Public License v3 or later' %}
+{% elif cookiecutter.license == 'GNU General Public License v3 or later' %}
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or

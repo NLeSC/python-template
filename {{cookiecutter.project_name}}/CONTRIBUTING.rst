@@ -15,14 +15,14 @@ The sections below outline the steps in each case.
 You have a question
 *******************
 
-#. use the search functionality `here <https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/issues>`__ to see if someone already filed the same issue;
+#. use the search functionality `here <{{ cookiecutter.repository }}/issues>`__ to see if someone already filed the same issue;
 #. if your issue search did not yield any relevant results, make a new issue;
 #. apply the "Question" label; apply other labels when relevant.
 
 You think you may have found a bug
 **********************************
 
-#. use the search functionality `here <https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/issues>`__ to see if someone already filed the same issue;
+#. use the search functionality `here <{{ cookiecutter.repository }}/issues>`__ to see if someone already filed the same issue;
 #. if your issue search did not yield any relevant results, make a new issue, making sure to provide enough information to the rest of the community to understand the cause and context of the problem. Depending on the issue, you may want to include:
     - the `SHA hashcode <https://help.github.com/articles/autolinked-references-and-urls/#commit-shas>`_ of the commit that is causing your problem;
     - some identifying information (name and version number) for dependencies you're using;

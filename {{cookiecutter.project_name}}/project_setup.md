@@ -14,7 +14,7 @@ control](https://guide.esciencecenter.nl/#/best_practices/version_control)! We r
 [git](http://git-scm.com/) and [github](https://github.com/).
 
 ```shell
-cd {{ cookiecutter.project_slug }}
+cd {{ cookiecutter.project_name }}
 git init
 git add --all
 git commit
@@ -56,7 +56,7 @@ help you decide which tool to use for packaging.
 -   Tests should be put in the `tests` folder.
 -   The `tests` folder contains:
     -   Example tests that you should replace with your own meaningful tests (file:
-        `test_{{ cookiecutter.project_slug.lower().replace(' ', '_').replace('-', '_')}}`)
+        `test_my_module.py`)
     -   A test that checks whether your code conforms to the Python style guide (PEP 8) (file: `test_lint.py`)
 -   The testing framework used is [PyTest](https://pytest.org)
     -   [PyTest introduction](http://pythontesting.net/framework/pytest/pytest-introduction/)
@@ -112,16 +112,16 @@ help you decide which tool to use for packaging.
     2. login with your GitHub account
     3. add organization or reuse existing
     4. setup repository
-    5. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}) and select `Number of days` option
+    5. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}) and select `Number of days` option
 -   The analysis will be run by [GitHub Action workflow](.github/workflows/quality.yml)
--   To be able to run the analysis, a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/) and this token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/settings/secrets/actions)
+-   To be able to run the analysis, a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/) and this token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_name }}/settings/secrets/actions)
 
 ## Package version number
 
 -   We recommend using [semantic
     versioning](https://guide.esciencecenter.nl/#/best_practices/releases?id=semantic-versioning).
 -   For convenience, the package version is stored in a single place:
-    `{{ cookiecutter.project_slug }}/__version__.py`. For updating the
+    `{{ cookiecutter.package_name }}/__version__.py`. For updating the
     version number, you only have to change this file.
 -   Don't forget to update the version number before [making a
     release](https://guide.esciencecenter.nl/#/best_practices/releases)!
@@ -129,9 +129,9 @@ help you decide which tool to use for packaging.
 ## Publish on Python Package Index (PyPI)
 
 To publish your package on PyPI, you need to create a [PyPI API token](https://pypi.org/help#apitoken) and
-save it as a secret called `PYPI_TOKEN` on [Settings page](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/settings/secrets/actions)
+save it as a secret called `PYPI_TOKEN` on [Settings page]({{cookiecutter.repository}}/settings/secrets/actions)
 
-[Creating a release](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/releases/new) on GitHub
+[Creating a release]({{cookiecutter.repository}}/releases/new) on GitHub
 will trigger a [GitHub action workflow](.github/workflows/pypi.yml) to publish the release on PyPI for you.
 
 ## Logging
@@ -147,7 +147,7 @@ will trigger a [GitHub action workflow](.github/workflows/pypi.yml) to publish t
 -   Document changes to your software package
 -   [Relevant section in the
     guide](https://guide.esciencecenter.nl/#/best_practices/releases?id=changelogmd)
-           
+
 
 ## CITATION.cff
 

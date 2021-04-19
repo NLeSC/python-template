@@ -10,8 +10,8 @@ authors:
 date-released: 20??-MM-DD
 doi: <insert your DOI here>
 version: "{{ cookiecutter.version }}"
-repository-code: "https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}"
+repository-code: "{{ cookiecutter.repository }}"
 identifiers:
 keywords:
 message: "If you use this software, please cite it using these metadata."
-license: "{{ cookiecutter.open_source_license }}"
+license: "{{ cookiecutter.license }}"

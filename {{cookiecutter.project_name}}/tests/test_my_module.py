@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-"""Tests for the {{ cookiecutter.project_slug }} module.
+"""Tests for the {{ cookiecutter.package_name }}.my_module module.
 """
 import pytest
 
-from {{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
+from {{ cookiecutter.package_name }} import my_module
 
 
 def test_something():
@@ -23,5 +23,5 @@ def an_object():
     return {}
 
 
-def test_{{ cookiecutter.project_slug }}(an_object):
+def test_my_module(an_object):
     assert an_object == {}

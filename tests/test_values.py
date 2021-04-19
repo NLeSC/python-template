@@ -14,25 +14,25 @@ def test_double_quotes_in_name_and_description(cookies):
 def test_single_quotes_in_name_and_description(cookies):
     ctx = {
         "project_short_description": "'single quotes'",
-        "full_name": "Mr. O'Keeffe"
+        "full_name": "Mr. O'Keefe"
     }
     project = cookies.bake(extra_context=ctx)
 
     assert project.exit_code == 0
 
 
-def test_dash_in_project_slug(cookies):
+def test_dash_in_project_name(cookies):
     ctx = {
-        "project_slug": "my-package"
+        "project_name": "my-python-project"
     }
     project = cookies.bake(extra_context=ctx)
 
     assert project.exit_code == 0
 
 
-def test_space_in_project_slug(cookies):
+def test_space_in_project_name(cookies):
     ctx = {
-        "project_slug": "my package"
+        "project_name": "my python project"
     }
     project = cookies.bake(extra_context=ctx)
 
