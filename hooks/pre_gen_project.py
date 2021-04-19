@@ -1,5 +1,3 @@
-import sys
-
 # Note: cookiecutter first makes the main level directory using
 # project_name from cookiecutter.json before running this hook
 
@@ -10,5 +8,3 @@ import sys
     "repository": "https://github.com/" + cookiecutter.github_organization + "/" + cookiecutter.project_name.lower().replace("-", "_"),
     "package_short_description": cookiecutter.package_short_description.replace('\"', '\\\"')
 }) }}
-
-sys.exit(0)
