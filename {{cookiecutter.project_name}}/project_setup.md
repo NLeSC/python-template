@@ -121,7 +121,7 @@ help you decide which tool to use for packaging.
 -   We recommend using [semantic
     versioning](https://guide.esciencecenter.nl/#/best_practices/releases?id=semantic-versioning).
 -   For convenience, the package version is stored in a single place:
-    `{{ cookiecutter.project_name }}/__version__.py`. For updating the
+    `{{ cookiecutter.package_name }}/__version__.py`. For updating the
     version number, you only have to change this file.
 -   Don't forget to update the version number before [making a
     release](https://guide.esciencecenter.nl/#/best_practices/releases)!
