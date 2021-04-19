@@ -104,6 +104,18 @@ help you decide which tool to use for packaging.
 -   [Relevant section in the
     guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=coding-style-conventions)
 
+## Continuous code quality
+
+-   [Sonarcloud](https://sonarcloud.io/) is used to perform quality analysis and code coverage report on each push
+-   The GitHub organization and repository must be added Sonarcloud for analysis to work
+    1. go to [Sonarcloud](https://sonarcloud.io/projects/create)
+    2. login with your GitHub account
+    3. add organization or reuse existing
+    4. setup repository
+    5. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}) and select `Number of days` option
+-   The analysis will be run by [GitHub Action workflow](.github/workflows/quality.yml)
+-   To be able to run the analysis, a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/) and this token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/settings/secrets/actions)
+
 ## Package version number
 
 -   We recommend using [semantic
@@ -113,6 +125,14 @@ help you decide which tool to use for packaging.
     version number, you only have to change this file.
 -   Don't forget to update the version number before [making a
     release](https://guide.esciencecenter.nl/#/best_practices/releases)!
+
+## Publish on Python Package Index (PyPI)
+
+To publish your package on PyPI, you need to create a [PyPI API token](https://pypi.org/help#apitoken) and
+save it as a secret called `PYPI_TOKEN` on [Settings page](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/settings/secrets/actions)
+
+[Creating a release](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/releases/new) on GitHub
+will trigger a [GitHub action workflow](.github/workflows/pypi.yml) to publish the release on PyPI for you.
 
 ## Logging
 

@@ -15,6 +15,7 @@ an empty Python package. Features include:
 - [Editorconfig]({{ cookiecutter.project_name }}/.editorconfig),
 - Miscellaneous files, such as [Change log]({{ cookiecutter.project_name }}/CHANGELOG.rst), [Code of Conduct]({{ cookiecutter.project_name }}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{ cookiecutter.project_name }}/CONTRIBUTING.rst),
 - A [README]({{ cookiecutter.project_name }}/README.rst) and [a separate document]({{ cookiecutter.project_name }}/project_setup.md) with extensive documentation about project setup.
+- Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/)
 
 ## Badges
 
