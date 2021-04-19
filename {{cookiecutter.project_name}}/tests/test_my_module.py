@@ -23,5 +23,5 @@ def an_object():
     return {}
 
 
-def test_{{ cookiecutter.package_name }}(an_object):
+def test_my_module(an_object):
     assert an_object == {}
