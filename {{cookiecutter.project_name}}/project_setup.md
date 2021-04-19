@@ -56,7 +56,7 @@ help you decide which tool to use for packaging.
 -   Tests should be put in the `tests` folder.
 -   The `tests` folder contains:
     -   Example tests that you should replace with your own meaningful tests (file:
-        `test_{{ cookiecutter.project_name }}`)
+        `test_my_module.py`)
     -   A test that checks whether your code conforms to the Python style guide (PEP 8) (file: `test_lint.py`)
 -   The testing framework used is [PyTest](https://pytest.org)
     -   [PyTest introduction](http://pythontesting.net/framework/pytest/pytest-introduction/)
