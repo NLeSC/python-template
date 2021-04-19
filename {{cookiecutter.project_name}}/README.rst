@@ -90,7 +90,7 @@ The project setup is documented in `a separate document <project_setup.rst>`_. F
 Installation
 ------------
 
-To install {{ cookiecutter.project_name }}, do:
+To install {{ cookiecutter.package_name }}, do:
 
 .. code-block:: console
 
