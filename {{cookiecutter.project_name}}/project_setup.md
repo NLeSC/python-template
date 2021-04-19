@@ -55,54 +55,41 @@ help you decide which tool to use for packaging.
 
 - Tests should be put in the `tests` folder.
 - The `tests` folder contains:
-    - Example tests that you should replace with your own meaningful tests (file:
-        `test_my_module.py`)
-    - A test that checks whether your code conforms to the Python style guide (PEP 8) (file: `test_lint.py`)
+  - Example tests that you should replace with your own meaningful tests (file: `test_my_module.py`)
+  - A test that checks whether your code conforms to the Python style guide (PEP 8) (file: `test_lint.py`)
 - The testing framework used is [PyTest](https://pytest.org)
-    - [PyTest introduction](http://pythontesting.net/framework/pytest/pytest-introduction/)
+  - [PyTest introduction](http://pythontesting.net/framework/pytest/pytest-introduction/)
 - Tests can be run with `python setup.py test`
-    - This is configured in `setup.py` and `setup.cfg`
+  - This is configured in `setup.py` and `setup.cfg`
 - Use [Travis CI](https://travis-ci.com/) to automatically run tests and to test using multiple Python versions
-    - Configuration can be found in `.travis.yml`
-    - [Getting started with Travis
-        CI](https://docs.travis-ci.com/user/getting-started/)
+  - Configuration can be found in `.travis.yml`
+  - [Getting started with Travis CI](https://docs.travis-ci.com/user/getting-started/)
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=testing)
 
 ## Documentation
 
-- Documentation should be put in the `docs` folder. The contents have
-    been generated using `sphinx-quickstart` (Sphinx version 1.6.5).
-- We recommend writing the documentation using Restructured Text
-    (reST) and Google style docstrings.
-    - [Restructured Text (reST) and Sphinx
-        CheatSheet](http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html)
-    - [Google style docstring
-        examples](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
+- Documentation should be put in the `docs` folder. The contents have been generated using `sphinx-quickstart` (Sphinx version 1.6.5).
+- We recommend writing the documentation using Restructured Text (reST) and Google style docstrings.
+    - [Restructured Text (reST) and Sphinx CheatSheet](http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html)
+    - [Google style docstring examples](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
 - The documentation is set up with the Read the Docs Sphinx Theme.
-    - Check out the [configuration
-        options](https://sphinx-rtd-theme.readthedocs.io/en/latest/).
+    - Check out the [configuration options](https://sphinx-rtd-theme.readthedocs.io/en/latest/).
 - To generate html documentation run `python setup.py build_sphinx`
     - This is configured in `setup.cfg`
     - Alternatively, run `make html` in the `docs` folder.
-- The `docs/_templates` directory contains an (empty) `.gitignore`
-    file, to be able to add it to the repository. This file can be
-    safely removed (or you can just leave it there).
-- To put the documentation on [Read the
-    Docs](https://readthedocs.org), log in to your Read the Docs
-    account, and import the repository (under 'My Projects').
+- The `docs/_templates` directory contains an (empty) `.gitignore` file, to be able to add it to the repository. This
+  file can be safely removed (or you can just leave it there).
+- To put the documentation on [ReadTheDocs](https://readthedocs.org), log in to your ReadTheDocs account, and import
+  the repository (under 'My Projects').
     - Include the link to the documentation in this [README]().
-- [Relevant section in the
-    guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=writingdocumentation)
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=writingdocumentation)
 
 ## Coding style conventions and code quality
 
 - Check your code style with `prospector`
-- You may need run `pip install .[dev]` first, to install the required
-    dependencies
-- You can use `yapf` to fix the readability of your code style and
-    `isort` to format and group your imports
-- [Relevant section in the
-    guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=coding-style-conventions)
+- You may need run `pip install .[dev]` first, to install the required dependencies
+- You can use `yapf` to fix the readability of your code style and `isort` to format and group your imports
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=coding-style-conventions)
 
 ## Continuous code quality
 
@@ -118,57 +105,45 @@ help you decide which tool to use for packaging.
 
 ## Package version number
 
-- We recommend using [semantic
-    versioning](https://guide.esciencecenter.nl/#/best_practices/releases?id=semantic-versioning).
-- For convenience, the package version is stored in a single place:
-    `{{ cookiecutter.package_name }}/__version__.py`. For updating the
-    version number, you only have to change this file.
-- Don't forget to update the version number before [making a
-    release](https://guide.esciencecenter.nl/#/best_practices/releases)!
+- We recommend using [semantic versioning](https://guide.esciencecenter.nl/#/best_practices/releases?id=semantic-versioning).
+- For convenience, the package version is stored in a single place: `{{ cookiecutter.package_name }}/__version__.py`.
+  For updating the version number, you only have to change this file.
+- Don't forget to update the version number before [making a release](https://guide.esciencecenter.nl/#/best_practices/releases)!
 
 ## Publish on Python Package Index (PyPI)
 
 To publish your package on PyPI, you need to create a [PyPI API token](https://pypi.org/help#apitoken) and
 save it as a secret called `PYPI_TOKEN` on [Settings page]({{cookiecutter.repository}}/settings/secrets/actions)
 
-[Creating a release]({{cookiecutter.repository}}/releases/new) on GitHub
-will trigger a [GitHub action workflow](.github/workflows/pypi.yml) to publish the release on PyPI for you.
+[Creating a release]({{cookiecutter.repository}}/releases/new) on GitHub will trigger a [GitHub action workflow](.github/workflows/pypi.yml) to publish the release on PyPI for you.
 
 ## Logging
 
-- We recommend using the logging module for getting useful information
-    from your module (instead of using print).
+- We recommend using the logging module for getting useful information from your module (instead of using print).
 - The project is set up with a logging example.
-- [Relevant section in the
-    guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=logging)
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=logging)
 
 ## CHANGELOG.rst
 
 - Document changes to your software package
-- [Relevant section in the
-    guide](https://guide.esciencecenter.nl/#/best_practices/releases?id=changelogmd)
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/releases?id=changelogmd)
 
 
 ## CITATION.cff
 
 - To allow others to cite your software, add a `CITATION.cff` file
-- It only makes sense to do this once there is something to cite
-    (e.g., a software release with a DOI).
-- Follow the [making software
-    citable](https://guide.esciencecenter.nl/#/citable_software/making_software_citable)
-    section in the guide.
+- It only makes sense to do this once there is something to cite (e.g., a software release with a DOI).
+- Follow the [making software citable](https://guide.esciencecenter.nl/#/citable_software/making_software_citable) section in the guide.
 
 ## CODE\_OF\_CONDUCT.rst
 
 - Information about how to behave professionally
-- [Relevant section in the
-    guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=code-of-conduct)
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=code-of-conduct)
 
 ## CONTRIBUTING.rst
 
 - Information about how to contribute to this software package
-- [Relevant section in the
-    guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=contribution-guidelines)
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=contribution-guidelines)
 
 ## MANIFEST.in
 
