@@ -112,9 +112,9 @@ help you decide which tool to use for packaging.
     2. login with your GitHub account
     3. add organization or reuse existing
     4. setup repository
-    5. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_slug }}) and select `Number of days` option
+    5. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}) and select `Number of days` option
 -   The analysis will be run by [GitHub Action workflow](.github/workflows/quality.yml)
--   To be able to run the analysis, a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/) and this token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/settings/secrets/actions)
+-   To be able to run the analysis, a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/) and this token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_name }}/settings/secrets/actions)
 
 ## Package version number
 
@@ -129,9 +129,9 @@ help you decide which tool to use for packaging.
 ## Publish on Python Package Index (PyPI)
 
 To publish your package on PyPI, you need to create a [PyPI API token](https://pypi.org/help#apitoken) and
-save it as a secret called `PYPI_TOKEN` on [Settings page](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/settings/secrets/actions)
+save it as a secret called `PYPI_TOKEN` on [Settings page]({{cookiecutter.repository}}/settings/secrets/actions)
 
-[Creating a release](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_slug }}/releases/new) on GitHub
+[Creating a release]({{cookiecutter.repository}}/releases/new) on GitHub
 will trigger a [GitHub action workflow](.github/workflows/pypi.yml) to publish the release on PyPI for you.
 
 ## Logging
@@ -147,7 +147,7 @@ will trigger a [GitHub action workflow](.github/workflows/pypi.yml) to publish t
 -   Document changes to your software package
 -   [Relevant section in the
     guide](https://guide.esciencecenter.nl/#/best_practices/releases?id=changelogmd)
-           
+
 
 ## CITATION.cff
 
