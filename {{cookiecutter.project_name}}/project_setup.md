@@ -43,7 +43,7 @@ to use one or the other, as project requirements differ. For advice on what to u
 of the
 guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=dependencies-and-package-management).
 
--   Dependencies should be added to `setup.py` in the `install\_requires` list.
+- Dependencies should be added to `setup.py` in the `install\_requires` list.
 
 ## Packaging/One command install
 
@@ -53,77 +53,77 @@ help you decide which tool to use for packaging.
 
 ## Testing and code coverage
 
--   Tests should be put in the `tests` folder.
--   The `tests` folder contains:
-    -   Example tests that you should replace with your own meaningful tests (file:
+- Tests should be put in the `tests` folder.
+- The `tests` folder contains:
+    - Example tests that you should replace with your own meaningful tests (file:
         `test_my_module.py`)
-    -   A test that checks whether your code conforms to the Python style guide (PEP 8) (file: `test_lint.py`)
--   The testing framework used is [PyTest](https://pytest.org)
-    -   [PyTest introduction](http://pythontesting.net/framework/pytest/pytest-introduction/)
--   Tests can be run with `python setup.py test`
-    -   This is configured in `setup.py` and `setup.cfg`
--   Use [Travis CI](https://travis-ci.com/) to automatically run tests and to test using multiple Python versions
-    -   Configuration can be found in `.travis.yml`
-    -   [Getting started with Travis
+    - A test that checks whether your code conforms to the Python style guide (PEP 8) (file: `test_lint.py`)
+- The testing framework used is [PyTest](https://pytest.org)
+    - [PyTest introduction](http://pythontesting.net/framework/pytest/pytest-introduction/)
+- Tests can be run with `python setup.py test`
+    - This is configured in `setup.py` and `setup.cfg`
+- Use [Travis CI](https://travis-ci.com/) to automatically run tests and to test using multiple Python versions
+    - Configuration can be found in `.travis.yml`
+    - [Getting started with Travis
         CI](https://docs.travis-ci.com/user/getting-started/)
--   [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=testing)
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=testing)
 
 ## Documentation
 
--   Documentation should be put in the `docs` folder. The contents have
+- Documentation should be put in the `docs` folder. The contents have
     been generated using `sphinx-quickstart` (Sphinx version 1.6.5).
--   We recommend writing the documentation using Restructured Text
+- We recommend writing the documentation using Restructured Text
     (reST) and Google style docstrings.
-    -   [Restructured Text (reST) and Sphinx
+    - [Restructured Text (reST) and Sphinx
         CheatSheet](http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html)
-    -   [Google style docstring
+    - [Google style docstring
         examples](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
--   The documentation is set up with the Read the Docs Sphinx Theme.
-    -   Check out the [configuration
+- The documentation is set up with the Read the Docs Sphinx Theme.
+    - Check out the [configuration
         options](https://sphinx-rtd-theme.readthedocs.io/en/latest/).
--   To generate html documentation run `python setup.py build_sphinx`
-    -   This is configured in `setup.cfg`
-    -   Alternatively, run `make html` in the `docs` folder.
--   The `docs/_templates` directory contains an (empty) `.gitignore`
+- To generate html documentation run `python setup.py build_sphinx`
+    - This is configured in `setup.cfg`
+    - Alternatively, run `make html` in the `docs` folder.
+- The `docs/_templates` directory contains an (empty) `.gitignore`
     file, to be able to add it to the repository. This file can be
     safely removed (or you can just leave it there).
--   To put the documentation on [Read the
+- To put the documentation on [Read the
     Docs](https://readthedocs.org), log in to your Read the Docs
     account, and import the repository (under 'My Projects').
-    -   Include the link to the documentation in this [README]().
--   [Relevant section in the
+    - Include the link to the documentation in this [README]().
+- [Relevant section in the
     guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=writingdocumentation)
 
 ## Coding style conventions and code quality
 
--   Check your code style with `prospector`
--   You may need run `pip install .[dev]` first, to install the required
+- Check your code style with `prospector`
+- You may need run `pip install .[dev]` first, to install the required
     dependencies
--   You can use `yapf` to fix the readability of your code style and
+- You can use `yapf` to fix the readability of your code style and
     `isort` to format and group your imports
--   [Relevant section in the
+- [Relevant section in the
     guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=coding-style-conventions)
 
 ## Continuous code quality
 
--   [Sonarcloud](https://sonarcloud.io/) is used to perform quality analysis and code coverage report on each push
--   The GitHub organization and repository must be added Sonarcloud for analysis to work
+- [Sonarcloud](https://sonarcloud.io/) is used to perform quality analysis and code coverage report on each push
+- The GitHub organization and repository must be added Sonarcloud for analysis to work
     1. go to [Sonarcloud](https://sonarcloud.io/projects/create)
     2. login with your GitHub account
     3. add organization or reuse existing
     4. setup repository
     5. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}) and select `Number of days` option
--   The analysis will be run by [GitHub Action workflow](.github/workflows/quality.yml)
--   To be able to run the analysis, a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/) and this token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_name }}/settings/secrets/actions)
+- The analysis will be run by [GitHub Action workflow](.github/workflows/quality.yml)
+- To be able to run the analysis, a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/) and this token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_name }}/settings/secrets/actions)
 
 ## Package version number
 
--   We recommend using [semantic
+- We recommend using [semantic
     versioning](https://guide.esciencecenter.nl/#/best_practices/releases?id=semantic-versioning).
--   For convenience, the package version is stored in a single place:
+- For convenience, the package version is stored in a single place:
     `{{ cookiecutter.package_name }}/__version__.py`. For updating the
     version number, you only have to change this file.
--   Don't forget to update the version number before [making a
+- Don't forget to update the version number before [making a
     release](https://guide.esciencecenter.nl/#/best_practices/releases)!
 
 ## Publish on Python Package Index (PyPI)
@@ -136,46 +136,46 @@ will trigger a [GitHub action workflow](.github/workflows/pypi.yml) to publish t
 
 ## Logging
 
--   We recommend using the logging module for getting useful information
+- We recommend using the logging module for getting useful information
     from your module (instead of using print).
--   The project is set up with a logging example.
--   [Relevant section in the
+- The project is set up with a logging example.
+- [Relevant section in the
     guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=logging)
 
 ## CHANGELOG.rst
 
--   Document changes to your software package
--   [Relevant section in the
+- Document changes to your software package
+- [Relevant section in the
     guide](https://guide.esciencecenter.nl/#/best_practices/releases?id=changelogmd)
 
 
 ## CITATION.cff
 
--   To allow others to cite your software, add a `CITATION.cff` file
--   It only makes sense to do this once there is something to cite
+- To allow others to cite your software, add a `CITATION.cff` file
+- It only makes sense to do this once there is something to cite
     (e.g., a software release with a DOI).
--   Follow the [making software
+- Follow the [making software
     citable](https://guide.esciencecenter.nl/#/citable_software/making_software_citable)
     section in the guide.
 
 ## CODE\_OF\_CONDUCT.rst
 
--   Information about how to behave professionally
--   [Relevant section in the
+- Information about how to behave professionally
+- [Relevant section in the
     guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=code-of-conduct)
 
 ## CONTRIBUTING.rst
 
--   Information about how to contribute to this software package
--   [Relevant section in the
+- Information about how to contribute to this software package
+- [Relevant section in the
     guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=contribution-guidelines)
 
 ## MANIFEST.in
 
--   List non-Python files that should be included in a source distribution
--   [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=building-and-packaging-code)
+- List non-Python files that should be included in a source distribution
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=building-and-packaging-code)
 
 ## NOTICE
 
--   List of attributions of this project and Apache-license dependencies
--   [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/licensing?id=notice)
+- List of attributions of this project and Apache-license dependencies
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/licensing?id=notice)
