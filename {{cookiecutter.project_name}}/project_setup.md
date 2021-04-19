@@ -70,18 +70,18 @@ help you decide which tool to use for packaging.
 
 - Documentation should be put in the `docs` folder. The contents have been generated using `sphinx-quickstart` (Sphinx version 1.6.5).
 - We recommend writing the documentation using Restructured Text (reST) and Google style docstrings.
-    - [Restructured Text (reST) and Sphinx CheatSheet](http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html)
-    - [Google style docstring examples](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
+  - [Restructured Text (reST) and Sphinx CheatSheet](http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html)
+  - [Google style docstring examples](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
 - The documentation is set up with the Read the Docs Sphinx Theme.
-    - Check out the [configuration options](https://sphinx-rtd-theme.readthedocs.io/en/latest/).
+  - Check out the [configuration options](https://sphinx-rtd-theme.readthedocs.io/en/latest/).
 - To generate html documentation run `python setup.py build_sphinx`
-    - This is configured in `setup.cfg`
-    - Alternatively, run `make html` in the `docs` folder.
+  - This is configured in `setup.cfg`
+  - Alternatively, run `make html` in the `docs` folder.
 - The `docs/_templates` directory contains an (empty) `.gitignore` file, to be able to add it to the repository. This
   file can be safely removed (or you can just leave it there).
 - To put the documentation on [ReadTheDocs](https://readthedocs.org), log in to your ReadTheDocs account, and import
   the repository (under 'My Projects').
-    - Include the link to the documentation in your project's [README.md](README.md).
+  - Include the link to the documentation in your project's [README.md](README.md).
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=writingdocumentation)
 
 ## Coding style conventions and code quality
@@ -95,11 +95,11 @@ help you decide which tool to use for packaging.
 
 - [Sonarcloud](https://sonarcloud.io/) is used to perform quality analysis and code coverage report on each push
 - The GitHub organization and repository must be added Sonarcloud for analysis to work
-    1. go to [Sonarcloud](https://sonarcloud.io/projects/create)
-    2. login with your GitHub account
-    3. add organization or reuse existing
-    4. setup repository
-    5. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}) and select `Number of days` option
+  1. go to [Sonarcloud](https://sonarcloud.io/projects/create)
+  2. login with your GitHub account
+  3. add organization or reuse existing
+  4. setup repository
+  5. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}) and select `Number of days` option
 - The analysis will be run by [GitHub Action workflow](.github/workflows/quality.yml)
 - To be able to run the analysis, a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/) and this token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_name }}/settings/secrets/actions)
 
@@ -127,7 +127,6 @@ save it as a secret called `PYPI_TOKEN` on [Settings page]({{cookiecutter.reposi
 
 - Document changes to your software package
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/releases?id=changelogmd)
-
 
 ## CITATION.cff
 

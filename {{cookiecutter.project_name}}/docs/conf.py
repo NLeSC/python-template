@@ -131,9 +131,9 @@ html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
 html_context = {
     "css_files": [
-        "_static/theme_overrides.css",  # override wide tables in RTD theme
-        ],
-     }
+        "_static/theme_overrides.css"  # override wide tables in RTD theme
+    ]
+ }
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -143,7 +143,7 @@ html_context = {
 html_sidebars = {
     "**": [
         "relations.html",  # needs "show_related": True theme option to display
-        "searchbox.html",
+        "searchbox.html"
     ]
 }
 
@@ -179,7 +179,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (main_doc, "{{ cookiecutter.package_name }}.tex", u"{{ cookiecutter.package_name }} Documentation",
-     u"{{ cookiecutter.full_name }}", "manual"),
+     u"{{ cookiecutter.full_name }}", "manual")
 ]
 
 
@@ -188,8 +188,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (main_doc, "{{ cookiecutter.package_name }}", u"{{ cookiecutter.package_name }} Documentation",
-     [author], 1)
+    (main_doc, "{{ cookiecutter.package_name }}", u"{{ cookiecutter.package_name }} Documentation", [author], 1)
 ]
 
 
@@ -201,5 +200,5 @@ man_pages = [
 texinfo_documents = [
     (main_doc, "{{ cookiecutter.package_name }}", u"{{ cookiecutter.package_name }} Documentation",
      author, "{{ cookiecutter.package_name }}", "{{ cookiecutter.package_short_description }}",
-     "Miscellaneous"),
+     "Miscellaneous")
 ]
