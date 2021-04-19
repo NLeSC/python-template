@@ -8,13 +8,13 @@ Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generat
 an empty Python package. Features include:
 
 - Boilerplate tests and documentation,
-- [Python setup configuration]({{ cookiecutter.project_name }}/setup.py),
+- [Python setup configuration]({{cookiecutter.project_name}}/setup.py),
 - Open source software license,
-- [Default Github actions]({{ cookiecutter.project_name }}/.github/workflows) for building, testing and deployment
+- [Default Github actions]({{cookiecutter.project_name}}/.github/workflows) for building, testing and deployment
 - Code style checking,
-- [Editorconfig]({{ cookiecutter.project_name }}/.editorconfig),
-- Miscellaneous files, such as [Change log]({{ cookiecutter.project_name }}/CHANGELOG.rst), [Code of Conduct]({{ cookiecutter.project_name }}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{ cookiecutter.project_name }}/CONTRIBUTING.rst),
-- A [README]({{ cookiecutter.project_name }}/README.rst) and [a separate document]({{ cookiecutter.project_name }}/project_setup.md) with extensive documentation about project setup.
+- [Editorconfig]({{cookiecutter.project_name}}/.editorconfig),
+- Miscellaneous files, such as [Change log]({{cookiecutter.project_name}}/CHANGELOG.rst), [Code of Conduct]({{cookiecutter.project_name}}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{cookiecutter.project_name}}/CONTRIBUTING.rst),
+- A [README]({{cookiecutter.project_name}}/README.rst) and [a separate document]({{cookiecutter.project_name}}/project_setup.md) with extensive documentation about project setup.
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/)
 
 ## Badges
@@ -58,21 +58,53 @@ cookiecutter https://github.com/nlesc/python-template.git
 
 | Name                      | Default value | Explanation |
 | ------------------------- | ------------- | ----------- |
-| package_name              | my_python_package | Name of the package. It is safest not to use dashes (-) or spaces in this name. |
-| project_name              | my-python-project | Name of the project that contains the package. |
+| package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. |
+| project_name              | my-python-project | Name of the project that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. |
 | package_short_description | &nbsp;            | The information that you enter here will end up in the README, documentation, license, and setup.cfg, so it may be a good idea to prepare something in advance. |
 | version                   | 0.1.0             | &nbsp; |
 | github_organization       | &lt;my-github-organization&gt; | GitHub organization that will contain this project's repository. This can also be your GitHub user name. |
 | license                   | Apache Software License 2.0 | The software license under which the code is made available.  |
 | apidoc                    | no                | Add support for automatically generating a module index from the `docstrings` in your Python package (look at the [scriptcwl package](http://scriptcwl.readthedocs.io/en/latest/apidocs/scriptcwl.html) for an example).
 | full_name                 | John Smith        | Your full name, e.g. _John Smith_. |
-| email                     | yourname@esciencecenter.nl | Your (work) email address |
-| copyright_holder          | &nbsp;            | Name(s) of the organization(s) or person(s) who hold the copyright of the software (e.g., Netherlands eScience Center). |
+| email                     | yourname@esciencecenter.nl | Your (work) email address. |
+| copyright_holder          | Netherlands eScience Center | Name(s) of the organization(s) or person(s) who hold the copyright of the software. |
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
 
 ### Step 3/3: Read about what was just generated
 
-Good job! You have now generated the skeleton for your package. For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.project_name}}/project_setup.md) file.
+Good job! You have now generated the skeleton for your package:
+
+```text
+my-python-project/
+├── CHANGELOG.rst
+├── CITATION.cff
+├── CODE_OF_CONDUCT.rst
+├── CONTRIBUTING.rst
+├── docs
+│   ├── conf.py
+│   ├── index.rst
+│   ├── make.bat
+│   ├── Makefile
+│   ├── _static
+│   │   └── theme_overrides.css
+│   └── _templates
+├── LICENSE
+├── MANIFEST.in
+├── my_python_package
+│   ├── __init__.py
+│   ├── my_module.py
+│   └── __version__.py
+├── NOTICE
+├── project_setup.md
+├── README.rst
+├── setup.cfg
+├── setup.py
+└── tests
+    ├── __init__.py
+    └── test_my_module.py
+```
+
+For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.project_name}}/project_setup.md) file.
 
 ## Examples
 
