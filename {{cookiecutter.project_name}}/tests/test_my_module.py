@@ -4,7 +4,7 @@
 """
 import pytest
 
-from {{cookiecutter.package_name}} import my_module
+from {{ cookiecutter.package_name }} import my_module
 
 
 def test_something():
