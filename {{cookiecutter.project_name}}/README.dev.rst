@@ -122,7 +122,7 @@ In a new terminal, without an activated virtual environment or an `env` director
 
     # upload to test pypi instance (requires credentials)
     twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-
+Visit https://test.pypi.org/project/{{cookiecutter.package_name}} and verify that your package was uploaded successfully.
 Keep the terminal open, we'll need it later.
 
 In a new terminal, without an activated virtual environment or an `env` directory:
