@@ -1,4 +1,4 @@
-{%-if cookiecutter.apidoc == "yes" %}"""Documentation about the {{ cookiecutter.package_name }} module."""{% endif %}
+"""Documentation about the {{ cookiecutter.package_name }} module."""
 import logging
 
 
