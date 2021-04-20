@@ -179,7 +179,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (main_doc, "{{ cookiecutter.package_name }}.tex", u"{{ cookiecutter.package_name }} Documentation",
-     u"{{ cookiecutter.full_name }}", "manual")
+    u"{{ cookiecutter.full_name }}", "manual")
 ]
 
 
@@ -199,6 +199,6 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (main_doc, "{{ cookiecutter.package_name }}", u"{{ cookiecutter.package_name }} Documentation",
-     author, "{{ cookiecutter.package_name }}", "{{ cookiecutter.package_short_description }}",
-     "Miscellaneous")
+    author, "{{ cookiecutter.package_name }}", "{{ cookiecutter.package_short_description }}",
+    "Miscellaneous")
 ]
