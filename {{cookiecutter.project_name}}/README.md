@@ -1,84 +1,31 @@
-.. list-table::
-  :widths: 25 25
-  :header-rows: 1
-
-  * - fair-software.nl recommendations
-    - Badges
-  * - \1. Code repository
-    - |GitHub Badge|
-  * - \2. License
-    - |License Badge|
-  * - \3. Community Registry
-    - |PyPI Badge| |Research Software Directory Badge|
-  * - \4. Enable Citation
-    - |Zenodo Badge|
-  * - \5. Checklist
-    - |CII Best Practices Badge|
-  * - **Other best practices**
-    -
-  * - Continuous integration
-    - |Python Build| |PyPI Publish|
-  * - Metadata consistency
-    - |metadata consistency|
-  * - Code quality
-    - |sonarcloud quality badge|
-  * - Code coverage of unit tests
-    - |sonarcloud coverage badge|
+## Badges
 
 (Customize these badges with your own links, and check https://shields.io/ or https://badgen.net/ to see which other badges are available.)
 
-.. |GitHub Badge| image:: https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue
-  :target: {{ cookiecutter.repository }}
-  :alt: GitHub Badge
+| fair-software.nl recommendations | |
+| :-- | :--  |
+| (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)]({{cookiecutter.repository}}) |
+| (2/5) license                      | [![github license badge](https://img.shields.io/github/license/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_name }})]({{cookiecutter.repository}}) |
+| (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-{{ cookiecutter.project_name }}-00a3e3.svg)](https://www.research-software.nl/software/{{ cookiecutter.project_name }}) |
+| (4/5) citation                     | [![DOI](https://zenodo.org/badge/DOI/< replace with created DOI >.svg)](https://doi.org/<replace with created DOI>) |
+| (5/5) checklist                    | &nbsp; |
+| overall                            | [![fair-software badge](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu) |
+| **Other best practices**           | &nbsp; |
+| &nbsp;                             | &nbsp; |
+| **GitHub Actions**                 | &nbsp; |
+| Python Build              | [![workflow python badge]({{ cookiecutter.repository }}/workflows/Python/badge.svg)]({{cookiecutter.repository}}/actions?query=workflow%3A%22Python%22) |
+| PyPI Publish      | [![workflow pypi badge]({{ cookiecutter.repository }}/workflows/PyPI/badge.svg)]({{ cookiecutter.repository }}/actions?query=workflow%3A%22PyPI%22) |
+| Metadata consistency                         | [![workflow tests badge]({{ cookiecutter.repository }}/workflows/cffconvert/badge.svg)]({{ cookiecutter.repository }}/actions?query=workflow%3A%22cffconvert%22) |
+| **Software quality**                 | &nbsp; |
+| Sonarcloud quality badge              | [![workflow scq badge](https://sonarcloud.io/api/project_badges/measure?project={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}&metric=alert_status)](https://sonarcloud.io/dashboard?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}) |
+| Sonarcloud coverage badge              | [![workflow scc badge](https://sonarcloud.io/api/project_badges/measure?project={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}&metric=coverage)](https://sonarcloud.io/dashboard?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}) |
+| PyPI Badge             | [![workflow pypi badge](https://img.shields.io/pypi/v/{{ cookiecutter.project_name }}.svg?colorB=blue)](https://pypi.python.org/project/{{ cookiecutter.project_name }}/) |
+| CII Best Practices Badge              | [![workflow cii badge](https://bestpractices.coreinfrastructure.org/projects/< replace with created project identifier >/badge)](https://bestpractices.coreinfrastructure.org/projects/< replace with created project identifier >) |
 
-.. |License Badge| image:: https://img.shields.io/github/license/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_name }}
-  :target: {{ cookiecutter.repository }}
-  :alt: License Badge
+A CII Best Practices project can be created at https://bestpractices.coreinfrastructure.org/en/projects/new
 
-.. |PyPI Badge| image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_name }}.svg?colorB=blue
-  :target: https://pypi.python.org/project/{{ cookiecutter.project_name }}/
-  :alt: PyPI Badge
 
-.. |Research Software Directory Badge| image:: https://img.shields.io/badge/rsd-{{ cookiecutter.project_name }}-00a3e3.svg
-  :target: https://www.research-software.nl/software/{{ cookiecutter.project_name }}
-  :alt: Research Software Directory Badge
-
-..
-    Goto https://zenodo.org/account/settings/github/ to enable Zenodo/GitHub integration.
-    After creation of a GitHub release at {{ cookiecutter.repository }}/releases
-    there will be a Zenodo upload created at https://zenodo.org/deposit with a DOI, this DOI can be put in the Zenodo badge urls.
-    In the README, we prefer to use the concept DOI over versioned DOI, see https://help.zenodo.org/#versioning.
-
-.. |Zenodo Badge| image:: https://zenodo.org/badge/DOI/< replace with created DOI >.svg
-  :target: https://doi.org/<replace with created DOI>
-  :alt: Zenodo Badge
-
-..
-    A CII Best Practices project can be created at https://bestpractices.coreinfrastructure.org/en/projects/new
-
-.. |CII Best Practices Badge| image:: https://bestpractices.coreinfrastructure.org/projects/< replace with created project identifier >/badge
-  :target: https://bestpractices.coreinfrastructure.org/projects/< replace with created project identifier >
-  :alt: CII Best Practices Badge
-
-.. |Python Build| image:: {{ cookiecutter.repository }}/workflows/Python/badge.svg
-  :target: {{ cookiecutter.repository }}/actions?query=workflow%3A%22Python%22
-  :alt: Python Build
-
-.. |PyPI Publish| image:: {{ cookiecutter.repository }}/workflows/PyPI/badge.svg
-  :target: {{ cookiecutter.repository }}/actions?query=workflow%3A%22PyPI%22
-  :alt: PyPI Publish
-
-.. |metadata consistency| image:: {{ cookiecutter.repository }}/workflows/cffconvert/badge.svg
-  :target: {{ cookiecutter.repository }}/actions?query=workflow%3A%22cffconvert%22
-  :alt: metadata consistency badge
-
-.. |sonarcloud quality badge| image:: https://sonarcloud.io/api/project_badges/measure?project={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}&metric=alert_status
-  :target: https://sonarcloud.io/dashboard?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}
-  :alt: Quality Gate Status
-
-.. |sonarcloud coverage badge| image:: https://sonarcloud.io/api/project_badges/measure?project={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}&metric=coverage
-  :target: https://sonarcloud.io/dashboard?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}
-  :alt: Coverage
+## How to use
 
 ## {{ cookiecutter.project_name }}
 
