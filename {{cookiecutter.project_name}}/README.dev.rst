@@ -11,10 +11,10 @@ Development install
 
 .. code:: shell
 
-    # Create a virtualenv, e.g. with
+    # Create a virtual environment, e.g. with
     python3 -m venv env
 
-    # activate virtualenv
+    # activate virtual environment
     source env/bin/activate
     
     # make sure to have a recent version of pip and setuptools
@@ -32,7 +32,7 @@ environment variable.
 Running the tests
 -----------------
 
-Running the tests requires an activated virtualenv with the development tools installed.
+Running the tests requires an activated virtual environment with the development tools installed.
 
 .. code:: shell
 
@@ -43,7 +43,7 @@ Running the tests requires an activated virtualenv with the development tools in
 Running linters locally
 -----------------------
 
-Running the linters requires an activated virtualenv with the development tools installed.
+Running the linters requires an activated virtual environment with the development tools installed.
 
 .. code:: shell
 
