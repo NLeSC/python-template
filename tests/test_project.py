@@ -24,6 +24,8 @@ def test_pytest(cookies):
     result = cookies.bake()
     env_output = run('python3 -m venv env', result.project)
     assert env_output.returncode == 0
+    latest_pip_output = run('env/bin/pip3 install --upgrade pip setuptools', result.project)
+    assert latest_pip_output.returncode == 0
     pip_output = run('env/bin/pip3 install --editable .[dev]', result.project)
     assert pip_output.returncode == 0
 
