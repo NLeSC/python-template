@@ -26,7 +26,7 @@ Development install
     # install development dependencies
     pip install --no-cache-dir --editable .[dev]
 
-Afterwards check that the install directory was added to the ``PATH``
+Afterwards check that the install directory is present in the ``PATH``
 environment variable.
 
 Running the tests
