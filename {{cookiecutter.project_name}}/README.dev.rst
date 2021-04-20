@@ -42,7 +42,7 @@ Running the tests requires an activated virtual environment with the development
     
 Running linters locally
 -----------------------
-
+For linting we will use [prospector](https://pypi.org/project/prospector/) and to sort imports we will use [isort](https://pycqa.github.io/isort/).
 Running the linters requires an activated virtual environment with the development tools installed.
 
 .. code:: shell
