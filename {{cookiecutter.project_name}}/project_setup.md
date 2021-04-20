@@ -105,8 +105,9 @@ help you decide which tool to use for packaging.
 ## Package version number
 
 - We recommend using [semantic versioning](https://guide.esciencecenter.nl/#/best_practices/releases?id=semantic-versioning).
-- For convenience, the package version is stored in a single place: `{{ cookiecutter.package_name }}/__version__.py`.
-  For updating the version number, you only have to change this file.
+- For convenience, the package version is stored in a single place: `{{ cookiecutter.package_name }}/.bumpversion.cfg`.
+  For updating the version number, make sure the dev dependencies are installed and run `bumpversion patch`,
+  `bumpversion minor`, or `bumpversion major` as appropriate.
 - Don't forget to update the version number before [making a release](https://guide.esciencecenter.nl/#/best_practices/releases)!
 
 ## Publish on Python Package Index (PyPI)
