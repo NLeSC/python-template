@@ -6,6 +6,12 @@
         },
         {
             "pattern": "\\{\\{"
+        },
+        {
+          "pattern": "^https://doi.org/<replace-with-created-DOI>"
+        },
+        {
+          "pattern": "^https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>"
         }
     ],
     "replacementPatterns": [
