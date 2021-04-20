@@ -138,7 +138,7 @@ In a new terminal, without an activated virtual environment or an `env` director
     # make sure to have a recent version of pip and setuptools
     pip install --upgrade pip setuptools
 
-    # install in user space from test pypi instance:
+    # install from test pypi instance:
     python3 -m pip -v install --no-cache-dir \
     --index-url https://test.pypi.org/simple/ \
     --extra-index-url https://pypi.org/simple {{ cookiecutter.package_name }}
