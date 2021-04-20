@@ -10,9 +10,9 @@ path/to/package/
 ├── .gitignore
 ├── pyproject.toml
 ├── .prospector.yml
-├── CHANGELOG.rst
-├── CODE_OF_CONDUCT.rst
-├── CONTRIBUTING.rst
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
 ├── docs
 │   ├── conf.py
 │   ├── index.rst
@@ -24,8 +24,8 @@ path/to/package/
 │   ├── __init__.py
 │   ├── __version__.py
 │   └── package.py
-├── README.rst
-├── project_setup.rst
+├── README.md
+├── project_setup.md
 ├── requirements.txt
 ├── setup.cfg
 ├── setup.py

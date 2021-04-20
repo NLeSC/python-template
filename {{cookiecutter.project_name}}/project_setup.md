@@ -80,7 +80,7 @@ help you decide which tool to use for packaging.
   file can be safely removed (or you can just leave it there).
 - To put the documentation on [ReadTheDocs](https://readthedocs.org), log in to your ReadTheDocs account, and import
   the repository (under 'My Projects').
-  - Include the link to the documentation in your project's [README.rst](README.rst).
+  - Include the link to the documentation in your project's [README.md](README.md).
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=writingdocumentation)
 
 ## Coding style conventions and code quality
@@ -122,7 +122,7 @@ save it as a secret called `PYPI_TOKEN` on [Settings page]({{cookiecutter.reposi
 - The project is set up with a logging example.
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=logging)
 
-## CHANGELOG.rst
+## CHANGELOG.md
 
 - Document changes to your software package
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/releases?id=changelogmd)
@@ -133,12 +133,12 @@ save it as a secret called `PYPI_TOKEN` on [Settings page]({{cookiecutter.reposi
 - It only makes sense to do this once there is something to cite (e.g., a software release with a DOI).
 - Follow the [making software citable](https://guide.esciencecenter.nl/#/citable_software/making_software_citable) section in the guide.
 
-## CODE\_OF\_CONDUCT.rst
+## CODE\_OF\_CONDUCT.md
 
 - Information about how to behave professionally
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=code-of-conduct)
 
-## CONTRIBUTING.rst
+## CONTRIBUTING.md
 
 - Information about how to contribute to this software package
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=contribution-guidelines)

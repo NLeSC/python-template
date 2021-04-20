@@ -13,8 +13,8 @@ an empty Python package. Features include:
 - [Default Github actions]({{cookiecutter.project_name}}/.github/workflows) for building, testing and deployment
 - Code style checking,
 - [Editorconfig]({{cookiecutter.project_name}}/.editorconfig),
-- Miscellaneous files, such as [Change log]({{cookiecutter.project_name}}/CHANGELOG.rst), [Code of Conduct]({{cookiecutter.project_name}}/CODE_OF_CONDUCT.rst), and [Contributing guidelines]({{cookiecutter.project_name}}/CONTRIBUTING.rst),
-- A [README]({{cookiecutter.project_name}}/README.rst) and [a separate document]({{cookiecutter.project_name}}/project_setup.md) with extensive documentation about project setup.
+- Miscellaneous files, such as [Change log]({{cookiecutter.project_name}}/CHANGELOG.md), [Code of Conduct]({{cookiecutter.project_name}}/CODE_OF_CONDUCT.md), and [Contributing guidelines]({{cookiecutter.project_name}}/CONTRIBUTING.md),
+- A [README]({{cookiecutter.project_name}}/README.md) and [a separate document]({{cookiecutter.project_name}}/project_setup.md) with extensive documentation about project setup.
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/)
 
 ## Badges
@@ -76,10 +76,10 @@ Good job! You have now generated the skeleton for your package:
 
 ```text
 my-python-project/
-├── CHANGELOG.rst
+├── CHANGELOG.md
 ├── CITATION.cff
-├── CODE_OF_CONDUCT.rst
-├── CONTRIBUTING.rst
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
 ├── docs
 │   ├── conf.py
 │   ├── index.rst
@@ -96,7 +96,7 @@ my-python-project/
 │   └── __version__.py
 ├── NOTICE
 ├── project_setup.md
-├── README.rst
+├── README.md
 ├── setup.cfg
 ├── setup.py
 └── tests
