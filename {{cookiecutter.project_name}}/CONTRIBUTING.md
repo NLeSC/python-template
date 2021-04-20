@@ -35,7 +35,7 @@ The sections below outline the steps in each case.
 1. add your own tests (if necessary);
 1. update or expand the documentation;
 1. update the `CHANGELOG.md` file with change;
-1. [push](http://rogerdudler.github.io/git-guide/>) your feature branch to (your fork of) the {{ cookiecutter.package_name }} repository on GitHub;
+1. push your feature branch to (your fork of) the {{ cookiecutter.package_name }} repository on GitHub;
 1. create the pull request, e.g. following the instructions [here](https://help.github.com/articles/creating-a-pull-request/).
 
 In case you feel like you've made a valuable contribution, but you don't know how to write or run tests for it, or how to generate the documentation: don't let this discourage you from making the pull request; we can help you! Just go ahead and submit the pull request, but keep in mind that you might be asked to append additional commits to your pull request.
