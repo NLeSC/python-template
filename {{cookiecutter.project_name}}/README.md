@@ -7,27 +7,20 @@
 | (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)]({{cookiecutter.repository}}) |
 | (2/5) license                      | [![github license badge](https://img.shields.io/github/license/{{cookiecutter.github_organization}}/{{cookiecutter.project_name}})]({{cookiecutter.repository}}) |
 | (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-{{cookiecutter.project_name}}-00a3e3.svg)](https://www.research-software.nl/software/{{cookiecutter.project_name}}) |
+| PyPI Badge             | [![workflow pypi badge](https://img.shields.io/pypi/v/{{cookiecutter.project_name}}.svg?colorB=blue)](https://pypi.python.org/project/{{cookiecutter.project_name}}/) |
 | (4/5) citation                     | [![DOI](https://zenodo.org/badge/DOI/<replace-with-created-DOI>.svg)](https://doi.org/<replace-with-created-DOI>) |
 | (5/5) checklist                    | &nbsp; |
 | overall                            | [![fair-software badge](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu) |
+| CII Best Practices Badge              | [![workflow cii badge](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>/badge)](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>) |
 | **Other best practices**           | &nbsp; |
-| &nbsp;                             | &nbsp; |
+| Sonarcloud quality badge              | [![workflow scq badge](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}&metric=alert_status)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}) |
+| Sonarcloud coverage badge              | [![workflow scc badge](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}&metric=coverage)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}) |
 | **GitHub Actions**                 | &nbsp; |
 | Python Build              | [![workflow python badge]({{cookiecutter.repository}}/workflows/Python/badge.svg)]({{cookiecutter.repository}}/actions?query=workflow%3A%22Python%22) |
 | PyPI Publish      | [![workflow pypi badge]({{cookiecutter.repository}}/workflows/PyPI/badge.svg)]({{cookiecutter.repository}}/actions?query=workflow%3A%22PyPI%22) |
 | Metadata consistency                         | [![workflow tests badge]({{cookiecutter.repository}}/workflows/cffconvert/badge.svg)]({{cookiecutter.repository}}/actions?query=workflow%3A%22cffconvert%22) |
-| **Software quality**                 | &nbsp; |
-| Sonarcloud quality badge              | [![workflow scq badge](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}&metric=alert_status)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}) |
-| Sonarcloud coverage badge              | [![workflow scc badge](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}&metric=coverage)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}) |
-| PyPI Badge             | [![workflow pypi badge](https://img.shields.io/pypi/v/{{cookiecutter.project_name}}.svg?colorB=blue)](https://pypi.python.org/project/{{cookiecutter.project_name}}/) |
-| CII Best Practices Badge              | [![workflow cii badge](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>/badge)](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>) |
 
-A CII Best Practices project can be created at https://bestpractices.coreinfrastructure.org/en/projects/new
-
-
-## How to use
-
-## {{ cookiecutter.project_name }}
+## How to use {{ cookiecutter.package_name }}
 
 {{ cookiecutter.package_short_description }}
 
