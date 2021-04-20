@@ -24,7 +24,6 @@
 
 {{ cookiecutter.package_short_description }}
 
-
 The project setup is documented in [project_setup.md](project_setup.md). Feel free to remove this document (and/or the link to this document) if you don't need it.
 
 ## Installation
@@ -46,8 +45,6 @@ Include a link to your project's full documentation here.
 If you want to contribute to the development of {{ cookiecutter.project_name }},
 have a look at the [contribution guidelines](CONTRIBUTING.md).
 
+## Credits
 
-Credits
-*******
-
-This package was created with `Cookiecutter <https://github.com/audreyr/cookiecutter>`_ and the `NLeSC/python-template <https://github.com/NLeSC/python-template>`_.
+This package was created with [Cookiecutter](https://github.com/audreyr/cookiecutter) and the [NLeSC/python-template](https://github.com/NLeSC/python-template).
