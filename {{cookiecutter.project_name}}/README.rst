@@ -92,21 +92,13 @@ The project setup is documented in `a separate document <project_setup.rst>`_. F
 Installation
 ------------
 
-To install {{ cookiecutter.package_name }}, do:
+To install {{ cookiecutter.package_name }} from GitHub repository, do:
 
 .. code-block:: console
 
   git clone {{ cookiecutter.repository }}.git
   cd {{ cookiecutter.project_name }}
   python3 -m pip install .
-
-
-Run tests (including coverage) with:
-
-.. code-block:: console
-
-  python3 setup.py test
-
 
 Documentation
 *************

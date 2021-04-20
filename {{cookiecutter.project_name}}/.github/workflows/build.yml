@@ -39,6 +39,4 @@ jobs:
         run: prospector -0 -o grouped -o pylint:pylint-report.txt
       - name: Test
         shell: bash -l {0}
-        run: |
-          pytest tests
-          pytest --cov --cov-report term --cov-report xml --junitxml=xunit-result.xml
+        run: pytest
