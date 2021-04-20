@@ -1,7 +1,7 @@
 ``{{ cookiecutter.package_name }}`` developer documentation
 =====================================
 
-If you're looking for user documentation, go `here <README.rst>`_.
+If you're looking for user documentation, go `here <README.md>`_.
 
 |
 |
