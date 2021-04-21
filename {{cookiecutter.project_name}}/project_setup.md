@@ -69,7 +69,7 @@ help you decide which tool to use for packaging.
 
 ## Documentation
 
-- Documentation should be put in the `docs/` directory. The contents have been generated using `sphinx-quickstart` (Sphinx version 1.6.5).
+- Documentation should be put in the [`docs/`](docs/) directory. The contents have been generated using `sphinx-quickstart` (Sphinx version 1.6.5).
 - We recommend writing the documentation using Restructured Text (reST) and Google style docstrings.
   - [Restructured Text (reST) and Sphinx CheatSheet](http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html)
   - [Google style docstring examples](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
