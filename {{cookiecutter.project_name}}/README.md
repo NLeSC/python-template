@@ -19,6 +19,7 @@
 | Lint                               | [![lint]({{cookiecutter.repository}}/actions/workflows/lint.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/lint.yml) |
 | Publish                            | [![publish]({{cookiecutter.repository}}/actions/workflows/publish.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/publish.yml) |
 | SonarCloud                         | [![sonarcloud]({{cookiecutter.repository}}/actions/workflows/sonarcloud.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/sonarcloud.yml) |
+| MarkDown link checker              | [![markdown-link-check]({{cookiecutter.repository}}/actions/workflows/markdown-link-check.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/markdown-link-check.yml) |
 
 ## How to use {{ cookiecutter.package_name }}
 
