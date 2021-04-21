@@ -49,7 +49,7 @@ guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?i
 
 ## Packaging/One command install
 
-You can distribute your code using PyPI or conda. Again, the project template does not enforce the use of either one.
+You can distribute your code using PyPI.
 [The guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=building-and-packaging-code) can
 help you decide which tool to use for packaging.
 
