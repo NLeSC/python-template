@@ -1,24 +1,31 @@
-name: Publish
+name: publish
 
 on:
   release:
     types: [published]
 
 jobs:
+
   publish:
+    name: Publish
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.7
+        python-version: 3.9
+    - name: Python info
+      shell: bash -l {0}
+      run: |
+        which python3
+        python3 --version
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install setuptools wheel twine
+        python3 -m pip install --upgrade pip setuptools
+        python3 -m pip install .[publishing]
     - name: Build distributions
-      run: python setup.py sdist bdist_wheel
+      run: python3 setup.py sdist bdist_wheel
     - name: Publish package
       uses: pypa/gh-action-pypi-publish@release/v1
       with:

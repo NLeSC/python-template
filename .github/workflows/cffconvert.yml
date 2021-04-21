@@ -3,8 +3,9 @@ name: cffconvert
 on: push
 
 jobs:
-  verify:
-    name: "cffconvert"
+
+  cffconvert:
+    name: Verify citation metadata consistency
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
