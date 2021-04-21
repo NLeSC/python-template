@@ -45,7 +45,7 @@ of the
 guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=dependencies-and-package-management).
 
 - Runtime dependencies should be added to `setup.cfg` in the `install_requires` list under `[options]`.
-- Development dependencies should be added to `setup.cfg` in the list under `[options.extras_require]`.
+- Development dependencies should be added to `setup.cfg` in one of the lists under `[options.extras_require]`.
 
 ## Packaging/One command install
 
