@@ -63,7 +63,7 @@ help you decide which tool to use for packaging.
   - PyTest is listed as a development dependency, and can thus be installed with `pip3 install --editable .[dev]`
 - Tests can be run with `pytest`
   - This is configured in `setup.cfg`
-- Uses [GitHub action workflows](https://docs.github.com/en/actions) to automatically run tests on GitHub infrastructure against multiple Python versions
+- The project uses [GitHub action workflows](https://docs.github.com/en/actions) to automatically run tests on GitHub infrastructure against multiple Python versions
   - Workflows can be found in [`.github/workflows`](.github/workflows/)
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=testing)
 
