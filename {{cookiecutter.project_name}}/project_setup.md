@@ -16,12 +16,12 @@ control](https://guide.esciencecenter.nl/#/best_practices/version_control)! We r
 ```shell
 cd {{ cookiecutter.project_name }}
 git init
-git add --all
-git commit
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin {{ cookiecutter.repository }}
+git push --set-upstream origin main
 ```
-
-To put your code on github, follow [this
-tutorial](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
 
 ## Python versions
 
@@ -43,7 +43,8 @@ to use one or the other, as project requirements differ. For advice on what to u
 of the
 guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=dependencies-and-package-management).
 
-- Dependencies should be added to `setup.py` in the `install\_requires` list.
+- Runtime dependencies should be added to `setup.cfg` in the `install_requires` list under `[options]`.
+- Development dependencies should be added to `setup.cfg` in the list under `[options.extras_require]`.
 
 ## Packaging/One command install
 
@@ -58,26 +59,22 @@ help you decide which tool to use for packaging.
   - Example tests that you should replace with your own meaningful tests (file: `test_my_module.py`)
 - The testing framework used is [PyTest](https://pytest.org)
   - [PyTest introduction](http://pythontesting.net/framework/pytest/pytest-introduction/)
-  - PyTest can be installed with `pip3 install --editable .[dev]`
+  - PyTest is listed as a development dependency, and can thus be installed with `pip3 install --editable .[dev]`
 - Tests can be run with `pytest`
   - This is configured in `setup.cfg`
-- Use [GitHub action workflow](https://docs.github.com/en/actions) to automatically run tests on GitHub infrastructure against multiple Python versions
-  - Workflow can be found in [`.github/workflows/build.yml`](.github/workflows/build.yml)
+- Uses [GitHub action workflows](https://docs.github.com/en/actions) to automatically run tests on GitHub infrastructure against multiple Python versions
+  - Workflows can be found in [`.github/workflows`](.github/workflows/)
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=testing)
 
 ## Documentation
 
-- Documentation should be put in the `docs` folder. The contents have been generated using `sphinx-quickstart` (Sphinx version 1.6.5).
+- Documentation should be put in the `docs/` directory. The contents have been generated using `sphinx-quickstart` (Sphinx version 1.6.5).
 - We recommend writing the documentation using Restructured Text (reST) and Google style docstrings.
   - [Restructured Text (reST) and Sphinx CheatSheet](http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html)
   - [Google style docstring examples](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
-- The documentation is set up with the Read the Docs Sphinx Theme.
-  - Check out the [configuration options](https://sphinx-rtd-theme.readthedocs.io/en/latest/).
-- To generate html documentation run `python setup.py build_sphinx`
-  - This is configured in `setup.cfg`
-  - Alternatively, run `make html` in the `docs` folder.
-- The `docs/_templates` directory contains an (empty) `.gitignore` file, to be able to add it to the repository. This
-  file can be safely removed (or you can just leave it there).
+- The documentation is set up with the ReadTheDocs Sphinx theme.
+  - Check out its [configuration options](https://sphinx-rtd-theme.readthedocs.io/en/latest/).
+- To generate HTML documentation, run `make html` in the `docs/` folder.
 - To put the documentation on [ReadTheDocs](https://readthedocs.org), log in to your ReadTheDocs account, and import
   the repository (under 'My Projects').
   - Include the link to the documentation in your project's [README.md](README.md).
@@ -93,11 +90,11 @@ help you decide which tool to use for packaging.
 ## Continuous code quality
 
 - [Sonarcloud](https://sonarcloud.io/) is used to perform quality analysis and code coverage report on each push
-- The GitHub organization and repository must be added Sonarcloud for analysis to work
+- Sonarcloud must be configured for the analysis to work
   1. go to [Sonarcloud](https://sonarcloud.io/projects/create)
   2. login with your GitHub account
   3. add organization or reuse existing
-  4. setup repository
+  4. set up repository
   5. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}) and select `Number of days` option
 - The analysis will be run by [GitHub Action workflow](.github/workflows/quality.yml)
 - To be able to run the analysis, a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/) and this token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_name }}/settings/secrets/actions)
@@ -134,7 +131,7 @@ save it as a secret called `PYPI_TOKEN` on [Settings page]({{cookiecutter.reposi
 - It only makes sense to do this once there is something to cite (e.g., a software release with a DOI).
 - Follow the [making software citable](https://guide.esciencecenter.nl/#/citable_software/making_software_citable) section in the guide.
 
-## CODE\_OF\_CONDUCT.md
+## CODE_OF_CONDUCT.md
 
 - Information about how to behave professionally
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=code-of-conduct)
