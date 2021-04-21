@@ -20,7 +20,7 @@ git add --all
 git commit -m "first commit"
 git branch -M main
 git remote add origin {{ cookiecutter.repository }}
-# on github, create {{ cookiecutter.repository }} as an empty repository 
+# on github, create {{ cookiecutter.repository }} as an empty repository
 git push --set-upstream origin main
 ```
 
@@ -97,7 +97,7 @@ help you decide which tool to use for packaging.
   3. add organization or reuse existing one
   4. set up repository
   5. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}) and select `Number of days` option
-- The analysis will be run by [GitHub Action workflow](.github/workflows/quality.yml)
+- The analysis will be run by [GitHub Action workflow](.github/workflows/sonarcloud.yml)
 - To be able to run the analysis, a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/) and this token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_name }}/settings/secrets/actions)
 
 ## Package version number
@@ -113,7 +113,7 @@ help you decide which tool to use for packaging.
 To publish your package on PyPI, you need to create a [PyPI API token](https://pypi.org/help#apitoken) and
 save it as a secret called `PYPI_TOKEN` on [Settings page]({{cookiecutter.repository}}/settings/secrets/actions)
 
-[Creating a release]({{cookiecutter.repository}}/releases/new) on GitHub will trigger a [GitHub action workflow](.github/workflows/pypi.yml) to publish the release on PyPI for you.
+[Creating a release]({{cookiecutter.repository}}/releases/new) on GitHub will trigger a [GitHub action workflow](.github/workflows/publish.yml) to publish the release on PyPI for you.
 
 ## Logging
 

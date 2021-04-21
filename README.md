@@ -30,9 +30,9 @@ an empty Python package. Features include:
 | **Other best practices**           | &nbsp; |
 | &nbsp;                             | &nbsp; |
 | **GitHub Actions**                 | &nbsp; |
-| MarkDown link checker              | [![workflow mlc badge](https://github.com/nlesc/python-template/workflows/markdown-link-checker/badge.svg)](https://github.com/nlesc/python-template/actions?query=workflow%3A%22markdown-link-checker%22) |
-| Citation metadata consistency      | [![workflow cffconvert badge](https://github.com/nlesc/python-template/workflows/cffconvert/badge.svg)](https://github.com/nlesc/python-template/actions?query=workflow%3A%22cffconvert%22) |
-| Unit tests                         | [![workflow tests badge](https://github.com/nlesc/python-template/workflows/tests/badge.svg)](https://github.com/nlesc/python-template/actions?query=workflow%3Atests) |
+| Citation metadata consistency      | [![cffconvert](https://github.com/nlesc/python-template/actions/workflows/cffconvert.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/cffconvert.yml) |
+| MarkDown link checker              | [![markdown-link-check](https://github.com/nlesc/python-template/actions/workflows/markdown-link-check.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/markdown-link-check.yml) |
+| Tests                              | [![tests](https://github.com/nlesc/python-template/actions/workflows/tests.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/tests.yml) |
 
 ## How to use
 

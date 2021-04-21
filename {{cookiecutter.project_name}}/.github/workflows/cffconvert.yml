@@ -1,8 +1,9 @@
 name: cffconvert
 
-on: push
+on: [push, pull_request]
 
 jobs:
+
   verify:
     name: "cffconvert"
     runs-on: ubuntu-latest
