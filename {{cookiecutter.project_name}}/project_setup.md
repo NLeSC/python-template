@@ -20,6 +20,7 @@ git add .
 git commit -m "first commit"
 git branch -M main
 git remote add origin {{ cookiecutter.repository }}
+# on github, create {{ cookiecutter.repository }} as an empty repository 
 git push --set-upstream origin main
 ```
 
