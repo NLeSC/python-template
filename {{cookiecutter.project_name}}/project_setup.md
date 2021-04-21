@@ -16,7 +16,7 @@ control](https://guide.esciencecenter.nl/#/best_practices/version_control)! We r
 ```shell
 cd {{ cookiecutter.project_name }}
 git init
-git add .
+git add --all
 git commit -m "first commit"
 git branch -M main
 git remote add origin {{ cookiecutter.repository }}
