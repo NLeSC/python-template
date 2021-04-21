@@ -10,7 +10,6 @@ Welcome to {{ cookiecutter.package_name }}'s documentation!
   :maxdepth: 2
   :caption: Contents:
 
-{% if cookiecutter.apidoc == 'yes' %}
 API Reference
 =============
 
@@ -18,7 +17,6 @@ API Reference
   :maxdepth: 2
 
   {{ cookiecutter.package_name }} <apidocs/{{ cookiecutter.package_name }}.rst>
-{% endif %}
 
 Indices and tables
 ==================

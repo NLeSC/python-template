@@ -78,7 +78,6 @@ pygments_style = "sphinx"
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
-{% if cookiecutter.apidoc == "yes" %}
 # -- Run apidoc plug-in manually, as readthedocs doesn't support it -------
 # See https://github.com/rtfd/readthedocs.org/issues/1139
 def run_apidoc(_):
@@ -110,7 +109,6 @@ def run_apidoc(_):
 
 def setup(app):
     app.connect("builder-inited", run_apidoc)
-{% endif %}
 
 # -- Options for HTML output ----------------------------------------------
 
