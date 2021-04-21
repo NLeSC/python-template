@@ -94,7 +94,7 @@ help you decide which tool to use for packaging.
 - Sonarcloud must be configured for the analysis to work
   1. go to [Sonarcloud](https://sonarcloud.io/projects/create)
   2. login with your GitHub account
-  3. add organization or reuse existing
+  3. add organization or reuse existing one
   4. set up repository
   5. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}) and select `Number of days` option
 - The analysis will be run by [GitHub Action workflow](.github/workflows/quality.yml)
