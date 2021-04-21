@@ -29,4 +29,4 @@ jobs:
           python3 -m pip install .[dev]
       - name: Check style against standards using prospector
         shell: bash -l {0}
-        run: prospector --zero-exit --output-format grouped ---output-format pylint:pylint-report.txt
+        run: prospector --zero-exit --output-format grouped --output-format pylint:pylint-report.txt
