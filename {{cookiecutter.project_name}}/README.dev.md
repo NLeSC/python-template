@@ -71,7 +71,7 @@ The documentation will be in `docs/_build/`
 
 ## Versioning
 
-Bumping the version across all files is done with bump2version, e.g.
+Bumping the version across all files is done with bumpversion, e.g.
 
 ```shell
 bumpversion major
