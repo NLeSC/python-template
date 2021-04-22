@@ -22,12 +22,12 @@
 
 ### Changed
 
-* Added requirements.txt dependencies to setup.cfg and removed requirements.txt [#67](https://github.com/NLeSC/python-template/issues/67)
-* Replaced rst format by markdown [#190](https://github.com/NLeSC/python-template/issues/190) [#162](https://github.com/NLeSC/python-template/issues/162)
-* Replaced appveyor with gha matrix build for generated project, support all current python versions and Windows, Linux, Mac [#160](https://github.com/NLeSC/python-template/issues/160)
+* Moved requirements.txt dependencies to setup.cfg and removed requirements.txt [#67](https://github.com/NLeSC/python-template/issues/67)
+* Replaced all ReStructuredText (rst) files by Markdown [#190](https://github.com/NLeSC/python-template/issues/190) [#162](https://github.com/NLeSC/python-template/issues/162)
+* Use matrix build for generated project to support all current Python versions on Windows, Linux, Mac [#160](https://github.com/NLeSC/python-template/issues/160)
 * Updated CITATION.cff, .zenodo.json; removed codemeta.json [#127](https://github.com/NLeSC/python-template/issues/127) [#137](https://github.com/NLeSC/python-template/issues/137)
-* Updated CoC
-* Simplified templating variables using pre project hook [#82](https://github.com/NLeSC/python-template/issues/82)
+* Updated Code of Conduct of the template
+* Simplified templating variables using cookiecutter pre-hook [#82](https://github.com/NLeSC/python-template/issues/82)
 * Consolidated pytest.ini into setup.cfg [#155](https://github.com/NLeSC/python-template/issues/155)
 * Versioning now handled with bump2version [#192](https://github.com/NLeSC/python-template/issues/192)
 * Updated project_setup.md [#165](https://github.com/NLeSC/python-template/issues/165)
@@ -35,10 +35,10 @@
 * Improved the documentation for the generated package and template itself
 
 ## Removed
-* Drop appveyor
-* Evrything Conda related
-* Python 3.5 support
-* Unit test that was acting as a linter, replaced with actual linter documented in README.dev.md
+* Dropped appveyor [#160](https://github.com/NLeSC/python-template/issues/160)
+* Dropped everything Conda related
+* Drop Python 3.5 support
+* Removed unit tests doing the linting 
 
 
 ## 0.2.0
