@@ -1,69 +1,110 @@
-The file structure of the generated package looks like:
+# Developer documentation
+
+If you're looking for user documentation, go [here](README.md).
+
+## Development install
+
+### Install `cookiecutter` in user space
+
+We recommend installing `cookiecutter` in user space as per `cookiecutter`'s instructions. This way, you don't have to
+install `cookiecutter` for every new project.
 
 ```shell
-path/to/package/
-├── .editorconfig
-└── .github/
-    └── workflows
-        ├── build.yml
-        └── pypi_deploy.yml
-├── .gitignore
-├── pyproject.toml
-├── .prospector.yml
-├── CHANGELOG.md
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── docs
-│   ├── conf.py
-│   ├── index.rst
-│   └── ...
-├── LICENSE
-├── MANIFEST.in
-├── NOTICE
-├── package
-│   ├── __init__.py
-│   ├── __version__.py
-│   └── package.py
-├── README.md
-├── project_setup.md
-├── requirements.txt
-├── setup.cfg
-├── setup.py
-└── tests
-    ├── __init__.py
-    ├── test_lint.py
-    └── test_package.py
+python3 -m pip install --user --upgrade cookiecutter
 ```
 
-* Code (existing or new) should be placed in `path/to/package/package/` (please choose a better name for your software!).
-* Add documentation by editing `path/to/package/docs/index.rst`
-* Tests go in the `path/to/package/tests/` directory
-* The generated [project setup document]({{cookiecutter.project_name}}/project_setup.md) contains extensive documentation about the project setup and provides further instructions on what to do.
+### Get your own copy of the repository
 
-### Step 3: Create and activate a Python environment
+Before you can do development work on the template, you'll need to check out a local copy of the repository:
 
-* If you are using **virtualenv + pip3**, do:
-     ```bash
-     $ virtualenv -p python3 env
-     $ . env/bin/activate
-     ```
-* If you are using **conda**, type:
-    ```bash
-    $ conda create -n env python=3
-    $ source activate env
-    ```
-    (On windows use `activate env` to activate the conda environment.)
+```shell
+cd <where you keep your GitHub repositories>
+git clone https://github.com/NLeSC/python-template.git
+cd python-template
+```
 
-## Continuous integration with Github Actions
+### Create a virtual environment
 
-The template has two Ci workflows. They can be found in **.github/workflows** folder.
+Next, make a virtual environment, activate it, and install the development dependencies in it. This will enable you to 
+run the tests later.
 
-1. **build.yml**
+```shell
+# Create a virtual environment, e.g. with
+python3 -m venv env
 
-This workflow install the dependencies, builds the package and runs tests.
+# activate virtual environment
+source env/bin/activate
 
-2. **pypi.yml**
+# make sure to have a recent version of pip and setuptools
+python3 -m pip install --upgrade pip setuptools
 
-This workflow pushes the package to [PYPI](https://pypi.org/). This action will require PYPI token to be stored as [Github secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). The workflow uses secret with a name of `PYPI_TOKEN`.
+# (from the project root directory)
+# install development dependencies
+python3 -m pip install --no-cache-dir .[dev]
+```
 
-You can learn more about Python packaging at [this link](https://packaging.python.org/tutorials/packaging-projects/).
+## Running the tests
+
+Running the tests requires an activated virtual environment with the development tools installed.
+
+```shell
+# unit tests
+pytest
+pytest tests/
+```
+
+## Using `cookiecutter` to generate a new package from the command line
+
+While making changes to the template, you'll regularly want to verify that the packages generated with the template
+still work. Any easy way to do this is to generate new packages in a temporary directory (which will get removed
+everytime you reboot), for example like so:
+
+```shell
+# change directory to a new temporary directory
+cd $(mktemp -d --tmpdir cookiecutter-generated.XXXXXX)
+
+# run cookiecutter with the template to generate a new package
+cookiecutter <path to where your template is>
+
+# when it asks you for the GitHub organization, put in your own name;
+# for the other questions, just accept the default
+
+# 'ls' should return just the one directory called 'my-python-project'
+ls 
+```
+
+If your Python package was created successfully, `cookiecutter` will point you to a file
+(`my-python-project/project_setup.md`) that contains information on next steps such as:
+
+1. making `my-python-project` a local git repository
+1. connecting the local repository to a new repository on GitHub
+1. pushing the freshly generated content to GitHub
+1. discovering what GitHub Actions there are, what they do, and how to inspect their results
+
+Follow the instructions from `my-python-project/project_setup.md` and make sure that everything works.
+
+In addition to the information in `my-python-project/project_setup.md`, the developer documentation
+`my-python-project/README.dev.md` contains information on a few more things to check, for example:
+
+1. generating `my-python-project`'s documentation locally
+1. running `my-python-project`'s tests locally
+1. running `my-python-project`'s linters locally
+1. verifying that the `my-python-project`'s version can be updated using `bumpversion`
+1. making a release of `my-python-project` on https://test.pypi.org/
+
+Follow the instructions from `my-python-project/README.dev.md` and make sure that everything works.
+
+## Making a release
+
+### Preparation
+
+1. Make sure the `CHANGELOG.md` has been updated
+2. Verify that the information in `CITATION.cff` is correct, and that `.zenodo.json` contains equivalent data
+3. Make sure that `version` in [setup.cfg](setup.cfg) and  `version` in [CITATION.cff](CITATION.cff) have been bumped to the to-be-released version of the template
+4. Run the unit tests with `pytest tests/`
+5. Go through the steps outlined above for [generating a new package from the command line](#using-cookiecutter-to-generate-a-new-package-from-the-command-line), and verify that the generated package works as it should.
+
+### GitHub
+
+1. Make sure that the GitHub-Zenodo integration is enabled for https://github.com/NLeSC/python-template
+1. Go to https://github.com/NLeSC/python-template/releases and click `Draft a new release`

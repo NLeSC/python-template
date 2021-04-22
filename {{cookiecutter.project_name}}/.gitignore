@@ -23,3 +23,9 @@ docs/apidocs
 
 # Mac
 .DS_Store
+
+# virtual environments
+env
+env3
+venv
+venv3
