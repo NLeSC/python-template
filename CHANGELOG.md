@@ -2,16 +2,44 @@
 
 ## Unreleased
 
+
+## 0.3.0
+
 ### Added
 
-* Python 3.5 support in the generated project
-* Run template tests for Python 3.7 on appveyor
-* Badge table (#52 and #57)
-* Remove requirements.txt (discussion: https://github.com/NLeSC/guide/issues/156)
+* Added Python 3.9 support
+* Template is being tested for Python 3.6, 3.7, 3.8, 3.9
+* Added extra badges such as fair-software.eu badges and SonarCloud, GitHub Actions [#52](https://github.com/NLeSC/python-template/issues/52) [#57](https://github.com/NLeSC/python-template/issues/57)
+* Added issue templates [#159](https://github.com/NLeSC/python-template/issues/159)
+* Added cffconvert GitHub action [#91](https://github.com/NLeSC/python-template/issues/91)
+* Added Markdown Link Checker GitHub action
+* Added Developer documentation
+* Added cookiecutter post-hook to point to document with more information
+* Migrated to static setup.cfg as per the recommended practice [#84](https://github.com/NLeSC/python-template/issues/84)
+* Added Pre-commit githook to automatically run the linters before committing to GitHub [#82](https://github.com/NLeSC/python-template/issues/82)
+* Added Sonarcloud integration for static analysis and code coverage [#172](https://github.com/NLeSC/python-template/issues/172)
+* Added badges to the generated package
 
 ### Changed
 
-* Use pip setup on appveyor (instead of conda)
+* Moved requirements.txt dependencies to setup.cfg and removed requirements.txt [#67](https://github.com/NLeSC/python-template/issues/67)
+* Replaced all ReStructuredText (rst) files by Markdown [#190](https://github.com/NLeSC/python-template/issues/190) [#162](https://github.com/NLeSC/python-template/issues/162)
+* Use matrix build for generated project to support all current Python versions on Windows, Linux, Mac [#160](https://github.com/NLeSC/python-template/issues/160)
+* Updated CITATION.cff, .zenodo.json; removed codemeta.json [#127](https://github.com/NLeSC/python-template/issues/127) [#137](https://github.com/NLeSC/python-template/issues/137)
+* Updated Code of Conduct of the template
+* Simplified templating variables using cookiecutter pre-hook [#82](https://github.com/NLeSC/python-template/issues/82)
+* Consolidated pytest.ini into setup.cfg [#155](https://github.com/NLeSC/python-template/issues/155)
+* Versioning now handled with bump2version [#192](https://github.com/NLeSC/python-template/issues/192)
+* Updated project_setup.md [#165](https://github.com/NLeSC/python-template/issues/165)
+* Updated Code of Conduct for generated package
+* Improved the documentation for the generated package and template itself
+
+## Removed
+* Dropped appveyor [#160](https://github.com/NLeSC/python-template/issues/160)
+* Dropped everything Conda related
+* Drop Python 3.5 support
+* Removed unit tests doing the linting 
+
 
 ## 0.2.0
 
