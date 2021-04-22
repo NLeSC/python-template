@@ -56,7 +56,7 @@ pytest tests/
 ## Using `cookiecutter` to generate a new package from the command line
 
 While making changes to the template, you'll regularly want to verify that the packages generated with the template
-still work. Any ewasy way to do this is to generate new packages in a temporary directory (which will get removed
+still work. Any easy way to do this is to generate new packages in a temporary directory (which will get removed
 everytime you reboot), for example like so:
 
 ```shell
