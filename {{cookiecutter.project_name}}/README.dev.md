@@ -4,7 +4,7 @@ If you're looking for user documentation, go [here](README.md).
 
 ## Development install
 
-``` sourceCode
+```shell
 # Create a virtual environment, e.g. with
 python3 -m venv env
 
@@ -12,13 +12,13 @@ python3 -m venv env
 source env/bin/activate
 
 # make sure to have a recent version of pip and setuptools
-pip install --upgrade pip setuptools
+python3 -m pip install --upgrade pip setuptools
 
 # (from the project root directory)
 # install {{ cookiecutter.package_name }} as an editable package
-pip install --no-cache-dir --editable .
+python3 -m pip install --no-cache-dir --editable .
 # install development dependencies
-pip install --no-cache-dir --editable .[dev]
+python3 -m pip install --no-cache-dir --editable .[dev]
 ```
 
 Afterwards check that the install directory is present in the `PATH` environment variable.
@@ -27,7 +27,7 @@ Afterwards check that the install directory is present in the `PATH` environment
 
 Running the tests requires an activated virtual environment with the development tools installed.
 
-``` sourceCode
+```shell
 # unit tests
 pytest
 pytest tests/
@@ -35,9 +35,11 @@ pytest tests/
 
 ## Running linters locally
 
-For linting we will use [prospector](https://pypi.org/project/prospector/) and to sort imports we will use [isort](https://pycqa.github.io/isort/). Running the linters requires an activated virtual environment with the development tools installed.
+For linting we will use [prospector](https://pypi.org/project/prospector/) and to sort imports we will use
+[isort](https://pycqa.github.io/isort/). Running the linters requires an activated virtual environment with the
+development tools installed.
 
-``` sourceCode
+```shell
 # linter
 prospector
 
@@ -48,21 +50,30 @@ isort --recursive --check-only {{ cookiecutter.package_name }}
 # any proposed changes as a diff
 isort --recursive --check-only --diff {{ cookiecutter.package_name }}
 
-# recursively fix  import style for the {{ cookiecutter.package_name }} module only
+# recursively fix import style for the {{ cookiecutter.package_name }} module only
 isort --recursive {{ cookiecutter.package_name }}
 ```
 
 You can enable automatic linting with `prospector` and `isort` on commit by enabling the git hook from `.githooks/pre-commit`, like so:
 
-``` sourceCode
+```shell
 git config --local core.hooksPath .githooks
 ```
+
+## Generating the API docs
+
+```shell
+cd docs
+make html
+```
+
+The documentation will be in `docs/_build/`
 
 ## Versioning
 
 Bumping the version across all files is done with bump2version, e.g.
 
-``` sourceCode
+```shell
 bumpversion major
 bumpversion minor
 bumpversion patch
@@ -70,18 +81,24 @@ bumpversion patch
 
 ## Making a release
 
-### Preparation
+This section describes how to make a release in 3 parts:
+
+1. preparation
+1. making a release on PyPI
+1. making a release on GitHub
+
+### (1/3) Preparation
 
 1.  Update the `CHANGELOG.md`
 2.  Verify that the information in `CITATION.cff` is correct, and that `.zenodo.json` contains equivalent data
 3.  Make sure the version has been updated.
 4.  Run the unit tests with `pytest tests/`
 
-### PyPI
+### (2/3) PyPI
 
 In a new terminal, without an activated virtual environment or an env directory:
 
-``` sourceCode
+```shell
 # prepare a new directory
 cd $(mktemp -d --tmpdir {{ cookiecutter.package_name }}.XXXXXX)
 
@@ -93,18 +110,18 @@ python3 -m venv env
 source env/bin/activate
 
 # make sure to have a recent version of pip and setuptools
-pip install --upgrade pip setuptools
+python3 -m pip install --upgrade pip setuptools
 
 # install runtime dependencies and publishing dependencies
-pip install --no-cache-dir .
-pip install --no-cache-dir .[publishing]
+python3 -m pip install --no-cache-dir .
+python3 -m pip install --no-cache-dir .[publishing]
 
 # clean up any previously generated artefacts 
 rm -rf {{ cookiecutter.package_name }}.egg-info
 rm -rf dist
 
 # create the source distribution and the wheel
-python setup.py sdist bdist_wheel
+python3 setup.py sdist bdist_wheel
 
 # upload to test pypi instance (requires credentials)
 twine upload --repository-url https://test.pypi.org/legacy/ dist/*
@@ -116,7 +133,7 @@ and verify that your package was uploaded successfully. Keep the terminal open, 
 
 In a new terminal, without an activated virtual environment or an env directory:
 
-``` sourceCode
+```shell
 cd $(mktemp -d --tmpdir {{ cookiecutter.package_name }}-test.XXXXXX)
 
 # prepare a clean virtual environment and activate it
@@ -136,13 +153,13 @@ Check that the package works as it should when installed from pypitest.
 
 Then upload to pypi.org with:
 
-``` sourceCode
+```shell
 # Back to the first terminal,
 # FINAL STEP: upload to PyPI (requires credentials)
 twine upload dist/*
 ```
 
-### GitHub
+### (3/3) GitHub
 
 Don't forget to also make a release on GitHub. If your repository uses the GitHub-Zenodo integration this will also
 trigger Zenodo into making a snapshot of your repository and sticking a DOI on it.

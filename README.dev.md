@@ -36,11 +36,11 @@ python3 -m venv env
 source env/bin/activate
 
 # make sure to have a recent version of pip and setuptools
-pip install --upgrade pip setuptools
+python3 -m pip install --upgrade pip setuptools
 
 # (from the project root directory)
 # install development dependencies
-pip install --no-cache-dir .[dev]
+python3 -m pip install --no-cache-dir .[dev]
 ```
 
 ## Running the tests
@@ -66,7 +66,7 @@ cd $(mktemp -d --tmpdir cookiecutter-generated.XXXXXX)
 # run cookiecutter with the template to generate a new package
 cookiecutter <path to where your template is>
 
-# when it ask you for the GitHub organization, put in your own name
+# when it asks you for the GitHub organization, put in your own name;
 # for the other questions, just accept the default
 
 # 'ls' should return just the one directory called 'my-python-project'
@@ -81,6 +81,8 @@ If your Python package was created successfully, `cookiecutter` will point you t
 1. pushing the freshly generated content to GitHub
 1. discovering what GitHub Actions there are, what they do, and how to inspect their results
 
+Follow the instructions from `my-python-project/project_setup.md` and make sure that everything works.
+
 In addition to the information in `my-python-project/project_setup.md`, the developer documentation
 `my-python-project/README.dev.md` contains information on a few more things to check, for example:
 
@@ -90,13 +92,15 @@ In addition to the information in `my-python-project/project_setup.md`, the deve
 1. verifying that the `my-python-project`'s version can be updated using `bumpversion`
 1. making a release of `my-python-project` on https://test.pypi.org/
 
+Follow the instructions from `my-python-project/README.dev.md` and make sure that everything works.
+
 ## Making a release
 
 ### Preparation
 
-1. Update the `CHANGELOG.md`
+1. Make sure the `CHANGELOG.md` has been updated
 2. Verify that the information in `CITATION.cff` is correct, and that `.zenodo.json` contains equivalent data
-3. Make sure that `version` in [setup.cfg](setup.cfg) has been bumped to the to-be-released version of the template
+3. Make sure that `version` in [setup.cfg](setup.cfg) and  `version` in [CITATION.cff](CITATION.cff) have been bumped to the to-be-released version of the template
 4. Run the unit tests with `pytest tests/`
 5. Go through the steps outlined above for [generating a new package from the command line](#using-cookiecutter-to-generate-a-new-package-from-the-command-line), and verify that the generated package works as it should.
 
