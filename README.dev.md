@@ -69,20 +69,22 @@ cookiecutter <path to where your template is>
 # when it ask you for the GitHub organization, put in your own name
 # for the other questions, just accept the default
 
-ls
-
-# should now list just the one directory called 'my-python-project'
+# 'ls' should return just the one directory called 'my-python-project'
+ls 
 ```
 
-Next we'll simulate what a user would want to do after generating a package, for example:
+If your Python package was created successfully, `cookiecutter` will point you to a file
+(`my-python-project/project_setup.md`) that contains information on next steps such as:
 
-1. make `my-python-project` a local git repository
-1. connect the local repository to a new repository on github
-1. push the freshly generated content to github
-1. inspect the results of the github actions
-1. generate `my-python-project`'s documentation locally
-1. run the tests locally
+1. making `my-python-project` a local git repository
+1. connecting the local repository to a new repository on github
+1. pushing the freshly generated content to github
+1. inspecting the results of the github actions
 
+In addition to the information `my-python-project/project_setup.md`, the developer documentation `my-python-project/README.dev.md` contains information on a few more things to check, for example:
+
+1. generating `my-python-project`'s documentation locally
+1. running the tests locally
 
 ## Making a release
 
