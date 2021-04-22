@@ -13,11 +13,13 @@ def test_project_folder(cookies):
 
 
 def run(command: str, dirpath: os.PathLike) -> subprocess.CompletedProcess:
+    use_shell = True if os.name == 'nt' else False    
     return subprocess.run(shlex.split(command),
                           stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           cwd=dirpath,
-                          universal_newlines=True)
+                          universal_newlines=True,
+                          shell=use_shell)
 
 
 def test_pytest(cookies):
