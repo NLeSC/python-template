@@ -14,9 +14,12 @@
 | Static analysis              | [![workflow scq badge](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}&metric=alert_status)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}) |
 | Coverage              | [![workflow scc badge](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}&metric=coverage)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}) |
 | **GitHub Actions**                 | &nbsp; |
-| Python Build              | [![workflow python badge]({{cookiecutter.repository}}/workflows/Python/badge.svg)]({{cookiecutter.repository}}/actions?query=workflow%3A%22Python%22) |
-| PyPI Publish      | [![workflow pypi badge]({{cookiecutter.repository}}/workflows/PyPI/badge.svg)]({{cookiecutter.repository}}/actions?query=workflow%3A%22PyPI%22) |
-| Metadata consistency                         | [![workflow tests badge]({{cookiecutter.repository}}/workflows/cffconvert/badge.svg)]({{cookiecutter.repository}}/actions?query=workflow%3A%22cffconvert%22) |
+| Build                              | [![build]({{cookiecutter.repository}}/actions/workflows/build.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/build.yml) |
+|  Metadata consistency              | [![cffconvert]({{cookiecutter.repository}}/actions/workflows/cffconvert.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/cffconvert.yml) |
+| Lint                               | [![lint]({{cookiecutter.repository}}/actions/workflows/lint.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/lint.yml) |
+| Publish                            | [![publish]({{cookiecutter.repository}}/actions/workflows/publish.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/publish.yml) |
+| SonarCloud                         | [![sonarcloud]({{cookiecutter.repository}}/actions/workflows/sonarcloud.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/sonarcloud.yml) |
+| MarkDown link checker              | [![markdown-link-check]({{cookiecutter.repository}}/actions/workflows/markdown-link-check.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/markdown-link-check.yml) |
 
 ## How to use {{ cookiecutter.package_name }}
 
