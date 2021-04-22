@@ -24,6 +24,7 @@ def run(command: str, dirpath: os.PathLike) -> subprocess.CompletedProcess:
 
 def test_pytest(cookies):
     result = cookies.bake()
+    print(result.project)
     env_output = run('python3 -m venv env', result.project)
     assert env_output.returncode == 0
     
