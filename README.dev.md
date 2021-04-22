@@ -4,6 +4,30 @@ If you're looking for user documentation, go [here](README.md).
 
 ## Development install
 
+### Install `cookiecutter` in user space
+
+We recommend installing `cookiecutter` in user space as per `cookiecutter`'s instructions. This way, you don't have to
+install `cookiecutter` for every new project.
+
+```shell
+python3 -m pip install --user --upgrade cookiecutter
+```
+
+### Get your own copy of the repository
+
+Before you can do development work on the template, you'll need to check out a local copy of the repository:
+
+```shell
+cd <where you keep your github repositories>
+git clone https://github.com/NLeSC/python-template.git
+cd python-template
+```
+
+### Create a virtual environment
+
+Next, make a virtual environment, activate it, and install the development dependencies in it. This will enable you to 
+run the tests later.
+
 ```shell
 # Create a virtual environment, e.g. with
 python3 -m venv env
@@ -15,13 +39,9 @@ source env/bin/activate
 pip install --upgrade pip setuptools
 
 # (from the project root directory)
-# install {{ cookiecutter.package_name }} as an editable package
-pip install --no-cache-dir --editable .
 # install development dependencies
-pip install --no-cache-dir --editable .[dev]
+pip install --no-cache-dir .[dev]
 ```
-
-Afterwards check that the install directory is present in the `PATH` environment variable.
 
 ## Running the tests
 
@@ -32,6 +52,37 @@ Running the tests requires an activated virtual environment with the development
 pytest
 pytest tests/
 ```
+
+## Using `cookiecutter` to generate a new package from the command line
+
+While making changes to the template, you'll regularly want to verify that the packages generated with the template
+still work. Any ewasy way to do this is to generate new packages in a temporary directory (which will get removed
+everytime you reboot), for example like so:
+
+```shell
+# change directory to a new temporary directory
+cd $(mktemp -d --tmpdir cookiecutter-generated.XXXXXX)
+
+# run cookiecutter with the template to generate a new package
+cookiecutter <path to where your template is>
+
+# when it ask you for the GitHub organization, put in your own name
+# for the other questions, just accept the default
+
+ls
+
+# should now list just the one directory called 'my-python-project'
+```
+
+Next we'll simulate what a user would want to do after generating a package, for example:
+
+1. make `my-python-project` a local git repository
+1. connect the local repository to a new repository on github
+1. push the freshly generated content to github
+1. inspect the results of the github actions
+1. generate `my-python-project`'s documentation locally
+1. run the tests locally
+
 
 ## Making a release
 
