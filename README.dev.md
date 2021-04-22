@@ -81,19 +81,22 @@ If your Python package was created successfully, `cookiecutter` will point you t
 1. pushing the freshly generated content to github
 1. inspecting the results of the github actions
 
-In addition to the information `my-python-project/project_setup.md`, the developer documentation `my-python-project/README.dev.md` contains information on a few more things to check, for example:
+In addition to the information in `my-python-project/project_setup.md`, the developer documentation
+`my-python-project/README.dev.md` contains information on a few more things to check, for example:
 
 1. generating `my-python-project`'s documentation locally
 1. running the tests locally
+1. verifying that the version can be updated using `bumpversion`
 
 ## Making a release
 
 ### Preparation
 
-1.  Update the `CHANGELOG.md`
-2.  Verify that the information in `CITATION.cff` is correct, and that `.zenodo.json` contains equivalent data
-3.  Make sure the version has been updated.
-4.  Run the unit tests with `pytest tests/`
+1. Update the `CHANGELOG.md`
+2. Verify that the information in `CITATION.cff` is correct, and that `.zenodo.json` contains equivalent data
+3. Make sure the version has been updated; see `my-python-project/README.dev.md` for reference.
+4. Run the unit tests with `pytest tests/`
+5. Go through the steps outlined above for [generating a new package from the command line](#using-cookiecutter-to-generate-a-new-package-from-the-command-line), verify that the generated package works as it should
 
 ### GitHub
 
