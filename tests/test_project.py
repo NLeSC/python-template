@@ -17,7 +17,8 @@ def run(command: str, dirpath: os.PathLike) -> subprocess.CompletedProcess:
                           stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           cwd=dirpath,
-                          universal_newlines=True)
+                          universal_newlines=True,
+                          shell=True)
 
 
 def test_pytest(cookies):
