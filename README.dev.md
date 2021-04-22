@@ -1,4 +1,4 @@
-# Netherlands eScience Center Python Template - developer documentation
+# Developer documentation
 
 If you're looking for user documentation, go [here](README.md).
 
