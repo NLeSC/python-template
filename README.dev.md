@@ -18,7 +18,7 @@ python3 -m pip install --user --upgrade cookiecutter
 Before you can do development work on the template, you'll need to check out a local copy of the repository:
 
 ```shell
-cd <where you keep your github repositories>
+cd <where you keep your GitHub repositories>
 git clone https://github.com/NLeSC/python-template.git
 cd python-template
 ```
@@ -77,16 +77,18 @@ If your Python package was created successfully, `cookiecutter` will point you t
 (`my-python-project/project_setup.md`) that contains information on next steps such as:
 
 1. making `my-python-project` a local git repository
-1. connecting the local repository to a new repository on github
-1. pushing the freshly generated content to github
-1. inspecting the results of the github actions
+1. connecting the local repository to a new repository on GitHub
+1. pushing the freshly generated content to GitHub
+1. discovering what GitHub Actions there are, what they do, and how to inspect their results
 
 In addition to the information in `my-python-project/project_setup.md`, the developer documentation
 `my-python-project/README.dev.md` contains information on a few more things to check, for example:
 
 1. generating `my-python-project`'s documentation locally
-1. running the tests locally
-1. verifying that the version can be updated using `bumpversion`
+1. running `my-python-project`'s tests locally
+1. running `my-python-project`'s linters locally
+1. verifying that the `my-python-project`'s version can be updated using `bumpversion`
+1. making a release of `my-python-project` on https://test.pypi.org/
 
 ## Making a release
 
@@ -94,11 +96,11 @@ In addition to the information in `my-python-project/project_setup.md`, the deve
 
 1. Update the `CHANGELOG.md`
 2. Verify that the information in `CITATION.cff` is correct, and that `.zenodo.json` contains equivalent data
-3. Make sure the version has been updated; see `my-python-project/README.dev.md` for reference.
+3. Make sure that `version` in [setup.cfg](setup.cfg) has been bumped to the to-be-released version of the template
 4. Run the unit tests with `pytest tests/`
-5. Go through the steps outlined above for [generating a new package from the command line](#using-cookiecutter-to-generate-a-new-package-from-the-command-line), verify that the generated package works as it should
+5. Go through the steps outlined above for [generating a new package from the command line](#using-cookiecutter-to-generate-a-new-package-from-the-command-line), and verify that the generated package works as it should.
 
 ### GitHub
 
-If your repository uses the GitHub-Zenodo integration this will also
-trigger Zenodo into making a snapshot of your repository and sticking a DOI on it.
+1. Make sure that the GitHub-Zenodo integration is enabled for https://github.com/NLeSC/python-template
+1. Go to https://github.com/NLeSC/python-template/releases and click `Draft a new release`
