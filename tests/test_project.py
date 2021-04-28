@@ -17,15 +17,14 @@ def run(command: str, dirpath: os.PathLike) -> subprocess.CompletedProcess:
     return subprocess.run(command.split(' '),
                           stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
-                          cwd=dirpath,
+                          cwd=dirpath, shell=True,
                           encoding='utf-8')
 
 
 def test_pytest(cookies):
     env_bin = 'env/Scripts/' if platform.startswith("win") else 'env/bin/'
-    pyexe = '/c/hostedtoolcache/windows/Python/3.9.4/x64/python3.exe' if platform.startswith("win") else 'python3'
     result = cookies.bake()
-    env_output = run(f'{pyexe} -m venv env', result.project)
+    env_output = run('python3 -m venv env', result.project)
     print(env_output.stdout)
     print(env_output.stderr)
     assert env_output.returncode == 0
