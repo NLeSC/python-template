@@ -70,6 +70,9 @@ cookiecutter https://github.com/nlesc/python-template.git
 | copyright_holder          | Netherlands eScience Center | Name(s) of the organization(s) or person(s) who hold the copyright of the software. |
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
 
+Once the project files have been generated, follow the steps outlined in
+[{{cookiecutter.project_name}}/next_steps.md]({{cookiecutter.project_name}}/next_steps.md).
+
 ### Step 3/3: Read about what was just generated
 
 Good job! You have now generated the skeleton for your package:
