@@ -12,19 +12,47 @@ jobs:
         with:
           filename: .github/next_steps/01_sonarcloud_integration.md
         id: sonarcloud
+      - name: Create Zenodo integration issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/next_steps/02_zenodo_integration.md
+        id: zenodo
+      - name: Create readthedocs issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/next_steps/03_readthedocs.md
+        id: readthedocs
+      - name: Create citation data issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/next_steps/04_citation.md
+        id: citation
+      - name: Create linting issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/next_steps/05_linting.md
+        id: linting
       - name: List created issues
         run: |
-          echo 'Created issues that must be completed to have fully working Python package:'
-          echo '* ${{ steps.sonarcloud.outputs.url }}'
-          echo '* ${{ steps.sonarcloud.outputs.url }}'
-          echo '* ${{ steps.sonarcloud.outputs.url }}'
-          echo '* ${{ steps.sonarcloud.outputs.url }}'
-          echo '* ${{ steps.sonarcloud.outputs.url }}'
-          echo '* ${{ steps.sonarcloud.outputs.url }}'
+          echo 'Created issues that must be completed to have fully working Python package:' | tee -a next_steps.md
+          echo '* ${{ steps.sonarcloud.outputs.url }}' | tee -a next_steps.md
+          echo '* ${{ steps.zenodo.outputs.url }}' | tee -a next_steps.md
+          echo '* ${{ steps.readthedocs.outputs.url }}' | tee -a next_steps.md
+          echo '* ${{ steps.citation.outputs.url }}' | tee -a next_steps.md
+          echo '* ${{ steps.linting.outputs.url }}' | tee -a next_steps.md
       - name: Cleanup files needed to create next steps issues
         run: |
           git config --global user.name 'Your Name'
           git config --global user.email 'your-username@users.noreply.github.com'
+          git add next_steps.md
           git rm .github/workflows/next_steps.yml
           git rm -r .github/next_steps
           git commit -am "Cleanup automated next step issue generator"
