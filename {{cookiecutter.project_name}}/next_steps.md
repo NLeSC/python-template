@@ -15,6 +15,8 @@ git branch -M main
 git remote add origin {{ cookiecutter.repository }}
 ```
 
+## Push the initial commit to a new repo on GitHub
+
 Go to
 [https://github.com/{{cookiecutter.github_organization}}?tab=repositories](https://github.com/{{cookiecutter.github_organization}}?tab=repositories)
 and create a new repository named {{ cookiecutter.project_name }} as an empty repository, then:
