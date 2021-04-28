@@ -1,7 +1,6 @@
 ---
 title: 'Next step: Sonarcloud integration'
 labels: 
-  - 'enhancement'
   - 'action required'
 ---
 
