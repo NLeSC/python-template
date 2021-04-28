@@ -1,7 +1,6 @@
 import os
 import subprocess
-import shlex
-from sys import executable, platform
+from sys import platform
 
 
 def test_project_folder(cookies):
@@ -14,7 +13,7 @@ def test_project_folder(cookies):
 
 
 def run(command: str, dirpath: os.PathLike) -> subprocess.CompletedProcess:
-    return subprocess.run(shlex.split(command),
+    return subprocess.run(command.split(' '),
                           stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           cwd=dirpath,
