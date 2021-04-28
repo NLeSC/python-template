@@ -1,6 +1,6 @@
 # Next steps
 
-## Version control
+## Put the generated files under version control
 
 Once your Python package is created, put it under [version
 control](https://guide.esciencecenter.nl/#/best_practices/version_control)! We recommend using
@@ -22,3 +22,14 @@ and create a new repository named {{ cookiecutter.project_name }} as an empty re
 ```shell
 git push --set-upstream origin main
 ```
+
+## Check automatically generated issues
+
+The generated project comes with a GitHub action
+([`.github/workflows/create-issues.yml`](.github/workflows/create-issues.yml)) that adds a couple of issues to the issue
+tracker on GitHub ([here]({{cookiecutter.repository}}/issues)). Resolve the issues to complete the setup of your
+repository.
+
+## Project layout explained
+
+For an explanation of what files are there, and what each of these do, please refer to [project_setup.md](project_setup.md).
