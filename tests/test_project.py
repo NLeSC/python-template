@@ -1,6 +1,7 @@
 import os
 import subprocess
 import shlex
+from sys import executable
 
 
 def test_project_folder(cookies):
@@ -22,7 +23,7 @@ def run(command: str, dirpath: os.PathLike) -> subprocess.CompletedProcess:
 
 def test_pytest(cookies):
     result = cookies.bake()
-    env_output = run('python3 -m venv env', result.project)
+    env_output = run(f'{executable} -m venv env', result.project)
     assert env_output.returncode == 0
     latest_pip_output = run('env/bin/pip3 install --upgrade pip setuptools', result.project)
     assert latest_pip_output.returncode == 0
