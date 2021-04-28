@@ -1,6 +1,6 @@
 import os
 import subprocess
-from sys import platform
+from sys import platform, executable
 
 
 def test_project_folder(cookies):
@@ -24,7 +24,7 @@ def run(command: str, dirpath: os.PathLike) -> subprocess.CompletedProcess:
 def test_pytest(cookies):
     env_bin = 'env/Scripts/' if platform.startswith("win") else 'env/bin/'
     result = cookies.bake()
-    env_output = run(f'python3 -m venv env', result.project)
+    env_output = run(f'{executable} -m venv env', result.project)
     print(env_output.stdout)
     print(env_output.stderr)
     assert env_output.returncode == 0
