@@ -1,6 +1,7 @@
 import os
 import subprocess
 from sys import platform
+from venv import EnvBuilder
 
 
 def test_project_folder(cookies):
@@ -21,13 +22,15 @@ def run(command: str, dirpath: os.PathLike) -> subprocess.CompletedProcess:
                           encoding='utf-8')
 
 
-def test_pytest(cookies):
-    env_bin = 'env/Scripts/' if platform.startswith("win") else 'env/bin/'
+def test_pytest(cookies, tmp_path):
     result = cookies.bake()
-    env_output = run('python3 -m venv env', result.project)
-    print(env_output.stdout)
-    print(env_output.stderr)
-    assert env_output.returncode == 0
+
+    # Programmatically do python3 -m venv env
+    env_root = str(tmp_path / 'env')
+    env_bin = f'{env_root}/Scripts/' if platform.startswith("win") else f'{env_root}/bin/'
+    builder = EnvBuilder(with_pip=True)
+    builder.create(env_root)
+
     latest_pip_output = run(f'{env_bin}pip3 install --upgrade pip setuptools', result.project)
     assert latest_pip_output.returncode == 0
     pip_output = run(f'{env_bin}pip3 install --editable .[dev]', result.project)

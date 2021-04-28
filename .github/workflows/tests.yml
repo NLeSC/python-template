@@ -33,6 +33,5 @@ jobs:
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install .[dev]
     - name: Run pytest
-      shell: cmd
       run: |
         pytest
