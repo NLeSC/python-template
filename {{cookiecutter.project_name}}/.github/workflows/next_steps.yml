@@ -56,8 +56,8 @@ jobs:
           * Linting fixes ${{ steps.linting.outputs.url }}' | tee -a next_steps.md
       - name: Cleanup files needed to create next steps issues
         run: |
-          git config --global user.name 'Your Name'
-          git config --global user.email 'your-username@users.noreply.github.com'
+          git config --global user.name 'NLeSC Python template'
+          git config --global user.email 'nlesc-python-template@users.noreply.github.com'
           git add next_steps.md
           git rm .github/workflows/next_steps.yml
           git rm -r .github/next_steps
