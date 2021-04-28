@@ -33,6 +33,6 @@ jobs:
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install .[dev]
     - name: Run pytest
-      shell: powershell
+      shell: cmd
       run: |
         pytest
