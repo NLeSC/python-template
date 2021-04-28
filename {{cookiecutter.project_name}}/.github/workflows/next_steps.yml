@@ -48,12 +48,12 @@ jobs:
         id: linting
       - name: List created issues
         run: |
-          echo 'Created issues that must be completed to have fully working Python package:' | tee -a next_steps.md
-          echo '* ${{ steps.sonarcloud.outputs.url }}' | tee -a next_steps.md
-          echo '* ${{ steps.zenodo.outputs.url }}' | tee -a next_steps.md
-          echo '* ${{ steps.readthedocs.outputs.url }}' | tee -a next_steps.md
-          echo '* ${{ steps.citation.outputs.url }}' | tee -a next_steps.md
-          echo '* ${{ steps.linting.outputs.url }}' | tee -a next_steps.md
+          echo 'Created issues that must be completed to have fully working Python package:
+          * Sonarcloud integration ${{ steps.sonarcloud.outputs.url }}
+          * Zenodo integration ${{ steps.zenodo.outputs.url }}
+          * Readthedocs instructions ${{ steps.readthedocs.outputs.url }}
+          * Citation data ${{ steps.citation.outputs.url }}
+          * Linting fixes ${{ steps.linting.outputs.url }}' | tee -a next_steps.md
       - name: Cleanup files needed to create next steps issues
         run: |
           git config --global user.name 'Your Name'
