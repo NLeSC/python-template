@@ -10,7 +10,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           yaml-file: .github/next_steps/labels.yml
-          skip-delete: true      
+          skip-delete: true
       - name: Create Sonarcloud integration issue
         uses: JasonEtco/create-an-issue@v2
         env:
@@ -61,5 +61,5 @@ jobs:
           git add next_steps.md
           git rm .github/workflows/next_steps.yml
           git rm -r .github/next_steps
-          git commit -am "Cleanup automated next step issue generator"
+          git commit -am "Cleanup automated next steps issue generator"
           git push
