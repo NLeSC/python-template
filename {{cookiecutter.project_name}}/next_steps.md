@@ -4,7 +4,7 @@
 
 Once your Python package is created, put it under [version
 control](https://guide.esciencecenter.nl/#/best_practices/version_control) using
-[git](http://git-scm.com/) and [github](https://github.com/).
+[git](http://git-scm.com/) and [GitHub](https://github.com/).
 
 ```shell
 cd {{ cookiecutter.project_name }}
