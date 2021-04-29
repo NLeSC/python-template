@@ -1,7 +1,5 @@
 ---
 title: 'Next step: Read the Docs'
-labels:
-  - 'action required'
 ---
 
 Your Python package should have publicly readable documentation, including API documentation, for your users.
