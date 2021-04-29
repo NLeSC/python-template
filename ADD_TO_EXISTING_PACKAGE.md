@@ -2,14 +2,7 @@
 
 
 
-1. Apply the `cookiecutter` to the Python template to create a new package with the same name in temporary directory. Answer all questions like you would do for the existing package.
-```shell
-$ cd /tmp
-$ cookiecutter https://github.com/NLeSC/python-template
-package_name [my_python_package]: new_package
-project_name [new_package]: new_package
-...
-```
+1. Follow the instrcutions to create a new package. You can find the instructions [here](https://github.com/NLeSC/python-template#how-to-use).
 
 2. Examine the new package to check if it contains files that are already present in you existing package. In our case we found four files: `README.md`, `LICENSE`, `.gitignore` and `CITATION.cff`
 
