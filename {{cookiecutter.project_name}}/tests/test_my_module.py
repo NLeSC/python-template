@@ -2,6 +2,7 @@
 
 """Tests for the {{ cookiecutter.package_name }}.my_module module.
 """
+import sys
 import pytest
 from {{ cookiecutter.package_name }} import my_module
 
