@@ -27,7 +27,7 @@ git push --set-upstream origin main
 
 ## Check automatically generated issues
 
-The first time you push to GitHub, a few issues outlining next steps will be added automatically
+The first time you push to GitHub, a few issues outlining next steps will as soon as possible be added automatically
 ([here]({{cookiecutter.repository}}/issues?q=author%3Aapp%2Fgithub-actions)). Resolve them to complete the setup of your
 repository.
 
