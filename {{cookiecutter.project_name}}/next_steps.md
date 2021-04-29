@@ -27,9 +27,8 @@ git push --set-upstream origin main
 
 ## Check automatically generated issues
 
-The generated project comes with a GitHub action
-([`.github/workflows/create-issues.yml`](.github/workflows/create-issues.yml)) that adds a couple of issues to the issue
-tracker on GitHub ([here]({{cookiecutter.repository}}/issues)). Resolve the issues to complete the setup of your
+The first time you push to GitHub, a few issues outlining next steps will be added automatically
+([here]({{cookiecutter.repository}}/issues?q=author%3Aapp%2Fgithub-actions)). Resolve them to complete the setup of your
 repository.
 
 ## Project layout explained
