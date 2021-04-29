@@ -13,7 +13,7 @@ To host the documentation of this repository please perform the following instru
    * If repository is not listed,
       1. go to [Read the Docs GitHub app](https://github.com/settings/connections/applications/fae83c942bc1d89609e2)
       2. make sure {{ cookiecutter.github_organization }} has been granted access.
-      3. Reload repository list on Read the Docs import page
+      3. reload repository list on Read the Docs import page
 1. wait for the first build to be completed at <https://readthedocs.org/projects/{{ cookiecutter.project_name }}/builds>
 1. check that the link of the documentation badge in the [README.md]({{ cookiecutter.repository }}) works
 
