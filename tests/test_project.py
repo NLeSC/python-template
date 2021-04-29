@@ -48,6 +48,12 @@ def test_subpackage(baked_withdevdeps):
     subpackage = (project_dir / 'my_python_package' / 'mysub')
     subpackage.mkdir()
     (subpackage / '__init__.py').write_text('FOO = "bar"', encoding="utf-8")
+
+    subsubpackage = (project_dir / 'my_python_package' / 'mysub' / 'mysub2')
+    subsubpackage.mkdir()
+    (subsubpackage / '__init__.py').write_text('FOO = "bar"', encoding="utf-8")
+
     build_output = run('env/bin/python3 setup.py build', project_dir)
     assert build_output.returncode == 0
     assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / '__init__.py').exists()
+    assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / 'mysub2' / '__init__.py').exists()
