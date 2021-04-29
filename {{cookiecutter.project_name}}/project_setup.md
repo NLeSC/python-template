@@ -7,29 +7,6 @@ text when the development of the software package takes off.
 For a quick reference on software development, we refer to [the software guide
 checklist](https://guide.esciencecenter.nl/#/best_practices/checklist).
 
-## Version control
-
-Once your Python package is created, put it under [version
-control](https://guide.esciencecenter.nl/#/best_practices/version_control)! We recommend using
-[git](http://git-scm.com/) and [github](https://github.com/).
-
-```shell
-cd {{ cookiecutter.project_name }}
-git init
-git add --all
-git commit -m "first commit"
-git branch -M main
-git remote add origin {{ cookiecutter.repository }}
-```
-
-Go to
-[https://github.com/{{cookiecutter.github_organization}}?tab=repositories](https://github.com/{{cookiecutter.github_organization}}?tab=repositories)
-and create a new repository named {{ cookiecutter.project_name }} as an empty repository, then:
-
-```shell
-git push --set-upstream origin main
-```
-
 ## Python versions
 
 This repository is set up with Python versions:
@@ -81,10 +58,6 @@ help you decide which tool to use for packaging.
   - [Google style docstring examples](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
 - The documentation is set up with the ReadTheDocs Sphinx theme.
   - Check out its [configuration options](https://sphinx-rtd-theme.readthedocs.io/en/latest/).
-- To generate HTML documentation, run `make html` in the `docs/` folder.
-- To put the documentation on [ReadTheDocs](https://readthedocs.org), log in to your ReadTheDocs account, and import
-  the repository (under 'My Projects').
-  - Include the link to the documentation in your project's [README.md](README.md).
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=writingdocumentation)
 
 ## Coding style conventions and code quality
@@ -96,15 +69,10 @@ help you decide which tool to use for packaging.
 
 ## Continuous code quality
 
-- [Sonarcloud](https://sonarcloud.io/) is used to perform quality analysis and code coverage report on each push
-- Sonarcloud must be configured for the analysis to work
-  1. go to [Sonarcloud](https://sonarcloud.io/projects/create)
-  2. login with your GitHub account
-  3. add organization or reuse existing one
-  4. set up repository
-  5. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{ cookiecutter.github_organization }}_{{ cookiecutter.project_name }}) and select `Number of days` option
-- The analysis will be run by [GitHub Action workflow](.github/workflows/sonarcloud.yml)
-- To be able to run the analysis, a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/) and this token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.project_name }}/settings/secrets/actions)
+[Sonarcloud](https://sonarcloud.io/) is used to perform quality analysis and code coverage report
+
+- `sonar-project.properties` is the SonarCloud [configuration](https://docs.sonarqube.org/latest/analysis/analysis-parameters/) file
+- `.github/workflows/sonarcloud.yml` is the GitHub action workflow which performs the SonarCloud analysis
 
 ## Package version number
 
@@ -113,13 +81,6 @@ help you decide which tool to use for packaging.
   For updating the version number, make sure the dev dependencies are installed and run `bumpversion patch`,
   `bumpversion minor`, or `bumpversion major` as appropriate.
 - Don't forget to update the version number before [making a release](https://guide.esciencecenter.nl/#/best_practices/releases)!
-
-## Publish on Python Package Index (PyPI)
-
-To publish your package on PyPI, you need to create a [PyPI API token](https://pypi.org/help#apitoken) and
-save it as a secret called `PYPI_TOKEN` on [Settings page]({{cookiecutter.repository}}/settings/secrets/actions)
-
-[Creating a release]({{cookiecutter.repository}}/releases/new) on GitHub will trigger a [GitHub action workflow](.github/workflows/publish.yml) to publish the release on PyPI for you.
 
 ## Logging
 

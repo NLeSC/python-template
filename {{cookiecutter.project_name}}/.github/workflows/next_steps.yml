@@ -1,0 +1,58 @@
+on: [push]
+name: Create issues for next steps
+jobs:
+  next_steps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create Sonarcloud integration issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/next_steps/01_sonarcloud_integration.md
+        id: sonarcloud
+      - name: Create Zenodo integration issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/next_steps/02_zenodo_integration.md
+        id: zenodo
+      - name: Create readthedocs issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/next_steps/03_readthedocs.md
+        id: readthedocs
+      - name: Create citation data issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/next_steps/04_citation.md
+        id: citation
+      - name: Create linting issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/next_steps/05_linting.md
+        id: linting
+      - name: List created issues
+        run: |
+          echo 'Created issues that must be completed to have fully working Python package:
+          * Sonarcloud integration ${{ steps.sonarcloud.outputs.url }}
+          * Zenodo integration ${{ steps.zenodo.outputs.url }}
+          * Read the Docs instructions ${{ steps.readthedocs.outputs.url }}
+          * Citation data ${{ steps.citation.outputs.url }}
+          * Linting fixes ${{ steps.linting.outputs.url }}'
+      - name: Cleanup files needed to create next steps issues
+        run: |
+          git config --global user.name 'NLeSC Python template'
+          git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git rm .github/workflows/next_steps.yml
+          git rm -r .github/next_steps
+          git commit -am "Cleanup automated next steps issue generator"
+          git push
