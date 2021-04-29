@@ -3,6 +3,8 @@ import subprocess
 from sys import platform
 from typing import Sequence
 
+import pytest
+
 
 def test_project_folder(cookies):
     project = cookies.bake()
@@ -21,7 +23,8 @@ def run(args: Sequence[str], dirpath: os.PathLike) -> subprocess.CompletedProces
                           encoding="utf-8")
 
 
-def test_pytest(cookies):
+@pytest.fixture
+def baked_with_development_dependencies(cookies):
     result = cookies.bake()
     env_output = run(['python3', '-m', 'venv', 'env'], result.project)
     assert env_output.returncode == 0
@@ -30,9 +33,29 @@ def test_pytest(cookies):
     assert latest_pip_output.returncode == 0
     pip_output = run([f'{env_bin}pip3', 'install', '--editable', '.[dev]'], result.project)
     assert pip_output.returncode == 0
+    return result.project, env_bin
 
-    pytest_output = run([f'{env_bin}pytest'], result.project)
+
+def test_pytest(baked_with_development_dependencies):
+    project_dir, env_bin = baked_with_development_dependencies
+    pytest_output = run([f'{env_bin}pytest'], project_dir)
     assert pytest_output.returncode == 0
-    assert '== 3 passed in' in  pytest_output.stdout
-    assert (result.project / 'coverage.xml').exists()
-    assert (result.project / 'htmlcov/index.html').exists()
+    assert '== 3 passed in' in pytest_output.stdout
+    assert (project_dir / 'coverage.xml').exists()
+    assert (project_dir / 'htmlcov/index.html').exists()
+
+
+def test_subpackage(baked_with_development_dependencies):
+    project_dir, env_bin = baked_with_development_dependencies
+    subpackage = (project_dir / 'my_python_package' / 'mysub')
+    subpackage.mkdir()
+    (subpackage / '__init__.py').write_text('FOO = "bar"', encoding="utf-8")
+
+    subsubpackage = (project_dir / 'my_python_package' / 'mysub' / 'mysub2')
+    subsubpackage.mkdir()
+    (subsubpackage / '__init__.py').write_text('FOO = "bar"', encoding="utf-8")
+
+    build_output = run([f'{env_bin}python3', 'setup.py', 'build'], project_dir)
+    assert build_output.returncode == 0
+    assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / '__init__.py').exists()
+    assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / 'mysub2' / '__init__.py').exists()
