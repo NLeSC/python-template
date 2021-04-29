@@ -2,7 +2,7 @@
 title: 'Next step: Read the Docs'
 ---
 
-Your Python package should have publicly readable documentation, including API documentation, for your users.
+Your Python package should have publicly available documentation, including API documentation for your users.
 [Read the Docs](https://readthedocs.org) can host your user documentation for you.
 
 To host the documentation of this repository please perform the following instructions:
