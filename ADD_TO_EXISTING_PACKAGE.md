@@ -4,7 +4,7 @@
 
 1. Follow the instrcutions to create a new package. You can find the instructions [here](https://github.com/NLeSC/python-template#how-to-use).
 
-2. Examine the new package to check if it contains files that are already present in you existing package. In our case we found four files: `README.md`, `LICENSE`, `.gitignore` and `CITATION.cff`
+2. Examine the new package to check if it contains files that are conflicting with your existing code.`
 
 3. Move all non-duplicate files from the new package to the existing package, one-by-one. Immediately after moving a file, add it to the Git collection of the existing package
 ```shell
