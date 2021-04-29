@@ -34,6 +34,7 @@ It is likely that your `CITATION.cff` currently doesn't pass validation. The err
 
 - [ ] Check if the `given-name` and `family-name` keys need updating. If your family name has a name particle like `von` or `van` or `de`, use the `name-particle` key; if your name has a suffix like `Sr` or `IV`, use `name-suffix`. For details, refer to the schema description: https://github.com/citation-file-format/citation-file-format
 - [ ] Update the value of the `orcid` key. If you do not have an orcid yet, you can get one here [https://orcid.org/](https://orcid.org/).
+- [ ] Add more authors if needed
 - [ ] Update `date-released` using the YYYY-MM-DD format.
 - [ ] Update the `doi` key with the conceptDOI for your repository (see [https://help.zenodo.org](https://help.zenodo.org/) for more information on what a conceptDOI is). If your project doesn't have a DOI yet, you can use the string `10.0000/FIXME` to pass validation.
 - [ ] Update the `keywords` array with some keywords of your own that describe your project.
