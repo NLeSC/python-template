@@ -18,7 +18,6 @@
 | Build                              | [![build]({{cookiecutter.repository}}/actions/workflows/build.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/build.yml) |
 |  Metadata consistency              | [![cffconvert]({{cookiecutter.repository}}/actions/workflows/cffconvert.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/cffconvert.yml) |
 | Lint                               | [![lint]({{cookiecutter.repository}}/actions/workflows/lint.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/lint.yml) |
-| Publish                            | [![publish]({{cookiecutter.repository}}/actions/workflows/publish.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/publish.yml) |
 | SonarCloud                         | [![sonarcloud]({{cookiecutter.repository}}/actions/workflows/sonarcloud.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/sonarcloud.yml) |
 | MarkDown link checker              | [![markdown-link-check]({{cookiecutter.repository}}/actions/workflows/markdown-link-check.yml/badge.svg)]({{cookiecutter.repository}}/actions/workflows/markdown-link-check.yml) |
 

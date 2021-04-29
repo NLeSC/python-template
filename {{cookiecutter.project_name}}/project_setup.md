@@ -82,13 +82,6 @@ help you decide which tool to use for packaging.
   `bumpversion minor`, or `bumpversion major` as appropriate.
 - Don't forget to update the version number before [making a release](https://guide.esciencecenter.nl/#/best_practices/releases)!
 
-## Publish on Python Package Index (PyPI)
-
-To publish your package on PyPI, you need to create a [PyPI API token](https://pypi.org/help#apitoken) and
-save it as a secret called `PYPI_TOKEN` on [Settings page]({{cookiecutter.repository}}/settings/secrets/actions)
-
-[Creating a release]({{cookiecutter.repository}}/releases/new) on GitHub will trigger a [GitHub action workflow](.github/workflows/publish.yml) to publish the release on PyPI for you.
-
 ## Logging
 
 - We recommend using the logging module for getting useful information from your module (instead of using print).
