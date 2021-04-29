@@ -4,7 +4,7 @@ cff-version: "1.1.0"
 title: "{{ cookiecutter.project_name }}"
 authors:
   -
-    family-names: "{{ cookiecutter.full_name }}"
+    family-names: {{ cookiecutter.full_name }}
     given-names:
     orcid: "https://orcid.org/0000-0000-0000-0000"
 date-released: 20??-MM-DD
@@ -12,5 +12,13 @@ doi: <insert your DOI here>
 version: "{{ cookiecutter.version }}"
 repository-code: "{{ cookiecutter.repository }}"
 keywords:
+  - keyword1
+  - keyword2
 message: "If you use this software, please cite it using these metadata."
-license: "{{ cookiecutter.license }}"
+{{ { "Apache Software License 2.0": "license: Apache-2.0",
+    "MIT license": "license: MIT",
+    "BSD license": "license: BSD-3-Clause",
+    "ISC license": "license: ISC",
+    "GNU General Public License v3 or later": "license: GPL-3.0-or-later",
+    "Not open source": ""
+}[cookiecutter.license] }}
