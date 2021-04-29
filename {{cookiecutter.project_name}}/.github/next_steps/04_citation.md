@@ -6,15 +6,15 @@ labels:
 
 The repository has been set up with a [GitHub action](https://github.com/marketplace/actions/cffconvert) that monitors your citation data. It checks the following 6 aspects:
 
-1. Whether your repository includes a `CITATION.cff` file
+1. Whether your repository includes a `CITATION.cff` file.
 
     _By including this file, authors of the software can receive credit for the work they put in._
 
-1. Whether your `CITATION.cff` is valid YAML
+1. Whether your `CITATION.cff` is valid YAML.
 
     _Visit https://yamllint.com to see if the contents of your CITATION.cff are valid YAML._
 
-1. Whether your `CITATION.cff` adheres to the schema (as listed in the `CITATION.cff` file itself under key `cff-version`
+1. Whether your `CITATION.cff` adheres to the schema (as listed in the `CITATION.cff` file itself under key `cff-version`).
 
     _The Citation File Format schema can be found [here](https://github.com/citation-file-format/citation-file-format), along with an explanation of all the keys. You're advised to use the latest available schema version._
 
@@ -24,11 +24,11 @@ The repository has been set up with a [GitHub action](https://github.com/marketp
 
     _The `cffconvert` GitHub action will tell you what it expects to find in `.zenodo.json`, just copy and paste it to a new file named `.zenodo.json`. The suggested text ignores CITATION.cff's `version`, `commit`, and `date-released`. `cffconvert` considers these keys `suspect` in the sense that they are often out of date, and there is little purpose to telling Zenodo about these properties: Zenodo already knows._
 
-1. Whether `.zenodo.json` is valid JSON
+1. Whether `.zenodo.json` is valid JSON.
 
     _Currently unimplemented, but you can check for yourself on [https://jsonlint.com/](https://jsonlint.com/)._ 
 
-1. Whether `CITATION.cff` and `.zenodo.json` contain equivalent data
+1. Whether `CITATION.cff` and `.zenodo.json` contain equivalent data.
 
     _This final check verifies that the two files are in sync. The check ignores CITATION.cff's `version`, `commit`, and `date-released`._
 
