@@ -1,3 +1,0 @@
-- name: "action required"
-  color: "207909"
-  description: "Issues that should be completed to get a fully working Python package"
