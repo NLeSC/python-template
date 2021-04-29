@@ -53,12 +53,11 @@ jobs:
           * Zenodo integration ${{ steps.zenodo.outputs.url }}
           * Readthedocs instructions ${{ steps.readthedocs.outputs.url }}
           * Citation data ${{ steps.citation.outputs.url }}
-          * Linting fixes ${{ steps.linting.outputs.url }}' | tee -a next_steps.md
+          * Linting fixes ${{ steps.linting.outputs.url }}'
       - name: Cleanup files needed to create next steps issues
         run: |
           git config --global user.name 'NLeSC Python template'
           git config --global user.email 'nlesc-python-template@users.noreply.github.com'
-          git add next_steps.md
           git rm .github/workflows/next_steps.yml
           git rm -r .github/next_steps
           git commit -am "Cleanup automated next steps issue generator"
