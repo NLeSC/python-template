@@ -38,7 +38,7 @@ def baked_withdevdeps(cookies):
 
 def test_pytest(baked_withdevdeps):
     project_dir, env_bin = baked_withdevdeps
-    pytest_output = run([f'{env_bin}pytest'], result.project)
+    pytest_output = run([f'{env_bin}pytest'], project_dir)
     assert pytest_output.returncode == 0
     assert '== 3 passed in' in pytest_output.stdout
     assert (project_dir / 'coverage.xml').exists()
