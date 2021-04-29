@@ -19,7 +19,7 @@ git remote add origin {{ cookiecutter.repository }}
 
 Go to
 [https://github.com/{{cookiecutter.github_organization}}?tab=repositories](https://github.com/{{cookiecutter.github_organization}}?tab=repositories)
-and create a new repository named {{ cookiecutter.project_name }} as an empty repository, then push your commits to GitHub:
+and create a new repository named `{{ cookiecutter.project_name }}` as an empty repository, then push your commits to GitHub:
 
 ```shell
 git push --set-upstream origin main
