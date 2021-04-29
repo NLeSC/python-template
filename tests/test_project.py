@@ -1,6 +1,7 @@
 import os
 import subprocess
-import shlex
+from sys import platform
+from typing import Sequence
 
 
 def test_project_folder(cookies):
@@ -12,8 +13,8 @@ def test_project_folder(cookies):
     assert project.project.isdir()
 
 
-def run(command: str, dirpath: os.PathLike) -> subprocess.CompletedProcess:
-    return subprocess.run(shlex.split(command),
+def run(args: Sequence[str], dirpath: os.PathLike) -> subprocess.CompletedProcess:
+    return subprocess.run(args=args,
                           stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           cwd=dirpath,
@@ -22,14 +23,15 @@ def run(command: str, dirpath: os.PathLike) -> subprocess.CompletedProcess:
 
 def test_pytest(cookies):
     result = cookies.bake()
-    env_output = run('python3 -m venv env', result.project)
+    env_output = run(['python3', '-m', 'venv', 'env'], result.project)
     assert env_output.returncode == 0
-    latest_pip_output = run('env/bin/pip3 install --upgrade pip setuptools', result.project)
+    env_bin = 'env/Scripts/' if platform.startswith("win") else 'env/bin/'
+    latest_pip_output = run([f'{env_bin}pip3 install', '--upgrade', 'pip', 'setuptools'], result.project)
     assert latest_pip_output.returncode == 0
-    pip_output = run('env/bin/pip3 install --editable .[dev]', result.project)
+    pip_output = run([f'{env_bin}pip3', 'install', '--editable', '.[dev]'], result.project)
     assert pip_output.returncode == 0
 
-    pytest_output = run('env/bin/pytest', result.project)
+    pytest_output = run([f'{env_bin}pytest'], result.project)
     assert pytest_output.returncode == 0
     assert '== 3 passed in' in  pytest_output.stdout
     assert (result.project / 'coverage.xml').exists()
