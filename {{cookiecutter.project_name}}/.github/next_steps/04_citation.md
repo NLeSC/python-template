@@ -2,7 +2,19 @@
 title: 'Next step: Citation data'
 ---
 
-The repository has been set up with a [GitHub action](https://github.com/marketplace/actions/cffconvert) that monitors your citation data. It checks the following 6 aspects:
+It is likely that your `CITATION.cff` currently doesn't pass validation. The error messages you get from the [`cffconvert`]({{cookiecutter.repository}}/actions/workflows/cffconvert.yml) GitHub Action are unfortunately a bit cryptic, but doing the following helps:
+
+- [ ] Check if the `given-name` and `family-name` keys need updating. If your family name has a name particle like `von` or `van` or `de`, use the `name-particle` key; if your name has a suffix like `Sr` or `IV`, use `name-suffix`. For details, refer to the schema description: https://github.com/citation-file-format/citation-file-format
+- [ ] Update the value of the `orcid` key. If you do not have an orcid yet, you can get one here [https://orcid.org/](https://orcid.org/).
+- [ ] Add more authors if needed
+- [ ] Update `date-released` using the YYYY-MM-DD format.
+- [ ] Update the `doi` key with the conceptDOI for your repository (see [https://help.zenodo.org](https://help.zenodo.org/) for more information on what a conceptDOI is). If your project doesn't have a DOI yet, you can use the string `10.0000/FIXME` to pass validation.
+- [ ] Update the `keywords` array with some keywords of your own that describe your project.
+
+Once you do all the steps above, the `cffconvert` workflow will tell you what content it expected to see in `.zenodo.json`. Copy-paste from the GitHub Action log into a new file `.zenodo.json`. Afterwards, the `cffconvert` GitHub Action should be green.
+
+
+To help you keep the citation metadata up to date and synchronized, the [`cffconvert`]({{cookiecutter.repository}}/actions/workflows/cffconvert.yml) GitHub Action checks the following 6 aspects:
 
 1. Whether your repository includes a `CITATION.cff` file.
 
@@ -29,14 +41,3 @@ The repository has been set up with a [GitHub action](https://github.com/marketp
 1. Whether `CITATION.cff` and `.zenodo.json` contain equivalent data.
 
     _This final check verifies that the two files are in sync. The check ignores CITATION.cff's `version`, `commit`, and `date-released`._
-
-It is likely that your `CITATION.cff` currently doesn't pass validation. The error messages you get from `cffconvert` are unfortunately a bit cryptic, but doing the following likely helps:
-
-- [ ] Check if the `given-name` and `family-name` keys need updating. If your family name has a name particle like `von` or `van` or `de`, use the `name-particle` key; if your name has a suffix like `Sr` or `IV`, use `name-suffix`. For details, refer to the schema description: https://github.com/citation-file-format/citation-file-format
-- [ ] Update the value of the `orcid` key. If you do not have an orcid yet, you can get one here [https://orcid.org/](https://orcid.org/).
-- [ ] Add more authors if needed
-- [ ] Update `date-released` using the YYYY-MM-DD format.
-- [ ] Update the `doi` key with the conceptDOI for your repository (see [https://help.zenodo.org](https://help.zenodo.org/) for more information on what a conceptDOI is). If your project doesn't have a DOI yet, you can use the string `10.0000/FIXME` to pass validation.
-- [ ] Update the `keywords` array with some keywords of your own that describe your project.
-
-Once you do all the steps above, the `cffconvert` workflow will tell you what content it expected to see in `.zenodo.json`. Copy-paste from the GitHub Action log into a new file `.zenodo.json`. Afterwards, the `cffconvert` GitHub Action should be green.
