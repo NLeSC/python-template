@@ -12,6 +12,9 @@
         },
         {
           "pattern": "^https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>"
+        },
+        {
+          "pattern": "^.github/workflows/sonarcloud.yml$"
         }
     ],
     "replacementPatterns": [
