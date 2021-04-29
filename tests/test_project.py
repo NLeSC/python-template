@@ -26,7 +26,7 @@ def test_pytest(cookies):
     env_output = run(['python3', '-m', 'venv', 'env'], result.project)
     assert env_output.returncode == 0
     env_bin = 'env/Scripts/' if platform.startswith("win") else 'env/bin/'
-    latest_pip_output = run([f'{env_bin}pip3 install', '--upgrade', 'pip', 'setuptools'], result.project)
+    latest_pip_output = run([f'{env_bin}pip3', 'install', '--upgrade', 'pip', 'setuptools'], result.project)
     assert latest_pip_output.returncode == 0
     pip_output = run([f'{env_bin}pip3', 'install', '--editable', '.[dev]'], result.project)
     assert pip_output.returncode == 0
