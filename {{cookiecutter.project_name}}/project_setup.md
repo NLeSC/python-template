@@ -81,10 +81,6 @@ help you decide which tool to use for packaging.
   - [Google style docstring examples](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
 - The documentation is set up with the ReadTheDocs Sphinx theme.
   - Check out its [configuration options](https://sphinx-rtd-theme.readthedocs.io/en/latest/).
-- To generate HTML documentation, run `make html` in the `docs/` folder.
-- To put the documentation on [ReadTheDocs](https://readthedocs.org), log in to your ReadTheDocs account, and import
-  the repository (under 'My Projects').
-  - Include the link to the documentation in your project's [README.md](README.md).
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=writingdocumentation)
 
 ## Coding style conventions and code quality
