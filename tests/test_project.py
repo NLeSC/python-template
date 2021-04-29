@@ -24,7 +24,7 @@ def run(args: Sequence[str], dirpath: os.PathLike) -> subprocess.CompletedProces
 
 
 @pytest.fixture
-def baked_withdevdeps(cookies):
+def baked_with_development_dependencies(cookies):
     result = cookies.bake()
     env_output = run(['python3', '-m', 'venv', 'env'], result.project)
     assert env_output.returncode == 0
@@ -36,8 +36,8 @@ def baked_withdevdeps(cookies):
     return result.project, env_bin
 
 
-def test_pytest(baked_withdevdeps):
-    project_dir, env_bin = baked_withdevdeps
+def test_pytest(baked_with_development_dependencies):
+    project_dir, env_bin = baked_with_development_dependencies
     pytest_output = run([f'{env_bin}pytest'], project_dir)
     assert pytest_output.returncode == 0
     assert '== 3 passed in' in pytest_output.stdout
@@ -45,8 +45,8 @@ def test_pytest(baked_withdevdeps):
     assert (project_dir / 'htmlcov/index.html').exists()
 
 
-def test_subpackage(baked_withdevdeps):
-    project_dir, env_bin = baked_withdevdeps
+def test_subpackage(baked_with_development_dependencies):
+    project_dir, env_bin = baked_with_development_dependencies
     subpackage = (project_dir / 'my_python_package' / 'mysub')
     subpackage.mkdir()
     (subpackage / '__init__.py').write_text('FOO = "bar"', encoding="utf-8")
