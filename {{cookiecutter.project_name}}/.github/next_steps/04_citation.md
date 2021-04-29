@@ -1,7 +1,5 @@
 ---
 title: 'Next step: Citation data'
-labels:
-  - 'action required'
 ---
 
 The repository has been set up with a [GitHub action](https://github.com/marketplace/actions/cffconvert) that monitors your citation data. It checks the following 6 aspects:

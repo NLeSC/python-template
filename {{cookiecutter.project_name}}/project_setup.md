@@ -58,10 +58,6 @@ help you decide which tool to use for packaging.
   - [Google style docstring examples](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
 - The documentation is set up with the ReadTheDocs Sphinx theme.
   - Check out its [configuration options](https://sphinx-rtd-theme.readthedocs.io/en/latest/).
-- To generate HTML documentation, run `make html` in the `docs/` folder.
-- To put the documentation on [ReadTheDocs](https://readthedocs.org), log in to your ReadTheDocs account, and import
-  the repository (under 'My Projects').
-  - Include the link to the documentation in your project's [README.md](README.md).
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=writingdocumentation)
 
 ## Coding style conventions and code quality
@@ -85,13 +81,6 @@ help you decide which tool to use for packaging.
   For updating the version number, make sure the dev dependencies are installed and run `bumpversion patch`,
   `bumpversion minor`, or `bumpversion major` as appropriate.
 - Don't forget to update the version number before [making a release](https://guide.esciencecenter.nl/#/best_practices/releases)!
-
-## Publish on Python Package Index (PyPI)
-
-To publish your package on PyPI, you need to create a [PyPI API token](https://pypi.org/help#apitoken) and
-save it as a secret called `PYPI_TOKEN` on [Settings page]({{cookiecutter.repository}}/settings/secrets/actions)
-
-[Creating a release]({{cookiecutter.repository}}/releases/new) on GitHub will trigger a [GitHub action workflow](.github/workflows/publish.yml) to publish the release on PyPI for you.
 
 ## Logging
 

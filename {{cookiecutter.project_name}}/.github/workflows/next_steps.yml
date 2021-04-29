@@ -5,12 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Create labels
-        uses: crazy-max/ghaction-github-labeler@v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          yaml-file: .github/next_steps/labels.yml
-          skip-delete: true
       - name: Create Sonarcloud integration issue
         uses: JasonEtco/create-an-issue@v2
         env:
@@ -51,7 +45,7 @@ jobs:
           echo 'Created issues that must be completed to have fully working Python package:
           * Sonarcloud integration ${{ steps.sonarcloud.outputs.url }}
           * Zenodo integration ${{ steps.zenodo.outputs.url }}
-          * Readthedocs instructions ${{ steps.readthedocs.outputs.url }}
+          * Read the Docs instructions ${{ steps.readthedocs.outputs.url }}
           * Citation data ${{ steps.citation.outputs.url }}
           * Linting fixes ${{ steps.linting.outputs.url }}'
       - name: Cleanup files needed to create next steps issues
