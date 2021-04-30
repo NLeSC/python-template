@@ -12,5 +12,6 @@
         }
     ],
     "replacementPatterns": [
-    ]
+    ],
+    "timeout": "20s"
 }
