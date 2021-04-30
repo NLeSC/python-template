@@ -11,7 +11,7 @@ def test_project_folder(cookies):
 
     assert project.exit_code == 0
     assert project.exception is None
-    assert project.project.basename == 'my-python-project'
+    assert project.project.basename == 'my_python_package'
     assert project.project.isdir()
 
 
