@@ -22,7 +22,7 @@ To help you keep the citation metadata up to date and synchronized, the [`cffcon
 
 1. Whether your `CITATION.cff` is valid YAML.
 
-    _Visit https://yamllint.com to see if the contents of your CITATION.cff are valid YAML._
+    _Visit http://www.yamllint.com/ to see if the contents of your CITATION.cff are valid YAML._
 
 1. Whether your `CITATION.cff` adheres to the schema (as listed in the `CITATION.cff` file itself under key `cff-version`).
 
