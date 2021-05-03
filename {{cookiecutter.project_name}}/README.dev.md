@@ -28,9 +28,7 @@ Afterwards check that the install directory is present in the `PATH` environment
 Running the tests requires an activated virtual environment with the development tools installed.
 
 ```shell
-# unit tests
-pytest
-pytest tests/
+pytest -v
 ```
 
 ## Running linters locally
