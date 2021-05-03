@@ -7,8 +7,8 @@ import pytest
 from {{ cookiecutter.package_name }} import my_module
 
 
-def test_module_import():
-    assert my_module not in sys.modules
+def test_hello():
+    assert my_module.hello('nlesc') == 'Hello nlesc!'
 
 
 def test_something():
