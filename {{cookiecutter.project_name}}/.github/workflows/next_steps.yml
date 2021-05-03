@@ -12,13 +12,14 @@ jobs:
         with:
           filename: .github/next_steps/01_sonarcloud_integration.md
         id: sonarcloud
-      - name: Create Zenodo integration issue
+
+      - name: Create citation data issue
         uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          filename: .github/next_steps/02_zenodo_integration.md
-        id: zenodo
+          filename: .github/next_steps/02_citation.md
+        id: citation
       - name: Create readthedocs issue
         uses: JasonEtco/create-an-issue@v2
         env:
@@ -26,13 +27,13 @@ jobs:
         with:
           filename: .github/next_steps/03_readthedocs.md
         id: readthedocs
-      - name: Create citation data issue
+      - name: Create Zenodo integration issue
         uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          filename: .github/next_steps/04_citation.md
-        id: citation
+          filename: .github/next_steps/04_zenodo_integration.md
+        id: zenodo
       - name: Create linting issue
         uses: JasonEtco/create-an-issue@v2
         env:
