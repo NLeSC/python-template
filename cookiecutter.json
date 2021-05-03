@@ -3,6 +3,8 @@
   "project_name": "my-python-project",
   "_copy_without_render": [".github/workflows/*"],
   "package_short_description": "",
+  "keyword1": "keyword1",
+  "keyword2": "keyword2",
   "version": "0.1.0",
   "github_organization": "<my-github-organization>",
   "license": ["Apache Software License 2.0", "MIT license", "BSD license", "ISC license", "GNU General Public License v3 or later", "Not open source"],
