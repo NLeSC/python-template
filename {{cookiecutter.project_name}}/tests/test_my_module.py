@@ -4,20 +4,10 @@
 """
 import pytest
 from {{ cookiecutter.package_name }} import my_module
-from testfixtures import LogCapture
 
 
-def test_log_capture(caplog):
-    with LogCapture() as lc:
-        my_module.example()
-
-    lc.check(
-        ('{{ cookiecutter.package_name }}.my_module', 'INFO', 'Providing information about the excecution of the function.')
-    )
-
-
-def test_module_import():
-    assert my_module not in sys.modules
+def test_hello():
+    assert my_module.hello('nlesc') == 'Hello nlesc!'
 
 
 def test_something():
