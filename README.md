@@ -59,7 +59,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 | Name                      | Default value | Explanation |
 | ------------------------- | ------------- | ----------- |
 | package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. |
-| project_name              | my-python-project | Name of the project that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. |
+| project_name              | my_python_package | Name of the project that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. |
 | package_short_description | &nbsp;            | The information that you enter here will end up in the README, documentation, license, and setup.cfg, so it may be a good idea to prepare something in advance. |
 | version                   | 0.1.0             | &nbsp; |
 | github_organization       | &lt;my-github-organization&gt; | GitHub organization that will contain this project's repository. This can also be your GitHub user name. |
