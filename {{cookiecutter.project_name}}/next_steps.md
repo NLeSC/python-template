@@ -18,7 +18,7 @@ git remote add origin {{ cookiecutter.repository }}
 ## Push the initial commit to a new repo on GitHub
 
 Go to
-[https://github.com/{{cookiecutter.github_organization}}/repositories/new](https://github.com/{{cookiecutter.github_organization}}/repositories/new)
+[https://github.com/organizations/{{cookiecutter.github_organization}}/repositories/new](https://github.com/organizations/{{cookiecutter.github_organization}}/repositories/new)
 and create a new repository named `{{ cookiecutter.project_name }}` as an empty repository, then push your commits to GitHub:
 
 ```shell
@@ -27,9 +27,9 @@ git push --set-upstream origin main
 
 ## Check automatically generated issues
 
-The first time you push to GitHub, a few issues outlining next steps will as soon as possible be added automatically
-([here]({{cookiecutter.repository}}/issues?q=author%3Aapp%2Fgithub-actions)). Resolve them to complete the setup of your
-repository.
+A short while after you push your commits to GitHub for the first time, a few issues outlining next steps will added
+automatically ([here]({{cookiecutter.repository}}/issues?q=author%3Aapp%2Fgithub-actions)). Resolve them to complete the
+setup of your repository.
 
 ## Project layout explained
 

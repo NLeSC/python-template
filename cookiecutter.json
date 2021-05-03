@@ -1,7 +1,7 @@
 {
   "package_name": "my_python_package",
   "project_name": "my-python-project",
-  "_copy_without_render": [".github/*"],
+  "_copy_without_render": [".github/workflows/*"],
   "package_short_description": "",
   "version": "0.1.0",
   "github_organization": "<my-github-organization>",
