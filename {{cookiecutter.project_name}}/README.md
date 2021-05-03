@@ -6,7 +6,7 @@
 | :-- | :--  |
 | (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)]({{cookiecutter.repository}}) |
 | (2/5) license                      | [![github license badge](https://img.shields.io/github/license/{{cookiecutter.github_organization}}/{{cookiecutter.directory_name}})]({{cookiecutter.repository}}) |
-| (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-{{cookiecutter.directory_name}}-00a3e3.svg)](https://www.research-software.nl/software/{{cookiecutter.directory_name}}) [![workflow pypi badge](https://img.shields.io/pypi/v/{{cookiecutter.directory_name}}.svg?colorB=blue)](https://pypi.python.org/project/{{cookiecutter.directory_name}}/) |
+| (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-{{cookiecutter.package_name}}-00a3e3.svg)](https://www.research-software.nl/software/{{cookiecutter.package_name}}) [![workflow pypi badge](https://img.shields.io/pypi/v/{{cookiecutter.package_name}}.svg?colorB=blue)](https://pypi.python.org/project/{{cookiecutter.package_name}}/) |
 | (4/5) citation                     | [![DOI](https://zenodo.org/badge/DOI/<replace-with-created-DOI>.svg)](https://doi.org/<replace-with-created-DOI>) |
 | (5/5) checklist                    | [![workflow cii badge](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>/badge)](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>) |
 | howfairis                          | [![fair-software badge](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu) |
