@@ -74,14 +74,7 @@ ls
 ```
 
 If your Python package was created successfully, `cookiecutter` will point you to a file
-(`my-python-project/project_setup.md`) that contains information on next steps such as:
-
-1. making `my-python-project` a local git repository
-1. connecting the local repository to a new repository on GitHub
-1. pushing the freshly generated content to GitHub
-1. discovering what GitHub Actions there are, what they do, and how to inspect their results
-
-Follow the instructions from `my-python-project/project_setup.md` and make sure that everything works.
+(`my-python-project/next_steps.md`) that contains information on next steps.
 
 In addition to the information in `my-python-project/project_setup.md`, the developer documentation
 `my-python-project/README.dev.md` contains information on a few more things to check, for example:
