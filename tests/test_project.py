@@ -40,7 +40,7 @@ def test_pytest(baked_with_development_dependencies):
     project_dir, env_bin = baked_with_development_dependencies
     pytest_output = run([f'{env_bin}pytest'], project_dir)
     assert pytest_output.returncode == 0
-    assert '== 3 passed in' in pytest_output.stdout
+    assert '== 4 passed in' in pytest_output.stdout
     assert (project_dir / 'coverage.xml').exists()
     assert (project_dir / 'htmlcov/index.html').exists()
 
