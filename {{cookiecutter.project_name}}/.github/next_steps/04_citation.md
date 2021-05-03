@@ -9,7 +9,7 @@ It is likely that your `CITATION.cff` currently doesn't pass validation. The err
 - [ ] Add more authors if needed
 - [ ] Update `date-released` using the YYYY-MM-DD format.
 - [ ] Update the `doi` key with the conceptDOI for your repository (see [https://help.zenodo.org](https://help.zenodo.org/) for more information on what a conceptDOI is). If your project doesn't have a DOI yet, you can use the string `10.0000/FIXME` to pass validation.
-- [ ] Update the `keywords` array with some keywords of your own that describe your project.
+- [ ] Verify that the `keywords` array accurately describes your project.
 
 Once you do all the steps above, the `cffconvert` workflow will tell you what content it expected to see in `.zenodo.json`. Copy-paste from the GitHub Action log into a new file `.zenodo.json`. Afterwards, the `cffconvert` GitHub Action should be green.
 
