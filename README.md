@@ -109,6 +109,7 @@ my-python-project/
 ```
 
 For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.project_name}}/project_setup.md) file.
+There are also instructions on how to [apply the template to an existing Python package](ADD_TO_EXISTING_PACKAGE.md).
 
 ## Examples
 
