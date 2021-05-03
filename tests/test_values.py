@@ -21,18 +21,18 @@ def test_single_quotes_in_name_and_description(cookies):
     assert project.exit_code == 0
 
 
-def test_dash_in_project_name(cookies):
+def test_dash_in_directory_name(cookies):
     ctx = {
-        "project_name": "my-python-project"
+        "directory_name": "my-python-project"
     }
     project = cookies.bake(extra_context=ctx)
 
     assert project.exit_code == 0
 
 
-def test_space_in_project_name(cookies):
+def test_space_in_directory_name(cookies):
     ctx = {
-        "project_name": "my python project"
+        "directory_name": "my python project"
     }
     project = cookies.bake(extra_context=ctx)
 

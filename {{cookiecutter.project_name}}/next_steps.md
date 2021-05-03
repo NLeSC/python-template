@@ -7,7 +7,7 @@ control](https://guide.esciencecenter.nl/#/best_practices/version_control) using
 [git](https://git-scm.com/) and [GitHub](https://github.com/).
 
 ```shell
-cd {{ cookiecutter.project_name }}
+cd {{ cookiecutter.directory_name }}
 git init
 git add --all
 git commit -m "first commit"
@@ -19,7 +19,7 @@ git remote add origin {{ cookiecutter.repository }}
 
 Go to
 [https://github.com/organizations/{{cookiecutter.github_organization}}/repositories/new](https://github.com/organizations/{{cookiecutter.github_organization}}/repositories/new)
-and create a new repository named `{{ cookiecutter.project_name }}` as an empty repository, then push your commits to GitHub:
+and create a new repository named `{{ cookiecutter.directory_name }}` as an empty repository, then push your commits to GitHub:
 
 ```shell
 git push --set-upstream origin main

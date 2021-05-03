@@ -67,8 +67,8 @@ cookiecutter https://github.com/nlesc/python-template.git
 
 | Name                      | Default value | Explanation |
 | ------------------------- | ------------- | ----------- |
+| directory_name              | my-python-project | Name of the directory that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. To get an impression of what will be generated, see the directory tree [below](https://github.com/NLeSC/python-template#step-33-read-about-what-was-just-generated) |
 | package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. |
-| project_name              | my-python-project | Name of the project that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. |
 | package_short_description | &nbsp;            | The information that you enter here will end up in the README, documentation, license, and setup.cfg, so it may be a good idea to prepare something in advance. |
 | keyword1                  | keyword1          | A term that describes your package. |
 | keyword2                  | keyword2          | Another term that describes your package. |
@@ -81,7 +81,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
 
 Once the project files have been generated, follow the steps outlined in
-[{{cookiecutter.project_name}}/next_steps.md]({{cookiecutter.project_name}}/next_steps.md).
+[{{cookiecutter.directory_name}}/next_steps.md]({{cookiecutter.directory_name}}/next_steps.md).
 
 ### Step 3/3: Read about what was just generated
 

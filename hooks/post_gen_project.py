@@ -1,1 +1,1 @@
-print("\nProject was successfully generated. For next steps, refer to file {{ cookiecutter.project_name }}/next_steps.md.\n")
+print("\nProject was successfully generated. For next steps, refer to file {{ cookiecutter.directory_name }}/next_steps.md.\n")
