@@ -10,7 +10,7 @@ In order to configure Sonarcloud analysis [GitHub Action workflow](.github/workf
 1. login with your GitHub account
 1. add Sonarcloud organization or reuse existing one
 1. set up a repository
-1. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{cookiecutter.github_organization}}_{{cookiecutter.project_name}}) and select `Number of days` option
+1. go to [new code definition administration page](https://sonarcloud.io/project/new_code?id={{cookiecutter.github_organization}}_{{cookiecutter.directory_name}}) and select `Number of days` option
 1. To be able to run the analysis:
    1. a token must be created at [Sonarcloud account](https://sonarcloud.io/account/security/)
-   1. the created token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{cookiecutter.github_organization}}/{{cookiecutter.project_name}}/settings/secrets/actions)
+   1. the created token must be added as `SONAR_TOKEN` to [secrets on GitHub](https://github.com/{{cookiecutter.github_organization}}/{{cookiecutter.directory_name}}/settings/secrets/actions)

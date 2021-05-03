@@ -8,13 +8,13 @@ Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generat
 an empty Python package. Features include:
 
 - Boilerplate tests and documentation,
-- [Python setup configuration]({{cookiecutter.project_name}}/setup.py),
+- [Python setup configuration]({{cookiecutter.directory_name}}/setup.py),
 - Open source software license,
-- [Default Github actions]({{cookiecutter.project_name}}/.github/workflows) for building, testing and deployment
+- [Default Github actions]({{cookiecutter.directory_name}}/.github/workflows) for building, testing and deployment
 - Code style checking,
-- [Editorconfig]({{cookiecutter.project_name}}/.editorconfig),
-- Miscellaneous files, such as [Change log]({{cookiecutter.project_name}}/CHANGELOG.md), [Code of Conduct]({{cookiecutter.project_name}}/CODE_OF_CONDUCT.md), and [Contributing guidelines]({{cookiecutter.project_name}}/CONTRIBUTING.md),
-- A [README]({{cookiecutter.project_name}}/README.md) and [a separate document]({{cookiecutter.project_name}}/project_setup.md) with extensive documentation about project setup.
+- [Editorconfig]({{cookiecutter.directory_name}}/.editorconfig),
+- Miscellaneous files, such as [Change log]({{cookiecutter.directory_name}}/CHANGELOG.md), [Code of Conduct]({{cookiecutter.directory_name}}/CODE_OF_CONDUCT.md), and [Contributing guidelines]({{cookiecutter.directory_name}}/CONTRIBUTING.md),
+- A [README]({{cookiecutter.directory_name}}/README.md) and [a separate document]({{cookiecutter.directory_name}}/project_setup.md) with extensive documentation about project setup.
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/)
 
 ## Badges
@@ -59,7 +59,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 | Name                      | Default value | Explanation |
 | ------------------------- | ------------- | ----------- |
 | package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. |
-| project_name              | my-python-project | Name of the project that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. |
+| directory_name              | my-python-project | Name of the project that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. |
 | package_short_description | &nbsp;            | The information that you enter here will end up in the README, documentation, license, and setup.cfg, so it may be a good idea to prepare something in advance. |
 | version                   | 0.1.0             | &nbsp; |
 | github_organization       | &lt;my-github-organization&gt; | GitHub organization that will contain this project's repository. This can also be your GitHub user name. |
@@ -70,7 +70,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
 
 Once the project files have been generated, follow the steps outlined in
-[{{cookiecutter.project_name}}/next_steps.md]({{cookiecutter.project_name}}/next_steps.md).
+[{{cookiecutter.directory_name}}/next_steps.md]({{cookiecutter.directory_name}}/next_steps.md).
 
 ### Step 3/3: Read about what was just generated
 
@@ -106,7 +106,7 @@ my-python-project/
     └── test_my_module.py
 ```
 
-For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.project_name}}/project_setup.md) file.
+For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.directory_name}}/project_setup.md) file.
 
 ## Examples
 
