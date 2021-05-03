@@ -6,6 +6,10 @@ import pytest
 from {{ cookiecutter.package_name }} import my_module
 
 
+def test_hello():
+    assert my_module.hello('nlesc') == 'Hello nlesc!'
+
+
 def test_something():
     assert True
 

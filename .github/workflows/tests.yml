@@ -32,4 +32,4 @@ jobs:
         python3 -m pip install .[dev]
     - name: Run pytest
       run: |
-        pytest
+        pytest -v
