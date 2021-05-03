@@ -75,7 +75,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 | version                   | 0.1.0             | &nbsp; |
 | github_organization       | &lt;my-github-organization&gt; | GitHub organization that will contain this project's repository. This can also be your GitHub user name. |
 | license                   | Apache Software License 2.0 | The software license under which the code is made available.  |
-| full_name                 | John Smith        | Your full name, e.g. _John Smith_. |
+| full_name                 | Jane Smith        | Your full name, e.g. _Jane Smith_. |
 | email                     | yourname@esciencecenter.nl | Your (work) email address. |
 | copyright_holder          | Netherlands eScience Center | Name(s) of the organization(s) or person(s) who hold the copyright of the software. |
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
