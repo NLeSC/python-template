@@ -18,7 +18,8 @@ $ git fetch existing_code
 $ git merge existing_code/<BRANCH> --allow-unrelated-histories
 ```
 
-4. The previous step will likely result in several merge conflicts. Solve the conflicts by editing the files and add the files to  Git:
+4. The previous step will likely result in several merge conflicts. Solve the conflicts by editing the files.
+5. Add all the files to GitHub:
 ```shell
 $ EDITOR CONFLICT_FILES
 $ git add --all
