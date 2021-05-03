@@ -28,9 +28,7 @@ Afterwards check that the install directory is present in the `PATH` environment
 Running the tests requires an activated virtual environment with the development tools installed.
 
 ```shell
-# unit tests
-pytest
-pytest tests/
+pytest -v
 ```
 
 ## Running linters locally
@@ -116,7 +114,7 @@ python3 -m pip install --upgrade pip setuptools
 python3 -m pip install --no-cache-dir .
 python3 -m pip install --no-cache-dir .[publishing]
 
-# clean up any previously generated artefacts 
+# clean up any previously generated artefacts
 rm -rf {{ cookiecutter.package_name }}.egg-info
 rm -rf dist
 
@@ -161,5 +159,4 @@ twine upload dist/*
 
 ### (3/3) GitHub
 
-Don't forget to also make a release on GitHub. If your repository uses the GitHub-Zenodo integration this will also
-trigger Zenodo into making a snapshot of your repository and sticking a DOI on it.
+Don't forget to also make a release on GitHub. If your repository uses the GitHub-Zenodo integration this will also trigger Zenodo into making a snapshot of your repository and sticking a DOI on it.

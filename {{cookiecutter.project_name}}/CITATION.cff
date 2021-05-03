@@ -12,8 +12,8 @@ doi: <insert your DOI here>
 version: "{{ cookiecutter.version }}"
 repository-code: "{{ cookiecutter.repository }}"
 keywords:
-  - keyword1
-  - keyword2
+  - {{ cookiecutter.keyword1 }}
+  - {{ cookiecutter.keyword2 }}
 message: "If you use this software, please cite it using these metadata."
 {{ { "Apache Software License 2.0": "license: Apache-2.0",
     "MIT license": "license: MIT",

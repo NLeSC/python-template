@@ -7,15 +7,24 @@ from the start.
 Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generate
 an empty Python package. Features include:
 
-- Boilerplate tests and documentation,
-- [Python setup configuration]({{cookiecutter.directory_name}}/setup.py),
+- Boilerplate unit tests and documentation,
+- [Python static setup configuration]({{cookiecutter.project_name}}/setup.cfg),
 - Open source software license,
-- [Default Github actions]({{cookiecutter.directory_name}}/.github/workflows) for building, testing and deployment
-- Code style checking,
-- [Editorconfig]({{cookiecutter.directory_name}}/.editorconfig),
-- Miscellaneous files, such as [Change log]({{cookiecutter.directory_name}}/CHANGELOG.md), [Code of Conduct]({{cookiecutter.directory_name}}/CODE_OF_CONDUCT.md), and [Contributing guidelines]({{cookiecutter.directory_name}}/CONTRIBUTING.md),
-- A [README]({{cookiecutter.directory_name}}/README.md) and [a separate document]({{cookiecutter.directory_name}}/project_setup.md) with extensive documentation about project setup.
-- Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/)
+- Continuous integration with [GitHub action workflows]({{cookiecutter.project_name}}/.github/workflows) for building, testing, link checking and linting,
+- Code style checking with [prospector](https://pypi.org/project/prospector/),
+- [Editorconfig]({{cookiecutter.project_name}}/.editorconfig),
+- Usage and contribution documents:
+  - [README.md]({{cookiecutter.project_name}}/README.md) for package users,
+  - [README.dev.md]({{cookiecutter.project_name}}/README.dev.md) for package developer,
+  - [project_setup.md]({{cookiecutter.project_name}}/project_setup.md) with extensive documentation about project setup,
+  - [Change log]({{cookiecutter.project_name}}/CHANGELOG.md),
+  - [Code of Conduct]({{cookiecutter.project_name}}/CODE_OF_CONDUCT.md),
+  - [Contributing guidelines]({{cookiecutter.project_name}}/CONTRIBUTING.md),
+- Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/),
+- Automatic creation of [issues]({{cookiecutter.project_name}}/.github/next_steps) with instructions how to pass all GitHub action workflows and integrate with services like Zenodo and Read the Docs,
+- Instructions how to make package [citable]({{cookiecutter.project_name}}/.github/next_steps/04_citation.md)
+- FAIR software recommendation badge,
+- Optional [pre commit hook](https://github.com/NLeSC/python-template/blob/main/%7B%7Bcookiecutter.project_name%7D%7D/README.dev.md#running-linters-locally) to catch lint errors early
 
 ## Badges
 
@@ -61,6 +70,8 @@ cookiecutter https://github.com/nlesc/python-template.git
 | directory_name              | my-python-project | Name of the directory that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. To get an impression of what will be generated, see the directory tree [below](https://github.com/NLeSC/python-template#step-33-read-about-what-was-just-generated) |
 | package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. |
 | package_short_description | &nbsp;            | The information that you enter here will end up in the README, documentation, license, and setup.cfg, so it may be a good idea to prepare something in advance. |
+| keyword1                  | keyword1          | A term that describes your package. |
+| keyword2                  | keyword2          | Another term that describes your package. |
 | version                   | 0.1.0             | &nbsp; |
 | github_organization       | &lt;my-github-organization&gt; | GitHub organization that will contain this project's repository. This can also be your GitHub user name. |
 | license                   | Apache Software License 2.0 | The software license under which the code is made available.  |
@@ -78,6 +89,7 @@ Good job! You have now generated the skeleton for your package:
 
 ```text
 my-python-project/
+├── .bumpversion.cfg
 ├── CHANGELOG.md
 ├── CITATION.cff
 ├── CODE_OF_CONDUCT.md
@@ -90,23 +102,50 @@ my-python-project/
 │   ├── _static
 │   │   └── theme_overrides.css
 │   └── _templates
+│       └── .gitignore
+├── .editorconfig
+├── .githooks
+│   └── pre-commit
+├── .github
+│   ├── next_steps
+│   │   ├── 01_sonarcloud_integration.md
+│   │   ├── 02_citation.md
+│   │   ├── 03_readthedocs.md
+│   │   ├── 04_zenodo_integration.md
+│   │   └── 05_linting.md
+│   └── workflows
+│       ├── build.yml
+│       ├── cffconvert.yml
+│       ├── lint.yml
+│       ├── markdown-link-check.yml
+│       ├── next_steps.yml
+│       └── sonarcloud.yml
+├── .gitignore
 ├── LICENSE
 ├── MANIFEST.in
+├── .mlc-config.json
 ├── my_python_package
 │   ├── __init__.py
 │   ├── my_module.py
 │   └── __version__.py
+├── next_steps.md
 ├── NOTICE
 ├── project_setup.md
+├── .prospector.yml
+├── .pylintrc
+├── pyproject.toml
+├── README.dev.md
 ├── README.md
 ├── setup.cfg
 ├── setup.py
+├── sonar-project.properties
 └── tests
     ├── __init__.py
     └── test_my_module.py
 ```
 
-For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.directory_name}}/project_setup.md) file.
+For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.project_name}}/project_setup.md) file.
+There are also instructions on how to [apply the template to an existing Python package](ADD_TO_EXISTING_PACKAGE.md).
 
 ## Examples
 
