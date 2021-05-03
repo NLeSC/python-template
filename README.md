@@ -80,6 +80,7 @@ Good job! You have now generated the skeleton for your package:
 
 ```text
 my-python-project/
+├── .bumpversion.cfg
 ├── CHANGELOG.md
 ├── CITATION.cff
 ├── CODE_OF_CONDUCT.md
@@ -92,17 +93,43 @@ my-python-project/
 │   ├── _static
 │   │   └── theme_overrides.css
 │   └── _templates
+│       └── .gitignore
+├── .editorconfig
+├── .githooks
+│   └── pre-commit
+├── .github
+│   ├── next_steps
+│   │   ├── 01_sonarcloud_integration.md
+│   │   ├── 02_zenodo_integration.md
+│   │   ├── 03_readthedocs.md
+│   │   ├── 04_citation.md
+│   │   └── 05_linting.md
+│   └── workflows
+│       ├── build.yml
+│       ├── cffconvert.yml
+│       ├── lint.yml
+│       ├── markdown-link-check.yml
+│       ├── next_steps.yml
+│       └── sonarcloud.yml
+├── .gitignore
 ├── LICENSE
 ├── MANIFEST.in
+├── .mlc-config.json
 ├── my_python_package
 │   ├── __init__.py
 │   ├── my_module.py
 │   └── __version__.py
+├── next_steps.md
 ├── NOTICE
 ├── project_setup.md
+├── .prospector.yml
+├── .pylintrc
+├── pyproject.toml
+├── README.dev.md
 ├── README.md
 ├── setup.cfg
 ├── setup.py
+├── sonar-project.properties
 └── tests
     ├── __init__.py
     └── test_my_module.py
