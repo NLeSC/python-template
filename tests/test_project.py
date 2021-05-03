@@ -35,7 +35,7 @@ def baked_with_development_dependencies(cookies):
         # falling back to using current Python
         bin_dir = str(Path(executable).parent) + '\\'
         print(bin_dir)
-        print(list(bin_dir.iterdir()))
+        print(list(Path(bin_dir).iterdir()))
     else:
         env_output = run(['python3', '-m', 'venv', 'env'], result.project)
         assert env_output.returncode == 0
