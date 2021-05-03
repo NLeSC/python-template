@@ -34,13 +34,15 @@ def baked_with_development_dependencies(cookies):
         # Creating virtualenv does not work on Windows CI,
         # falling back to using current Python
         bin_dir = str(Path(executable).parent) + '\\'
+        print(bin_dir)
+        print(list(bin_dir.iterdir()))
     else:
         env_output = run(['python3', '-m', 'venv', 'env'], result.project)
         assert env_output.returncode == 0
         bin_dir = 'env/Scripts/' if platform.startswith("win") else 'env/bin/'
-    latest_pip_output = run([f'{bin_dir}pip3', 'install', '--upgrade', 'pip', 'setuptools'], result.project)
+    latest_pip_output = run([f'{bin_dir}pip', 'install', '--upgrade', 'pip', 'setuptools'], result.project)
     assert latest_pip_output.returncode == 0
-    pip_output = run([f'{bin_dir}pip3', 'install', '--editable', '.[dev]'], result.project)
+    pip_output = run([f'{bin_dir}pip', 'install', '--editable', '.[dev]'], result.project)
     assert pip_output.returncode == 0
     return result.project, bin_dir
 
