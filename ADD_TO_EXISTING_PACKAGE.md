@@ -2,7 +2,7 @@
 
 1. Follow the [instructions to create a new package](https://github.com/NLeSC/python-template#how-to-use) with the Python template, while answering the questions like you would for the existing package.
 
-2. Create a Git structure for the new package: (replace the capitalized name by your own)
+2. Create a Git structure for the new directory: (replace the capitalized name by your own)
 ```shell
 $ cd NEW_PACKAGE
 $ git init
