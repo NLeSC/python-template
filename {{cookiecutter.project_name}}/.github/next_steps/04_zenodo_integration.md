@@ -15,7 +15,7 @@ To enable Zenodo integration:
    3. Click on the badge and copy the **Markdown** badge link
 4. Update the badge in your repository
    1. Edit README.md and replace the badge placeholder with the badge link you copied in previous step.
-   The badge placeholder is hown below.
+   The badge placeholder is shown below.
 
       `[![DOI](https://zenodo.org/badge/DOI/<replace-with-created-DOI>.svg)](https://doi.org/<replace-with-created-DOI>)`
 
