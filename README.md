@@ -7,15 +7,24 @@ from the start.
 Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generate
 an empty Python package. Features include:
 
-- Boilerplate tests and documentation,
-- [Python setup configuration]({{cookiecutter.project_name}}/setup.py),
+- Boilerplate unit tests and documentation,
+- [Python static setup configuration]({{cookiecutter.project_name}}/setup.cfg),
 - Open source software license,
-- [Default Github actions]({{cookiecutter.project_name}}/.github/workflows) for building, testing and deployment
-- Code style checking,
+- Continuous integration with [GitHub action workflows]({{cookiecutter.project_name}}/.github/workflows) for building, testing, link checking and linting,
+- Code style checking with [prospector](https://pypi.org/project/prospector/),
 - [Editorconfig]({{cookiecutter.project_name}}/.editorconfig),
-- Miscellaneous files, such as [Change log]({{cookiecutter.project_name}}/CHANGELOG.md), [Code of Conduct]({{cookiecutter.project_name}}/CODE_OF_CONDUCT.md), and [Contributing guidelines]({{cookiecutter.project_name}}/CONTRIBUTING.md),
-- A [README]({{cookiecutter.project_name}}/README.md) and [a separate document]({{cookiecutter.project_name}}/project_setup.md) with extensive documentation about project setup.
-- Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/)
+- Usage and contribution documents:
+  - [README.md]({{cookiecutter.project_name}}/README.md) for package users,
+  - [README.dev.md]({{cookiecutter.project_name}}/README.dev.md) for package developer,
+  - [project_setup.md]({{cookiecutter.project_name}}/project_setup.md) with extensive documentation about project setup,
+  - [Change log]({{cookiecutter.project_name}}/CHANGELOG.md),
+  - [Code of Conduct]({{cookiecutter.project_name}}/CODE_OF_CONDUCT.md),
+  - [Contributing guidelines]({{cookiecutter.project_name}}/CONTRIBUTING.md),
+- Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/),
+- Automatic creation of [issues]({{cookiecutter.project_name}}/.github/next_steps) with instructions how to pass all GitHub action workflows and integrate with services like Zenodo and Read the Docs,
+- Instructions how to make package [citable]({{cookiecutter.project_name}}/.github/next_steps/04_citation.md)
+- FAIR software recommendation badge,
+- Optional [pre commit hook](https://github.com/NLeSC/python-template/blob/main/%7B%7Bcookiecutter.project_name%7D%7D/README.dev.md#running-linters-locally) to catch lint errors early
 
 ## Badges
 
