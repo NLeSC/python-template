@@ -100,9 +100,9 @@ my-python-project/
 ├── .github
 │   ├── next_steps
 │   │   ├── 01_sonarcloud_integration.md
-│   │   ├── 02_zenodo_integration.md
+│   │   ├── 02_citation.md
 │   │   ├── 03_readthedocs.md
-│   │   ├── 04_citation.md
+│   │   ├── 04_zenodo_integration.md
 │   │   └── 05_linting.md
 │   └── workflows
 │       ├── build.yml
