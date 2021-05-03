@@ -4,7 +4,7 @@
 
 2. Create a Git structure for the new directory: (replace the capitalized name by your own)
 ```shell
-$ cd NEW_PACKAGE
+$ cd NEW_DIRECTORY
 $ git init
 $ git add --all
 $ git commit -m "first commit"
