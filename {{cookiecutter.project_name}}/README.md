@@ -43,7 +43,7 @@ Include a link to your project's full documentation here.
 
 ## Contributing
 
-If you want to contribute to the development of {{ cookiecutter.directory_name }},
+If you want to contribute to the development of {{ cookiecutter.package_name }},
 have a look at the [contribution guidelines](CONTRIBUTING.md).
 
 ## Credits
