@@ -2,10 +2,13 @@ import os
 import subprocess
 from pathlib import Path
 from shutil import which
-from sys import platform, executable
+from sys import platform
 from typing import Sequence
 
 import pytest
+
+IS_WINDOWS = platform.startswith("win")
+IS_WINDOWS_CI = IS_WINDOWS and os.environ.get('CI', False)
 
 
 def test_project_folder(cookies):
@@ -31,7 +34,7 @@ def run(args: Sequence[str], dirpath: os.PathLike) -> subprocess.CompletedProces
 @pytest.fixture
 def baked_with_development_dependencies(cookies):
     result = cookies.bake()
-    if platform.startswith("win") and os.environ.get('CI', False):
+    if IS_WINDOWS_CI:
         # Creating virtualenv does not work on Windows CI,
         # falling back to using current pip3 dir
         pip = Path(which('pip3'))
@@ -39,7 +42,7 @@ def baked_with_development_dependencies(cookies):
     else:
         env_output = run(['python3', '-m', 'venv', 'env'], result.project)
         assert env_output.returncode == 0
-        bin_dir = 'env/Scripts/' if platform.startswith("win") else 'env/bin/'
+        bin_dir = 'env/Scripts/' if IS_WINDOWS else 'env/bin/'
     latest_pip_output = run([f'{bin_dir}pip3', 'install', '--upgrade', 'pip', 'setuptools'], result.project)
     assert latest_pip_output.returncode == 0
     pip_output = run([f'{bin_dir}pip3', 'install', '--editable', '.[dev]'], result.project)
@@ -66,7 +69,7 @@ def test_subpackage(baked_with_development_dependencies):
     subsubpackage.mkdir()
     (subsubpackage / '__init__.py').write_text('FOO = "bar"', encoding="utf-8")
 
-    if platform.startswith("win") and os.environ.get('CI', False):
+    if IS_WINDOWS_CI:
         # On Windows CI python and pip executable are in different paths
         bin_dir = ''
     build_output = run([f'{bin_dir}python', 'setup.py', 'build'], project_dir)
