@@ -8,7 +8,7 @@
   "version": "0.1.0",
   "github_organization": "<my-github-organization>",
   "license": ["Apache Software License 2.0", "MIT license", "BSD license", "ISC license", "GNU General Public License v3 or later", "Not open source"],
-  "full_name": "John Smith",
+  "full_name": "Jane Smith",
   "email": "yourname@esciencecenter.nl",
   "copyright_holder": "Netherlands eScience Center",
   "code_of_conduct_email": "{{ cookiecutter.email }}"
