@@ -33,11 +33,9 @@ def baked_with_development_dependencies(cookies):
     result = cookies.bake()
     if platform.startswith("win") and os.environ.get('CI', False):
         # Creating virtualenv does not work on Windows CI,
-        # falling back to using current Python
+        # falling back to using current pip3 dir
         pip = Path(which('pip3'))
         bin_dir = str(pip.parent) + '\\'
-        print(bin_dir)
-        print(list(Path(bin_dir).iterdir()))
     else:
         env_output = run(['python3', '-m', 'venv', 'env'], result.project)
         assert env_output.returncode == 0
@@ -68,6 +66,9 @@ def test_subpackage(baked_with_development_dependencies):
     subsubpackage.mkdir()
     (subsubpackage / '__init__.py').write_text('FOO = "bar"', encoding="utf-8")
 
+    if platform.startswith("win") and os.environ.get('CI', False):
+        # On Windows CI python and pip executable are in different paths
+        bin_dir = ''
     build_output = run([f'{bin_dir}python', 'setup.py', 'build'], project_dir)
     assert build_output.returncode == 0
     assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / '__init__.py').exists()
