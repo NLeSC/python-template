@@ -13,8 +13,9 @@ $ git branch -M main
 
 3. Import the existing repository from Github (Replace `<ORGANIZATION>` with your GitHub organization name , `REPOSITORY` with your GitHub repository name and `<BRANCH>` with your default branch for example `main` or `master`):
 ```shell
-$ git remote add -f EXISTING_PACKAGE https://github.com/ORGANIZATION/EXISTING_PACKAGE
-$ git merge EXISTING_PACKAGE/main --allow-unrelated-histories
+$ git remote add -f existing_code https://github.com/<ORGANIZATION>/<REPOSITORY>
+$ git fetch existing_code
+$ git merge existing_code/<BRANCH> --allow-unrelated-histories
 ```
 
 4. The previous step will likely result in several merge conflicts. Solve the conflicts by editing the files and add the files to  Git:
