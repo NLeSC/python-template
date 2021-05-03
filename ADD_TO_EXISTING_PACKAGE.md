@@ -11,7 +11,7 @@ $ git commit -m "first commit"
 $ git branch -M main
 ```
 
-3. Import the existing package from Github:
+3. Import the existing repository from Github (Replace `<ORGANIZATION>` with your GitHub organization name , `REPOSITORY` with your GitHub repository name and `<BRANCH>` with your default branch for example `main` or `master`):
 ```shell
 $ git remote add -f EXISTING_PACKAGE https://github.com/ORGANIZATION/EXISTING_PACKAGE
 $ git merge EXISTING_PACKAGE/main --allow-unrelated-histories
