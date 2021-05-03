@@ -1,5 +1,5 @@
 {
-  "directory_name": "my-python-project",
+  "directory_name": "my-project-directory",
   "package_name": "my_python_package",
   "_copy_without_render": [".github/workflows/*"],
   "package_short_description": "",
