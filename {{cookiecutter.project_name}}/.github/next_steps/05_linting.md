@@ -2,7 +2,7 @@
 title: 'Next step: Linting'
 ---
 
-Your repository has a [workflow]({{ cookiecutter.repository }}/blob/main/.github/workflows/lint.yml) which [lints](https://en.wikipedia.org/wiki/Lint_(software)) your code in every push and when creating a pull request.
+Your repository has a [workflow]({{ cookiecutter.repository }}/blob/main/.github/workflows/lint.yml) which [lints](https://en.wikipedia.org/wiki/Lint_(software)) your code after every push and when creating a pull request.
 
 To make sure you have a proper linter configuration you need to follow the steps below.
 
