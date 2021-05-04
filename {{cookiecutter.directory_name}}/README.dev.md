@@ -65,7 +65,13 @@ cd docs
 make html
 ```
 
-The documentation will be in `docs/_build/`
+The documentation will be in `docs/_build/html`
+
+If you do not have `make` use
+
+```shell
+sphinx-build -b html docs docs/_build/html
+```
 
 ## Versioning
 
