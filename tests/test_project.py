@@ -34,6 +34,7 @@ def run(args: Sequence[str], dirpath: os.PathLike) -> subprocess.CompletedProces
 @pytest.fixture
 def baked_with_development_dependencies(cookies):
     result = cookies.bake()
+    assert result.exit_code == 0
     if IS_WINDOWS_CI:
         # Creating virtualenv does not work on Windows CI,
         # falling back to using current pip3 dir
@@ -52,9 +53,9 @@ def baked_with_development_dependencies(cookies):
 
 def test_pytest(baked_with_development_dependencies):
     project_dir, bin_dir = baked_with_development_dependencies
-    pytest_output = run([f'{bin_dir}pytest'], project_dir)
-    assert pytest_output.returncode == 0
-    assert '== 4 passed in' in pytest_output.stdout
+    result = run([f'{bin_dir}pytest'], project_dir)
+    assert result.returncode == 0
+    assert '== 1 passed in' in result.stdout
     assert (project_dir / 'coverage.xml').exists()
     assert (project_dir / 'htmlcov/index.html').exists()
 
@@ -72,8 +73,8 @@ def test_subpackage(baked_with_development_dependencies):
     if IS_WINDOWS_CI:
         # On Windows CI python and pip executable are in different paths
         bin_dir = ''
-    build_output = run([f'{bin_dir}python', 'setup.py', 'build'], project_dir)
-    assert build_output.returncode == 0
+    result = run([f'{bin_dir}python', 'setup.py', 'build'], project_dir)
+    assert result.returncode == 0
     assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / '__init__.py').exists()
     assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / 'mysub2' / '__init__.py').exists()
 
@@ -81,7 +82,40 @@ def test_subpackage(baked_with_development_dependencies):
 def test_generate_api_docs(baked_with_development_dependencies):
     project_dir, bin_dir = baked_with_development_dependencies
 
-    build_output = run([f'{bin_dir}sphinx-build', '-b', 'html', 'docs', 'docs/_build/html'], project_dir)
-    assert build_output.returncode == 0
-    assert 'build succeeded' in build_output.stdout
+    result = run([f'{bin_dir}sphinx-build', '-b', 'html', 'docs', 'docs/_build/html'], project_dir)
+    assert result.returncode == 0
+    assert 'build succeeded' in result.stdout
     assert (project_dir / 'docs' / '_build' / 'html' / 'index.html').exists()
+
+
+def test_prospector(baked_with_development_dependencies):
+    project_dir, bin_dir = baked_with_development_dependencies
+
+    result = run([f'{bin_dir}prospector'], project_dir)
+    assert result.returncode == 0
+    assert 'Messages Found: 0' in result.stdout
+
+
+def test_isort_check(baked_with_development_dependencies):
+    project_dir, bin_dir = baked_with_development_dependencies
+
+    result = run([f'{bin_dir}isort', '--recursive', '--check-only', 'my_python_package'], project_dir)
+    assert result.returncode == 0
+    assert '' in result.stdout
+
+
+def test_bumpversion(baked_with_development_dependencies):
+    project_dir, bin_dir = baked_with_development_dependencies
+
+    original_version = '0.1.0'
+    assert original_version in (project_dir / 'setup.cfg').read_text('utf-8')
+    assert original_version in (project_dir / 'CITATION.cff').read_text('utf-8')
+    assert original_version in (project_dir / 'my_python_package' / '__init__.py').read_text('utf-8')
+
+    result = run([f'{bin_dir}bumpversion', 'major'], project_dir)
+    assert result.returncode == 0
+    assert '' in result.stdout
+    expected_version = '1.0.0'
+    assert expected_version in (project_dir / 'setup.cfg').read_text('utf-8')
+    assert expected_version in (project_dir / 'CITATION.cff').read_text('utf-8')
+    assert expected_version in (project_dir / 'my_python_package' / '__init__.py').read_text('utf-8')
