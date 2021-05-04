@@ -1,12 +1,12 @@
-name: build
+name: Python package
 
 on: [push, pull_request]
 
 jobs:
 
   build:
-    name: Build for (${{ matrix.python-version }}, ${{ matrix.os }})
-    runs-on: ${{ matrix.os }}
+    name: Build for (${{ '{{ ' -}} matrix.python-version }}, ${{ '{{ ' -}} matrix.os }})
+    runs-on: ${{ '{{ ' -}} matrix.os }}
     strategy:
       fail-fast: false
       matrix:
@@ -14,10 +14,10 @@ jobs:
         python-version: ['3.6', '3.7', '3.8', '3.9']
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python ${{ '{{ ' -}} matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ '{{ ' -}} matrix.python-version }}
       - name: Python info
         shell: bash -l {0}
         run: |
@@ -26,8 +26,12 @@ jobs:
       - name: Upgrade pip and install dependencies
         run: |
           python3 -m pip install --upgrade pip setuptools
-          python3 -m pip install .[publishing]
+          python3 -m pip install .[dev,publishing]
+      - name: Check style against standards using prospector
+        run: prospector
+      - name: Check import order
+        run: isort --recursive --check-only {{ cookiecutter.package_name }}
+      - name: Run unit tests
+        run: pytest -v
       - name: Verify that we can build the package
-        shell: bash -l {0}
-        run: |
-          python3 setup.py sdist bdist_wheel
+        run: python3 setup.py sdist bdist_wheel
