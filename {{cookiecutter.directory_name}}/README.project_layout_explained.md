@@ -1,4 +1,4 @@
-# Project Setup
+# Project layout explained
 
 Here we provide some details about the project setup. Most of the choices are explained in the
 [guide](https://guide.esciencecenter.nl). Links to the relevant sections are included below. Feel free to remove this
