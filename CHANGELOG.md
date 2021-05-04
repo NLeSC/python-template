@@ -16,13 +16,13 @@
 * Default for `package_short_description` in cookiecutter questionnaire
 * Link checker ignores GH private pages and test pypi site [#288](https://github.com/NLeSC/python-template/issues/288)
 * In CI build workflow make prospector die if there are errors [#275](https://github.com/NLeSC/python-template/issues/275)
+* Explain pytest using package code
 
 ### Removed
 
 * `.pylintrc` file, was too strict, too soon [#267](https://github.com/NLeSC/python-template/issues/267)
 * Unused development dependencies [#167](https://github.com/NLeSC/python-template/issues/167)
 * Statements in project_setup.md already mentioned in README.dev.md
-* Example tests to explain pytest
 
 ## 0.4.0
 

@@ -55,7 +55,7 @@ def test_pytest(baked_with_development_dependencies):
     project_dir, bin_dir = baked_with_development_dependencies
     result = run([f'{bin_dir}pytest'], project_dir)
     assert result.returncode == 0
-    assert '== 1 passed in' in result.stdout
+    assert '== 2 passed in' in result.stdout
     assert (project_dir / 'coverage.xml').exists()
     assert (project_dir / 'htmlcov/index.html').exists()
 
