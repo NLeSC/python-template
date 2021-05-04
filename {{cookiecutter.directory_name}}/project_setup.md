@@ -43,8 +43,7 @@ help you decide which tool to use for packaging.
   - Example tests that you should replace with your own meaningful tests (file: `test_my_module.py`)
 - The testing framework used is [PyTest](https://pytest.org)
   - [PyTest introduction](http://pythontesting.net/framework/pytest/pytest-introduction/)
-  - PyTest is listed as a development dependency, and can thus be installed with `pip3 install --editable .[dev]`
-- Tests can be run with `pytest`
+  - PyTest is listed as a development dependency
   - This is configured in `setup.cfg`
 - The project uses [GitHub action workflows](https://docs.github.com/en/actions) to automatically run tests on GitHub infrastructure against multiple Python versions
   - Workflows can be found in [`.github/workflows`](.github/workflows/)
@@ -62,9 +61,6 @@ help you decide which tool to use for packaging.
 
 ## Coding style conventions and code quality
 
-- Check your code style with `prospector`
-- You may need run `pip install --editable .[dev]` first, to install the required dependencies
-- You can use `yapf` to fix the readability of your code style and `isort` to format and group your imports
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=coding-style-conventions)
 
 ## Continuous code quality
@@ -78,8 +74,6 @@ help you decide which tool to use for packaging.
 
 - We recommend using [semantic versioning](https://guide.esciencecenter.nl/#/best_practices/releases?id=semantic-versioning).
 - For convenience, the package version is stored in a single place: `{{ cookiecutter.directory_name }}/.bumpversion.cfg`.
-  For updating the version number, make sure the dev dependencies are installed and run `bumpversion patch`,
-  `bumpversion minor`, or `bumpversion major` as appropriate.
 - Don't forget to update the version number before [making a release](https://guide.esciencecenter.nl/#/best_practices/releases)!
 
 ## Logging
