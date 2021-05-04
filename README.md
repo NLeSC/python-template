@@ -17,7 +17,7 @@ an empty Python package. Features include:
   - [README.md]({{cookiecutter.directory_name}}/README.md) for package users,
   - [README.dev.md]({{cookiecutter.directory_name}}/README.dev.md) for package developer,
   - [project_setup.md]({{cookiecutter.directory_name}}/project_setup.md) with extensive documentation about project setup,
-  - [Change log]({{cookiecutter.directory_name}}/CHANGELOG.md),
+  - [CHANGELOG.md]({{cookiecutter.directory_name}}/CHANGELOG.md),
   - [Code of Conduct]({{cookiecutter.directory_name}}/CODE_OF_CONDUCT.md),
   - [Contributing guidelines]({{cookiecutter.directory_name}}/CONTRIBUTING.md),
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/),
@@ -145,7 +145,7 @@ my-python-project/
 ```
 
 For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.directory_name}}/project_setup.md) file.
-There are also instructions on how to [apply the template to an existing Python package](ADD_TO_EXISTING_PACKAGE.md).
+There are also instructions on how to [apply the template to an existing Python package](README.add_to_existing_package.md).
 
 ## Examples
 
