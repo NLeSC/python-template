@@ -10,15 +10,15 @@
 ### Changed
 
 * Renamed `project_name` to `directory_name` in cookiecutter questionnaire
-* Initial linting is error free
-* Consolidated test/lint/build into single matrix workflow
+* Initial linting is error free [#227](https://github.com/NLeSC/python-template/issues/227)
+* Consolidated test/lint/build into single matrix workflow [@270](https://github.com/NLeSC/python-template/issues/276)
 * Enforce isort configuration
 * Default for `package_short_description` in cookiecutter questionnaire
 
 ### Removed
 
 * `.pylintrc` file, was too strict, too soon
-* Unused development dependencies
+* Unused development dependencies [#167](https://github.com/NLeSC/python-template/issues/167)
 * Statements in project_setup.md already mentioned in README.dev.md
 * Removed example tests for pytest
 
