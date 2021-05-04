@@ -81,7 +81,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
 
 Once the project files have been generated, follow the steps outlined in
-[{{cookiecutter.directory_name}}/next_steps.md]({{cookiecutter.directory_name}}/next_steps.md).
+[{{cookiecutter.directory_name}}/README.next_steps.md]({{cookiecutter.directory_name}}/README.next_steps.md).
 
 ### Step 3/3: Read about what was just generated
 
@@ -128,7 +128,6 @@ my-python-project/
 │   ├── __init__.py
 │   ├── my_module.py
 │   └── __version__.py
-├── next_steps.md
 ├── NOTICE
 ├── project_setup.md
 ├── .prospector.yml
@@ -136,6 +135,7 @@ my-python-project/
 ├── pyproject.toml
 ├── README.dev.md
 ├── README.md
+├── README.next_steps.md
 ├── setup.cfg
 ├── setup.py
 ├── sonar-project.properties
