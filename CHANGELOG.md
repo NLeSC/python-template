@@ -20,7 +20,7 @@
 * `.pylintrc` file, was too strict, too soon [#267](https://github.com/NLeSC/python-template/issues/267)
 * Unused development dependencies [#167](https://github.com/NLeSC/python-template/issues/167)
 * Statements in project_setup.md already mentioned in README.dev.md
-* Removed example tests for pytest
+* Example tests to explain pytest
 
 ## 0.4.0
 
