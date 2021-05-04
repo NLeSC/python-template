@@ -11,6 +11,9 @@
           "pattern": "/settings/secrets/actions$"
         },
         {
+          "pattern": "^https://github.com/organizations/.*/repositories/new"
+        },
+        {
           "pattern": "^https://test.pypi.org"
         },
         {

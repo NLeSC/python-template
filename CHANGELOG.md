@@ -14,7 +14,7 @@
 * Consolidated test/lint/build into single matrix workflow [#270](https://github.com/NLeSC/python-template/issues/276)
 * Enforce isort configuration
 * Default for `package_short_description` in cookiecutter questionnaire
-* Link checker ignores GH settings page and test pypi site
+* Link checker ignores GH private pages and test pypi site [#288](https://github.com/NLeSC/python-template/issues/288)
 
 ### Removed
 
