@@ -15,6 +15,7 @@
 * Enforce isort configuration
 * Default for `package_short_description` in cookiecutter questionnaire
 * Link checker ignores GH private pages and test pypi site [#288](https://github.com/NLeSC/python-template/issues/288)
+* In CI build workflow make prospector die if there are errors [#275](https://github.com/NLeSC/python-template/issues/275)
 
 ### Removed
 
