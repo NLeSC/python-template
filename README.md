@@ -16,7 +16,7 @@ an empty Python package. Features include:
 - Usage and contribution documents:
   - [README.md]({{cookiecutter.directory_name}}/README.md) for package users,
   - [README.dev.md]({{cookiecutter.directory_name}}/README.dev.md) for package developer,
-  - [project_setup.md]({{cookiecutter.directory_name}}/project_setup.md) with extensive documentation about project setup,
+  - [README.project_layout_explained.md]({{cookiecutter.directory_name}}/README.project_layout_explained.md) with extensive documentation about project setup,
   - [CHANGELOG.md]({{cookiecutter.directory_name}}/CHANGELOG.md),
   - [Code of Conduct]({{cookiecutter.directory_name}}/CODE_OF_CONDUCT.md),
   - [Contributing guidelines]({{cookiecutter.directory_name}}/CONTRIBUTING.md),
@@ -129,13 +129,13 @@ my-python-project/
 │   ├── my_module.py
 │   └── __version__.py
 ├── NOTICE
-├── project_setup.md
 ├── .prospector.yml
 ├── .pylintrc
 ├── pyproject.toml
 ├── README.dev.md
 ├── README.md
 ├── README.next_steps.md
+├── README.project_layout_explained.md
 ├── setup.cfg
 ├── setup.py
 ├── sonar-project.properties
@@ -144,7 +144,7 @@ my-python-project/
     └── test_my_module.py
 ```
 
-For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.directory_name}}/project_setup.md) file.
+For an explanation of what's there, read on in the [README.project_layout_explained.md]({{cookiecutter.directory_name}}/README.project_layout_explained.md) file.
 There are also instructions on how to [apply the template to an existing Python package](README.add_to_existing_package.md).
 
 ## Examples

@@ -76,7 +76,7 @@ ls
 If your Python package was created successfully, `cookiecutter` will point you to a file
 (`my-python-project/README.next_steps.md`) that contains information on next steps.
 
-In addition to the information in `my-python-project/project_setup.md`, the developer documentation
+In addition to the information in `my-python-project/README.project_layout_explained.md`, the developer documentation
 `my-python-project/README.dev.md` contains information on a few more things to check, for example:
 
 1. generating `my-python-project`'s documentation locally

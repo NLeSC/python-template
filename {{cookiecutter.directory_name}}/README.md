@@ -25,7 +25,7 @@
 
 {{ cookiecutter.package_short_description }}
 
-The project setup is documented in [project_setup.md](project_setup.md). Feel free to remove this document (and/or the link to this document) if you don't need it.
+The project setup is documented in [README.project_layout_explained.md](README.project_layout_explained.md). Feel free to remove this document (and/or the link to this document) if you don't need it.
 
 ## Installation
 

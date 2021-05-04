@@ -33,4 +33,4 @@ setup of your repository.
 
 ## Project layout explained
 
-For an explanation of what files are there, and what each of these do, please refer to [project_setup.md](project_setup.md).
+For an explanation of what files are there, and what each of these do, please refer to [README.project_layout_explained.md](README.project_layout_explained.md).
