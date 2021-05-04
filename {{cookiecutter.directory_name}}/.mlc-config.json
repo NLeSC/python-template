@@ -8,6 +8,12 @@
           "pattern": "^https://doi.org/<replace-with-created-DOI>"
         },
         {
+          "pattern": "/settings/secrets/actions$"
+        },
+        {
+          "pattern": "^https://test.pypi.org"
+        },
+        {
           "pattern": "^https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>"
         }
     ],
