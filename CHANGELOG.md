@@ -11,7 +11,7 @@
 
 * Renamed `project_name` to `directory_name` in cookiecutter questionnaire
 * Initial linting is error free [#227](https://github.com/NLeSC/python-template/issues/227)
-* Consolidated test/lint/build into single matrix workflow [@270](https://github.com/NLeSC/python-template/issues/276)
+* Consolidated test/lint/build into single matrix workflow [#270](https://github.com/NLeSC/python-template/issues/276)
 * Enforce isort configuration
 * Default for `package_short_description` in cookiecutter questionnaire
 
