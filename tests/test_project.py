@@ -131,7 +131,8 @@ def test_prospector(baked_with_development_dependencies, project_env_bin_dir):
 
 
 def test_isort_check(baked_with_development_dependencies, project_env_bin_dir):
-    project_dir, bin_dir = baked_with_development_dependencies
+    project_dir = baked_with_development_dependencies
+    bin_dir = project_env_bin_dir
 
     result = run([f'{bin_dir}isort', '--recursive', '--check-only', 'my_python_package'], project_dir)
     assert result.returncode == 0
