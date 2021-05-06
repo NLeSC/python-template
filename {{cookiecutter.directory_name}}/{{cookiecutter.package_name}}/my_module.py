@@ -5,7 +5,7 @@
 def hello(name):
     """Say hello
 
-    Example docstring using Google docstring style.
+    Function docstring using Google docstring style.
 
     Args:
         name (str): Name to say hello to
@@ -15,6 +15,13 @@ def hello(name):
 
     Raises:
         ValueError: If `name` is equal to `nobody`
+
+    Example:
+        This function can be called with `Jane Smith` as argument using
+
+        >>> from {{ cookiecutter.package_name }}.my_module import hello
+        >>> hello('Jane Smith')
+        'Hello Jane Smith!'
 
     """
     if name == 'nobody':
