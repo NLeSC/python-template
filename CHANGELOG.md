@@ -7,7 +7,7 @@
 * Template unit tests for documentation generation, linting and version bumping
 * Docstring for function
 * Intersphinx to documentation
-* Coverage and doctest commands for documentation
+* Coverage and doctest commands for documentation [#97](https://github.com/NLeSC/python-template/issues/97)
 
 ### Changed
 
@@ -19,9 +19,9 @@
 * Link checker ignores GH private pages and test pypi site [#288](https://github.com/NLeSC/python-template/issues/288)
 * In CI build workflow make prospector die if there are errors [#275](https://github.com/NLeSC/python-template/issues/275)
 * All example tests make use of example function
-* Use bumpversion for version in Sphinx config
-* Regenerated docs/conf.py with sphinx-quickstart v3.5.4 + enabled built-in extensions
-* Generate api rst files with 3rd party extension instead of custom function
+* Use bumpversion for version in Sphinx config [#44](https://github.com/NLeSC/python-template/issues/44)
+* Regenerated docs/conf.py with sphinx-quickstart v3.5.4 + enabled built-in extensions [#44](https://github.com/NLeSC/python-template/issues/44)
+* Generate api rst files with 3rd party extension instead of custom function [#95](https://github.com/NLeSC/python-template/issues/95)
 
 ### Removed
 
