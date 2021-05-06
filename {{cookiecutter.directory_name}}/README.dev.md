@@ -73,9 +73,24 @@ If you do not have `make` use
 sphinx-build -b html docs docs/_build/html
 ```
 
+To find undocumented Python objects run
+
+```shell
+cd docs
+make coverage
+cat _build/coverage/python.txt
+```
+
+To [test snippets](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html) in documentation run
+
+```shell
+cd docs
+make doctest
+```
+
 ## Versioning
 
-Bumping the version across all files is done with bumpversion, e.g.
+Bumping the version across all files is done with [bumpversion](https://github.com/c4urself/bump2version), e.g.
 
 ```shell
 bumpversion major
@@ -93,10 +108,10 @@ This section describes how to make a release in 3 parts:
 
 ### (1/3) Preparation
 
-1.  Update the `CHANGELOG.md`
-2.  Verify that the information in `CITATION.cff` is correct, and that `.zenodo.json` contains equivalent data
-3.  Make sure the version has been updated.
-4.  Run the unit tests with `pytest tests/`
+1. Update the <CHANGELOG.md> (don't forget to update links at bottom of page)
+2. Verify that the information in `CITATION.cff` is correct, and that `.zenodo.json` contains equivalent data
+3. Make sure the [version has been updated](#versioning).
+4. Run the unit tests with `pytest -v`
 
 ### (2/3) PyPI
 
@@ -165,4 +180,4 @@ twine upload dist/*
 
 ### (3/3) GitHub
 
-Don't forget to also make a release on GitHub. If your repository uses the GitHub-Zenodo integration this will also trigger Zenodo into making a snapshot of your repository and sticking a DOI on it.
+Don't forget to also make a [release on GitHub]({{cookiecutter.repository}}/releases/new). If your repository uses the GitHub-Zenodo integration this will also trigger Zenodo into making a snapshot of your repository and sticking a DOI on it.

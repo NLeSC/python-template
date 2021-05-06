@@ -4,19 +4,24 @@
 
 ### Added
 
-* Tests for linting and version bumping
+* Template unit tests for documentation generation, linting and version bumping
 * Docstring for function
+* Intersphinx to documentation
+* Coverage and doctest commands for documentation
 
 ### Changed
 
 * Renamed `project_name` to `directory_name` in cookiecutter questionnaire
 * Initial linting is error free [#227](https://github.com/NLeSC/python-template/issues/227)
-* Consolidated test/lint/build into single matrix workflow [#270](https://github.com/NLeSC/python-template/issues/276)
+* Consolidated test/lint/build/docs into single matrix workflow [#270](https://github.com/NLeSC/python-template/issues/276)
 * Enforce isort configuration
 * Default for `package_short_description` in cookiecutter questionnaire
 * Link checker ignores GH private pages and test pypi site [#288](https://github.com/NLeSC/python-template/issues/288)
 * In CI build workflow make prospector die if there are errors [#275](https://github.com/NLeSC/python-template/issues/275)
 * All example tests make use of example function
+* Use bumpversion for version in Sphinx config
+* Regenerated docs/conf.py with sphinx-quickstart v3.5.4 + enabled built-in extensions
+* Generate api rst files with 3rd party extension instead of custom function
 
 ### Removed
 
