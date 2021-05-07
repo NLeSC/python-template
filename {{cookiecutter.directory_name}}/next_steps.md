@@ -33,7 +33,7 @@ setup of your repository.
 
 ## Project development documentation
 
-The <README.dev.md> contains developer documentation.
+The [README.dev.md](README.dev.md) contains developer documentation.
 
 ## Project layout explained
 
