@@ -52,6 +52,8 @@ isort --recursive --check-only --diff {{ cookiecutter.package_name }}
 isort --recursive {{ cookiecutter.package_name }}
 ```
 
+To fix readability of your code style you can use [yapf](https://github.com/google/yapf).
+
 You can enable automatic linting with `prospector` and `isort` on commit by enabling the git hook from `.githooks/pre-commit`, like so:
 
 ```shell
