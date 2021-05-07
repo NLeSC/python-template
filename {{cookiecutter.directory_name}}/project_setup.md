@@ -63,7 +63,7 @@ help you decide which tool to use for packaging.
 
 ## Coding style conventions and code quality
 
-- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=coding-style-conventions)
+- [Relevant section in the NLeSC guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=coding-style-conventions) and [README.dev.md](README.dev.md).
 
 ## Continuous code quality
 
