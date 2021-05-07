@@ -70,6 +70,7 @@ def test_pytest(baked_with_development_dependencies, project_env_bin_dir):
 
 
 def test_subpackage(baked_with_development_dependencies, project_env_bin_dir):
+    """Test if subpackages end up in sdist and bdist_wheel distributions"""
     project_dir = baked_with_development_dependencies
     bin_dir = project_env_bin_dir
     subpackage = (project_dir / 'my_python_package' / 'mysub')
@@ -83,6 +84,8 @@ def test_subpackage(baked_with_development_dependencies, project_env_bin_dir):
     if IS_WINDOWS_CI:
         # On Windows CI python and pip executable are in different paths
         bin_dir = ''
+    # sdist and bdist_wheel both call build command to create build/ dir
+    # So instead of looking in distribution archives we can look in build/ dir
     result = run([f'{bin_dir}python', 'setup.py', 'build'], project_dir)
     assert result.returncode == 0
     assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / '__init__.py').exists()
