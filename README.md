@@ -69,7 +69,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 | ------------------------- | ------------- | ----------- |
 | directory_name              | my-python-project | Name of the directory that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. To get an impression of what will be generated, see the directory tree [below](https://github.com/NLeSC/python-template#step-33-read-about-what-was-just-generated) |
 | package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. |
-| package_short_description | &nbsp;            | The information that you enter here will end up in the README, documentation, license, and setup.cfg, so it may be a good idea to prepare something in advance. |
+| package_short_description | Short description of package | The information that you enter here will end up in the README, documentation, license, and setup.cfg, so it may be a good idea to prepare something in advance. |
 | keyword1                  | keyword1          | A term that describes your package. |
 | keyword2                  | keyword2          | Another term that describes your package. |
 | version                   | 0.1.0             | &nbsp; |

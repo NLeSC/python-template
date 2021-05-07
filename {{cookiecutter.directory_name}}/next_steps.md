@@ -31,6 +31,10 @@ A short while after you push your commits to GitHub for the first time, a few is
 automatically ([here]({{cookiecutter.repository}}/issues?q=author%3Aapp%2Fgithub-actions)). Resolve them to complete the
 setup of your repository.
 
+## Project development documentation
+
+The [README.dev.md](README.dev.md) contains developer documentation.
+
 ## Project layout explained
 
 For an explanation of what files are there, and what each of these do, please refer to [project_setup.md](project_setup.md).

@@ -25,6 +25,8 @@ jobs:
           python3 --version
       - name: Install dependencies
         run: python3 -m pip install .[dev]
+      - name: Check style against standards using prospector
+        run: prospector --zero-exit --output-format grouped --output-format pylint:pylint-report.txt
       - name: Run unit tests with coverage
         run: pytest --cov --cov-report term --cov-report xml --junitxml=xunit-result.xml tests/
       - name: Correct coverage paths
@@ -32,5 +34,5 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ '{{' -}} secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ '{{' -}} secrets.SONAR_TOKEN }}

@@ -1,6 +1,3 @@
-import pytest
-
-
 def test_double_quotes_in_name_and_description(cookies):
     ctx = {
         "project_short_description": '"double quotes"',

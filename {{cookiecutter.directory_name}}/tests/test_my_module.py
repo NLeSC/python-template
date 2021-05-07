@@ -1,30 +1,24 @@
-#!/usr/bin/env python
-
 """Tests for the {{ cookiecutter.package_name }}.my_module module.
 """
 import pytest
-from {{ cookiecutter.package_name }} import my_module
+
+from {{ cookiecutter.package_name }}.my_module import hello
 
 
 def test_hello():
-    assert my_module.hello('nlesc') == 'Hello nlesc!'
+    assert hello('nlesc') == 'Hello nlesc!'
 
 
-def test_something():
-    assert True
+def test_hello_with_error():
+    with pytest.raises(ValueError) as excinfo:
+        hello('nobody')
+    assert 'Can not say hello to nobody' in str(excinfo.value)
 
 
-def test_with_error():
-    with pytest.raises(ValueError):
-        # Do something that raises a ValueError
-        raise(ValueError)
-
-
-# Fixture example
 @pytest.fixture
-def an_object():
-    return {}
+def some_name():
+    return 'Jane Smith'
 
 
-def test_my_module(an_object):
-    assert an_object == {}
+def test_hello_with_fixture(some_name):
+    assert hello(some_name) == 'Hello Jane Smith!'
