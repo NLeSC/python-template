@@ -107,8 +107,10 @@ def test_coverage_api_docs(baked_with_development_dependencies, project_env_bin_
     assert result.returncode == 0
     assert 'build succeeded' in result.stdout
     coverage_file = project_dir / 'docs' / '_build' / 'coverage' / 'python.txt'
-    lines = coverage_file.readlines()
-    assert len(lines) == 2
+    coverage_file_lines = coverage_file.read_text('utf8').splitlines()
+    expected = ['Undocumented Python objects',
+                '===========================']
+    assert coverage_file_lines == expected
 
 
 def test_doctest_api_docs(baked_with_development_dependencies, project_env_bin_dir):
