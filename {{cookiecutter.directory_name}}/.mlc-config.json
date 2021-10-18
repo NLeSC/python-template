@@ -18,6 +18,9 @@
         },
         {
           "pattern": "^https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>"
+        },
+        {
+          "pattern": "^https://readthedocs.org/dashboard/import.*"
         }
     ],
     "replacementPatterns": [

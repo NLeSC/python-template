@@ -15,6 +15,9 @@
         },
         {
           "pattern": "^.github/workflows/sonarcloud.yml$"
+        },
+        {
+          "pattern": "^https://readthedocs.org/dashboard/import.*"
         }
     ],
     "replacementPatterns": [
