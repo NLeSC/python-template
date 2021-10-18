@@ -7,7 +7,7 @@ Your Python package should have publicly available documentation, including API 
 
 To host the documentation of this repository please perform the following instructions:
 
-1. go to [Read the Docs](https://readthedocs.org/dashboard/import/?)
+1. go to [Read the Docs](https://readthedocs.org/dashboard/import/)
 1. log in with your GitHub account
 1. find `{{ cookiecutter.github_organization }}/{{ cookiecutter.directory_name }}` in list and press `+` button.
    * If repository is not listed,
