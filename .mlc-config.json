@@ -22,5 +22,6 @@
     ],
     "replacementPatterns": [
     ],
+    "retryOn429": true,
     "timeout": "20s"
 }
