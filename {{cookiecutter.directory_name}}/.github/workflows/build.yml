@@ -58,4 +58,4 @@ jobs:
       - name: Check style against standards using prospector
         run: prospector
       - name: Check import order
-        run: isort --recursive --check-only dianna
+        run: isort --check-only {{ cookiecutter.package_name }}
