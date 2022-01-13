@@ -15,9 +15,13 @@
         },
         {
           "pattern": "^.github/workflows/sonarcloud.yml$"
+        },
+        {
+          "pattern": "^https://readthedocs.org/dashboard/import.*"
         }
     ],
     "replacementPatterns": [
     ],
+    "retryOn429": true,
     "timeout": "20s"
 }
