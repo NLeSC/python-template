@@ -27,10 +27,6 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip setuptools
           python3 -m pip install .[dev,publishing]
-      - name: Check style against standards using prospector
-        run: prospector
-      - name: Check import order
-        run: isort --recursive --check-only {{ cookiecutter.package_name }}
       - name: Run unit tests
         run: pytest -v
       - name: Verify that we can build the package
@@ -38,3 +34,28 @@ jobs:
       - name: Build documentation
         run: make coverage doctest html
         working-directory: docs
+
+  lint:
+    name: Linting build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Python info
+        shell: bash -l {0}
+        run: |
+          which python3
+          python3 --version
+      - name: Upgrade pip and install dependencies
+        run: |
+          python3 -m pip install --upgrade pip setuptools
+          python3 -m pip install .[dev,publishing]
+      - name: Check style against standards using prospector
+        run: prospector
+      - name: Check import order
+        run: isort --check-only {{ cookiecutter.package_name }}
