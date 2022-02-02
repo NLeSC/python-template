@@ -1,15 +1,19 @@
 name: cffconvert
 
-on: push
+on:
+  push:
+    paths:
+      - CITATION.cff
 
 jobs:
-
-  cffconvert:
-    name: Verify citation metadata consistency
+  validate:
+    name: "validate"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        name: Check out a copy of the repository
+      - name: Check out a copy of the repository
+        uses: actions/checkout@v2
 
-      - uses: citation-file-format/cffconvert-github-action@main
-        name: Check whether the citation metadata from CITATION.cff is equivalent to that in .zenodo.json
+      - name: Check whether the citation metadata from CITATION.cff is valid
+        uses: citation-file-format/cffconvert-github-action@2.0.0
+        with:
+          args: "--validate"
