@@ -25,11 +25,40 @@ Afterwards check that the install directory is present in the `PATH` environment
 
 ## Running the tests
 
-Running the tests requires an activated virtual environment with the development tools installed.
+There are two ways to run tests.
+
+The first way requires an activated virtual environment with the development tools installed:
 
 ```shell
 pytest -v
 ```
+
+The second is to use `tox`, which can be installed separately (e.g. with `pip install tox`), i.e. not necessarily inside the virtual environment you use for installing `{{ cookiecutter.package_name }}`, but then builds the necessary virtual environments itself by simply running:
+
+```shell
+tox
+```
+
+Testing with `tox` allows for keeping the testing environment separate from your development environment.
+The development environment will typically accumulate (old) packages during development that interfere with testing; this problem is avoided by testing with `tox`.
+
+### Test coverage
+
+In addition to just running the tests to see if they pass, they can be used for coverage statistics, i.e. to determine how much of the package's code is actually executed during tests.
+In an activated virtual environment with the development tools installed, inside the package directory, run:
+
+```shell
+coverage run
+```
+
+This runs tests and stores the result in a `.coverage` file.
+To see the results on the command line, run
+
+```shell
+coverage report
+```
+
+`coverage` can also generate output in HTML and other formats; see `coverage help` for more information.
 
 ## Running linters locally
 

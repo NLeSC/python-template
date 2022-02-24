@@ -42,7 +42,7 @@ help you decide which tool to use for packaging.
 - The `tests` folder contains:
   - Example tests that you should replace with your own meaningful tests (file: `test_my_module.py`)
 - The testing framework used is [PyTest](https://pytest.org)
-  - [PyTest introduction](http://pythontesting.net/framework/pytest/pytest-introduction/)
+  - [PyTest introduction](https://pythontest.com/pytest-book/)
   - PyTest is listed as a development dependency
   - This is configured in `setup.cfg`
 - The project uses [GitHub action workflows](https://docs.github.com/en/actions) to automatically run tests on GitHub infrastructure against multiple Python versions

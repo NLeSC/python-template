@@ -65,8 +65,24 @@ def test_pytest(baked_with_development_dependencies, project_env_bin_dir):
     result = run([f'{bin_dir}pytest'], project_dir)
     assert result.returncode == 0
     assert '== 3 passed in' in result.stdout
-    assert (project_dir / 'coverage.xml').exists()
-    assert (project_dir / 'htmlcov' / 'index.html').exists()
+
+
+def test_coverage(baked_with_development_dependencies, project_env_bin_dir):
+    project_dir = baked_with_development_dependencies
+    bin_dir = project_env_bin_dir
+    result = run([f'{bin_dir}coverage', 'run', '-m', 'pytest'], project_dir)
+    assert result.returncode == 0
+    assert '== 3 passed in' in result.stdout
+    assert (project_dir / '.coverage').exists()
+
+
+def test_tox(baked_with_development_dependencies, project_env_bin_dir):
+    project_dir = baked_with_development_dependencies
+    bin_dir = project_env_bin_dir
+    result = run([f'{bin_dir}tox'], project_dir)
+    assert result.returncode == 0
+    assert '== 3 passed in' in result.stdout
+    assert (project_dir / '.tox' / 'dist' / 'my_python_package-0.1.0.zip').exists()
 
 
 def test_subpackage(baked_with_development_dependencies, project_env_bin_dir):
