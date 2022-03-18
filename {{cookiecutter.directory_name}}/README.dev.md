@@ -150,7 +150,7 @@ In a new terminal, without an activated virtual environment or an env directory:
 
 ```shell
 # prepare a new directory
-cd $(mktemp -d --tmpdir {{ cookiecutter.package_name }}.XXXXXX)
+cd $(mktemp -d {{ cookiecutter.package_name }}.XXXXXX)
 
 # fresh git clone ensures the release has the state of origin/main branch
 git clone {{ cookiecutter.repository }} .
@@ -184,7 +184,7 @@ and verify that your package was uploaded successfully. Keep the terminal open, 
 In a new terminal, without an activated virtual environment or an env directory:
 
 ```shell
-cd $(mktemp -d --tmpdir {{ cookiecutter.package_name }}-test.XXXXXX)
+cd $(mktemp -d {{ cookiecutter.package_name }}-test.XXXXXX)
 
 # prepare a clean virtual environment and activate it
 python3 -m venv env
