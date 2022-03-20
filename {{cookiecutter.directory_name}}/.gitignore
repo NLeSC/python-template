@@ -12,6 +12,7 @@ htmlcov
 .coverage
 coverage.xml
 .pytest_cache
+.tox
 
 docs/_build
 
