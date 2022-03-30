@@ -37,9 +37,6 @@ jobs:
         run: pytest -v
       - name: Verify that we can build the package
         run: python3 setup.py sdist bdist_wheel
-      - name: Build documentation
-        run: make coverage doctest html
-        working-directory: docs
 
   lint:
     name: Linting build
