@@ -6,6 +6,13 @@ Once your Python package is created, put it under [version
 control](https://guide.esciencecenter.nl/#/best_practices/version_control) using
 [git](https://git-scm.com/) and [GitHub](https://github.com/).
 
+Note that the next step assumes you have setup your connection to GitHub via SSH,
+see [Connecting to GitHub with SSH](https://docs.github.com/en/github-ae@latest/authentication/connecting-to-github-with-ssh).
+
+Alternatively, you can also use a personal access token, see
+[Creating a personal access token](https://docs.github.com/en/github-ae@latest/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).  If you choose this option, below you will have to replace
+`git@github.com:` by `https://github.com/`.
+
 ```shell
 cd {{ cookiecutter.directory_name }}
 git init
