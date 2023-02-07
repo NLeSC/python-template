@@ -6,7 +6,7 @@
   "keyword2": "keyword2",
   "version": "0.1.0",
   "github_organization": "<my-github-organization>",
-  "license": ["Apache Software License 2.0", "MIT license", "BSD license", "ISC license", "GNU General Public License v3 or later", "Not open source"],
+  "license": ["Apache Software License 2.0", "MIT license", "BSD license", "ISC license", "GNU General Public License v3 or later", "GNU Lesser General Public License v3 or later", "Not open source"],
   "full_name": "Jane Smith",
   "email": "yourname@esciencecenter.nl",
   "copyright_holder": "Netherlands eScience Center",
