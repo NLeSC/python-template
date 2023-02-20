@@ -71,14 +71,14 @@ development tools installed.
 prospector
 
 # recursively check import style for the {{ cookiecutter.package_name }} module only
-isort --recursive --check-only {{ cookiecutter.package_name }}
+isort --check-only {{ cookiecutter.package_name }}
 
 # recursively check import style for the {{ cookiecutter.package_name }} module only and show
 # any proposed changes as a diff
-isort --recursive --check-only --diff {{ cookiecutter.package_name }}
+isort --check-only --diff {{ cookiecutter.package_name }}
 
 # recursively fix import style for the {{ cookiecutter.package_name }} module only
-isort --recursive {{ cookiecutter.package_name }}
+isort {{ cookiecutter.package_name }}
 ```
 
 To fix readability of your code style you can use [yapf](https://github.com/google/yapf).
