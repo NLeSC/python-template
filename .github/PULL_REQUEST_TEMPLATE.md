@@ -1,4 +1,4 @@
-**Description*
+**Description**
 
 <!-- Description of PR -->
 
