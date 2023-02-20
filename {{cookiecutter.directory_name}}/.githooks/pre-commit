@@ -22,8 +22,8 @@ isort --recursive --check-only {{ cookiecutter.package_name }}
 
 if [ $? != "0" ]; then
     echo "Commit aborted."
-    echo "  Run 'isort --recursive --check-only --diff {{ cookiecutter.package_name }}' to see what's wrong."
-    echo "  Run 'isort --recursive {{ cookiecutter.package_name }}' to let isort fix problems automatically."
+    echo "  Run 'isort --check-only --diff {{ cookiecutter.package_name }}' to see what's wrong."
+    echo "  Run 'isort {{ cookiecutter.package_name }}' to let isort fix problems automatically."
     exit 1
 fi
 

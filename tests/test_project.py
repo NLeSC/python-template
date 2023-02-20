@@ -156,7 +156,7 @@ def test_isort_check(baked_with_development_dependencies, project_env_bin_dir):
     project_dir = baked_with_development_dependencies
     bin_dir = project_env_bin_dir
 
-    result = run([f'{bin_dir}isort', '--recursive', '--check-only', 'my_python_package'], project_dir)
+    result = run([f'{bin_dir}isort', '--check-only', 'my_python_package'], project_dir)
     assert result.returncode == 0
     assert '' in result.stdout
 
