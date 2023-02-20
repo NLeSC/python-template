@@ -1,6 +1,6 @@
 # YAML 1.2
 ---
-cff-version: "1.1.0"
+cff-version: "1.2.0"
 title: "{{ cookiecutter.package_name }}"
 authors:
   -
