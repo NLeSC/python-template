@@ -1,4 +1,7 @@
 on: [push]
+permissions:
+  contents: read
+  issues: write
 name: Create issues for next steps
 jobs:
   next_steps:
