@@ -23,12 +23,12 @@ jobs:
       - name: Python info
         shell: bash -l {0}
         run: |
-          which python3
-          python3 --version
+          which python
+          python --version
       - name: Upgrade pip and install dependencies
         run: |
-          python3 -m pip install --upgrade pip setuptools
-          python3 -m pip install .[dev,publishing]
+          python -m pip install --upgrade pip setuptools
+          python -m pip install .[dev,publishing]
       - name: Install pandoc using apt
         run: sudo apt install pandoc        
       - name: Build documentation
