@@ -27,16 +27,16 @@ jobs:
       - name: Python info
         shell: bash -e {0}
         run: |
-          which python3
-          python3 --version
+          which python
+          python --version
       - name: Upgrade pip and install dependencies
         run: |
-          python3 -m pip install --upgrade pip setuptools
-          python3 -m pip install .[dev,publishing]
+          python -m pip install --upgrade pip setuptools
+          python -m pip install .[dev,publishing]
       - name: Run unit tests
-        run: pytest -v
+        run: python -m pytest -v
       - name: Verify that we can build the package
-        run: python3 setup.py sdist bdist_wheel
+        run: python setup.py sdist bdist_wheel
 
   lint:
     name: Linting build
@@ -52,12 +52,12 @@ jobs:
       - name: Python info
         shell: bash -e {0}
         run: |
-          which python3
-          python3 --version
+          which python
+          python --version
       - name: Upgrade pip and install dependencies
         run: |
-          python3 -m pip install --upgrade pip setuptools
-          python3 -m pip install .[dev,publishing]
+          python -m pip install --upgrade pip setuptools
+          python -m pip install .[dev,publishing]
       - name: Check style against standards using prospector
         run: prospector
       - name: Check import order

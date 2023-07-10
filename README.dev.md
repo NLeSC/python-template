@@ -10,7 +10,7 @@ We recommend installing `cookiecutter` in user space as per `cookiecutter`'s ins
 install `cookiecutter` for every new project.
 
 ```shell
-python3 -m pip install --user --upgrade cookiecutter
+python -m pip install --user --upgrade cookiecutter
 ```
 
 ### Get your own copy of the repository
@@ -30,17 +30,17 @@ run the tests later.
 
 ```shell
 # Create a virtual environment, e.g. with
-python3 -m venv env
+python -m venv env
 
 # activate virtual environment
 source env/bin/activate
 
 # make sure to have a recent version of pip and setuptools
-python3 -m pip install --upgrade pip setuptools
+python -m pip install --upgrade pip setuptools
 
 # (from the project root directory)
 # install development dependencies
-python3 -m pip install --no-cache-dir .[dev]
+python -m pip install --no-cache-dir .[dev]
 ```
 
 ## Running the tests
