@@ -51,7 +51,7 @@ We recommend installing `cookiecutter` in user space as per `cookiecutter`'s ins
 install `cookiecutter` for every new project.
 
 ```shell
-python3 -m pip install --user --upgrade cookiecutter
+python -m pip install --user --upgrade cookiecutter
 ```
 
 ### Step 2/3: Generate the files and directory structure
