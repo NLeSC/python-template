@@ -38,6 +38,7 @@ select = [
 ]
 ignore = [
     'D100',  # Missing module docstring
+    'D104',  # Missing public package docstring
     # The following list excludes rules irrelevant to the Google style
     'D203',
     'D204',
