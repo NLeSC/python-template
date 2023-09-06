@@ -11,7 +11,7 @@ an empty Python package. Features include:
 - [Python static setup configuration]({{cookiecutter.directory_name}}/setup.cfg),
 - Open source software license,
 - Continuous integration with [GitHub action workflows]({{cookiecutter.directory_name}}/.github/workflows) for building, testing, link checking and linting,
-- Code style checking with [prospector](https://pypi.org/project/prospector/),
+- Code style checking with [ruff](https://beta.ruff.rs/),
 - [Editorconfig]({{cookiecutter.directory_name}}/.editorconfig),
 - Usage and contribution documents:
   - [README.md]({{cookiecutter.directory_name}}/README.md) for package users,

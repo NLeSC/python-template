@@ -19,3 +19,77 @@ skip_missing_interpreters = true
 commands = pytest
 extras = dev
 """
+
+[tool.ruff]
+# Enable Pyflakes `E` and `F` codes by default.
+select = [
+    "F",  # Pyflakes
+    "E",  # pycodestyle (error)
+    "W",    # pycodestyle (warning)
+    # "C90",  # mccabe
+    "I",    # isort
+    "D",    # pydocstyle
+    # "PL",   # Pylint
+    # "PLC",  # Convention
+    # "PLE",  # Error
+    # "PLR",  # Refactor
+    # "PLW",  # Warning
+
+]
+ignore = [
+    'D100',  # Missing module docstring
+    # The following list excludes rules irrelevant to the Google style
+    'D203',
+    'D204',
+    'D213',
+    'D215',
+    'D400',
+    'D401',
+    'D404',
+    'D406',
+    'D407',
+    'D408',
+    'D409',
+    'D413',
+]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["A", "B", "C", "D", "E", "F", "I"]
+unfixable = []
+
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    ".venv",
+    "scripts",
+]
+per-file-ignores = {}
+
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+target-version = "py39"
+line-length = 120
+
+[tool.ruff.isort]
+known-first-party = ["distance_explainer"]
+force-single-line = true
+no-lines-before = ["future","standard-library","third-party","first-party","local-folder"]
