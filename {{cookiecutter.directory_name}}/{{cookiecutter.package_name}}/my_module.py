@@ -3,7 +3,7 @@
 
 # FIXME: put actual code here
 def hello(name):
-    """Say hello
+    """Say hello.
 
     Function docstring using Google docstring style.
 

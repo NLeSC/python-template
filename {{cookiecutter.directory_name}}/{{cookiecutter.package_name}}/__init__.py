@@ -1,6 +1,5 @@
-"""Documentation about {{ cookiecutter.package_name }}"""
+"""Documentation about {{ cookiecutter.package_name }}."""
 import logging
-
 
 logging.getLogger(__name__).addHandler(logging.NullHandler())
 
