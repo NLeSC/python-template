@@ -131,20 +131,11 @@ def test_doctest_api_docs(baked_with_development_dependencies, project_env_bin_d
     assert (project_dir / 'docs' / '_build' / 'doctest' / 'output.txt').exists()
 
 
-def test_prospector(baked_with_development_dependencies, project_env_bin_dir):
+def test_ruff_check(baked_with_development_dependencies, project_env_bin_dir):
     project_dir = baked_with_development_dependencies
     bin_dir = project_env_bin_dir
 
-    result = run([f'{bin_dir}prospector'], project_dir)
-    assert result.returncode == 0
-    assert 'Messages Found: 0' in result.stdout
-
-
-def test_isort_check(baked_with_development_dependencies, project_env_bin_dir):
-    project_dir = baked_with_development_dependencies
-    bin_dir = project_env_bin_dir
-
-    result = run([f'{bin_dir}isort', '--check-only', 'my_python_package'], project_dir)
+    result = run([f'{bin_dir}ruff', '.'], project_dir)
     assert result.returncode == 0
     assert '' in result.stdout
 
