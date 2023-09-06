@@ -62,28 +62,20 @@ coverage report
 
 ## Running linters locally
 
-For linting we will use [prospector](https://pypi.org/project/prospector/) and to sort imports we will use
-[isort](https://pycqa.github.io/isort/). Running the linters requires an activated virtual environment with the
-development tools installed.
+For linting and sorting imports we will use [ruff](https://beta.ruff.rs/docs/). Running the linters requires an 
+activated virtual environment with the development tools installed.
 
 ```shell
 # linter
-prospector
+ruff .
 
-# recursively check import style for the {{ cookiecutter.package_name }} module only
-isort --check-only {{ cookiecutter.package_name }}
-
-# recursively check import style for the {{ cookiecutter.package_name }} module only and show
-# any proposed changes as a diff
-isort --check-only --diff {{ cookiecutter.package_name }}
-
-# recursively fix import style for the {{ cookiecutter.package_name }} module only
-isort {{ cookiecutter.package_name }}
+# linter with automatic fixing
+ruff . --fix
 ```
 
 To fix readability of your code style you can use [yapf](https://github.com/google/yapf).
 
-You can enable automatic linting with `prospector` and `isort` on commit by enabling the git hook from `.githooks/pre-commit`, like so:
+You can enable automatic linting with `ruff` on commit by enabling the git hook from `.githooks/pre-commit`, like so:
 
 ```shell
 git config --local core.hooksPath .githooks

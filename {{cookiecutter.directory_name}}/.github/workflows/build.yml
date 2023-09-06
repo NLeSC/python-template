@@ -58,7 +58,5 @@ jobs:
         run: |
           python -m pip install --upgrade pip setuptools
           python -m pip install .[dev,publishing]
-      - name: Check style against standards using prospector
-        run: prospector
-      - name: Check import order
-        run: isort --check-only {{ cookiecutter.package_name }} --diff
+      - name: Check style against standards using ruff
+        run: ruff .
