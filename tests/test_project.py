@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 from sys import platform
 from typing import Sequence
 
@@ -107,6 +108,8 @@ def test_generate_api_docs(baked_with_development_dependencies, project_env_bin_
     assert (project_dir / 'docs' / '_build' / 'html' / 'index.html').exists()
 
 
+@pytest.mark.skipif(sys.version_info < (3, 9), reason=
+"requires python 3.9 or higher, see https://github.com/NLeSC/python-template/pull/347#issuecomment-1710684574")
 def test_coverage_api_docs(baked_with_development_dependencies, project_env_bin_dir):
     project_dir = baked_with_development_dependencies
     bin_dir = project_env_bin_dir
@@ -116,9 +119,28 @@ def test_coverage_api_docs(baked_with_development_dependencies, project_env_bin_
     assert 'build succeeded' in result.stdout
     coverage_file = project_dir / 'docs' / '_build' / 'coverage' / 'python.txt'
     coverage_file_lines = coverage_file.read_text('utf8').splitlines()
-    expected = ['Undocumented Python objects',
-                '===========================']
-    assert coverage_file_lines == expected
+    # Coverage file lines should look globally like:
+    # ['Undocumented Python objects',
+    #  '===========================',
+    #  '',
+    #  'Statistics',
+    #  '----------',
+    #  '',
+    #  '+-----------------------------+----------+--------------+',
+    #  '| Module                      | Coverage | Undocumented |',
+    #  '+=============================+==========+==============+',
+    #  '| my_python_package           | 100.00%  | 0            |',
+    #  '+-----------------------------+----------+--------------+',
+    #  '| my_python_package.my_module | 100.00%  | 0            |',
+    #  '+-----------------------------+----------+--------------+',
+    #  '| TOTAL                       | 100.00%  | 0            |',
+    #  '+-----------------------------+----------+--------------+',
+    #  ''
+    #  ]
+    # The package coverage lines change order between runs, so we test for each data row individually:
+    assert '| my_python_package           | 100.00%  | 0            |' in coverage_file_lines
+    assert '| my_python_package.my_module | 100.00%  | 0            |' in coverage_file_lines
+    assert '| TOTAL                       | 100.00%  | 0            |' in coverage_file_lines
 
 
 def test_doctest_api_docs(baked_with_development_dependencies, project_env_bin_dir):
