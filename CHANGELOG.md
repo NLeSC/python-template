@@ -11,6 +11,7 @@
 
 ### Changed
 
+* Moved from setup.cfg/.py to pyproject.toml [#351](https://github.com/NLeSC/python-template/issues/351)
 * Moved from prospector to ruff [#336](https://github.com/NLeSC/python-template/issues/336)
 * Renamed `project_name` to `directory_name` in cookiecutter questionnaire
 * Initial linting is error free [#227](https://github.com/NLeSC/python-template/issues/227)

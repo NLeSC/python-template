@@ -15,6 +15,6 @@ To host the documentation of this repository please perform the following instru
       2. make sure {{ cookiecutter.github_organization }} has been granted access.
       3. reload repository list on Read the Docs import page
 1. wait for the first build to be completed at <https://readthedocs.org/projects/{{ cookiecutter.directory_name }}/builds>
-1. check that the link of the documentation badge in the [README.md]({{ cookiecutter.repository }}) works
+1. check that the link of the documentation badge in the [README.md]({{ cookiecutter.repository_url }}) works
 
-See [README.dev.md#]({{cookiecutter.repository}}/blob/main/README.dev.md#generating-the-api-docs) how to build documentation site locally.
+See [README.dev.md#]({{cookiecutter.repository_url}}/blob/main/README.dev.md#generating-the-api-docs) how to build documentation site locally.

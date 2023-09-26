@@ -6,5 +6,6 @@
     "directory_name": cookiecutter.directory_name.lower().replace(" ", "-"),
     "full_name": cookiecutter.full_name.replace('\"', '\\\"'),
     "repository": "git@github.com:" + cookiecutter.github_organization + "/" + cookiecutter.directory_name.lower().replace(" ", "-"),
+    "repository_url": "https://github.com/" + cookiecutter.github_organization + "/" + cookiecutter.directory_name.lower().replace(" ", "-"),
     "package_short_description": cookiecutter.package_short_description.replace('\"', '\\\"')
 }) }}

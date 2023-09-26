@@ -1,6 +1,69 @@
+# see documentation, e.g.
+# - https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata
+# - https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+# - https://www.python.org/dev/peps/pep-0621/
+
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=64.0.0", "setuptools-scm", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+authors = [
+    { name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}" }
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "{{ {'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
+        'MIT license': 'License :: OSI Approved :: MIT License',
+        'BSD license': 'License :: OSI Approved :: BSD License',
+        'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
+        'GNU General Public License v3 or later': 'License :: OSI Approved :: GNU General Public License',
+        'Not open source': 'License :: Other/Proprietary License'
+    }[cookiecutter.license] }}",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = []
+description = "{{ cookiecutter.package_short_description }}"
+keywords = [
+    "{{ cookiecutter.keyword1 }}",
+    "{{ cookiecutter.keyword2 }}",
+]
+license = {file = "LICENSE"}
+name = "{{ cookiecutter.package_name }}"
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.7"
+version = "{{ cookiecutter.version }}"
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "bump2version",
+    "coverage [toml]",
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "sphinx",
+    "sphinx_rtd_theme",
+    "sphinx-autoapi",
+    "tox",
+    "myst_parser",
+]
+publishing = [
+    "twine",
+    "wheel",
+]
+
+[project.urls]
+Repository = "{{ cookiecutter.repository_url }}"
+Issues = "{{ cookiecutter.repository_url }}/issues"
+Changelog = "{{ cookiecutter.repository_url }}/CHANGELOG.md"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -9,6 +72,19 @@ testpaths = ["tests"]
 branch = true
 source = ["{{ cookiecutter.package_name }}"]
 command_line = "-m pytest"
+
+[tool.isort]
+lines_after_imports = 2
+force_single_line = 1
+no_lines_before = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+known_first_party = "{{ cookiecutter.package_name }}"
+src_paths = ["{{ cookiecutter.package_name }}", "tests"]
+line_length = 120
+
+# For completeness, until we move to an src-based layout
+[tool.setuptools.packages.find]
+include = ["{{ cookiecutter.package_name }}*"]
+exclude = ["tests*"]
 
 [tool.tox]
 legacy_tox_ini = """
