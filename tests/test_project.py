@@ -14,8 +14,8 @@ def test_project_folder(cookies):
 
     assert project.exit_code == 0
     assert project.exception is None
-    assert project.project.basename == 'my-python-project'
-    assert project.project.isdir()
+    assert project.project_path.name == 'my-python-project'
+    assert project.project_path.is_dir()
 
 
 def run(args: Sequence[str], dirpath: os.PathLike) -> subprocess.CompletedProcess:
@@ -47,9 +47,9 @@ def baked_with_development_dependencies(cookies_session, project_env_bin_dir):
     bin_dir = project_env_bin_dir
     latest_pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--upgrade', 'pip', 'setuptools'], result.project_path)
     assert latest_pip_output.returncode == 0
-    pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--editable', '.[dev]'], result.project)
+    pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--editable', '.[dev]'], result.project_path)
     assert pip_output.returncode == 0
-    return result.project
+    return result.project_path
 
 
 def test_pytest(baked_with_development_dependencies, project_env_bin_dir):
