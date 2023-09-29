@@ -34,4 +34,4 @@ jobs:
         python -m pip install .[dev]
     - name: Run pytest
       run: |
-        python -m pytest -v
+        python -m pytest -v --durations=0
