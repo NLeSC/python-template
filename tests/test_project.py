@@ -29,8 +29,9 @@ def run(args: Sequence[str], dirpath: os.PathLike) -> subprocess.CompletedProces
     return completed_process
 
 
-@pytest.fixture
-def project_env_bin_dir(tmp_path):
+@pytest.fixture(scope='session')
+def project_env_bin_dir(tmp_path_factory):
+    tmp_path = tmp_path_factory.mktemp('venv')
     env_output = run(['python', '-m', 'venv', 'env'], tmp_path)
     assert env_output.returncode == 0
     bin_dir = str(tmp_path / 'env' / 'bin')
@@ -39,12 +40,12 @@ def project_env_bin_dir(tmp_path):
     return str(bin_dir) + os.sep
 
 
-@pytest.fixture
-def baked_with_development_dependencies(cookies, project_env_bin_dir):
-    result = cookies.bake()
+@pytest.fixture(scope='session')
+def baked_with_development_dependencies(cookies_session, project_env_bin_dir):
+    result = cookies_session.bake()
     assert result.exit_code == 0
     bin_dir = project_env_bin_dir
-    latest_pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--upgrade', 'pip', 'setuptools'], result.project)
+    latest_pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--upgrade', 'pip', 'setuptools'], result.project_path)
     assert latest_pip_output.returncode == 0
     pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--editable', '.[dev]'], result.project)
     assert pip_output.returncode == 0
@@ -84,11 +85,11 @@ def test_subpackage(baked_with_development_dependencies, project_env_bin_dir):
     bin_dir = project_env_bin_dir
     subpackage = (project_dir / 'my_python_package' / 'mysub')
     subpackage.mkdir()
-    (subpackage / '__init__.py').write_text('FOO = "bar"', encoding="utf-8")
+    (subpackage / '__init__.py').write_text('FOO = "bar"\n', encoding="utf-8")
 
     subsubpackage = (project_dir / 'my_python_package' / 'mysub' / 'mysub2')
     subsubpackage.mkdir()
-    (subsubpackage / '__init__.py').write_text('FOO = "bar"', encoding="utf-8")
+    (subsubpackage / '__init__.py').write_text('FOO = "bar"\n', encoding="utf-8")
 
     # sdist and bdist_wheel both call build command to create build/ dir
     # So instead of looking in distribution archives we can look in build/ dir
@@ -126,21 +127,25 @@ def test_coverage_api_docs(baked_with_development_dependencies, project_env_bin_
     #  'Statistics',
     #  '----------',
     #  '',
-    #  '+-----------------------------+----------+--------------+',
-    #  '| Module                      | Coverage | Undocumented |',
-    #  '+=============================+==========+==============+',
-    #  '| my_python_package           | 100.00%  | 0            |',
-    #  '+-----------------------------+----------+--------------+',
-    #  '| my_python_package.my_module | 100.00%  | 0            |',
-    #  '+-----------------------------+----------+--------------+',
-    #  '| TOTAL                       | 100.00%  | 0            |',
-    #  '+-----------------------------+----------+--------------+',
+    #  '+--------------------------------+----------+--------------+',
+    #  '| Module                         | Coverage | Undocumented |',
+    #  '+================================+==========+==============+',
+    #  '| my_python_package.my_module    | 100.00%  | 0            |',
+    #  '+--------------------------------+----------+--------------+',
+    #  '| my_python_package.mysub.mysub2 | 100.00%  | 0            |',
+    #  '+--------------------------------+----------+--------------+',
+    #  '| my_python_package              | 100.00%  | 0            |',
+    #  '+--------------------------------+----------+--------------+',
+    #  '| my_python_package.mysub        | 100.00%  | 0            |',
+    #  '+--------------------------------+----------+--------------+',
+    #  '| TOTAL                          | 100.00%  | 0            |',
+    #  '+--------------------------------+----------+--------------+',
     #  ''
     #  ]
     # The package coverage lines change order between runs, so we test for each data row individually:
-    assert '| my_python_package           | 100.00%  | 0            |' in coverage_file_lines
-    assert '| my_python_package.my_module | 100.00%  | 0            |' in coverage_file_lines
-    assert '| TOTAL                       | 100.00%  | 0            |' in coverage_file_lines
+    assert '| my_python_package              | 100.00%  | 0            |' in coverage_file_lines
+    assert '| my_python_package.my_module    | 100.00%  | 0            |' in coverage_file_lines
+    assert '| TOTAL                          | 100.00%  | 0            |' in coverage_file_lines
 
 
 def test_doctest_api_docs(baked_with_development_dependencies, project_env_bin_dir):
