@@ -93,7 +93,7 @@ def test_subpackage(baked_with_development_dependencies, project_env_bin_dir):
 
     # sdist and bdist_wheel both call build command to create build/ dir
     # So instead of looking in distribution archives we can look in build/ dir
-    result = run([f'{bin_dir}python', 'setup.py', 'build'], project_dir)
+    result = run([f'{bin_dir}python', '-m', 'build', '--sdist', '--wheel'], project_dir)
     assert result.returncode == 0
     assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / '__init__.py').exists()
     assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / 'mysub2' / '__init__.py').exists()
