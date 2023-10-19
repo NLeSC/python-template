@@ -22,7 +22,7 @@ an empty Python package. Features include:
   - [Contributing guidelines]({{cookiecutter.directory_name}}/CONTRIBUTING.md),
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/),
 - Automatic creation of [issues]({{cookiecutter.directory_name}}/.github/next_steps) with instructions how to pass all GitHub action workflows and integrate with services like Zenodo and Read the Docs,
-- Instructions how to make package [citable]({{cookiecutter.directory_name}}/.github/next_steps/04_citation.md)
+- Instructions how to make package [citable]({{cookiecutter.directory_name}}/.github/next_steps/02_citation.md)
 - FAIR software recommendation badge,
 - Optional [pre commit hook]({{cookiecutter.directory_name}}/README.dev.md#running-linters-locally) to catch lint errors early
 
