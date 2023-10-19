@@ -2,7 +2,7 @@
 title: 'Next step: Citation data'
 ---
 
-It is likely that your `CITATION.cff` currently doesn't pass validation. The error messages you get from the [`cffconvert`]({{cookiecutter.repository}}/actions/workflows/cffconvert.yml) GitHub Action are unfortunately a bit cryptic, but doing the following helps:
+It is likely that your `CITATION.cff` currently doesn't pass validation. The error messages you get from the [`cffconvert`]({{cookiecutter.repository_url}}/actions/workflows/cffconvert.yml) GitHub Action are unfortunately a bit cryptic, but doing the following helps:
 
 - [ ] Check if the `given-name` and `family-name` keys need updating. If your family name has a name particle like `von` or `van` or `de`, use the `name-particle` key; if your name has a suffix like `Sr` or `IV`, use `name-suffix`. For details, refer to the schema description: https://github.com/citation-file-format/citation-file-format
 - [ ] Update the value of the `orcid` key. If you do not have an orcid yet, you can get one here [https://orcid.org/](https://orcid.org/).
@@ -14,7 +14,7 @@ It is likely that your `CITATION.cff` currently doesn't pass validation. The err
 Once you do all the steps above, the `cffconvert` workflow will tell you what content it expected to see in `.zenodo.json`. Copy-paste from the GitHub Action log into a new file `.zenodo.json`. Afterwards, the `cffconvert` GitHub Action should be green.
 
 
-To help you keep the citation metadata up to date and synchronized, the [`cffconvert`]({{cookiecutter.repository}}/actions/workflows/cffconvert.yml) GitHub Action checks the following 6 aspects:
+To help you keep the citation metadata up to date and synchronized, the [`cffconvert`]({{cookiecutter.repository_url}}/actions/workflows/cffconvert.yml) GitHub Action checks the following 6 aspects:
 
 1. Whether your repository includes a `CITATION.cff` file.
 

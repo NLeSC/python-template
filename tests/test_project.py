@@ -93,7 +93,7 @@ def test_subpackage(baked_with_development_dependencies, project_env_bin_dir):
 
     # sdist and bdist_wheel both call build command to create build/ dir
     # So instead of looking in distribution archives we can look in build/ dir
-    result = run([f'{bin_dir}python', 'setup.py', 'build'], project_dir)
+    result = run([f'{bin_dir}python', '-m', 'build', '--sdist', '--wheel'], project_dir)
     assert result.returncode == 0
     assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / '__init__.py').exists()
     assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / 'mysub2' / '__init__.py').exists()
@@ -172,7 +172,7 @@ def test_bumpversion(baked_with_development_dependencies, project_env_bin_dir):
     bin_dir = project_env_bin_dir
 
     original_version = '0.1.0'
-    assert original_version in (project_dir / 'setup.cfg').read_text('utf-8')
+    assert original_version in (project_dir / 'pyproject.toml').read_text('utf-8')
     assert original_version in (project_dir / 'CITATION.cff').read_text('utf-8')
     assert original_version in (project_dir / 'my_python_package' / '__init__.py').read_text('utf-8')
     assert original_version in (project_dir / 'docs' / 'conf.py').read_text('utf-8')
@@ -181,7 +181,7 @@ def test_bumpversion(baked_with_development_dependencies, project_env_bin_dir):
     assert result.returncode == 0
     assert '' in result.stdout
     expected_version = '1.0.0'
-    assert expected_version in (project_dir / 'setup.cfg').read_text('utf-8')
+    assert expected_version in (project_dir / 'pyproject.toml').read_text('utf-8')
     assert expected_version in (project_dir / 'CITATION.cff').read_text('utf-8')
     assert expected_version in (project_dir / 'my_python_package' / '__init__.py').read_text('utf-8')
     assert expected_version in (project_dir / 'docs' / 'conf.py').read_text('utf-8')
