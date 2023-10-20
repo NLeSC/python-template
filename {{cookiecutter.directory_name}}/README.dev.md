@@ -138,35 +138,23 @@ This section describes how to make a release in 3 parts:
 
 ### (2/3) PyPI
 
-In a new terminal, without an activated virtual environment or an env directory:
+In a new terminal:
 
 ```shell
-# prepare a new directory
+# OPTIONAL: prepare a new directory with fresh git clone to ensure the release
+# has the state of origin/main branch
 cd $(mktemp -d {{ cookiecutter.package_name }}.XXXXXX)
-
-# fresh git clone ensures the release has the state of origin/main branch
 git clone {{ cookiecutter.repository }} .
 
-# prepare a clean virtual environment and activate it
-python -m venv env
-source env/bin/activate
-
-# make sure to have a recent version of pip and setuptools
-python -m pip install --upgrade pip setuptools
-
-# install runtime dependencies and publishing dependencies
-python -m pip install --no-cache-dir .
-python -m pip install --no-cache-dir .[publishing]
-
-# clean up any previously generated artefacts
-rm -rf {{ cookiecutter.package_name }}.egg-info
-rm -rf dist
+# make sure to have a recent version of pip and the publishing dependencies
+python -m pip install --upgrade pip
+python -m pip install .[publishing]
 
 # create the source distribution and the wheel
-python setup.py sdist bdist_wheel
+python -m build
 
 # upload to test pypi instance (requires credentials)
-twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+python -m twine upload --repository testpypi dist/*
 ```
 
 Visit
@@ -183,7 +171,7 @@ python -m venv env
 source env/bin/activate
 
 # make sure to have a recent version of pip and setuptools
-python -m pip install --upgrade pip setuptools
+python -m pip install --upgrade pip
 
 # install from test pypi instance:
 python -m pip -v install --no-cache-dir \
@@ -198,7 +186,7 @@ Then upload to pypi.org with:
 ```shell
 # Back to the first terminal,
 # FINAL STEP: upload to PyPI (requires credentials)
-twine upload dist/*
+python -m twine upload dist/*
 ```
 
 ### (3/3) GitHub
