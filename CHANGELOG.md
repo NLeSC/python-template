@@ -4,6 +4,7 @@
 
 ### Added
 
+* Added Python 3.12 support [#356](https://github.com/NLeSC/python-template/issues/356)
 * Template unit tests for documentation generation, linting and version bumping
 * Docstring for function
 * Intersphinx to documentation
@@ -27,6 +28,7 @@
 
 ### Removed
 
+* Removed Python 3.7 support [#343](https://github.com/NLeSC/python-template/issues/343)
 * `.pylintrc` file, was too strict, too soon [#267](https://github.com/NLeSC/python-template/issues/267)
 * Unused development dependencies [#167](https://github.com/NLeSC/python-template/issues/167)
 * Statements in project_setup.md already mentioned in README.dev.md
