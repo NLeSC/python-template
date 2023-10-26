@@ -36,7 +36,7 @@ jobs:
       - name: Run unit tests
         run: python -m pytest -v
       - name: Verify that we can build the package
-        run: python setup.py sdist bdist_wheel
+        run: python -m build
 
   lint:
     name: Linting build

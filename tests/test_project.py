@@ -80,7 +80,7 @@ def test_tox(baked_with_development_dependencies, project_env_bin_dir):
 
 
 def test_subpackage(baked_with_development_dependencies, project_env_bin_dir):
-    """Test if subpackages end up in sdist and bdist_wheel distributions"""
+    """Test if subpackages end up in (wheel) distributions"""
     project_dir = baked_with_development_dependencies
     bin_dir = project_env_bin_dir
     subpackage = (project_dir / 'my_python_package' / 'mysub')
@@ -91,9 +91,14 @@ def test_subpackage(baked_with_development_dependencies, project_env_bin_dir):
     subsubpackage.mkdir()
     (subsubpackage / '__init__.py').write_text('FOO = "bar"\n', encoding="utf-8")
 
-    # sdist and bdist_wheel both call build command to create build/ dir
-    # So instead of looking in distribution archives we can look in build/ dir
-    result = run([f'{bin_dir}python', '-m', 'build', '--sdist', '--wheel'], project_dir)
+    # Note: we pass --wheel explicitly, because wheel has a useful side-effect
+    # of leaving a build directory after building that we can check for its
+    # contents in the asserts below. However, be aware that this behavior is
+    # not guaranteed to stay and is in fact a known bug / PEP-violation!
+    # See https://github.com/pypa/wheel/issues/447. Also, by passing --wheel
+    # explicitly (although by default build already builds a wheel as well),
+    # we omit the sdist being built, saving some seconds.
+    result = run([f'{bin_dir}python', '-m', 'build', '--wheel'], project_dir)
     assert result.returncode == 0
     assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / '__init__.py').exists()
     assert (project_dir / 'build' / 'lib' / 'my_python_package' / 'mysub' / 'mysub2' / '__init__.py').exists()

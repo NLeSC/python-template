@@ -135,8 +135,6 @@ my-python-project/
 ├── pyproject.toml
 ├── README.dev.md
 ├── README.md
-├── setup.cfg
-├── setup.py
 ├── sonar-project.properties
 └── tests
     ├── __init__.py
