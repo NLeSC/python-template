@@ -28,8 +28,8 @@ to use one or the other, as project requirements differ. For advice on what to u
 of the
 guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=dependencies-and-package-management).
 
-- Runtime dependencies should be added to `setup.cfg` in the `install_requires` list under `[options]`.
-- Development dependencies should be added to `setup.cfg` in one of the lists under `[options.extras_require]`.
+- Runtime dependencies should be added to `pyproject.toml` in the `dependencies` list under `[project]`.
+- Development dependencies should be added to `pyproject.toml` in one of the lists under `[project.optional-dependencies]`.
 
 ## Packaging/One command install
 
@@ -45,7 +45,7 @@ help you decide which tool to use for packaging.
 - The testing framework used is [PyTest](https://pytest.org)
   - [PyTest introduction](https://pythontest.com/pytest-book/)
   - PyTest is listed as a development dependency
-  - This is configured in `setup.cfg`
+  - This is configured in `pyproject.toml`
 - The project uses [GitHub action workflows](https://docs.github.com/en/actions) to automatically run tests on GitHub infrastructure against multiple Python versions
   - Workflows can be found in [`.github/workflows`](.github/workflows/)
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=testing)
