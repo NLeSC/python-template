@@ -113,12 +113,12 @@ make doctest
 
 ## Versioning
 
-Bumping the version across all files is done with [bumpversion](https://github.com/c4urself/bump2version), e.g.
+Bumping the version across all files is done with [bump-my-version](https://github.com/callowayproject/bump-my-version), e.g.
 
 ```shell
-bumpversion major
-bumpversion minor
-bumpversion patch
+bump-my-version major  # bumps from e.g. 0.3.2 to 1.0.0
+bump-my-version minor  # bumps from e.g. 0.3.2 to 0.4.0
+bump-my-version patch  # bumps from e.g. 0.3.2 to 0.3.3
 ```
 
 ## Making a release
