@@ -76,7 +76,7 @@ help you decide which tool to use for packaging.
 ## Package version number
 
 - We recommend using [semantic versioning](https://guide.esciencecenter.nl/#/best_practices/releases?id=semantic-versioning).
-- For convenience, the package version is stored in a single place: `{{ cookiecutter.directory_name }}/.bumpversion.cfg`.
+- For convenience, the package version is stored in a single place: `{{ cookiecutter.directory_name }}/pyproject.toml` under the `tool.bumpversion` header.
 - Don't forget to update the version number before [making a release](https://guide.esciencecenter.nl/#/best_practices/releases)!
 
 ## Logging

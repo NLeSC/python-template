@@ -82,7 +82,7 @@ In addition to the information in `my-python-project/project_setup.md`, the deve
 1. generating `my-python-project`'s documentation locally
 1. running `my-python-project`'s tests locally
 1. running `my-python-project`'s linters locally
-1. verifying that the `my-python-project`'s version can be updated using `bumpversion`
+1. verifying that the `my-python-project`'s version can be updated using `bump-my-version`
 1. making a release of `my-python-project` on https://test.pypi.org/
 
 Follow the instructions from `my-python-project/README.dev.md` and make sure that everything works.

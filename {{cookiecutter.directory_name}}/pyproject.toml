@@ -44,7 +44,7 @@ version = "{{ cookiecutter.version }}"
 [project.optional-dependencies]
 dev = [
     "build",  # build is not only used in publishing (below), but also in the template's test suite
-    "bump2version",
+    "bump-my-version",
     "coverage [toml]",
     "pytest",
     "pytest-cov",
@@ -171,3 +171,18 @@ line-length = 120
 known-first-party = ["{{ cookiecutter.package_name }}"]
 force-single-line = true
 no-lines-before = ["future","standard-library","third-party","first-party","local-folder"]
+
+[tool.bumpversion]
+current_version = "{{ cookiecutter.version }}"
+
+[[tool.bumpversion.files]]
+filename = "{{ cookiecutter.package_name }}/__init__.py"
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+
+[[tool.bumpversion.files]]
+filename = "CITATION.cff"
+
+[[tool.bumpversion.files]]
+filename = "docs/conf.py"

@@ -182,7 +182,7 @@ def test_bumpversion(baked_with_development_dependencies, project_env_bin_dir):
     assert original_version in (project_dir / 'my_python_package' / '__init__.py').read_text('utf-8')
     assert original_version in (project_dir / 'docs' / 'conf.py').read_text('utf-8')
 
-    result = run([f'{bin_dir}bumpversion', 'major'], project_dir)
+    result = run([f'{bin_dir}bump-my-version', 'major'], project_dir)
     assert result.returncode == 0
     assert '' in result.stdout
     expected_version = '1.0.0'

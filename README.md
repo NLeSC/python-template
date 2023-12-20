@@ -8,7 +8,7 @@ Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generat
 an empty Python package. Features include:
 
 - Boilerplate unit tests and documentation,
-- [Python static setup configuration]({{cookiecutter.directory_name}}/setup.cfg),
+- [Python static setup configuration]({{cookiecutter.directory_name}}/pyproject.toml),
 - Open source software license,
 - Continuous integration with [GitHub action workflows]({{cookiecutter.directory_name}}/.github/workflows) for building, testing, link checking and linting,
 - Code style checking with [ruff](https://beta.ruff.rs/),
@@ -69,7 +69,7 @@ cookiecutter https://github.com/nlesc/python-template.git
 | ------------------------- | ------------- | ----------- |
 | directory_name              | my-python-project | Name of the directory that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. To get an impression of what will be generated, see the directory tree [below](https://github.com/NLeSC/python-template#step-33-read-about-what-was-just-generated) |
 | package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. |
-| package_short_description | Short description of package | The information that you enter here will end up in the README, documentation, license, and setup.cfg, so it may be a good idea to prepare something in advance. |
+| package_short_description | Short description of package | The information that you enter here will end up in the README, documentation, license, and pyproject.toml, so it may be a good idea to prepare something in advance. |
 | keyword1                  | keyword1          | A term that describes your package. |
 | keyword2                  | keyword2          | Another term that describes your package. |
 | version                   | 0.1.0             | &nbsp; |
@@ -89,7 +89,6 @@ Good job! You have now generated the skeleton for your package:
 
 ```text
 my-python-project/
-├── .bumpversion.cfg
 ├── CHANGELOG.md
 ├── CITATION.cff
 ├── CODE_OF_CONDUCT.md
