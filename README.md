@@ -158,7 +158,7 @@ list below:
 1. pycff: [https://github.com/citation-file-format/pycff](https://github.com/citation-file-format/pycff)
 1. spec2vec: [https://github.com/iomega/spec2vec](https://github.com/iomega/spec2vec)
 1. yatiml: [https://github.com/yatiml/yatiml](https://github.com/yatiml/yatiml)
-1. _... And many more. Make a PR to add your project here!_
+1. _... And many more (see [this discussion](https://github.com/NLeSC/python-template/issues/48)). Make a PR to add your project here, or simply ping us in an issue!_
 
 
 ## How to contribute
