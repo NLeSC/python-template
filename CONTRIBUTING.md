@@ -39,3 +39,17 @@ The sections below outline the steps in each case.
 1. create the pull request, e.g. following the instructions [here](https://help.github.com/articles/creating-a-pull-request/).
 
 In case you feel like you've made a valuable contribution, but you don't know how to write or run tests for it, or how to generate the documentation: don't let this discourage you from making the pull request; we can help you! Just go ahead and submit the pull request, but keep in mind that you might be asked to append additional commits to your pull request.
+
+## You want to make a new release of the code base
+
+To create a release you need write permission on the repository.
+
+1. Check the author list in [`CITATION.cff`](CITATION.cff)
+1. Update the version number in setup.cfg and CITATION.cff
+1. Update the `CHANGELOG.md` to include changes made
+1. Go to the [GitHub release page](https://github.com/nlesc/python-template/releases)
+1. Press draft a new release button
+1. Fill version, title and description field
+1. Press the Publish Release button
+
+Also a Zenodo entry will be made for the release with its own DOI.

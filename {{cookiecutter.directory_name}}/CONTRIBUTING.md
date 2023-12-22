@@ -40,3 +40,29 @@ The sections below outline the steps in each case.
 1. create the pull request, e.g. following the instructions [here](https://help.github.com/articles/creating-a-pull-request/).
 
 In case you feel like you've made a valuable contribution, but you don't know how to write or run tests for it, or how to generate the documentation: don't let this discourage you from making the pull request; we can help you! Just go ahead and submit the pull request, but keep in mind that you might be asked to append additional commits to your pull request.
+
+## You want to make a new release of the code base
+
+To create a release you need write permission on the repository.
+
+1. Check the author list in [`CITATION.cff`](CITATION.cff)
+1. Bump the version using `bump-my-version bump <major|minor|patch>`. For example, `bump-my-version bump major` will increase major version numbers everywhere it's needed (code, meta, etc.) in the repo. Alternatively the version can be manually changed in {{ cookiecutter.package_name }}/__init__.py, pyproject.toml, CITATION.cff and docs/conf.py (and other places it was possibly added).
+1. Update the `CHANGELOG.md` to include changes made
+1. Go to the [GitHub release page]({{ cookiecutter.repository_url }}/releases)
+1. Press draft a new release button
+1. Fill version, title and description field
+1. Press the Publish Release button
+<!--
+For projects that automatically publish to PyPI using a release or publish workflow, something like the following could be useful to add (make sure to replace the names and links):
+
+1. Wait until [PyPi publish workflow]({{ cookiecutter.repository_url }}/actions/workflows/publish.yml) has completed
+1. Verify new release is on [PyPi](https://pypi.org/project/matchms/#history)
+-->
+<!--
+For projects that also build conda packages, e.g. on conda-forge or Bioconda, something like the following could be useful to add (example taken from matchms, make sure to replace the names and links):
+
+1. Wait until new release is also on Bioconda (https://anaconda.org/bioconda/{{ cookiecutter.package_name }}) via a automaticly created PR on [bioconda recipes repo](https://github.com/bioconda/bioconda-recipes/pulls?q=is%3Apr+is%3Aopen+{{ cookiecutter.package_name }})
+1. Test {{ cookiecutter.package_name }} from bioconda by manually running [Conda verify]({{ cookiecutter.repository_url }}/actions/workflows/conda_verify.yml) workflow
+-->
+
+Also a Zenodo entry will be made for the release with its own DOI.
