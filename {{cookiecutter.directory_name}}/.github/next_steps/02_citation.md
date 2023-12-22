@@ -11,10 +11,9 @@ It is likely that your `CITATION.cff` currently doesn't pass validation. The err
 - [ ] Update the `doi` key with the conceptDOI for your repository (see [https://help.zenodo.org](https://help.zenodo.org/) for more information on what a conceptDOI is). If your project doesn't have a DOI yet, you can use the string `10.0000/FIXME` to pass validation.
 - [ ] Verify that the `keywords` array accurately describes your project.
 
-Once you do all the steps above, the `cffconvert` workflow will tell you what content it expected to see in `.zenodo.json`. Copy-paste from the GitHub Action log into a new file `.zenodo.json`. Afterwards, the `cffconvert` GitHub Action should be green.
+Afterwards, the `cffconvert` GitHub Action should be green.
 
-
-To help you keep the citation metadata up to date and synchronized, the [`cffconvert`]({{cookiecutter.repository_url}}/actions/workflows/cffconvert.yml) GitHub Action checks the following 6 aspects:
+To make sure services like [Zenodo](https://zenodo.org) and the [Research Software Directory](https://research-software-directory.org/) can keep your citation data up to date, the [`cffconvert`]({{cookiecutter.repository_url}}/actions/workflows/cffconvert.yml) GitHub Action checks the following:
 
 1. Whether your repository includes a `CITATION.cff` file.
 
@@ -27,17 +26,3 @@ To help you keep the citation metadata up to date and synchronized, the [`cffcon
 1. Whether your `CITATION.cff` adheres to the schema (as listed in the `CITATION.cff` file itself under key `cff-version`).
 
     _The Citation File Format schema can be found [here](https://github.com/citation-file-format/citation-file-format), along with an explanation of all the keys. You're advised to use the latest available schema version._
-
-1. Whether your repository includes a `.zenodo.json` file.
-
-    _With this file, you can control what metadata should be associated with any future releases of your software on Zenodo: things like the author names, along with their affiliations and their ORCIDs, the license under which the software has been released, as well as the name of your software and a short description. If your repository doesn't have a .zenodo.json file, Zenodo will take a somewhat crude guess to assign these metadata._
-
-    _The `cffconvert` GitHub action will tell you what it expects to find in `.zenodo.json`, just copy and paste it to a new file named `.zenodo.json`. The suggested text ignores CITATION.cff's `version`, `commit`, and `date-released`. `cffconvert` considers these keys `suspect` in the sense that they are often out of date, and there is little purpose to telling Zenodo about these properties: Zenodo already knows._
-
-1. Whether `.zenodo.json` is valid JSON.
-
-    _Currently unimplemented, but you can check for yourself on [https://jsonlint.com/](https://jsonlint.com/)._ 
-
-1. Whether `CITATION.cff` and `.zenodo.json` contain equivalent data.
-
-    _This final check verifies that the two files are in sync. The check ignores CITATION.cff's `version`, `commit`, and `date-released`._
