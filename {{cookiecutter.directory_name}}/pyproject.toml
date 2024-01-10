@@ -14,6 +14,7 @@ authors = [
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
     "{{ {'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
         'MIT license': 'License :: OSI Approved :: MIT License',
         'BSD license': 'License :: OSI Approved :: BSD License',

@@ -92,7 +92,7 @@ Follow the instructions from `my-python-project/README.dev.md` and make sure tha
 ### Preparation
 
 1. Make sure the `CHANGELOG.md` has been updated
-2. Verify that the information in `CITATION.cff` is correct, and that `.zenodo.json` contains equivalent data
+2. Verify that the information in `CITATION.cff` is correct.
 3. Make sure that `version` in [setup.cfg](setup.cfg) and  `version` in [CITATION.cff](CITATION.cff) have been bumped to the to-be-released version of the template
 4. Run the unit tests with `pytest tests/`
 5. Go through the steps outlined above for [generating a new package from the command line](#using-cookiecutter-to-generate-a-new-package-from-the-command-line), and verify that the generated package works as it should.
