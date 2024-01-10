@@ -27,6 +27,8 @@ The sections below outline the steps in each case.
 
 ## You want to make some kind of change to the code base
 
+1. (**important**) this repository implements the best practices we recommend in the Python chapter of the [Guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python). Check that your planned contribution is
+in line with what is recommended there. If not, please [contribute to the guide](https://github.com/NLeSC/guide/blob/main/CONTRIBUTING.md) instead.
 1. (**important**) announce your plan to the rest of the community _before you start working_. This announcement should be in the form of a (new) issue;
 1. (**important**) wait until some kind of consensus is reached about your idea being a good idea;
 1. if needed, fork the repository to your own Github profile and create your own feature branch off of the latest main commit. While working on your feature branch, make sure to stay up to date with the main branch by pulling in changes, possibly from the 'upstream' repository (follow the instructions [here](https://help.github.com/articles/configuring-a-remote-for-a-fork/) and [here](https://help.github.com/articles/syncing-a-fork/));
