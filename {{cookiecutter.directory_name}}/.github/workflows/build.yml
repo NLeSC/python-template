@@ -35,8 +35,32 @@ jobs:
           python -m pip install .[dev,publishing]
       - name: Run unit tests
         run: python -m pytest -v
+        run: |
+          python -m coverage run -p -m pytest
       - name: Verify that we can build the package
         run: python -m build
+      - name: Report coverage
+        run: |
+          coverage combine
+          coverage json
+          export TOTAL=$(python -c "import json;print(json.load(open('coverage.json'))['totals']['percent_covered_display'])")
+          echo "total=$TOTAL" >> $GITHUB_ENV
+          echo "### Total coverage: ${TOTAL}%" >> $GITHUB_STEP_SUMMARY
+          echo $'\n```' >> $GITHUB_STEP_SUMMARY
+          coverage report >> $GITHUB_STEP_SUMMARY
+          echo $'\n```' >> $GITHUB_STEP_SUMMARY
+      - name: Make coverage badge
+        if: ${{ github.ref == 'refs/heads/main' && matrix.python-version == '3.12' && matrix.os == 'ubuntu-latest' }}
+        uses: schneegans/dynamic-badges-action@v1.6.0
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gistID: ### Add your gist ID here
+          filename: covbadge.json
+          label: Coverage
+          message: ${{ env.total }}%
+          minColorRange: 50
+          maxColorRange: 90
+          valColorRange: ${{ env.total }}
 
   lint:
     name: Linting build
