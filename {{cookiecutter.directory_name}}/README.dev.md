@@ -121,74 +121,139 @@ bump-my-version minor  # bumps from e.g. 0.3.2 to 0.4.0
 bump-my-version patch  # bumps from e.g. 0.3.2 to 0.3.3
 ```
 
-## Making a release
+## Using Github Actions to make a release of the package
 
-This section describes how to make a release in 3 parts:
+This section describes how to make a release with a GitHub actions workflow.
+
+### Setup 
+The following steps set up the infrastructure for easy releasing via Github Actions. They are necessary once for your package.
+
+
+#### (1/2) Define Github workflow
+
+This is necessary once per package.
+
+You can set up a workflow file following instructions [here](https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/). 
+The workflow consists of 3 jobs: build, publishing to testpypi, publishing to pypi.
+
+**question** should we just create the workflow file directly? see also https://github.com/NLeSC/python-template/issues/361
+- if we take the code from sirup, anyway it will not run by default
+
+The job for publishing on TestPyPI is as follows:
+
+```yml
+publish-to-testpypi:
+    name: Publish Python distribution to TestPyPI
+    needs:
+    - build
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+
+    environment:
+        name: testpypi
+        url: https://test.pypi.org/p/{{ cookiecutter.package_name }}
+
+    permissions:
+        id-token: write  # IMPORTANT: mandatory for trusted publishing
+
+    steps:
+    - name: Download all the dists
+        uses: actions/download-artifact@v3
+        with:
+        name: python-package-distributions
+        path: dist/
+    - name: Publish distribution to TestPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+        repository-url: https://test.pypi.org/legacy/
+        verbose: true # optional; for debugging
+```
+
+
+The job for publishing on PyPI is as follows:
+
+```yml
+publish-to-pypi:
+    name: >-
+        Publish Python distribution to PyPI
+    if: github.event_name == 'release' && github.event.action == 'published'
+    needs:
+    - build
+    runs-on: ubuntu-latest
+    environment:
+        name: pypi
+        url: https://pypi.org/p/{{ cookiecutter.package_name }} 
+    permissions:
+        id-token: write  # IMPORTANT: mandatory for trusted publishing
+
+    steps:
+    - name: Download all the dists
+        uses: actions/download-artifact@v3
+        with:
+        name: python-package-distributions
+        path: dist/
+    - name: Publish distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+        verbose: true
+
+```
+
+
+<!-- - this is necessary once per package 
+- link to example
+- link to other docs
+- highlight important things, such as those commented in my workflow file  -->
+
+
+#### (2/2) PyPI and TestPyPI
+
+This is necessary once per package. 
+
+On your TestPyPI account, go to "Your Projects", and  under "Publishing", fill the form for "Add a new pending publisher". You need to specify {{ cookiecutter.package_name }} as the PyPI project name, the workflow name as the `yml` file with the github workflow, and the environment name as defined in the workflow file (see example above).
+
+Do the same on your PyPI account. 
+
+**not sure if the names need to match exactly? I guess it needs to fit between the workflow file and the information on pypi?**
+
+
+
+
+### Making a release 
+
+With the described setup, you can now make a new release in 3 steps: 
 
 1. preparation
-1. making a release on PyPI
-1. making a release on GitHub
+1. making a release on TestPyPI
+1. making a release on GitHub, which triggers a release on PyPI
 
-### (1/3) Preparation
+#### (1/3) Preparation
 
 1. Update the <CHANGELOG.md> (don't forget to update links at bottom of page)
 2. Verify that the information in [`CITATION.cff`](CITATION.cff) is correct.
 3. Make sure the [version has been updated](#versioning).
 4. Run the unit tests with `pytest -v`
+5. If you don't have it already, create an account on PyPI and TestPyPI.
 
-### (2/3) PyPI
 
-In a new terminal:
+#### (2/3) Make a release to TestPyPI
 
-```shell
-# OPTIONAL: prepare a new directory with fresh git clone to ensure the release
-# has the state of origin/main branch
-cd $(mktemp -d {{ cookiecutter.package_name }}.XXXXXX)
-git clone {{ cookiecutter.repository }} .
+In your web browser, visit [{{cookiecutter.repository}}/actions/workflows/release.yml]({{cookiecutter.repository}}/actions/workflows/release.yml). Click on "Run workflow".
+**DOES THIS URL WORK?**
 
-# make sure to have a recent version of pip and the publishing dependencies
-python -m pip install --upgrade pip
-python -m pip install .[publishing]
+If the workflow does not fail, you have successfully released a new version to TestPyPI. Verify this by visiting [https://test.pypi.org/project/{{cookiecutter.package_name}}](https://test.pypi.org/project/{{cookiecutter.package_name}})
 
-# create the source distribution and the wheel
-python -m build
+If the workflow fails, you should investigate the bug. TODO: ADD LINK TO MANUAL UPLOAD
 
-# upload to test pypi instance (requires credentials)
-python -m twine upload --repository testpypi dist/*
-```
+#### (3/3) Make a release on Github, triggering a release to PyPI
 
-Visit
-[https://test.pypi.org/project/{{cookiecutter.package_name}}](https://test.pypi.org/project/{{cookiecutter.package_name}})
-and verify that your package was uploaded successfully. Keep the terminal open, we'll need it later.
+If the release to TestPyPI worked, you can now release to PyPI. 
+Visit [{{cookiecutter.repository}}/releases/new]({{cookiecutter.repository}}/releases/new) and make a new release. When this is done, the github action workflow defined above runs. You can check that the workflow ran correctly, and visit [https://test.pypi.org/project/{{cookiecutter.package_name}}](https://test.pypi.org/project/{{cookiecutter.package_name}}) to make sure the release is on PyPI.
+If your repository uses the GitHub-Zenodo integration this will also trigger Zenodo into making a snapshot of your repository and sticking a DOI on it.
 
-In a new terminal, without an activated virtual environment or an env directory:
 
-```shell
-cd $(mktemp -d {{ cookiecutter.package_name }}-test.XXXXXX)
+### To do for me 
+- are these URLs correct? 
+- more readable re-write
 
-# prepare a clean virtual environment and activate it
-python -m venv env
-source env/bin/activate
 
-# make sure to have a recent version of pip and setuptools
-python -m pip install --upgrade pip
-
-# install from test pypi instance:
-python -m pip -v install --no-cache-dir \
---index-url https://test.pypi.org/simple/ \
---extra-index-url https://pypi.org/simple {{ cookiecutter.package_name }}
-```
-
-Check that the package works as it should when installed from pypitest.
-
-Then upload to pypi.org with:
-
-```shell
-# Back to the first terminal,
-# FINAL STEP: upload to PyPI (requires credentials)
-python -m twine upload dist/*
-```
-
-### (3/3) GitHub
-
-Don't forget to also make a [release on GitHub]({{cookiecutter.repository_url}}/releases/new). If your repository uses the GitHub-Zenodo integration this will also trigger Zenodo into making a snapshot of your repository and sticking a DOI on it.
