@@ -89,19 +89,6 @@ Good job! You have now generated the skeleton for your package:
 
 ```text
 my-python-project/
-├── CHANGELOG.md
-├── CITATION.cff
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── docs
-│   ├── conf.py
-│   ├── index.rst
-│   ├── make.bat
-│   ├── Makefile
-│   ├── _static
-│   │   └── theme_overrides.css
-│   └── _templates
-│       └── .gitignore
 ├── .editorconfig
 ├── .githooks
 │   └── pre-commit
@@ -115,26 +102,37 @@ my-python-project/
 │   └── workflows
 │       ├── build.yml
 │       ├── cffconvert.yml
-│       ├── lint.yml
+│       ├── documentation.yml
 │       ├── markdown-link-check.yml
 │       ├── next_steps.yml
 │       └── sonarcloud.yml
 ├── .gitignore
+├── .mlc-config.json
+├── .readthedocs.yaml
+├── CHANGELOG.md
+├── CITATION.cff
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
 ├── LICENSE
 ├── MANIFEST.in
-├── .mlc-config.json
-├── my_python_package
-│   ├── __init__.py
-│   ├── my_module.py
-│   └── __version__.py
-├── next_steps.md
 ├── NOTICE
-├── project_setup.md
-├── .pylintrc
-├── pyproject.toml
 ├── README.dev.md
 ├── README.md
+├── docs
+│   ├── Makefile
+│   ├── _templates
+│   │   └── .gitignore
+│   ├── conf.py
+│   ├── index.rst
+│   └── make.bat
+├── next_steps.md
+├── project_setup.md
+├── pyproject.toml
 ├── sonar-project.properties
+├── src
+│   └── my_python_package
+│       ├── __init__.py
+│       └── my_module.py
 └── tests
     ├── __init__.py
     └── test_my_module.py
