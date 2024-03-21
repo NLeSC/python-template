@@ -126,7 +126,7 @@ bump-my-version patch  # bumps from e.g. 0.3.2 to 0.3.3
 This section describes how to make a release with a GitHub actions workflow.
 
 ### Setup 
-The following steps set up the infrastructure for easy releasing via Github Actions. They are necessary once for your package.
+The following steps set up the infrastructure for making releases easy via Github Actions. They are necessary once for your package.
 
 
 #### (1/2) Define Github workflow
@@ -134,10 +134,7 @@ The following steps set up the infrastructure for easy releasing via Github Acti
 This is necessary once per package.
 
 You can set up a workflow file following instructions [here](https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/). 
-The workflow consists of 3 jobs: build, publishing to testpypi, publishing to pypi.
-
-**question** should we just create the workflow file directly? see also https://github.com/NLeSC/python-template/issues/361
-- if we take the code from sirup, anyway it will not run by default
+The workflow consists of 3 jobs: build, publishing to testpypi, publishing to pypi. The workflow for build is as usual.
 
 The job for publishing on TestPyPI is as follows:
 
@@ -199,33 +196,25 @@ publish-to-pypi:
 
 ```
 
-
-<!-- - this is necessary once per package 
-- link to example
-- link to other docs
-- highlight important things, such as those commented in my workflow file  -->
-
+Notes
+- The `id-token: write` item is important because it will enable GitHub to publish your package on PyPI (see below). You can read more about how this works [here](https://docs.pypi.org/trusted-publishers/).
+- The `url` item for `environment` needs to match exactly the PyPI projecte name, defined in the next step.
 
 #### (2/2) PyPI and TestPyPI
 
 This is necessary once per package. 
 
-On your TestPyPI account, go to "Your Projects", and  under "Publishing", fill the form for "Add a new pending publisher". You need to specify {{ cookiecutter.package_name }} as the PyPI project name, the workflow name as the `yml` file with the github workflow, and the environment name as defined in the workflow file (see example above).
+On your TestPyPI account, go to "Your Projects", and  under "Publishing", fill the form for "Add a new pending publisher". You need to specify:
+- {{ cookiecutter.package_name }} as the PyPI project name. 
+- The workflow name as the name of the `yml` file with the github workflow, for instance `release.yml`
+- The environment name as defined in the workflow file, in the above examples this is `testpypi` and `pypi`
 
 Do the same on your PyPI account. 
-
-**not sure if the names need to match exactly? I guess it needs to fit between the workflow file and the information on pypi?**
-
-
 
 
 ### Making a release 
 
-With the described setup, you can now make a new release in 3 steps: 
-
-1. preparation
-1. making a release on TestPyPI
-1. making a release on GitHub, which triggers a release on PyPI
+With the described setup, you can now make a new release in 3 steps.
 
 #### (1/3) Preparation
 
@@ -233,27 +222,18 @@ With the described setup, you can now make a new release in 3 steps:
 2. Verify that the information in [`CITATION.cff`](CITATION.cff) is correct.
 3. Make sure the [version has been updated](#versioning).
 4. Run the unit tests with `pytest -v`
-5. If you don't have it already, create an account on PyPI and TestPyPI.
 
 
 #### (2/3) Make a release to TestPyPI
 
 In your web browser, visit [{{cookiecutter.repository}}/actions/workflows/release.yml]({{cookiecutter.repository}}/actions/workflows/release.yml). Click on "Run workflow".
-**DOES THIS URL WORK?**
 
-If the workflow does not fail, you have successfully released a new version to TestPyPI. Verify this by visiting [https://test.pypi.org/project/{{cookiecutter.package_name}}](https://test.pypi.org/project/{{cookiecutter.package_name}})
+If the workflow passes, you have successfully released a new version to TestPyPI. Verify this by visiting [https://test.pypi.org/project/{{cookiecutter.package_name}}](https://test.pypi.org/project/{{cookiecutter.package_name}})
 
-If the workflow fails, you should investigate the bug. TODO: ADD LINK TO MANUAL UPLOAD
+If the workflow fails, you should investigate the bug. You can use a [manual upload with twine](https://docs.pypi.org/trusted-publishers/using-a-publisher/#the-manual-way) for this.
 
 #### (3/3) Make a release on Github, triggering a release to PyPI
 
 If the release to TestPyPI worked, you can now release to PyPI. 
 Visit [{{cookiecutter.repository}}/releases/new]({{cookiecutter.repository}}/releases/new) and make a new release. When this is done, the github action workflow defined above runs. You can check that the workflow ran correctly, and visit [https://test.pypi.org/project/{{cookiecutter.package_name}}](https://test.pypi.org/project/{{cookiecutter.package_name}}) to make sure the release is on PyPI.
 If your repository uses the GitHub-Zenodo integration this will also trigger Zenodo into making a snapshot of your repository and sticking a DOI on it.
-
-
-### To do for me 
-- are these URLs correct? 
-- more readable re-write
-
-
