@@ -56,6 +56,12 @@ dev = [
     "tox",
     "myst_parser",
 ]
+docs = [
+    "sphinx",
+    "sphinx_rtd_theme",
+    "sphinx-autoapi",
+    "myst_parser",
+]
 publishing = [
     "build",
     "twine",
