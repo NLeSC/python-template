@@ -2,6 +2,7 @@
 
 - [ ] I have read the [contribution guidelines](../CONTRIBUTING.md)
 - [ ] This update is in line with what is recommended in the [Python chapter of the Guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python)
+- [ ] All user facing changes have been added to CHANGELOG.md
 
 <!-- Description of PR -->
 
