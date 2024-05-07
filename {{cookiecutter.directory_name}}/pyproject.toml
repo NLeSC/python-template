@@ -81,7 +81,7 @@ force_single_line = 1
 no_lines_before = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
 known_first_party = "{{ cookiecutter.package_name }}"
 src_paths = ["{{ cookiecutter.package_name }}", "tests"]
-line_length = 120
+line_length = 79
 
 # For completeness, until we move to an src-based layout
 [tool.setuptools.packages.find]
@@ -166,7 +166,7 @@ per-file-ignores = {}
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 target-version = "py39"
-line-length = 120
+line-length = 79
 
 [tool.ruff.isort]
 known-first-party = ["{{ cookiecutter.package_name }}"]
