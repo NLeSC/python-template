@@ -29,7 +29,7 @@ of the
 guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=dependencies-and-package-management).
 
 - Runtime dependencies should be added to `pyproject.toml` in the `dependencies` list under `[project]`.
-- Development dependencies should be added to `pyproject.toml` in one of the lists under `[project.optional-dependencies]`.
+- Development dependencies, such as for testing or documentation, should be added to `pyproject.toml` in one of the lists under `[project.optional-dependencies]`.
 
 ## Packaging/One command install
 

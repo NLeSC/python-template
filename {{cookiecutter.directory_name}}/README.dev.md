@@ -19,6 +19,8 @@ python -m pip install --upgrade pip setuptools
 python -m pip install --no-cache-dir --editable .
 # install development dependencies
 python -m pip install --no-cache-dir --editable .[dev]
+# install documentation dependencies only
+python -m pip install --no-cache-dir --editable .[docs]
 ```
 
 Afterwards check that the install directory is present in the `PATH` environment variable.

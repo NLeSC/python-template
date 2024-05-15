@@ -9,6 +9,7 @@
 * Docstring for function
 * Intersphinx to documentation
 * Coverage and doctest commands for documentation [#97](https://github.com/NLeSC/python-template/issues/97)
+* Added new 'docs' section in extra dependencies [#317](https://github.com/NLeSC/python-template/issues/317)
 
 ### Changed
 
