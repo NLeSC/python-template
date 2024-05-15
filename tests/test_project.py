@@ -83,11 +83,11 @@ def test_subpackage(baked_with_development_dependencies, project_env_bin_dir):
     """Test if subpackages end up in (wheel) distributions"""
     project_dir = baked_with_development_dependencies
     bin_dir = project_env_bin_dir
-    subpackage = (project_dir / 'my_python_package' / 'mysub')
+    subpackage = (project_dir / 'src' / 'my_python_package' / 'mysub')
     subpackage.mkdir()
     (subpackage / '__init__.py').write_text('FOO = "bar"\n', encoding="utf-8")
 
-    subsubpackage = (project_dir / 'my_python_package' / 'mysub' / 'mysub2')
+    subsubpackage = (project_dir / 'src' / 'my_python_package' / 'mysub' / 'mysub2')
     subsubpackage.mkdir()
     (subsubpackage / '__init__.py').write_text('FOO = "bar"\n', encoding="utf-8")
 
@@ -179,7 +179,7 @@ def test_bumpversion(baked_with_development_dependencies, project_env_bin_dir):
     original_version = '0.1.0'
     assert original_version in (project_dir / 'pyproject.toml').read_text('utf-8')
     assert original_version in (project_dir / 'CITATION.cff').read_text('utf-8')
-    assert original_version in (project_dir / 'my_python_package' / '__init__.py').read_text('utf-8')
+    assert original_version in (project_dir / 'src' / 'my_python_package' / '__init__.py').read_text('utf-8')
     assert original_version in (project_dir / 'docs' / 'conf.py').read_text('utf-8')
 
     result = run([f'{bin_dir}bump-my-version', 'bump', 'major'], project_dir)
@@ -188,5 +188,5 @@ def test_bumpversion(baked_with_development_dependencies, project_env_bin_dir):
     expected_version = '1.0.0'
     assert expected_version in (project_dir / 'pyproject.toml').read_text('utf-8')
     assert expected_version in (project_dir / 'CITATION.cff').read_text('utf-8')
-    assert expected_version in (project_dir / 'my_python_package' / '__init__.py').read_text('utf-8')
+    assert expected_version in (project_dir / 'src' / 'my_python_package' / '__init__.py').read_text('utf-8')
     assert expected_version in (project_dir / 'docs' / 'conf.py').read_text('utf-8')

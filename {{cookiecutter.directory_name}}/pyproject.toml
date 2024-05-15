@@ -72,7 +72,7 @@ testpaths = ["tests"]
 
 [tool.coverage.run]
 branch = true
-source = ["{{ cookiecutter.package_name }}"]
+source = ["src/{{ cookiecutter.package_name }}"]
 command_line = "-m pytest"
 
 [tool.isort]
@@ -80,13 +80,8 @@ lines_after_imports = 2
 force_single_line = 1
 no_lines_before = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
 known_first_party = "{{ cookiecutter.package_name }}"
-src_paths = ["{{ cookiecutter.package_name }}", "tests"]
+src_paths = ["src/{{ cookiecutter.package_name }}", "tests"]
 line_length = 120
-
-# For completeness, until we move to an src-based layout
-[tool.setuptools.packages.find]
-include = ["{{ cookiecutter.package_name }}*"]
-exclude = ["tests*"]
 
 [tool.tox]
 legacy_tox_ini = """
@@ -177,7 +172,7 @@ no-lines-before = ["future","standard-library","third-party","first-party","loca
 current_version = "{{ cookiecutter.version }}"
 
 [[tool.bumpversion.files]]
-filename = "{{ cookiecutter.package_name }}/__init__.py"
+filename = "src/{{ cookiecutter.package_name }}/__init__.py"
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
