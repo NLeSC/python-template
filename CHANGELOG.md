@@ -13,6 +13,7 @@
 ### Changed
 
 * Restored default line-length of 79 characters, as recommended by [PEP-8](https://peps.python.org/pep-0008/#maximum-line-length) [#389](https://github.com/NLeSC/python-template/pull/389)
+* Moved to src/ based layout for generated packages
 * Moved from setup.cfg/.py to pyproject.toml [#351](https://github.com/NLeSC/python-template/issues/351)
 * Moved from prospector to ruff [#336](https://github.com/NLeSC/python-template/issues/336)
 * Renamed `project_name` to `directory_name` in cookiecutter questionnaire

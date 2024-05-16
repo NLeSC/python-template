@@ -61,7 +61,7 @@ todo_include_todos = False
 
 # -- Use autoapi.extension to run sphinx-apidoc -------
 
-autoapi_dirs = ['../{{ cookiecutter.package_name }}']
+autoapi_dirs = ['../src/{{ cookiecutter.package_name }}']
 
 # -- Options for HTML output ----------------------------------------------
 
