@@ -94,6 +94,35 @@ extras = dev
 """
 
 [tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    ".venv",
+    "scripts",
+]
+
+target-version = "py39"
+line-length = 120
+
+
+[tool.ruff.lint]
 # Enable Pyflakes `E` and `F` codes by default.
 select = [
     "F",  # Pyflakes
@@ -131,39 +160,14 @@ ignore = [
 fixable = ["A", "B", "C", "D", "E", "F", "I"]
 unfixable = []
 
-exclude = [
-    ".bzr",
-    ".direnv",
-    ".eggs",
-    ".git",
-    ".hg",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    ".venv",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "venv",
-    ".venv",
-    "scripts",
-]
 per-file-ignores = {}
 
 
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
-target-version = "py39"
-line-length = 120
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 known-first-party = ["{{ cookiecutter.package_name }}"]
 force-single-line = true
 no-lines-before = ["future","standard-library","third-party","first-party","local-folder"]
