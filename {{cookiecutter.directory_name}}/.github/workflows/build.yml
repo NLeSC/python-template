@@ -59,4 +59,6 @@ jobs:
           python -m pip install --upgrade pip setuptools
           python -m pip install .[dev,publishing]
       - name: Check style against standards using ruff
-        run: ruff .
+        run: |
+          ruff check
+          ruff format --check
