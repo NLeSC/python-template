@@ -120,22 +120,13 @@ select = [
 
 ]
 ignore = [
-    'D100',  # Missing module docstring
-    'D104',  # Missing public package docstring
-    # The following list excludes rules irrelevant to the Google style
-    'D203',
-    'D204',
-    'D213',
-    'D215',
-    'D400',
-    'D401',
-    'D404',
-    'D406',
-    'D407',
-    'D408',
-    'D409',
-    'D413',
+    # No docstrings required in the following cases
+    "D100", # Missing module docstring
+    "D104", # Missing public package docstring
+    "D105", # Missing docstring in magic method
+    "D107", # Missing docstring in `__init__`
 ]
+pydocstyle.convention = "google"
 
 # Allow autofix for all enabled rules (when `--fix`) is provided.
 fixable = ["A", "B", "C", "D", "E", "F", "I"]
