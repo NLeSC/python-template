@@ -1,19 +1,19 @@
 # YAML 1.2
 ---
 cff-version: "1.2.0"
-title: "{{ cookiecutter.package_name }}"
+title: "{{ package_name }}"
 authors:
   -
-    family-names: {{ cookiecutter.full_name.split(' ')[-1] }}
-    given-names: {{ cookiecutter.full_name.split(' ')[0] }}
+    family-names: {{ full_name.split(' ')[-1] }}
+    given-names: {{ full_name.split(' ')[0] }}
     orcid: "https://orcid.org/0000-0000-0000-0000"
 date-released: 20??-MM-DD
 doi: <insert your DOI here>
-version: "{{ cookiecutter.version }}"
-repository-code: "{{ cookiecutter.repository_url }}"
+version: "{{ version }}"
+repository-code: "{{ repository_url }}"
 keywords:
-  - {{ cookiecutter.keyword1 }}
-  - {{ cookiecutter.keyword2 }}
+  - {{ keyword1 }}
+  - {{ keyword2 }}
 message: "If you use this software, please cite it using these metadata."
 {{ { "Apache Software License 2.0": "license: Apache-2.0",
     "MIT license": "license: MIT",
@@ -21,4 +21,4 @@ message: "If you use this software, please cite it using these metadata."
     "ISC license": "license: ISC",
     "GNU General Public License v3 or later": "license: GPL-3.0-or-later",
     "Not open source": ""
-}[cookiecutter.license] }}
+}[license] }}

@@ -2,7 +2,7 @@
 title: 'Next step: Citation data'
 ---
 
-It is likely that your `CITATION.cff` currently doesn't pass validation. The error messages you get from the [`cffconvert`]({{cookiecutter.repository_url}}/actions/workflows/cffconvert.yml) GitHub Action are unfortunately a bit cryptic, but doing the following helps:
+It is likely that your `CITATION.cff` currently doesn't pass validation. The error messages you get from the [`cffconvert`]({{repository_url}}/actions/workflows/cffconvert.yml) GitHub Action are unfortunately a bit cryptic, but doing the following helps:
 
 - [ ] Check if the `given-name` and `family-name` keys need updating. If your family name has a name particle like `von` or `van` or `de`, use the `name-particle` key; if your name has a suffix like `Sr` or `IV`, use `name-suffix`. For details, refer to the schema description: https://github.com/citation-file-format/citation-file-format
 - [ ] Update the value of the `orcid` key. If you do not have an orcid yet, you can get one here [https://orcid.org/](https://orcid.org/).
@@ -13,7 +13,7 @@ It is likely that your `CITATION.cff` currently doesn't pass validation. The err
 
 Afterwards, the `cffconvert` GitHub Action should be green.
 
-To make sure services like [Zenodo](https://zenodo.org) and the [Research Software Directory](https://research-software-directory.org/) can keep your citation data up to date, the [`cffconvert`]({{cookiecutter.repository_url}}/actions/workflows/cffconvert.yml) GitHub Action checks the following:
+To make sure services like [Zenodo](https://zenodo.org) and the [Research Software Directory](https://research-software-directory.org/) can keep your citation data up to date, the [`cffconvert`]({{repository_url}}/actions/workflows/cffconvert.yml) GitHub Action checks the following:
 
 1. Whether your repository includes a `CITATION.cff` file.
 

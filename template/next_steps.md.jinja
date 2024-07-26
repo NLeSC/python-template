@@ -14,19 +14,19 @@ Alternatively, you can also use a personal access token, see
 `git@github.com:` by `https://github.com/`.
 
 ```shell
-cd {{ cookiecutter.directory_name }}
+cd {{ directory_name }}
 git init
 git add --all
 git commit -m "first commit"
 git branch -M main
-git remote add origin {{ cookiecutter.repository }}
+git remote add origin {{ repository }}
 ```
 
 ## Push the initial commit to a new repo on GitHub
 
 Go to
-[https://github.com/organizations/{{cookiecutter.github_organization}}/repositories/new](https://github.com/organizations/{{cookiecutter.github_organization}}/repositories/new)
-and create a new repository named `{{ cookiecutter.directory_name }}` as an empty repository, then push your commits to GitHub:
+[https://github.com/organizations/{{github_organization}}/repositories/new](https://github.com/organizations/{{github_organization}}/repositories/new)
+and create a new repository named `{{ directory_name }}` as an empty repository, then push your commits to GitHub:
 
 ```shell
 git push --set-upstream origin main
@@ -35,7 +35,7 @@ git push --set-upstream origin main
 ## Check automatically generated issues
 
 A short while after you push your commits to GitHub for the first time, a few issues outlining next steps will added
-automatically ([here]({{cookiecutter.repository_url}}/issues?q=author%3Aapp%2Fgithub-actions)). Resolve them to complete the
+automatically ([here]({{repository_url}}/issues?q=author%3Aapp%2Fgithub-actions)). Resolve them to complete the
 setup of your repository.
 
 ## Project development documentation
