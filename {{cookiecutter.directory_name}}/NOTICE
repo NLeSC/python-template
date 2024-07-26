@@ -1,2 +1,0 @@
-This product includes {{ cookiecutter.package_name }}, software developed by
-{{ cookiecutter.copyright_holder }}.

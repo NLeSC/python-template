@@ -7,5 +7,5 @@ assignees: ''
 
 ---
 <!--
-Whatever you write here must have something to do with the code you get from running `cookiecutter`.
+Whatever you write here must have something to do with the code you get from running `copier`.
 -->
