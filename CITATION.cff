@@ -72,7 +72,7 @@ cff-version: "1.2.0"
 date-released: 2018-07-17
 doi: 10.5281/zenodo.1310751
 keywords:
-  - cookiecutter
+  - copier
   - template
   - Python
 license: Apache-2.0

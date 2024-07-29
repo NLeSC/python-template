@@ -7,5 +7,5 @@ assignees: ''
 
 ---
 <!--
-Whatever you write here must have something to do with the code of the template itself, i.e. before you run `cookiecutter`.
+Whatever you write here must have something to do with the code of the template itself, i.e. before you run `copier`.
 -->
