@@ -9,7 +9,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 authors = [
-    { name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}" }
+    { name = "{{ full_name }}", email = "{{ email }}" }
 ]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
@@ -21,7 +21,7 @@ classifiers = [
         'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
         'GNU General Public License v3 or later': 'License :: OSI Approved :: GNU General Public License',
         'Not open source': 'License :: Other/Proprietary License'
-    }[cookiecutter.license] }}",
+    }[license] }}",
     "Natural Language :: English",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
@@ -31,16 +31,16 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = []
-description = "{{ cookiecutter.package_short_description }}"
+description = "{{ package_short_description }}"
 keywords = [
-    "{{ cookiecutter.keyword1 }}",
-    "{{ cookiecutter.keyword2 }}",
+    "{{ keyword1 }}",
+    "{{ keyword2 }}",
 ]
 license = {file = "LICENSE"}
-name = "{{ cookiecutter.package_name }}"
+name = "{{ package_name }}"
 readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.8"
-version = "{{ cookiecutter.version }}"
+version = "{{ version }}"
 
 [project.optional-dependencies]
 dev = [
@@ -69,24 +69,24 @@ publishing = [
 ]
 
 [project.urls]
-Repository = "{{ cookiecutter.repository_url }}"
-Issues = "{{ cookiecutter.repository_url }}/issues"
-Changelog = "{{ cookiecutter.repository_url }}/CHANGELOG.md"
+Repository = "{{ repository_url }}"
+Issues = "{{ repository_url }}/issues"
+Changelog = "{{ repository_url }}/CHANGELOG.md"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
 [tool.coverage.run]
 branch = true
-source = ["src/{{ cookiecutter.package_name }}"]
+source = ["src/{{ package_name }}"]
 command_line = "-m pytest"
 
 [tool.isort]
 lines_after_imports = 2
 force_single_line = 1
 no_lines_before = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
-known_first_party = "{{ cookiecutter.package_name }}"
-src_paths = ["src/{{ cookiecutter.package_name }}", "tests"]
+known_first_party = "{{ package_name }}"
+src_paths = ["src/{{ package_name }}", "tests"]
 line_length = 120
 
 [tool.tox]
@@ -170,15 +170,15 @@ target-version = "py39"
 line-length = 120
 
 [tool.ruff.isort]
-known-first-party = ["{{ cookiecutter.package_name }}"]
+known-first-party = ["{{ package_name }}"]
 force-single-line = true
 no-lines-before = ["future","standard-library","third-party","first-party","local-folder"]
 
 [tool.bumpversion]
-current_version = "{{ cookiecutter.version }}"
+current_version = "{{ version }}"
 
 [[tool.bumpversion.files]]
-filename = "src/{{ cookiecutter.package_name }}/__init__.py"
+filename = "src/{{ package_name }}/__init__.py"
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"

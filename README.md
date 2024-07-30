@@ -8,7 +8,7 @@ Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generat
 an empty Python package. Features include:
 
 - Boilerplate unit tests and documentation,
-- [Python static setup configuration]({{cookiecutter.directory_name}}/pyproject.toml),
+- [Python static setup configuration]({{directory_name}}/pyproject.toml),
 - Open source software license,
 - Continuous integration with [GitHub action workflows]({{cookiecutter.directory_name}}/.github/workflows) for building, testing, link checking and linting,
 - Code style checking with [ruff](https://beta.ruff.rs/),
