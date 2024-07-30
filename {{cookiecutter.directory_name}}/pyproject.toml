@@ -115,6 +115,7 @@ ignore = [
     "ANN204", # Missing return type annotation for special (dunder) method
     "FBT",    # Using boolean function arguments
     "TD",     # TODOs
+    "FIX001", # Resolve FIXMEs
     "FIX002", # Resolve TODOs
     "B028",   # No explicit `stacklevel` keyword argument found in warning
     # No docstrings required in the following cases
@@ -139,14 +140,20 @@ extend-safe-fixes = [
     "B006",   # Mutable default argument
 ]
 
-[lint.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "tests/*" = [
     "S101",   # Use of `assert` detected
     "PT011",  # pytest-raises-too-broad
+    "ANN001", # Missing function argument type
     "ANN201", # Missing return type
     "D103",   # Missing function docstring
     "ANN401", # Function arguments annotated with too generic `Any` type
     "SLF001", # Private member access
+]
+"docs/conf.py" = [
+    "INP001", # Add __init__.py to implicit namespace package
+    "ERA001", # Commented-out code
+    "A001",   # Shadowing Python builtin name, specifically `copyright`
 ]
 
 [tool.ruff.lint.isort]
