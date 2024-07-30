@@ -1,30 +1,27 @@
 # Netherlands eScience Center Python Template
 
-Spend less time setting up and configuring your new Python packages and comply with the
-[Netherlands eScience Center Software Development Guide](https://guide.esciencecenter.nl/)
-from the start.
+Spend less time setting up and configuring your new Python packages and comply with the [Netherlands eScience Center Software Development Guide](https://guide.esciencecenter.nl/) from the start.
 
-Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generate
-an empty Python package. Features include:
+Use this [Copier](https://copier.readthedocs.io) template to generate an empty Python package. Features include:
 
 - Boilerplate unit tests and documentation,
 - [Python static setup configuration]({{directory_name}}/pyproject.toml),
 - Open source software license,
-- Continuous integration with [GitHub action workflows]({{cookiecutter.directory_name}}/.github/workflows) for building, testing, link checking and linting,
+- Continuous integration with [GitHub action workflows]({{directory_name}}/.github/workflows) for building, testing, link checking and linting,
 - Code style checking with [ruff](https://beta.ruff.rs/),
-- [Editorconfig]({{cookiecutter.directory_name}}/.editorconfig),
+- [Editorconfig]({{directory_name}}/.editorconfig),
 - Usage and contribution documents:
-  - [README.md]({{cookiecutter.directory_name}}/README.md) for package users,
-  - [README.dev.md]({{cookiecutter.directory_name}}/README.dev.md) for package developer,
-  - [project_setup.md]({{cookiecutter.directory_name}}/project_setup.md) with extensive documentation about project setup,
-  - [Change log]({{cookiecutter.directory_name}}/CHANGELOG.md),
-  - [Code of Conduct]({{cookiecutter.directory_name}}/CODE_OF_CONDUCT.md),
-  - [Contributing guidelines]({{cookiecutter.directory_name}}/CONTRIBUTING.md),
+  - [README.md]({{directory_name}}/README.md) for package users,
+  - [README.dev.md]({{directory_name}}/README.dev.md) for package developer,
+  - [project_setup.md]({{directory_name}}/project_setup.md) with extensive documentation about project setup,
+  - [Change log]({{directory_name}}/CHANGELOG.md),
+  - [Code of Conduct]({{directory_name}}/CODE_OF_CONDUCT.md),
+  - [Contributing guidelines]({{directory_name}}/CONTRIBUTING.md),
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/),
-- Automatic creation of [issues]({{cookiecutter.directory_name}}/.github/next_steps) with instructions how to pass all GitHub action workflows and integrate with services like Zenodo and Read the Docs,
-- Instructions how to make package [citable]({{cookiecutter.directory_name}}/.github/next_steps/02_citation.md)
+- Automatic creation of [issues]({{directory_name}}/.github/next_steps) with instructions how to pass all GitHub action workflows and integrate with services like Zenodo and Read the Docs,
+- Instructions how to make package [citable]({{directory_name}}/.github/next_steps/02_citation.md)
 - FAIR software recommendation badge,
-- Optional [pre commit hook]({{cookiecutter.directory_name}}/README.dev.md#running-linters-locally) to catch lint errors early
+- Optional [pre commit hook]({{directory_name}}/README.dev.md#running-linters-locally) to catch lint errors early
 
 ## Badges
 
@@ -45,24 +42,21 @@ an empty Python package. Features include:
 
 ## How to use
 
-### Step 1/3: Install `cookiecutter`
-
-We recommend installing `cookiecutter` in user space as per `cookiecutter`'s instructions. This way, you don't have to
-install `cookiecutter` for every new project.
+### Step 1/3: Install `copier`
 
 ```shell
-python -m pip install --user --upgrade cookiecutter
+pipx install copier
 ```
 
 ### Step 2/3: Generate the files and directory structure
 
-Run `cookiecutter` with the template:
+Run `copier` with the template:
 
 ```shell
 # Notes:
 #   1. See table below for explanation of each question
 #   2. The files will be generated in a new directory
-cookiecutter https://github.com/nlesc/python-template.git
+copier copy https://github.com/nlesc/python-template.git path/to/destination
 ```
 
 | Name                      | Default value | Explanation |
@@ -81,64 +75,67 @@ cookiecutter https://github.com/nlesc/python-template.git
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
 
 Once the project files have been generated, follow the steps outlined in
-[{{cookiecutter.directory_name}}/next_steps.md]({{cookiecutter.directory_name}}/next_steps.md).
+[{{directory_name}}/next_steps.md]({{directory_name}}/next_steps.md).
 
 ### Step 3/3: Read about what was just generated
 
 Good job! You have now generated the skeleton for your package:
 
 ```text
-my-python-project/
-├── .editorconfig
-├── .githooks
-│   └── pre-commit
-├── .github
-│   ├── next_steps
-│   │   ├── 01_sonarcloud_integration.md
-│   │   ├── 02_citation.md
-│   │   ├── 03_readthedocs.md
-│   │   ├── 04_zenodo_integration.md
-│   │   └── 05_linting.md
-│   └── workflows
-│       ├── build.yml
-│       ├── cffconvert.yml
-│       ├── documentation.yml
-│       ├── markdown-link-check.yml
-│       ├── next_steps.yml
-│       └── sonarcloud.yml
-├── .gitignore
-├── .mlc-config.json
-├── .readthedocs.yaml
+.
 ├── CHANGELOG.md
 ├── CITATION.cff
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
-├── LICENSE
-├── MANIFEST.in
-├── NOTICE
-├── README.dev.md
-├── README.md
+├── .copier-answers.yml
 ├── docs
-│   ├── Makefile
-│   ├── _templates
-│   │   └── .gitignore
-│   ├── conf.py
-│   ├── index.rst
-│   └── make.bat
+│   ├── conf.py
+│   ├── index.rst
+│   ├── make.bat
+│   ├── Makefile
+│   └── _templates
+│       └── .gitignore
+├── .editorconfig
+├── .githooks
+│   └── pre-commit
+├── .github
+│   ├── next_steps
+│   │   ├── 01_sonarcloud_integration.md
+│   │   ├── 02_citation.md
+│   │   ├── 03_readthedocs.md
+│   │   ├── 04_zenodo_integration.md
+│   │   └── 05_linting.md
+│   └── workflows
+│       ├── build.yml
+│       ├── cffconvert.yml
+│       ├── documentation.yml
+│       ├── markdown-link-check.yml
+│       ├── next_steps.yml
+│       └── sonarcloud.yml
+├── .gitignore
+├── MANIFEST.in
+├── .mlc-config.json
 ├── next_steps.md
+├── NOTICE
 ├── project_setup.md
 ├── pyproject.toml
+├── README.dev.md
+├── README.md
+├── .readthedocs.yaml
 ├── sonar-project.properties
 ├── src
-│   └── my_python_package
-│       ├── __init__.py
-│       └── my_module.py
-└── tests
-    ├── __init__.py
-    └── test_my_module.py
+│   └── my_python_package
+│       ├── __init__.py
+│       └── my_module.py
+├── tests
+│   ├── __init__.py
+│   ├── test_my_module.py
+│   ├── test_project.py
+│   └── test_values.py
+└── .zenodo.json
 ```
 
-For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.directory_name}}/project_setup.md) file.
+For an explanation of what's there, read on in the [project_setup.md]({{directory_name}}/project_setup.md) file.
 There are also instructions on how to [apply the template to an existing Python package](ADD_TO_EXISTING_PACKAGE.md).
 
 ## Examples
