@@ -57,23 +57,27 @@ def project_env_bin_dir(tmp_path_factory):
 
 
 @pytest.fixture(scope='session')
-def baked_with_development_dependencies(tmp_path_factory, project_env_bin_dir, copier_project_defaults):
-    project_defaults = copier_project_defaults
-    project = run_copy(
-                    src_path=str(here()),
-                    dst_path=str(tmp_path_factory.mktemp('projects')),
-                    defaults=True,
-                    vcs_ref="HEAD",
-                    data=project_defaults
-                    )
-    project_dir = project.dst_path
+# def baked_with_development_dependencies(tmp_path_factory, project_env_bin_dir, copier_project_defaults):
+#     project_defaults = copier_project_defaults
+#     project = run_copy(
+#                     src_path=str(here()),
+#                     dst_path=str(tmp_path_factory.mktemp('projects')),
+#                     defaults=True,
+#                     vcs_ref="HEAD",
+#                     data=project_defaults
+#                     )
+#     project_dir = project.dst_path
+
+def baked_with_development_dependencies(copie_session, project_env_bin_dir, copier_project_defaults):
+    result = copie_session.copy(extra_answers=copier_project_defaults)
+    assert result.exit_code == 0
 
     bin_dir = project_env_bin_dir
-    latest_pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--upgrade', 'pip', 'setuptools'], project_dir)
+    latest_pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--upgrade', 'pip', 'setuptools'], result.project_dir)
     assert latest_pip_output.returncode == 0
-    pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--editable', '.[dev]'], project_dir)
+    pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--editable', '.[dev]'], result.project_dir)
     assert pip_output.returncode == 0
-    return project_dir
+    return result.project_dir
 
 
 def test_pytest(baked_with_development_dependencies, project_env_bin_dir):
