@@ -4,8 +4,8 @@ cff-version: "1.2.0"
 title: "{{ package_name }}"
 authors:
   -
-    family-names: {{ full_name.split(' ')[-1] }}
-    given-names: {{ full_name.split(' ')[0] }}
+    family-names: {{ full_name.replace('\"', '\\\"').split(' ')[-1] }}
+    given-names: {{ full_name.replace('\"', '\\\"').split(' ')[0] }}
     orcid: "https://orcid.org/0000-0000-0000-0000"
 date-released: 20??-MM-DD
 doi: <insert your DOI here>
