@@ -11,10 +11,6 @@ package_name:
 package_short_description:
   type: str
   default: Short description of package
-  validator: >-
-        {% if (package_short_description | regex_replace ('"', '\\\\"')|regex_replace ("'", "\\\\'")%}
-        package_short_description must not contain unescaped double or single quotes.
-        {% endif %}
 keyword1:
   type: str
   default: keyword1
@@ -42,10 +38,6 @@ full_name:
   type: str
   default: Jane Smith
   help: Enter your full name.
-  # validator: >-
-  #       {% if '"' in full_name %}
-  #       full_name must not contain unescaped double quotes. Use \\" for double quotes.
-  #       {% endif %}
 email:
   type: str
   default: yourname@esciencecenter.nl
