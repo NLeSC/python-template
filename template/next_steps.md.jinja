@@ -13,8 +13,8 @@ Alternatively, you can also use a personal access token, see
 [Creating a personal access token](https://docs.github.com/en/github-ae@latest/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).  If you choose this option, below you will have to replace
 `git@github.com:` by `https://github.com/`.
 
+Inside of the generated directory, run the following commands:
 ```shell
-cd {{ directory_name }}
 git init
 git add --all
 git commit -m "first commit"
@@ -26,7 +26,7 @@ git remote add origin {{ repository }}
 
 Go to
 [https://github.com/organizations/{{github_organization}}/repositories/new](https://github.com/organizations/{{github_organization}}/repositories/new)
-and create a new repository named `{{ directory_name }}` as an empty repository, then push your commits to GitHub:
+and create a new repository named `{{ package_name }}` as an empty repository, then push your commits to GitHub:
 
 ```shell
 git push --set-upstream origin main

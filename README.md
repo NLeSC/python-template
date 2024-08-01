@@ -5,23 +5,23 @@ Spend less time setting up and configuring your new Python packages and comply w
 Use this [Copier](https://copier.readthedocs.io) template to generate an empty Python package. Features include:
 
 - Boilerplate unit tests and documentation,
-- [Python static setup configuration]({{directory_name}}/pyproject.toml),
+- [Python static setup configuration](template/pyproject.toml),
 - Open source software license,
-- Continuous integration with [GitHub action workflows]({{directory_name}}/.github/workflows) for building, testing, link checking and linting,
+- Continuous integration with [GitHub action workflows](template/.github/workflows) for building, testing, link checking and linting,
 - Code style checking with [ruff](https://beta.ruff.rs/),
-- [Editorconfig]({{directory_name}}/.editorconfig),
+- [Editorconfig](template/.editorconfig),
 - Usage and contribution documents:
-  - [README.md]({{directory_name}}/README.md) for package users,
-  - [README.dev.md]({{directory_name}}/README.dev.md) for package developer,
-  - [project_setup.md]({{directory_name}}/project_setup.md) with extensive documentation about project setup,
-  - [Change log]({{directory_name}}/CHANGELOG.md),
-  - [Code of Conduct]({{directory_name}}/CODE_OF_CONDUCT.md),
-  - [Contributing guidelines]({{directory_name}}/CONTRIBUTING.md),
+  - [README.md](template/README.md) for package users,
+  - [README.dev.md](template/README.dev.md) for package developer,
+  - [project_setup.md](template/project_setup.md) with extensive documentation about project setup,
+  - [Change log](template/CHANGELOG.md),
+  - [Code of Conduct](template/CODE_OF_CONDUCT.md),
+  - [Contributing guidelines](template/CONTRIBUTING.md),
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/),
-- Automatic creation of [issues]({{directory_name}}/.github/next_steps) with instructions how to pass all GitHub action workflows and integrate with services like Zenodo and Read the Docs,
-- Instructions how to make package [citable]({{directory_name}}/.github/next_steps/02_citation.md)
+- Automatic creation of [issues](template/.github/next_steps) with instructions how to pass all GitHub action workflows and integrate with services like Zenodo and Read the Docs,
+- Instructions how to make package [citable](template/.github/next_steps/02_citation.md)
 - FAIR software recommendation badge,
-- Optional [pre commit hook]({{directory_name}}/README.dev.md#running-linters-locally) to catch lint errors early
+- Optional [pre commit hook](template/README.dev.md#running-linters-locally) to catch lint errors early
 
 ## Badges
 
@@ -61,8 +61,7 @@ copier copy https://github.com/nlesc/python-template.git path/to/destination
 
 | Name                      | Default value | Explanation |
 | ------------------------- | ------------- | ----------- |
-| directory_name              | my-python-project | Name of the directory that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. To get an impression of what will be generated, see the directory tree [below](https://github.com/NLeSC/python-template#step-33-read-about-what-was-just-generated) |
-| package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. |
+| package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. This also will be used as the github repository name.|
 | package_short_description | Short description of package | The information that you enter here will end up in the README, documentation, license, and pyproject.toml, so it may be a good idea to prepare something in advance. |
 | keyword1                  | keyword1          | A term that describes your package. |
 | keyword2                  | keyword2          | Another term that describes your package. |
@@ -75,7 +74,7 @@ copier copy https://github.com/nlesc/python-template.git path/to/destination
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
 
 Once the project files have been generated, follow the steps outlined in
-[{{directory_name}}/next_steps.md]({{directory_name}}/next_steps.md).
+[template/next_steps.md](template/next_steps.md).
 
 ### Step 3/3: Read about what was just generated
 
@@ -135,7 +134,7 @@ Good job! You have now generated the skeleton for your package:
 └── .zenodo.json
 ```
 
-For an explanation of what's there, read on in the [project_setup.md]({{directory_name}}/project_setup.md) file.
+For an explanation of what's there, read on in the [project_setup.md](template/project_setup.md) file.
 There are also instructions on how to [apply the template to an existing Python package](ADD_TO_EXISTING_PACKAGE.md).
 
 ## Examples
