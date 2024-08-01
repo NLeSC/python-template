@@ -43,7 +43,7 @@ def project_env_bin_dir(tmp_path_factory):
 
 @pytest.fixture(scope='session')
 def baked_with_development_dependencies(tmp_path_factory, project_env_bin_dir):
-    project = run_copy(src_path=str(here()), dst_path=str(tmp_path_factory.mktemp('projects')), defaults=True)
+    project = run_copy(src_path=str(here()), dst_path=str(tmp_path_factory.mktemp('projects')), defaults=True, vcs_ref="HEAD")
     project_dir = project.dst_path
 
     bin_dir = project_env_bin_dir
