@@ -11,10 +11,10 @@ package_name:
 package_short_description:
   type: str
   default: Short description of package
-  # validator: >-
-  #       {% if '"' in package_short_description %}
-  #       package_short_description must not contain unescaped double quotes. Use \\" for double quotes.
-  #       {% endif %}
+  validator: >-
+        {% if (package_short_description | regex_replace ('"', '\\\\"')|regex_replace ("'", "\\\\'")%}
+        package_short_description must not contain unescaped double or single quotes.
+        {% endif %}
 keyword1:
   type: str
   default: keyword1
@@ -59,11 +59,11 @@ code_of_conduct_email:
 _subdirectory: template
 
 repository:
-  default: git@github.com:{{ github_organization }}/{{ directory_name }}
+  default: git@github.com:{{ github_organization }}/{{ package_name }}
   when: false
 
 repository_url:
-  default: https://github.com/{{ github_organization }}/{{ directory_name }}
+  default: https://github.com/{{ github_organization }}/{{ package_name }}
   when: false
 
 

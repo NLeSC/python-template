@@ -16,21 +16,3 @@ def test_single_quotes_in_name_and_description(copie):
     project = copie.copy(extra_answers=ctx)
 
     assert project.exit_code == 0
-
-
-def test_dash_in_directory_name(copie):
-    ctx = {
-        "directory_name": "my-python-project"
-    }
-    project = copie.copy(extra_answers=ctx)
-
-    assert project.exit_code == 0
-
-
-def test_space_in_directory_name(copie):
-    ctx = {
-        "directory_name": "my python project"
-    }
-    project = copie.copy(extra_answers=ctx)
-
-    assert project.exit_code == 0
