@@ -28,6 +28,7 @@
 * Regenerated docs/conf.py with sphinx-quickstart v3.5.4 + enabled built-in extensions [#44](https://github.com/NLeSC/python-template/issues/44)
 * Generate api rst files with extension instead of custom function [#95](https://github.com/NLeSC/python-template/issues/95)
 * Change from bump2version (unmaintained) to bump-my-version.
+* Set markdown link checker to quiet mode: only report broken links [#262](https://github.com/NLeSC/python-template/issues/262)
 
 ### Removed
 
