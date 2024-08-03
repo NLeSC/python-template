@@ -105,7 +105,8 @@ my-python-project/
 │       ├── documentation.yml
 │       ├── markdown-link-check.yml
 │       ├── next_steps.yml
-│       └── sonarcloud.yml
+│       ├── sonarcloud.yml
+│       └── stale_issue_pr.yml
 ├── .gitignore
 ├── .mlc-config.json
 ├── .readthedocs.yaml
