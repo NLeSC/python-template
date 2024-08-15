@@ -81,7 +81,7 @@ copier copy --vcs-ref HEAD  <path/to/project/template> my-python-project
 # 'ls' should return just the one directory called 'my-python-project'
 ls 
 ```
-Notice, that the `--vcs-ref HEAD` flag is used to make sure that the current checked out version of a local template are used.
+Notice, that the `--vcs-ref HEAD` flag is used to make sure that the current checked out version of the local template is used.
 
 If your Python package was created successfully, `copier` will point you to a file
 (`my-python-project/next_steps.md`) that contains information on next steps.
