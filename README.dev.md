@@ -4,14 +4,16 @@ If you're looking for user documentation, go [here](README.md).
 
 ## Development install
 
-### Install `cookiecutter` in user space
+### Install `copier` in user space
 
-We recommend installing `cookiecutter` in user space as per `cookiecutter`'s instructions. This way, you don't have to
-install `cookiecutter` for every new project.
+We recommend installing `copier` in user space. This way, you don't have to
+install `copier` for every new project.
 
 ```shell
-python -m pip install --user --upgrade cookiecutter
+python -m pip install --user --upgrade copier
 ```
+
+
 
 ### Get your own copy of the repository
 
@@ -21,6 +23,13 @@ Before you can do development work on the template, you'll need to check out a l
 cd <where you keep your GitHub repositories>
 git clone https://github.com/NLeSC/python-template.git
 cd python-template
+```
+
+Please note that if you are working from some other branch than `main`, you should switch to that branch. For example, if you are working from the `dev` branch, you should do: 
+
+```shell
+git fetch origin
+git switch -c dev origin/dev
 ```
 
 ### Create a virtual environment
@@ -53,7 +62,7 @@ pytest
 pytest tests/
 ```
 
-## Using `cookiecutter` to generate a new package from the command line
+## Using `copier` to generate a new package from the command line
 
 While making changes to the template, you'll regularly want to verify that the packages generated with the template
 still work. Any easy way to do this is to generate new packages in a temporary directory (which will get removed
@@ -61,10 +70,10 @@ everytime you reboot), for example like so:
 
 ```shell
 # change directory to a new temporary directory
-cd $(mktemp -d --tmpdir cookiecutter-generated.XXXXXX)
+cd $(mktemp -d --tmpdir copier-generated.XXXXXX)
 
-# run cookiecutter with the template to generate a new package
-cookiecutter <path to where your template is>
+# run copier with the template to generate a new package
+copier copy --vcs-ref HEAD  <path/to/project/template> <path/to/destination>
 
 # when it asks you for the GitHub organization, put in your own name;
 # for the other questions, just accept the default
@@ -72,8 +81,9 @@ cookiecutter <path to where your template is>
 # 'ls' should return just the one directory called 'my-python-project'
 ls 
 ```
+Notice, that the `--vcs-ref HEAD` flag is used to make sure that the current checked out version of a local template are used.
 
-If your Python package was created successfully, `cookiecutter` will point you to a file
+If your Python package was created successfully, `copier` will point you to a file
 (`my-python-project/next_steps.md`) that contains information on next steps.
 
 In addition to the information in `my-python-project/project_setup.md`, the developer documentation
@@ -95,7 +105,7 @@ Follow the instructions from `my-python-project/README.dev.md` and make sure tha
 2. Verify that the information in `CITATION.cff` is correct.
 3. Make sure that `version` in [setup.cfg](setup.cfg) and  `version` in [CITATION.cff](CITATION.cff) have been bumped to the to-be-released version of the template
 4. Run the unit tests with `pytest tests/`
-5. Go through the steps outlined above for [generating a new package from the command line](#using-cookiecutter-to-generate-a-new-package-from-the-command-line), and verify that the generated package works as it should.
+5. Go through the steps outlined above for [generating a new package from the command line](#using-copier-to-generate-a-new-package-from-the-command-line), and verify that the generated package works as it should.
 
 ### GitHub
 
