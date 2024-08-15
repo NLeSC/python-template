@@ -73,7 +73,7 @@ everytime you reboot), for example like so:
 cd $(mktemp -d --tmpdir copier-generated.XXXXXX)
 
 # run copier with the template to generate a new package
-copier copy --vcs-ref HEAD  <path/to/project/template> <path/to/destination>
+copier copy --vcs-ref HEAD  <path/to/project/template> my-python-project
 
 # when it asks you for the GitHub organization, put in your own name;
 # for the other questions, just accept the default
