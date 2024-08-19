@@ -16,10 +16,9 @@
 <!-- remove what doesn't apply or add more if needed -->
 Create a `python-template-test` repo on GitHub (will be overwritten if existing)
 ```
-cd $(mktemp -d --tmpdir py-tmpl-XXXXXX)
-cookiecutter -c <pr-branch> https://github.com/<pr-user>/python-template
+copier copy --vcs-ref <pr-branch> https://github.com/<pr-user>/python-template py-tmpl-XXXXXX
 # Fill with python-template-test info
-cd python-template-test
+cd py-tmpl-XXXXXX
 git init
 git add --all
 git commit -m "First commit"
