@@ -79,7 +79,7 @@ _message_after_copy: |
 
        $ cd {{ _copier_conf.dst_path }}
 
-    2. Read ({{ package_name }}/next_steps.md) which contains information on next steps.
+    2. Read ({{ _copier_conf.dst_path }}/next_steps.md) which contains information on next steps.
 
 _message_before_update: |
     Thanks for updating your project using our template.
