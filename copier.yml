@@ -64,6 +64,12 @@ repository_url:
 
 # user messages
 
+_message_before_copy: |
+    Thanks for generating a project using our template.
+
+    You'll be asked a series of questions whose answers will be used to
+    generate a tailored project for you.
+
 _message_after_copy: |
     Your project "{{ package_name }}" has been created successfully!
 
@@ -75,19 +81,13 @@ _message_after_copy: |
 
     2. Read ("{{ package_name }}"/next_steps.md) which contains information on next steps.
 
-_message_after_update: |
-    Your project "{{ package_name }}" has been updated successfully!
-    In case there are any conflicts, please resolve them. Then,
-    you're done.
-
-_message_before_copy: |
-    Thanks for generating a project using our template.
-
-    You'll be asked a series of questions whose answers will be used to
-    generate a tailored project for you.
-
 _message_before_update: |
     Thanks for updating your project using our template.
 
     You'll be asked a series of questions whose answers are pre-populated
     with previously entered values. Feel free to change them as needed.
+
+_message_after_update: |
+    Your project "{{ package_name }}" has been updated successfully!
+    In case there are any conflicts, please resolve them. Then,
+    you're done.
