@@ -18,7 +18,7 @@ Create a `python-template-test` repo on GitHub (will be overwritten if existing)
 ```
 # Create a temporary directory by running the following command. Keep the XXXXXX in the directory name. 
 cd $(mktemp -d --tmpdir py-tmpl-XXXXXX)
-# Use --vcs-ref <pr-branch> to point to the branch to you want to test
+# Use --vcs-ref <pr-branch> to point to the branch you want to test
 copier copy --vcs-ref <pr-branch> https://github.com/<pr-user>/python-template .
 # Fill with python-template-test info
 # Create a local git repo to push to GitHub to trigger CI actions
