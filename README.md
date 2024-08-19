@@ -42,20 +42,29 @@ Use this [Copier](https://copier.readthedocs.io) template to generate an empty P
 
 ## How to use
 
-### Step 1/3: Install `copier`
+There are multiple ways to use this template:
 
+1. Creating a new package based on the template
+2. Applying the template's best practices to some pre-existing code
+3. Updating a package made with the template based on the latest template updates
+
+In all three cases, you will need to install copier first:
 ```shell
 pipx install copier
 ```
 
-### Step 2/3: Generate the files and directory structure
+### Option 1: Create a new package
+
+
+#### Step 1/2: Generate the files and directory structure
 
 Run `copier` with the template:
 
 ```shell
 # Notes:
-#   1. See table below for explanation of each question
-#   2. The files will be generated in a new directory
+#   1. Make sure that `path/to/destination` is an empty directory
+#   2. See table below for explanation of each question
+#   3. The files will be generated in the specified destination directory
 copier copy https://github.com/nlesc/python-template.git path/to/destination
 ```
 
@@ -76,7 +85,7 @@ copier copy https://github.com/nlesc/python-template.git path/to/destination
 Once the project files have been generated, follow the steps outlined in
 [template/next_steps.md](template/next_steps.md).
 
-### Step 3/3: Read about what was just generated
+#### Step 2/2: Read about what was just generated
 
 Good job! You have now generated the skeleton for your package:
 
@@ -135,7 +144,49 @@ Good job! You have now generated the skeleton for your package:
 ```
 
 For an explanation of what's there, read on in the [project_setup.md](template/project_setup.md) file.
-There are also instructions on how to [apply the template to an existing Python package](ADD_TO_EXISTING_PACKAGE.md).
+
+### Option 2: Apply to pre-existing code
+
+To apply the template to pre-existing code, you can use the same `copier copy`
+command as when creating a new package, except that you point to the folder
+containing your existing code rather than a new one:
+
+```shell
+copier copy https://github.com/nlesc/python-template.git path/to/existing/code
+```
+
+This works because if `path/to/destination` already exists, `copier` will
+update what is already there by either adding new files or updating
+existing files. Copier will ask to overwrite any files that resulted in
+conflicts. Especially if your files are already under version control, it is
+recommended to answer 'yes' for all files, you will still be able to review
+the changes suggested by the template.
+
+### Option 3. Updating a template-made package
+
+Copier provides the functionality for re-applying the template to a previously
+created project using the `copier update` command. This has two effects:
+
+1. Your project will be updated according to the latest version of the template
+2. You can change any of your previous answers to apply these changes
+   throughout your entire project.
+
+```shell
+cd path/to/project
+copier update
+```
+
+If you don't want to change any of your answers, but only want to update your
+project according to the latest template updates, you can provide the
+`--skip-answered` option. This tells copier to reuse all of your previous
+answers, and simply bring in all updates from the template into
+your current project, such as updating which Python versions are supported.
+You will still be asked to answer any new questions that have been added to
+the template since you last applied it.
+
+```shell
+copier update --skip-answered
+```
 
 ## Examples
 
