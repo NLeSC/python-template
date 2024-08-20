@@ -14,9 +14,9 @@
 
 ## Questions
 - licence (exist)
-- github action (exist) #451
+- github action (added by #451)
 - Pre-commit
-- cffconvert workflow and citation file
+- cffconvert workflow and citation file (added by #458)
 - markdown link checker workflow
 - static analysis
 - next steps workflow
