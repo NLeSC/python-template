@@ -74,7 +74,7 @@ AddGitHubActions:
   when: "{{ template_profile == 'ask' }}"
   type: bool
   default: "{{ template_profile != 'minimum' }}"
-  help: GitHub actions to test build, documentation
+  help: GitHub actions to test the package and the documentation
 
 
 # internal fields
