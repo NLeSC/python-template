@@ -23,17 +23,6 @@ version:
 github_organization:
   type: str
   default: "<my-github-organization>"
-license:
-  type: str
-  choices:
-  - "Apache Software License 2.0"
-  - "MIT license"
-  - "BSD license"
-  - "ISC license"
-  - "GNU General Public License v3 or later"
-  - "GNU Lesser General Public License v3 or later"
-  - "Not open source"
-  default: "MIT license"
 full_name:
   type: str
   default: Jane Smith
@@ -48,8 +37,7 @@ code_of_conduct_email:
   type: str
   default: "{{ email }}"
 
-_subdirectory: template
-
+# calculated fields
 repository:
   default: git@github.com:{{ github_organization }}/{{ package_name }}
   when: false
@@ -59,11 +47,42 @@ repository_url:
   when: false
 
 
-# Optional questions
+# profile selection
+template_profile:
+  type: str
+  default: recommended
+  help: Optional questions (You can use our defaults, or the bare minimum, or decide everything)
+  choices:
+    Recommended (our defaults for research software): "recommended"
+    Minimum (no extra features): "minimum"
+    Let me choose (decide each feature yourself): "ask"
+
+
+# extra questions
+license:
+  type: str
+  choices:
+  - "Apache Software License 2.0"
+  - "MIT license"
+  - "BSD license"
+  - "ISC license"
+  - "GNU General Public License v3 or later"
+  - "GNU Lesser General Public License v3 or later"
+  - "Not open source"
+  default: "MIT license"
+
+AddGitHubActions:
+  when: "{{ template_profile == 'ask' }}"
+  type: bool
+  default: "{{ template_profile != 'minimum' }}"
+  help: GitHub actions to test the package and the documentation
+
+
+# internal fields
+_subdirectory: template
 
 
 # user messages
-
 _message_before_copy: |
     Thanks for generating a project using our template.
 
@@ -77,7 +96,7 @@ _message_after_copy: |
 
     1. Change directory to the project root:
 
-       $ cd {{ _copier_conf.dst_path }}
+        $ cd {{ _copier_conf.dst_path }}
 
     2. Read next_steps.md which contains information on next steps.
 
