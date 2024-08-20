@@ -46,7 +46,7 @@ There are multiple scenarios to use this template:
 
 1. Creating a new package based on the template
 2. Applying the template to some pre-existing code
-3. Updating a package made with the template based on the latest template updates
+3. Updating a package made with the template
 
 In all three cases, you will need to install copier first:
 ```shell
