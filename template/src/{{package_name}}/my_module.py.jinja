@@ -2,7 +2,7 @@
 
 
 # FIXME: put actual code here
-def hello(name):
+def hello(name: str) -> str:
     """Say hello.
 
     Function docstring using Google docstring style.
