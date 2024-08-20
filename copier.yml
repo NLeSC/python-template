@@ -1,0 +1,93 @@
+# Essential questions
+
+package_name:
+  type: str
+  default: my_python_package
+  help: Enter the name of the Python package.
+  validator: >-
+        {% if not (package_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
+        package_name must start with a letter, followed one or more letters, digits or underscores all lowercase.
+        {% endif %}
+package_short_description:
+  type: str
+  default: Short description of package
+keyword1:
+  type: str
+  default: keyword1
+keyword2:
+  type: str
+  default: keyword2
+version:
+  type: str
+  default: 0.1.0
+github_organization:
+  type: str
+  default: "<my-github-organization>"
+license:
+  type: str
+  choices:
+  - "Apache Software License 2.0"
+  - "MIT license"
+  - "BSD license"
+  - "ISC license"
+  - "GNU General Public License v3 or later"
+  - "GNU Lesser General Public License v3 or later"
+  - "Not open source"
+  default: "MIT license"
+full_name:
+  type: str
+  default: Jane Smith
+  help: Enter your full name.
+email:
+  type: str
+  default: yourname@esciencecenter.nl
+copyright_holder:
+  type: str
+  default: Netherlands eScience Center
+code_of_conduct_email:
+  type: str
+  default: "{{ email }}"
+
+_subdirectory: template
+
+repository:
+  default: git@github.com:{{ github_organization }}/{{ package_name }}
+  when: false
+
+repository_url:
+  default: https://github.com/{{ github_organization }}/{{ package_name }}
+  when: false
+
+
+# Optional questions
+
+
+# user messages
+
+_message_before_copy: |
+    Thanks for generating a project using our template.
+
+    You'll be asked a series of questions whose answers will be used to
+    generate a tailored project for you.
+
+_message_after_copy: |
+    Your project "{{ package_name }}" has been created successfully!
+
+    Next steps:
+
+    1. Change directory to the project root:
+
+       $ cd {{ _copier_conf.dst_path }}
+
+    2. Read next_steps.md which contains information on next steps.
+
+_message_before_update: |
+    Thanks for updating your project using our template.
+
+    You'll be asked a series of questions whose answers are pre-populated
+    with previously entered values. Feel free to change them as needed.
+
+_message_after_update: |
+    Your project "{{ package_name }}" has been updated successfully!
+    In case there are any conflicts, please resolve them. Then,
+    you're done.
