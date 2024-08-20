@@ -44,3 +44,16 @@ cffconvert:
   script:
     # Check whether the citation metadata from CITATION.cff is valid
     - cffconvert --validate
+
+markdown-link-check:
+  stage: test
+  image:
+    name: "lycheeverse/lychee"
+    entrypoint: [""]
+  rules:
+    # Run on a Merge Request to the default branch
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == $CI_DEFAULT_BRANCH
+    # Run on new commits to the default branch
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  script:
+    - lychee .
