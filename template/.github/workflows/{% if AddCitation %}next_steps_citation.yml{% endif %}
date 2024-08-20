@@ -2,7 +2,7 @@ on: [push]
 permissions:
   contents: write
   issues: write
-name: Create issues for next steps
+name: Create issue for citation
 jobs:
   next_steps:
     runs-on: ubuntu-latest
@@ -11,14 +11,14 @@ jobs:
       - name: Create citation data issue
         uses: JasonEtco/create-an-issue@v2
         env:
-          GITHUB_TOKEN: ${{ '{{ ' -}} secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           filename: .github/next_steps/02_citation.md
         id: citation
       - name: List created issues
         run: |
           echo 'Created issues that must be completed to have fully working Python package:
-          * Citation data ${{ '{{ ' -}} steps.citation.outputs.url }}
+          * Citation data ${{ steps.citation.outputs.url }}
       - name: Cleanup files needed to create next steps issues
         run: |
           git config --global user.name 'NLeSC Python template'
