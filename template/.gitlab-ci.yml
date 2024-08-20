@@ -1,0 +1,30 @@
+# Change pip's cache directory to be inside the project directory since we can
+# only cache local items.
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+
+test:
+  stage: test
+  image: "python:$VERSION"
+  rules:
+    # Run on a Merge Request to the default branch
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == $CI_DEFAULT_BRANCH
+    # Run on new commits to the default branch
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  parallel:
+    matrix:
+      - VERSION: ['3.8', '3.9', '3.10', '3.11', '3.12']
+  before_script:
+    # Python info
+    - which python
+    - python --version
+    # Install dependencies
+    - python -m pip install --upgrade pip setuptools
+    - python -m pip install --editable ".[dev]"
+  script:
+    # Run pytest
+    - python -m pytest -v --durations=0
