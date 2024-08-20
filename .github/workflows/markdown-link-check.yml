@@ -7,15 +7,27 @@ on:
   pull_request:
     branches:
     - main
+  schedule:
+    - cron: '0 0 * * 0' # every Sunday at 00:00
 
 jobs:
-
-  markdown-link-check:
-    name: Check markdown links
+  linkChecker:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
-      with:
-        use-quiet-mode: 'yes'
-        config-file: '.mlc-config.json'
+      - uses: actions/checkout@v4
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v1
+        with:
+          # fail action if there are broken links
+          fail: true
+
+      - name: Create Issue From File
+        # create issues only when triggered by schedule
+        if: github.event_name == 'schedule' && env.lychee_exit_code != 0
+        uses: peter-evans/create-issue-from-file@v4
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: report, automated issue
