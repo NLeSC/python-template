@@ -23,17 +23,6 @@ version:
 github_organization:
   type: str
   default: "<my-github-organization>"
-license:
-  type: str
-  choices:
-  - "Apache Software License 2.0"
-  - "MIT license"
-  - "BSD license"
-  - "ISC license"
-  - "GNU General Public License v3 or later"
-  - "GNU Lesser General Public License v3 or later"
-  - "Not open source"
-  default: "MIT license"
 full_name:
   type: str
   default: Jane Smith
@@ -69,7 +58,19 @@ template_profile:
     Let me choose (decide each feature yourself): "ask"
 
 
-# Optional questions
+# extra questions
+license:
+  type: str
+  choices:
+  - "Apache Software License 2.0"
+  - "MIT license"
+  - "BSD license"
+  - "ISC license"
+  - "GNU General Public License v3 or later"
+  - "GNU Lesser General Public License v3 or later"
+  - "Not open source"
+  default: "MIT license"
+
 AddGitHubActions:
   when: "{{ template_profile == 'ask' }}"
   type: bool
