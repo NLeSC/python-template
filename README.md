@@ -44,9 +44,9 @@ Use this [Copier](https://copier.readthedocs.io) template to generate an empty P
 
 There are multiple scenarios to use this template:
 
-[Scenario 1](#scenario-1-create-a-new-package): Generating a new package using template
-[Scenario 2](#scenario-2-apply-to-pre-existing-code): Applying the template to some pre-existing code
-[Scenario 3](#scenario-3-updating-a-template-made-package): Updating a package made with the template
+- [Scenario 1](#scenario-1-create-a-new-package): Generating a new package using template
+- [Scenario 2](#scenario-2-apply-to-pre-existing-code): Applying the template to some pre-existing code
+- [Scenario 3](#scenario-3-updating-a-template-made-package): Updating a package made with the template
 
 In all three scenarios, you will need to install Copier first, which we
 recommend doing with [`pipx`](https://github.com/pypa/pipx):
