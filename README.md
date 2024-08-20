@@ -44,19 +44,19 @@ Use this [Copier](https://copier.readthedocs.io) template to generate an empty P
 
 There are multiple scenarios to use this template:
 
-1. Generating a new package using template
-2. Applying the template to some pre-existing code
-3. Updating a package made with the template
+[Scenario 1](#scenario-1-create-a-new-package): Generating a new package using template
+[Scenario 2](#scenario-2-apply-to-pre-existing-code): Applying the template to some pre-existing code
+[Scenario 3](#scenario-3-updating-a-template-made-package): Updating a package made with the template
 
-In all three cases, you will need to install copier first:
+In all three scenarios, you will need to install copier first:
 ```shell
 pipx install copier
 ```
 
-### Option 1: Create a new package
+### Scenario 1: Create a new package
 
 
-#### Step 1/2: Generate the files and directory structure
+#### Step 1/2: Create the files and directory structure
 
 Run `copier` with the template:
 
@@ -83,7 +83,7 @@ copier copy https://github.com/nlesc/python-template.git path/to/destination
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
 
 Once the project files have been generated, follow the steps outlined in
-[template/next_steps.md](template/next_steps.md).
+[next_steps.md](template/next_steps.md).
 
 #### Step 2/2: Read about what was just generated
 
@@ -145,7 +145,7 @@ Good job! You have now generated the skeleton for your package:
 
 For an explanation of what's there, read on in the [project_setup.md](template/project_setup.md) file.
 
-### Option 2: Apply to pre-existing code
+### Scenario 2: Apply to pre-existing code
 
 To apply the template to pre-existing code, you can use the same `copier copy`
 command as when creating a new package, except that you point to the folder
@@ -162,7 +162,7 @@ conflicts. Especially if your files are already under version control, it is
 recommended to answer 'yes' for all files, you will still be able to review
 the changes suggested by the template.
 
-### Option 3. Updating a template-made package
+### Scenario 3. Updating a template-made package
 
 Copier provides the functionality for re-applying the template to a previously
 created project using the `copier update` command. This has two effects:
