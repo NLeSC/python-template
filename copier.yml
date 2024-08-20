@@ -65,8 +65,8 @@ template_profile:
   help: Optional questions (You can use our defaults, or the bare minimum, or decide everything)
   choices:
     Recommended (our defaults for research software): "recommended"
-    Minimum (Answer no to any addition): "minimum"
-    Ask me (Ask all questions): "ask"
+    Minimum (no extra features): "minimum"
+    Let me choose (decide each feature yourself): "ask"
 
 
 # Optional questions
