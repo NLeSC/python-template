@@ -48,8 +48,7 @@ code_of_conduct_email:
   type: str
   default: "{{ email }}"
 
-_subdirectory: template
-
+# calculated fields
 repository:
   default: git@github.com:{{ github_organization }}/{{ package_name }}
   when: false
@@ -59,11 +58,30 @@ repository_url:
   when: false
 
 
+# profile selection
+template_profile:
+  type: str
+  default: recommended
+  help: Optional questions (You can use our defaults, or the bare minimum, or decide everything)
+  choices:
+    Recommended (our defaults for research software): "recommended"
+    Minimum (Answer no to any addition): "minimum"
+    Ask me (Ask all questions): "ask"
+
+
 # Optional questions
+AddGitHubActions:
+  when: "{{ AnswerStrategy == 'ask' }}"
+  type: bool
+  default: "{{ AnswerStrategy != 'minimum' }}"
+  help: GitHub actions to test build, documentation
+
+
+# internal fields
+_subdirectory: template
 
 
 # user messages
-
 _message_before_copy: |
     Thanks for generating a project using our template.
 
@@ -77,7 +95,7 @@ _message_after_copy: |
 
     1. Change directory to the project root:
 
-       $ cd {{ _copier_conf.dst_path }}
+        $ cd {{ _copier_conf.dst_path }}
 
     2. Read next_steps.md which contains information on next steps.
 
