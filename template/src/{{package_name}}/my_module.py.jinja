@@ -25,5 +25,6 @@ def hello(name: str) -> str:
 
     """
     if name == 'nobody':
-        raise ValueError('Can not say hello to nobody')
+        msg = 'Can not say hello to nobody'
+        raise ValueError(msg)
     return f'Hello {name}!'

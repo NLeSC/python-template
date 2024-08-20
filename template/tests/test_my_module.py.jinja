@@ -21,6 +21,6 @@ def some_name():
     return 'Jane Smith'
 
 
-def test_hello_with_fixture(some_name):
+def test_hello_with_fixture(some_name: str):
     """Example using a fixture."""
     assert hello(some_name) == 'Hello Jane Smith!'
