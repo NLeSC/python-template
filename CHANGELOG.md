@@ -4,6 +4,7 @@
 
 ### Added
 
+* Added a question about citation file [#471](https://github.com/NLeSC/python-template/pull/471)
 * Added Python 3.12 support [#356](https://github.com/NLeSC/python-template/issues/356)
 * Template unit tests for documentation generation, linting and version bumping
 * Docstring for function
