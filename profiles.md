@@ -10,9 +10,11 @@
 - README.md
 - .gitignore
 - .editorconfig
-- licence
+
 
 ## Questions
+- licence (exist)
+- github action (exist) #451
 - Pre-commit
 - cffconvert workflow and citation file
 - markdown link checker workflow
@@ -24,5 +26,4 @@
 - notice and manifest file
 - developer documentation
 - online documentation (read the docs)
-- github action
-- 
+
