@@ -28,3 +28,19 @@ test:
   script:
     # Run pytest
     - python -m pytest -v --durations=0
+
+cffconvert:
+  stage: test
+  image:
+    name: "citationcff/cffconvert:2.0.0"
+    entrypoint: [""]
+  rules:
+    # Run on a Merge Request to the default branch
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == $CI_DEFAULT_BRANCH
+    # Run on new commits to the default branch
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - CITATION.cff
+  script:
+    # Check whether the citation metadata from CITATION.cff is valid
+    - cffconvert --validate
