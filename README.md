@@ -5,23 +5,23 @@ Spend less time setting up and configuring your new Python packages and comply w
 Use this [Copier](https://copier.readthedocs.io) template to generate an empty Python package. Features include:
 
 - Boilerplate unit tests and documentation,
-- [Python static setup configuration](template/pyproject.toml),
+- [Python static setup configuration](template/pyproject.toml.jinja),
 - Open source software license,
 - Continuous integration with [GitHub action workflows](template/.github/workflows) for building, testing, link checking and linting,
 - Code style checking with [ruff](https://beta.ruff.rs/),
 - [Editorconfig](template/.editorconfig),
 - Usage and contribution documents:
-  - [README.md](template/README.md) for package users,
-  - [README.dev.md](template/README.dev.md) for package developer,
-  - [project_setup.md](template/project_setup.md) with extensive documentation about project setup,
+  - [README.md](template/README.md.jinja) for package users,
+  - [README.dev.md](template/README.dev.md.jinja) for package developer,
+  - [project_setup.md](template/project_setup.md.jinja) with extensive documentation about project setup,
   - [Change log](template/CHANGELOG.md),
-  - [Code of Conduct](template/CODE_OF_CONDUCT.md),
-  - [Contributing guidelines](template/CONTRIBUTING.md),
+  - [Code of Conduct](template/CODE_OF_CONDUCT.md.jinja),
+  - [Contributing guidelines](template/CONTRIBUTING.md.jinja),
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/),
 - Automatic creation of [issues](template/.github/next_steps) with instructions how to pass all GitHub action workflows and integrate with services like Zenodo and Read the Docs,
-- Instructions how to make package [citable](template/.github/next_steps/02_citation.md)
+- Instructions how to make package [citable](template/.github/next_steps/02_citation.md.jinja)
 - FAIR software recommendation badge,
-- Optional [pre commit hook](template/README.dev.md#running-linters-locally) to catch lint errors early
+- Optional [pre commit hook](template/README.dev.md.jinja#running-linters-locally) to catch lint errors early
 
 ## Badges
 
@@ -92,7 +92,7 @@ copier copy https://github.com/nlesc/python-template.git path/to/destination
 | code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
 
 Once the project files have been generated, follow the steps outlined in
-[next_steps.md](template/next_steps.md).
+[next_steps.md](template/next_steps.md.jinja).
 
 #### Step 2/2: Read about what was just generated
 
@@ -152,7 +152,7 @@ Good job! You have now generated the skeleton for your package:
 └── .zenodo.json
 ```
 
-For an explanation of what's there, read on in the [project_setup.md](template/project_setup.md) file.
+For an explanation of what's there, read on in the [project_setup.md](template/project_setup.md.jinja) file.
 
 ### Scenario 2: Apply to pre-existing code
 
