@@ -3,6 +3,12 @@
 ## Minimum
 src/
 docs/
+test/
+pyproject.toml
+README.md
+.gitignore
+.editorconfig
+
 
 ## Recommended
 
