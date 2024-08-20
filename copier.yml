@@ -71,6 +71,12 @@ license:
   - "Not open source"
   default: "MIT license"
 
+AddMarkdownLinkCheck:
+  when: "{{ template_profile == 'ask' }}"
+  type: bool
+  default: "{{ template_profile != 'minimum' }}"
+  help: Do you want to add a GitHub action to check links in markdown files?
+
 AddGitHubActions:
   when: "{{ template_profile == 'ask' }}"
   type: bool
