@@ -71,9 +71,9 @@ template_profile:
 
 # Optional questions
 AddGitHubActions:
-  when: "{{ AnswerStrategy == 'ask' }}"
+  when: "{{ template_profile == 'ask' }}"
   type: bool
-  default: "{{ AnswerStrategy != 'minimum' }}"
+  default: "{{ template_profile != 'minimum' }}"
   help: GitHub actions to test build, documentation
 
 
