@@ -45,7 +45,7 @@ Use this [Copier](https://copier.readthedocs.io) template to generate an empty P
 There are multiple ways to use this template:
 
 1. Creating a new package based on the template
-2. Applying the template's best practices to some pre-existing code
+2. Applying the template to some pre-existing code
 3. Updating a package made with the template based on the latest template updates
 
 In all three cases, you will need to install copier first:
