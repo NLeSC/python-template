@@ -2,7 +2,7 @@ on: [push]
 permissions:
   contents: write
   issues: write
-name: Create issues for next steps
+name: Create an issue for online documentation
 jobs:
   next_steps:
     runs-on: ubuntu-latest
