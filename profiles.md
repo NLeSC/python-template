@@ -12,6 +12,11 @@
 - MANIFEST.in
 - LICENCE
 
+## Questions to exclude from recommended
+- Link checker
+- pre-commit
+- changelog.md
+- project_setup.md
 
 ## Questions
 - licence (exist)
@@ -21,10 +26,9 @@
 - markdown link checker workflow
 - static analysis
 - next steps workflow
-- changelog
+- changelog.md
 - code of conduct
 - contributing guidelines
-- notice and manifest file
 - developer documentation
 - online documentation (read the docs)
 - .editorconfig
