@@ -20,18 +20,25 @@
 
 ## Questions
 - licence (exist)
-- github action (exist) #451
-- Pre-commit
+
 - cffconvert workflow and citation file
 - markdown link checker workflow
-- static analysis
-- next steps workflow
+
 - changelog.md
-- code of conduct
-- contributing guidelines
-- developer documentation
-- online documentation (read the docs)
-- .editorconfig
-- project_setup.md
+- community:
+  - code of conduct
+  - contributing guidelines
+- documentation
+  - developer documentation
+  - online documentation (read the docs)
+  - project_setup.md
+- code quality:
+  - static analysis
+  - github action (exist) #451
+  - pre-commit
+  - .editorconfig
+- next steps workflow
+
+
 - keywords
   
