@@ -9,7 +9,7 @@
 - pyproject.toml
 - README.md
 - .gitignore
-- .editorconfig
+- MANIFEST.in
 
 
 ## Questions
@@ -26,4 +26,7 @@
 - notice and manifest file
 - developer documentation
 - online documentation (read the docs)
-
+- .editorconfig
+- project_setup.md
+- keywords
+  
