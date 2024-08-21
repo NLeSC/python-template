@@ -13,7 +13,9 @@
 | **Other best practices**           | &nbsp; |
 | Static analysis                    | [![workflow scq badge](https://sonarcloud.io/api/project_badges/measure?project={{github_organization}}_{{package_name}}&metric=alert_status)](https://sonarcloud.io/dashboard?id={{github_organization}}_{{package_name}}) |
 | Coverage                           | [![workflow scc badge](https://sonarcloud.io/api/project_badges/measure?project={{github_organization}}_{{package_name}}&metric=coverage)](https://sonarcloud.io/dashboard?id={{github_organization}}_{{package_name}}) |
+{% if AddOnlineDocumentation -%}
 | Documentation                      | [![Documentation Status](https://readthedocs.org/projects/{{package_name}}/badge/?version=latest)](https://{{package_name}}.readthedocs.io/en/latest/?badge=latest) |
+{%- endif -%}
 | **GitHub Actions**                 | &nbsp; |
 | Build                              | [![build]({{repository_url}}/actions/workflows/build.yml/badge.svg)]({{repository_url}}/actions/workflows/build.yml) |
 | Citation data consistency          | [![cffconvert]({{repository_url}}/actions/workflows/cffconvert.yml/badge.svg)]({{repository_url}}/actions/workflows/cffconvert.yml) |

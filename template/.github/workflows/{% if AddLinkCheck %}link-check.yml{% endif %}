@@ -1,0 +1,38 @@
+name: link-check
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+  schedule:
+  - cron: '0 0 1 * *' # first day of every month at midnight
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v1
+
+      - name: Set Issue Title
+        id: set_title
+        run: echo "ISSUE_TITLE=Link Checker Report - $(date '+%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Create Issue From File
+        if: env.lychee_exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: ${{ env.ISSUE_TITLE }}
+          content-filepath: ./lychee/out.md
+          labels: report, automated issue
