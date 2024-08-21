@@ -22,6 +22,7 @@ jobs:
         with:
           # fail action if there are broken links
           fail: true
+          args: "--exclude-all-private"
 
       - name: Create Issue From File
         # create issues only when triggered by schedule
