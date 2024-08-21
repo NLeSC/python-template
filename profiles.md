@@ -1,4 +1,16 @@
 # Template Profiles
+package_name:
+version:
+template_profile:
+  minumum --> DONE
+  recommeded --> all questions - excluded with the defaults
+  optional --> all questions with answers off
+
+github_organization:
+full_name:
+email:
+copyright_holder:
+
 
 
 ## Minimum
