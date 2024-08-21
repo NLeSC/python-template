@@ -133,10 +133,12 @@ This section describes how to make a release in 3 parts:
 
 ### (1/3) Preparation
 
+{% if AddChangeLog -%}
 1. Update the <CHANGELOG.md> (don't forget to update links at bottom of page)
-2. Verify that the information in [`CITATION.cff`](CITATION.cff) is correct.
-3. Make sure the [version has been updated](#versioning).
-4. Run the unit tests with `pytest -v`
+{%- endif %}
+1. Verify that the information in [`CITATION.cff`](CITATION.cff) is correct.
+1. Make sure the [version has been updated](#versioning).
+1. Run the unit tests with `pytest -v`
 
 ### (2/3) PyPI
 
