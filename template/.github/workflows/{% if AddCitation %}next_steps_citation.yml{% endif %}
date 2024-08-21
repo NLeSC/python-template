@@ -2,7 +2,7 @@ on: [push]
 permissions:
   contents: write
   issues: write
-name: Create issue for citation
+name: Create an issue for citation
 jobs:
   next_steps:
     runs-on: ubuntu-latest
