@@ -14,6 +14,7 @@
 
 ### Changed
 
+* pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
 * Moved to src/ based layout for generated packages
 * Moved from setup.cfg/.py to pyproject.toml [#351](https://github.com/NLeSC/python-template/issues/351)
 * Moved from prospector to ruff [#336](https://github.com/NLeSC/python-template/issues/336)
