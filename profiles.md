@@ -10,6 +10,7 @@
 - README.md
 - .gitignore
 - MANIFEST.in
+- LICENCE
 
 
 ## Questions
