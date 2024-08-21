@@ -1,5 +1,40 @@
 # Template Profiles
+- package_name:
+- version:
+- template_profile:
+  - minumum --> DONE
+  - recommeded --> all questions - excluded with the defaults
+  - optional --> all questions with answers off
 
+- github_organization:
+- full_name:
+- email:
+- copyright_holder:
+- licence (exist)
+
+- community:
+  - code of conduct --> if TRUE ask for email
+  - contributing guidelines
+
+- documentation
+  - developer documentation
+  - online documentation (read the docs)
+  - project_setup.md
+
+- code quality:
+  - sonarcloud
+  - ruff and lint workflow
+  - github action to build (exist) #451
+  - pre-commit
+  - .editorconfig
+
+- publishing and release
+  - zenodo
+  - keywords
+  - changelog.md
+  - cffconvert workflow and citation file
+
+- markdown link checker workflow
 
 ## Minimum
 
@@ -9,21 +44,11 @@
 - pyproject.toml
 - README.md
 - .gitignore
-- .editorconfig
+- MANIFEST.in
+- LICENCE
 
-
-## Questions
-- licence (exist)
-- github action (added by #451)
-- Pre-commit
-- cffconvert workflow and citation file (added by #458)
-- markdown link checker workflow
-- static analysis
-- next steps workflow
-- changelog
-- code of conduct
-- contributing guidelines
-- notice and manifest file
-- developer documentation
-- online documentation (read the docs)
-
+## Questions to exclude from recommended
+- Link checker
+- pre-commit
+- changelog.md
+- project_setup.md
