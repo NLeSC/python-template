@@ -90,13 +90,13 @@ help you decide which tool to use for packaging.
 - Document changes to your software package
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/releases?id=changelogmd)
 
-{% if AddCitation %}
+{% if AddCitation -%}
 ## CITATION.cff
 
 - To allow others to cite your software, add a `CITATION.cff` file
 - It only makes sense to do this once there is something to cite (e.g., a software release with a DOI).
 - Follow the [making software citable](https://guide.esciencecenter.nl/#/citable_software/making_software_citable) section in the guide.
-{% endif %}
+{%- endif -%}
 
 ## CODE_OF_CONDUCT.md
 
