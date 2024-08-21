@@ -14,7 +14,7 @@ Use this [Copier](https://copier.readthedocs.io) template to generate an empty P
   - [README.md](template/README.md.jinja) for package users,
   - [README.dev.md](template/README.dev.md.jinja) for package developer,
   - [project_setup.md](template/project_setup.md.jinja) with extensive documentation about project setup,
-  - [Change log](template/CHANGELOG.md),
+  - [Change log](template/%7B%25%20if%20AddChangeLog%20%25%7DCHANGELOG.md%7B%25%20endif%20%25%7D),
   - [Code of Conduct](template/CODE_OF_CONDUCT.md.jinja),
   - [Contributing guidelines](template/CONTRIBUTING.md.jinja),
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/),
