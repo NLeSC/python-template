@@ -71,7 +71,9 @@ publishing = [
 [project.urls]
 Repository = "{{ repository_url }}"
 Issues = "{{ repository_url }}/issues"
+{% if AddChangeLog -%}
 Changelog = "{{ repository_url }}/CHANGELOG.md"
+{%- endif %}
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
