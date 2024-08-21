@@ -101,6 +101,12 @@ AddOnlineDocumentation:
   default: "{{ template_profile != 'minimum' }}"
   help: Online documentation using Read the Docs
 
+AddPreCommit:
+  when: "{{ template_profile == 'ask' }}"
+  type: bool
+  default: "{{ template_profile != 'minimum' }}"
+  help: Add pre-commit hook to check code style and format on every commit?
+
 # internal fields
 _subdirectory: template
 
