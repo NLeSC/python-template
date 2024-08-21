@@ -2,8 +2,8 @@
 - package_name:
 - version:
 - template_profile:
-  - minumum --> DONE  
-  - recommeded --> all questions - excluded with the defaults  
+  - minumum --> DONE
+  - recommeded --> all questions - excluded with the defaults
   - optional --> all questions with answers off
 
 - github_organization:
@@ -11,7 +11,7 @@
 - email:
 - copyright_holder:
 - licence (exist)
-  
+
 - community:
   - code of conduct --> if TRUE ask for email
   - contributing guidelines
@@ -20,7 +20,7 @@
   - developer documentation
   - online documentation (read the docs)
   - project_setup.md
-    
+
 - code quality:
   - sonarcloud
   - ruff and lint workflow
@@ -30,7 +30,7 @@
 
 - publishing and release
   - zenodo
-  - keywords 
+  - keywords
   - changelog.md
   - cffconvert workflow and citation file
 

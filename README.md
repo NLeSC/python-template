@@ -19,7 +19,7 @@ Use this [Copier](https://copier.readthedocs.io) template to generate an empty P
   - [Contributing guidelines](template/CONTRIBUTING.md.jinja),
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/),
 - Automatic creation of [issues](template/.github/next_steps) with instructions how to pass all GitHub action workflows and integrate with services like Zenodo and Read the Docs,
-- Instructions how to make package [citable](template/.github/next_steps/02_citation.md.jinja)
+- Instructions how to make package [citable](.github/next_steps/%7B%25%20if%20AddCitation%20%25%7D02_citation.md%7B%25%20endif%20%25%7D.jinja)
 - FAIR software recommendation badge,
 - Optional [pre commit hook](template/README.dev.md.jinja#running-linters-locally) to catch lint errors early
 
