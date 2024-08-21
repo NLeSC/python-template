@@ -149,8 +149,10 @@ filename = "src/{{ package_name }}/__init__.py"
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
 
+{% if AddCitation %}
 [[tool.bumpversion.files]]
 filename = "CITATION.cff"
+{% endif %}
 
 [[tool.bumpversion.files]]
 filename = "docs/conf.py"
