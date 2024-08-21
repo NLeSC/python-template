@@ -22,7 +22,7 @@ version:
   default: 0.1.0
 github_organization:
   type: str
-  placeholder: "<my-github-organization>"
+  default: "<my-github-organization>"
   help: Enter the name of your GitHub username or organization
 full_name:
   type: str
