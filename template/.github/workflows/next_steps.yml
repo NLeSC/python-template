@@ -8,13 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Create Sonarcloud integration issue
-        uses: JasonEtco/create-an-issue@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          filename: .github/next_steps/01_sonarcloud_integration.md
-        id: sonarcloud
       - name: Create Zenodo integration issue
         uses: JasonEtco/create-an-issue@v2
         env:
@@ -32,7 +25,6 @@ jobs:
       - name: List created issues
         run: |
           echo 'Created issues that must be completed to have fully working Python package:
-          * Sonarcloud integration ${{ steps.sonarcloud.outputs.url }}
           * Zenodo integration ${{ steps.zenodo.outputs.url }}
           * Linting fixes ${{ steps.linting.outputs.url }}'
       - name: Cleanup files needed to create next steps issues
