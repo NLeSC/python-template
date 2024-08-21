@@ -77,10 +77,14 @@ AddGitHubActions:
   default: "{{ template_profile != 'minimum' }}"
   help: GitHub actions to test the package and the documentation
 
+AddChangeLog:
+  when: "{{ template_profile == 'ask' }}"
+  type: bool
+  default: "{{ template_profile != 'minimum' }}"
+  help: Add a change log to keep track of changes in the package
 
 # internal fields
 _subdirectory: template
-
 
 # user messages
 _message_before_copy: |
