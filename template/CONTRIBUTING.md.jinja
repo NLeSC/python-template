@@ -45,8 +45,8 @@ In case you feel like you've made a valuable contribution, but you don't know ho
 
 To create a release you need write permission on the repository.
 
-1. Check the author list in [`CITATION.cff`](CITATION.cff)
-1. Bump the version using `bump-my-version bump <major|minor|patch>`. For example, `bump-my-version bump major` will increase major version numbers everywhere it's needed (code, meta, etc.) in the repo. Alternatively the version can be manually changed in {{ package_name }}/__init__.py, pyproject.toml, CITATION.cff and docs/conf.py (and other places it was possibly added).
+{% if AddCitation %}1. Check the author list in [`CITATION.cff`](CITATION.cff){% endif %}
+1. Bump the version using `bump-my-version bump <major|minor|patch>`. For example, `bump-my-version bump major` will increase major version numbers everywhere it's needed (code, meta, etc.) in the repo. Alternatively the version can be manually changed in {{ package_name }}/__init__.py, pyproject.toml, {% if AddCitation %}CITATION.cff{% endif %} and docs/conf.py (and other places it was possibly added).
 1. Update the `CHANGELOG.md` to include changes made
 1. Go to the [GitHub release page]({{ repository_url }}/releases)
 1. Press draft a new release button
