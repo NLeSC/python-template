@@ -25,5 +25,5 @@ jobs:
           git config --global user.email 'nlesc-python-template@users.noreply.github.com'
           git rm .github/workflows/next_steps_citation.yml
           git rm .github/workflows/next_steps_citation_issue.md
-          git commit -am "Cleanup automated next steps issue generator"
+          git commit -am "Cleanup automated next steps issue generator for citation"
           git push
