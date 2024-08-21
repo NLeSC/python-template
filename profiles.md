@@ -20,25 +20,30 @@
 
 ## Questions
 - licence (exist)
-
-- cffconvert workflow and citation file
-- markdown link checker workflow
-
-- changelog.md
+  
 - community:
   - code of conduct
   - contributing guidelines
+
 - documentation
   - developer documentation
   - online documentation (read the docs)
   - project_setup.md
+    
 - code quality:
-  - static analysis
-  - github action (exist) #451
+  - sonarcloud
+  - ruff and lint workflow
+  - github action to build (exist) #451
   - pre-commit
   - .editorconfig
-- next steps workflow
+
+- publishing and release
+  - zenodo
+  - keywords
+  - changelog.md
+  - cffconvert workflow and citation file
+
+- markdown link checker workflow
 
 
-- keywords
   
