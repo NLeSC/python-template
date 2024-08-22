@@ -114,7 +114,6 @@ AddCodeConduct:
   default: "{{ template_profile != 'minimum' }}"
   help: Add code of conduct?
 
-
 AddSonarCloud:
   when: "{{ template_profile == 'ask' }}"
   type: bool
