@@ -23,6 +23,7 @@ version:
 github_organization:
   type: str
   default: "<my-github-organization>"
+  help: Enter the name of your GitHub username or organization
 full_name:
   type: str
   default: Jane Smith
@@ -112,6 +113,12 @@ AddZenodo:
   type: bool
   default: "{{ template_profile != 'minimum' }}"
   help: Create a GitHub issue on how to enable Zenodo integration?
+
+AddSonarCloud:
+  when: "{{ template_profile == 'ask' }}"
+  type: bool
+  default: "{{ template_profile != 'minimum' }}"
+  help: Add SonarCloud (code analysis service) integration?
 
 # internal fields
 _subdirectory: template
