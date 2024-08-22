@@ -12,7 +12,6 @@ version:
   type: str
   placeholder: 0.1.0
   help: Enter the version of the Python package
-
 license:
   type: str
   choices:

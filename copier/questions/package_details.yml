@@ -1,39 +1,44 @@
 ---
 # package details
+add_package_details:
+  type: bool
+  help: Do you want to add extra details for the package?
+  default: yes
+  when: "{{ template_profile != 'minimum'}}"
 package_short_description:
   type: str
   placeholder: Short description of package
-  when: "{{ template_profile != 'minimum' }}"
+  when: "{{ template_profile != 'minimum' and add_package_details }}"
 keyword1:
   type: str
   placeholder: keyword1
-  when: "{{ template_profile != 'minimum' }}"
+  when: "{{ template_profile != 'minimum'  and add_package_details }}"
 keyword2:
   type: str
   placeholder: keyword2
-  when: "{{ template_profile != 'minimum' }}"
+  when: "{{ template_profile != 'minimum'  and add_package_details }}"
 github_organization:
   type: str
   placeholder: "<my-github-organization>"
   help: Enter the name of your GitHub username or organization
-  when: "{{ template_profile != 'minimum' }}"
+  when: "{{ template_profile != 'minimum'  and add_package_details }}"
 full_name:
   type: str
   placeholder: Jane Smith
   help: Enter your full name
-  when: "{{ template_profile != 'minimum' }}"
+  when: "{{ template_profile != 'minimum'  and add_package_details }}"
 email:
   type: str
   placeholder: yourname@esciencecenter.nl
-  when: "{{ template_profile != 'minimum' }}"
+  when: "{{ template_profile != 'minimum'  and add_package_details }}"
 code_of_conduct_email:
   type: str
   placeholder: "{{ email }}"
-  when: "{{ template_profile != 'minimum' }}"
+  when: "{{ template_profile != 'minimum'  and add_package_details }}"
 copyright_holder:
   type: str
   placeholder: Netherlands eScience Center
-  when: "{{ template_profile != 'minimum' }}"
+  when: "{{ template_profile != 'minimum'  and add_package_details }}"
 
 # calculated fields for GitHub
 repository:
