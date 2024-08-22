@@ -8,6 +8,20 @@ package_name:
         {% if not (package_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
         Package name must start with a letter, followed one or more letters, digits or underscores all lowercase
         {% endif %}
+version:
+  type: str
+  placeholder: 0.1.0
+  help: Enter the version of the Python package
+template_profile:
+  type: str
+  default: recommended
+  help: Optional questions (You can use our defaults, or the bare minimum, or decide everything)
+  choices:
+    Recommended (our defaults for research software): "recommended"
+    Minimum (no extra features): "minimum"
+    Let me choose (decide each feature yourself): "ask"
+
+
 package_short_description:
   type: str
   placeholder: Short description of package
@@ -17,9 +31,6 @@ keyword1:
 keyword2:
   type: str
   placeholder: keyword2
-version:
-  type: str
-  placeholder: 0.1.0
 github_organization:
   type: str
   placeholder: "<my-github-organization>"
@@ -37,6 +48,7 @@ code_of_conduct_email:
   type: str
   placeholder: "{{ email }}"
 
+
 # calculated fields
 repository:
   default: git@github.com:{{ github_organization }}/{{ package_name }}
@@ -47,15 +59,6 @@ repository_url:
   when: false
 
 
-# profile selection
-template_profile:
-  type: str
-  default: recommended
-  help: Optional questions (You can use our defaults, or the bare minimum, or decide everything)
-  choices:
-    Recommended (our defaults for research software): "recommended"
-    Minimum (no extra features): "minimum"
-    Let me choose (decide each feature yourself): "ask"
 
 
 # extra questions
