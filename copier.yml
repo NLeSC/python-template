@@ -3,15 +3,8 @@
 !include copier/settings.yml
 
 ---
-# profile selection
-template_profile:
-  type: str
-  default: ask
-  help: Select a profile
-  choices:
-    Recommended (our defaults for research software): "recommended"
-    Minimum (bare minimum, no extra features): "minimum"
-    Let me choose (decide each feature yourself): "ask"
+# profiles
+!include copier/profiles.yml
 
 ---
 # questions about the package details
