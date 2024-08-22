@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Create readthedocs issue
+      - name: Create online documentation issue
         uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          filename: .github/next_steps/03_readthedocs.md
+          filename: .github/workflows/next_steps_online_documentation_issue.md
         id: readthedocs
       - name: List created issues
         run: |
@@ -23,7 +23,8 @@ jobs:
         run: |
           git config --global user.name 'NLeSC Python template'
           git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git pull # other next step workflows may push changes before
           git rm .github/workflows/next_steps_online_documentation.yml
-          git rm -r .github/next_steps
-          git commit -am "Cleanup automated next steps issue generator"
+          git rm .github/workflows/next_steps_online_documentation_issue.md
+          git commit -am "Cleanup automated next steps issue generator for online documentation"
           git push
