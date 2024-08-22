@@ -14,7 +14,7 @@ version:
   help: Enter the version of the Python package
 template_profile:
   type: str
-  default: recommended
+  default: ask
   help: Optional questions (You can use our defaults, or the bare minimum, or decide everything)
   choices:
     Recommended (our defaults for research software): "recommended"
