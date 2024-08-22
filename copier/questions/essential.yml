@@ -1,0 +1,26 @@
+---
+# Essential questions
+package_name:
+  type: str
+  placeholder: my_python_package
+  help: Enter the name of the Python package.
+  validator: >-
+        {% if not (package_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
+        Package name must start with a letter, followed one or more letters, digits or underscores all lowercase
+        {% endif %}
+version:
+  type: str
+  placeholder: 0.1.0
+  help: Enter the version of the Python package
+
+license:
+  type: str
+  choices:
+  - "Apache Software License 2.0"
+  - "MIT license"
+  - "BSD license"
+  - "ISC license"
+  - "GNU General Public License v3 or later"
+  - "GNU Lesser General Public License v3 or later"
+  - "Not open source"
+  default: "Apache Software License 2.0"

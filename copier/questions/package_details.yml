@@ -1,0 +1,45 @@
+---
+# package details
+package_short_description:
+  type: str
+  placeholder: Short description of package
+  when: "{{ template_profile != 'minimum' }}"
+keyword1:
+  type: str
+  placeholder: keyword1
+  when: "{{ template_profile != 'minimum' }}"
+keyword2:
+  type: str
+  placeholder: keyword2
+  when: "{{ template_profile != 'minimum' }}"
+github_organization:
+  type: str
+  placeholder: "<my-github-organization>"
+  help: Enter the name of your GitHub username or organization
+  when: "{{ template_profile != 'minimum' }}"
+full_name:
+  type: str
+  placeholder: Jane Smith
+  help: Enter your full name
+  when: "{{ template_profile != 'minimum' }}"
+email:
+  type: str
+  placeholder: yourname@esciencecenter.nl
+  when: "{{ template_profile != 'minimum' }}"
+code_of_conduct_email:
+  type: str
+  placeholder: "{{ email }}"
+  when: "{{ template_profile != 'minimum' }}"
+copyright_holder:
+  type: str
+  placeholder: Netherlands eScience Center
+  when: "{{ template_profile != 'minimum' }}"
+
+# calculated fields for GitHub
+repository:
+  default: git@github.com:{{ github_organization }}/{{ package_name }}
+  when: false
+
+repository_url:
+  default: https://github.com/{{ github_organization }}/{{ package_name }}
+  when: false
