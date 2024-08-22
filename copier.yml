@@ -6,7 +6,7 @@ package_name:
   help: Enter the name of the Python package.
   validator: >-
         {% if not (package_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
-        package_name must start with a letter, followed one or more letters, digits or underscores all lowercase.
+        Package name must start with a letter, followed one or more letters, digits or underscores all lowercase
         {% endif %}
 package_short_description:
   type: str
