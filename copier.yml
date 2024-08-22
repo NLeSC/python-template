@@ -82,7 +82,7 @@ license:
   - "GNU General Public License v3 or later"
   - "GNU Lesser General Public License v3 or later"
   - "Not open source"
-  default: "MIT license"
+  default: "Apache Software License 2.0"
 
 AddLinkCheck:
   when: "{{ template_profile == 'ask' }}"
