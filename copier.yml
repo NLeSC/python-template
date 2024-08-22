@@ -23,6 +23,7 @@ version:
 github_organization:
   type: str
   default: "<my-github-organization>"
+  help: Enter the name of your GitHub username or organization
 full_name:
   type: str
   default: Jane Smith
