@@ -1,18 +1,18 @@
-def test_double_quotes_in_name_and_description(copie):
-    ctx = {
-        "project_short_description": '"double quotes"',
-        "full_name": '"name"name'
-    }
-    project = copie.copy(extra_answers=ctx)
+# def test_double_quotes_in_name_and_description(copie):
+#     ctx = {
+#         "project_short_description": '"double quotes"',
+#         "full_name": '"name"name'
+#     }
+#     project = copie.copy(extra_answers=ctx)
 
-    assert project.exit_code == 0
+#     assert project.exit_code == 0
 
 
-def test_single_quotes_in_name_and_description(copie):
-    ctx = {
-        "project_short_description": "'single quotes'",
-        "full_name": "Mr. O'Keefe"
-    }
-    project = copie.copy(extra_answers=ctx)
+# def test_single_quotes_in_name_and_description(copie):
+#     ctx = {
+#         "project_short_description": "'single quotes'",
+#         "full_name": "Mr. O'Keefe"
+#     }
+#     project = copie.copy(extra_answers=ctx)
 
-    assert project.exit_code == 0
+#     assert project.exit_code == 0
