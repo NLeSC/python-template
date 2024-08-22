@@ -7,10 +7,10 @@
 template_profile:
   type: str
   default: ask
-  help: Profile selection (use the defaults, or the bare minimum, or decide everything)
+  help: Select a profile
   choices:
     Recommended (our defaults for research software): "recommended"
-    Minimum (no extra features): "minimum"
+    Minimum (bare minimum, no extra features): "minimum"
     Let me choose (decide each feature yourself): "ask"
 
 ---
