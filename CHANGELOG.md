@@ -1,6 +1,6 @@
 # Change Log
 
-## Unreleased
+## [Unreleased]
 
 ### Added
 
@@ -18,7 +18,7 @@
 
 *
 
-## 0.5.0
+## [0.5.0]
 
 Released on August 15, 2024
 
@@ -58,7 +58,7 @@ Released on August 15, 2024
 * Statements in project_setup.md already mentioned in README.dev.md
 * .zenodo.json is no longer necessary, CITATION.cff also works with Zenodo.
 
-## 0.4.0
+## [0.4.0]
 
 Released on May 3, 2021
 
@@ -90,7 +90,7 @@ Released on May 3, 2021
 
 * Automatic publish to PyPi after GitHub release [#196](https://github.com/NLeSC/python-template/issues/196)
 
-## 0.3.0
+## [0.3.0]
 
 Released on Apr 22, 2021
 
@@ -123,7 +123,7 @@ Released on Apr 22, 2021
 * Updated Code of Conduct for generated package
 * Improved the documentation for the generated package and template itself
 
-## Removed
+### Removed
 
 * Dropped appveyor [#160](https://github.com/NLeSC/python-template/issues/160)
 * Dropped everything Conda related
@@ -131,7 +131,7 @@ Released on Apr 22, 2021
 * Removed unit tests doing the linting
 
 
-## 0.2.0
+## [0.2.0]
 
 Released on July 17, 2019
 
@@ -169,7 +169,7 @@ Released on July 17, 2019
 
 * Python 2 support
 
-## 0.1.0
+## [0.1.0]
 
 Released on July 12, 2018.
 
@@ -189,3 +189,11 @@ Released on July 12, 2018.
 	- README
 	- Requirements.txt
 	- Setup configuration
+
+
+[Unreleased]: https://github.com/NLeSC/python-template//compare/0.5.0...HEAD
+[0.5.0]:      https://github.com/NLeSC/python-template/releases/tag/0.5.0
+[0.4.0]:      https://github.com/NLeSC/python-template/releases/tag/0.4.0
+[0.3.0]:      https://github.com/NLeSC/python-template/releases/tag/0.3.0
+[0.2.0]:      https://github.com/NLeSC/python-template/releases/tag/0.2.0
+[0.1.0]:      https://github.com/NLeSC/python-template/releases/tag/0.1.0
