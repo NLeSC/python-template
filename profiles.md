@@ -22,14 +22,14 @@
   - project_setup.md
 
 - code quality:
-  - sonarcloud
+  - sonarcloud #515
   - ruff and lint workflow
   - github action to build (exist) #451
   - pre-commit
   - .editorconfig
 
 - publishing and release
-  - zenodo
+  - zenodo #520 
   - keywords
   - changelog.md
   - cffconvert workflow and citation file

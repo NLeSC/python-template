@@ -7,12 +7,14 @@
 | (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)]({{repository_url}}) |
 | (2/5) license                      | [![github license badge](https://img.shields.io/github/license/{{github_organization}}/{{package_name}})]({{repository_url}}) |
 | (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-{{package_name}}-00a3e3.svg)](https://www.research-software.nl/software/{{package_name}}) [![workflow pypi badge](https://img.shields.io/pypi/v/{{package_name}}.svg?colorB=blue)](https://pypi.python.org/project/{{package_name}}/) |
-| (4/5) citation                     | [![DOI](https://zenodo.org/badge/DOI/<replace-with-created-DOI>.svg)](https://doi.org/<replace-with-created-DOI>) |
+| (4/5) citation                     | {% if AddZenodo -%} [![DOI](https://zenodo.org/badge/DOI/<replace-with-created-DOI>.svg)](https://doi.org/<replace-with-created-DOI>){%- endif -%} |
 | (5/5) checklist                    | [![workflow cii badge](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>/badge)](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>) |
 | howfairis                          | [![fair-software badge](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu) |
 | **Other best practices**           | &nbsp; |
+{% if AddSonarCloud -%}
 | Static analysis                    | [![workflow scq badge](https://sonarcloud.io/api/project_badges/measure?project={{github_organization}}_{{package_name}}&metric=alert_status)](https://sonarcloud.io/dashboard?id={{github_organization}}_{{package_name}}) |
 | Coverage                           | [![workflow scc badge](https://sonarcloud.io/api/project_badges/measure?project={{github_organization}}_{{package_name}}&metric=coverage)](https://sonarcloud.io/dashboard?id={{github_organization}}_{{package_name}}) |
+{%- endif -%}
 {% if AddOnlineDocumentation -%}
 | Documentation                      | [![Documentation Status](https://readthedocs.org/projects/{{package_name}}/badge/?version=latest)](https://{{package_name}}.readthedocs.io/en/latest/?badge=latest) |
 {%- endif -%}
@@ -21,7 +23,9 @@
 {% if AddCitation -%}
 | Citation data consistency          | [![cffconvert]({{repository_url}}/actions/workflows/cffconvert.yml/badge.svg)]({{repository_url}}/actions/workflows/cffconvert.yml) |
 {%- endif -%}
+{% if AddSonarCloud -%}
 | SonarCloud                         | [![sonarcloud]({{repository_url}}/actions/workflows/sonarcloud.yml/badge.svg)]({{repository_url}}/actions/workflows/sonarcloud.yml) |
+{%- endif -%}
 | MarkDown link checker              | [![markdown-link-check]({{repository_url}}/actions/workflows/markdown-link-check.yml/badge.svg)]({{repository_url}}/actions/workflows/markdown-link-check.yml) |
 
 ## How to use {{ package_name }}

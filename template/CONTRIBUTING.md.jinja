@@ -69,4 +69,6 @@ For projects that also build conda packages, e.g. on conda-forge or Bioconda, so
 1. Test {{ package_name }} from bioconda by manually running [Conda verify]({{ repository_url }}/actions/workflows/conda_verify.yml) workflow
 -->
 
+{% if AddZenodo -%}
 Also a Zenodo entry will be made for the release with its own DOI.
+{%- endif %}
