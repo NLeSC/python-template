@@ -111,7 +111,7 @@ AddZenodo:
   when: "{{ template_profile == 'ask' }}"
   type: bool
   default: "{{ template_profile != 'minimum' }}"
-  help: Add zenodo integration?
+  help: Add instructions about zenodo integration?
 
 # internal fields
 _subdirectory: template
