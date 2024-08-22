@@ -29,7 +29,7 @@
   - .editorconfig
 
 - publishing and release
-  - zenodo #469
+  - zenodo #520 
   - keywords
   - changelog.md
   - cffconvert workflow and citation file
