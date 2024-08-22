@@ -3,10 +3,27 @@
 ## Unreleased
 
 ### Added
+
 * Make zenodo next step instructions optional [#520](https://github.com/NLeSC/python-template/pull/520)
 * Make SonarCloud optional [#515](https://github.com/NLeSC/python-template/pull/515)
 * Make citation optional [#471](https://github.com/NLeSC/python-template/pull/471)
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
+
+### Changed
+
+* pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
+* CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
+
+### Removed
+
+*
+
+## 0.5.0
+
+Released on August 15, 2024
+
+### Added
+
 * Added Python 3.12 support [#356](https://github.com/NLeSC/python-template/issues/356)
 * Template unit tests for documentation generation, linting and version bumping
 * Docstring for function
@@ -16,8 +33,6 @@
 
 ### Changed
 
-* pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
-* CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
 * Moved to src/ based layout for generated packages
 * Moved from setup.cfg/.py to pyproject.toml [#351](https://github.com/NLeSC/python-template/issues/351)
 * Moved from prospector to ruff [#336](https://github.com/NLeSC/python-template/issues/336)
@@ -44,6 +59,8 @@
 * .zenodo.json is no longer necessary, CITATION.cff also works with Zenodo.
 
 ## 0.4.0
+
+Released on May 3, 2021
 
 ### Added
 
@@ -75,6 +92,8 @@
 
 ## 0.3.0
 
+Released on Apr 22, 2021
+
 ### Added
 
 * Added Python 3.9 support
@@ -105,6 +124,7 @@
 * Improved the documentation for the generated package and template itself
 
 ## Removed
+
 * Dropped appveyor [#160](https://github.com/NLeSC/python-template/issues/160)
 * Dropped everything Conda related
 * Drop Python 3.5 support
