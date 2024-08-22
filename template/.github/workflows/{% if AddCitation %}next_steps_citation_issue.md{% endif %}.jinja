@@ -8,13 +8,15 @@ It is likely that your `CITATION.cff` currently doesn't pass validation. The err
 - [ ] Update the value of the `orcid` key. If you do not have an orcid yet, you can get one here [https://orcid.org/](https://orcid.org/).
 - [ ] Add more authors if needed
 - [ ] Update `date-released` using the YYYY-MM-DD format.
+
+{% if AddZenodo -%}
 - [ ] Update the `doi` key with the conceptDOI for your repository (see [https://help.zenodo.org](https://help.zenodo.org/) for more information on what a conceptDOI is). If your project doesn't have a DOI yet, you can use the string `10.0000/FIXME` to pass validation.
+{%- endif -%}
 - [ ] Verify that the `keywords` array accurately describes your project.
 
 Afterwards, the `cffconvert` GitHub Action should be green.
 
-To make sure services like [Zenodo](https://zenodo.org) and the [Research Software Directory](https://research-software-directory.org/) can keep your citation data up to date, the [`cffconvert`]({{repository_url}}/actions/workflows/cffconvert.yml) GitHub Action checks the following:
-
+To make sure services like {% if AddZenodo -%} [Zenodo](https://zenodo.org) and {%- endif -%} the [Research Software Directory](https://research-software-directory.org/) can keep your citation data up to date, the [`cffconvert`]({{repository_url}}/actions/workflows/cffconvert.yml) GitHub Action checks the following:
 1. Whether your repository includes a `CITATION.cff` file.
 
     _By including this file, authors of the software can receive credit for the work they put in._

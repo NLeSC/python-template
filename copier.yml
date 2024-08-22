@@ -108,6 +108,12 @@ AddPreCommit:
   default: "{{ template_profile != 'minimum' }}"
   help: Add pre-commit hook to check code style and format on every commit?
 
+AddZenodo:
+  when: "{{ template_profile == 'ask' }}"
+  type: bool
+  default: "{{ template_profile != 'minimum' }}"
+  help: Create a GitHub issue on how to enable Zenodo integration?
+
 AddSonarCloud:
   when: "{{ template_profile == 'ask' }}"
   type: bool
