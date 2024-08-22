@@ -2,7 +2,7 @@
 
 package_name:
   type: str
-  default: my_python_package
+  placeholder: my_python_package
   help: Enter the name of the Python package.
   validator: >-
         {% if not (package_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
@@ -10,32 +10,32 @@ package_name:
         {% endif %}
 package_short_description:
   type: str
-  default: Short description of package
+  placeholder: Short description of package
 keyword1:
   type: str
-  default: keyword1
+  placeholder: keyword1
 keyword2:
   type: str
-  default: keyword2
+  placeholder: keyword2
 version:
   type: str
-  default: 0.1.0
+  placeholder: 0.1.0
 github_organization:
   type: str
-  default: "<my-github-organization>"
+  placeholder: "<my-github-organization>"
 full_name:
   type: str
-  default: Jane Smith
+  placeholder: Jane Smith
   help: Enter your full name.
 email:
   type: str
-  default: yourname@esciencecenter.nl
+  placeholder: yourname@esciencecenter.nl
 copyright_holder:
   type: str
-  default: Netherlands eScience Center
+  placeholder: Netherlands eScience Center
 code_of_conduct_email:
   type: str
-  default: "{{ email }}"
+  placeholder: "{{ email }}"
 
 # calculated fields
 repository:
