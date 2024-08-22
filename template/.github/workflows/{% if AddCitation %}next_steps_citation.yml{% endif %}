@@ -13,7 +13,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          filename: .github/next_steps/02_citation.md
+          filename: .github/workflows/next_steps_citation_issue.md
         id: citation
       - name: List created issues
         run: |
@@ -23,7 +23,8 @@ jobs:
         run: |
           git config --global user.name 'NLeSC Python template'
           git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git pull # other next step workflows may push changes before
           git rm .github/workflows/next_steps_citation.yml
-          git rm -r .github/next_steps
-          git commit -am "Cleanup automated next steps issue generator"
+          git rm .github/workflows/next_steps_citation_issue.md
+          git commit -am "Cleanup automated next steps issue generator for citation"
           git push
