@@ -1,6 +1,6 @@
 ---
 # package details
-add_package_details:
+AddPackageDetails:
   type: bool
   default: yes
   help: Do you want to add extra details for the package?
@@ -9,42 +9,42 @@ package_short_description:
   type: str
   placeholder: Short description
   help: Short description of package
-  when: "{{ template_profile != 'minimum' and add_package_details }}"
+  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
 keyword1:
   type: str
   placeholder: keyword1
-  help: Add a keyword
-  when: "{{ template_profile != 'minimum'  and add_package_details }}"
+  help: Add keyword1
+  when: "{{ template_profile != 'minimum'  and AddPackageDetails }}"
 keyword2:
   type: str
   placeholder: keyword2
-  help: Add a keyword
-  when: "{{ template_profile != 'minimum'  and add_package_details }}"
+  help: Add keyword2
+  when: "{{ template_profile != 'minimum'  and AddPackageDetails }}"
 github_organization:
   type: str
   placeholder: "<my-github-organization>"
   help: Enter the name of your GitHub username or organization
-  when: "{{ template_profile != 'minimum'  and add_package_details }}"
+  when: "{{ template_profile != 'minimum'  and AddPackageDetails }}"
 full_name:
   type: str
   placeholder: Jane Smith
   help: Enter your full name
-  when: "{{ template_profile != 'minimum'  and add_package_details }}"
+  when: "{{ template_profile != 'minimum'  and AddPackageDetails }}"
 email:
   type: str
   placeholder: yourname@esciencecenter.nl
   help: What is your email address?
-  when: "{{ template_profile != 'minimum'  and add_package_details }}"
+  when: "{{ template_profile != 'minimum'  and AddPackageDetails }}"
 code_of_conduct_email:
   type: str
   placeholder: yourname@esciencecenter.nl
   help: What is the  email address cor code of conduct?
-  when: "{{ template_profile != 'minimum'  and add_package_details }}"
+  when: "{{ template_profile != 'minimum'  and AddPackageDetails }}"
 copyright_holder:
   type: str
   placeholder: Netherlands eScience Center
   help: Who is the copyright holder?
-  when: "{{ template_profile != 'minimum'  and add_package_details }}"
+  when: "{{ template_profile != 'minimum'  and AddPackageDetails }}"
 
 # calculated fields for GitHub
 repository:
