@@ -51,13 +51,13 @@ email:
   type: str
   placeholder: yourname@esciencecenter.nl
   when: "{{ template_profile != 'minimum' }}"
-copyright_holder:
-  type: str
-  placeholder: Netherlands eScience Center
 code_of_conduct_email:
   type: str
   placeholder: "{{ email }}"
   when: "{{ template_profile != 'minimum' }}"
+copyright_holder:
+  type: str
+  placeholder: Netherlands eScience Center
 
 # calculated fields for GitHub
 repository:
