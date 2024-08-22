@@ -4,6 +4,7 @@
 
 ### Added
 
+* Make Code of Conduct optional [#464](https://github.com/NLeSC/python-template/pull/530)
 * Make citation optional [#471](https://github.com/NLeSC/python-template/pull/471)
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
 * Added Python 3.12 support [#356](https://github.com/NLeSC/python-template/issues/356)
