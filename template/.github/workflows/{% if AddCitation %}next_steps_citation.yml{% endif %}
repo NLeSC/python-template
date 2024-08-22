@@ -23,6 +23,7 @@ jobs:
         run: |
           git config --global user.name 'NLeSC Python template'
           git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git pull # other next step workflows may push changes before
           git rm .github/workflows/next_steps_citation.yml
           git rm .github/workflows/next_steps_citation_issue.md
           git commit -am "Cleanup automated next steps issue generator for citation"
