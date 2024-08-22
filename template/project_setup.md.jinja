@@ -66,12 +66,14 @@ help you decide which tool to use for packaging.
 
 - [Relevant section in the NLeSC guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=coding-style-conventions) and [README.dev.md](README.dev.md).
 
+{% if AddSonarCloud -%}
 ## Continuous code quality
 
 [Sonarcloud](https://sonarcloud.io/) is used to perform quality analysis and code coverage report
 
 - `sonar-project.properties` is the SonarCloud [configuration](https://docs.sonarqube.org/latest/analysis/analysis-parameters/) file
 - `.github/workflows/sonarcloud.yml` is the GitHub action workflow which performs the SonarCloud analysis
+{%- endif -%}
 
 ## Package version number
 

@@ -1,0 +1,30 @@
+on: [push]
+permissions:
+  contents: write
+  issues: write
+name: Create an issue for Sonarcloud
+jobs:
+  next_steps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create Sonarcloud issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/workflows/next_steps_sonarcloud_issue.md
+        id: sonarcloud
+      - name: List created issues
+        run: |
+          echo 'Created issues that must be completed to have fully working Python package:
+          * Sonarcloud integration ${{ steps.sonarcloud.outputs.url }}'
+      - name: Cleanup files needed to create next steps issues
+        run: |
+          git config --global user.name 'NLeSC Python template'
+          git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git pull # other next step workflows may push changes before
+          git rm .github/workflows/next_steps_sonarcloud.yml
+          git rm .github/workflows/next_steps_sonarcloud_issue.md
+          git commit -am "Cleanup automated next steps issue generator for sonarcloud"
+          git push
