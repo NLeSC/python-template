@@ -5,6 +5,9 @@ _message_before_copy: |
     You'll be asked a series of questions whose answers will be used to
     generate a tailored project for you.
 
+    For each question there is a placeholder. Make sure you provide an
+    input to each of them.
+
 _message_after_copy: |
     Your project "{{ package_name }}" has been created successfully!
 
