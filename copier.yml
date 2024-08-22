@@ -62,6 +62,7 @@ code_of_conduct_email:
 copyright_holder:
   type: str
   placeholder: Netherlands eScience Center
+  when: "{{ template_profile != 'minimum' }}"
 
 # calculated fields for GitHub
 repository:
