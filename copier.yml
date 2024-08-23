@@ -114,6 +114,12 @@ AddCodeConduct:
   default: "{{ template_profile != 'minimum' }}"
   help: Add code of conduct?
 
+AddZenodo:
+  when: "{{ template_profile == 'ask' }}"
+  type: bool
+  default: "{{ template_profile != 'minimum' }}"
+  help: Create a GitHub issue on how to enable Zenodo integration?
+
 AddSonarCloud:
   when: "{{ template_profile == 'ask' }}"
   type: bool
