@@ -27,3 +27,26 @@ SelectCodeQualityFeatures:
     Editorconfig (NOT_IMPLEMENTED):
       value: not_implemented_editor_config
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+
+# split AddGitHubActions --> enable_github_actions_build and enable_github_actions_documentation
+SelectGitHubActions:
+  when: "{{ 'select_github_actions_flag' in SelectCodeQualityFeatures }}"
+  type: yaml
+  default: |-
+    {% if template_profile == 'recommended' %}
+      [not_implemented_enable_github_actions_build, not_implemented_enable_github_actions_documentation]
+    {%- else -%}
+      []
+    {%- endif %}
+  help: Select GitHub Action workflows
+  multiselect: true
+  choices:
+    Build (NOT_IMPLEMENTED):
+      value: not_implemented_enable_github_actions_build
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Documentation (NOT_IMPLEMENTED):
+      value: not_implemented_enable_github_actions_documentation
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Link checker (reports broken URLs):
+      value: AddLinkCheck
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
