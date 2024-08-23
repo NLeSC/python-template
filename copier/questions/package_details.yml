@@ -38,7 +38,7 @@ email:
 code_of_conduct_email:
   type: str
   placeholder: yourname@esciencecenter.nl
-  help: What is the  email address cor code of conduct?
+  help: What is the email address of code of conduct?
   when: "{{ template_profile != 'minimum'  and AddPackageDetails }}"
 copyright_holder:
   type: str
