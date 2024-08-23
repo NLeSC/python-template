@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### Added
+* Make developer documentation optional [#467](https://github.com/NLeSC/python-template/pull/541)
 * Make zenodo next step instructions optional [#520](https://github.com/NLeSC/python-template/pull/520)
 * Make SonarCloud optional [#515](https://github.com/NLeSC/python-template/pull/515)
 * Make citation optional [#471](https://github.com/NLeSC/python-template/pull/471)
