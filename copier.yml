@@ -1,159 +1,23 @@
-# Essential questions
+---
+# General settings for copier
+!include copier/settings.yml
 
-package_name:
-  type: str
-  default: my_python_package
-  help: Enter the name of the Python package.
-  validator: >-
-        {% if not (package_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
-        package_name must start with a letter, followed one or more letters, digits or underscores all lowercase.
-        {% endif %}
-package_short_description:
-  type: str
-  default: Short description of package
-keyword1:
-  type: str
-  default: keyword1
-keyword2:
-  type: str
-  default: keyword2
-version:
-  type: str
-  default: 0.1.0
-github_organization:
-  type: str
-  default: "<my-github-organization>"
-  help: Enter the name of your GitHub username or organization
-full_name:
-  type: str
-  default: Jane Smith
-  help: Enter your full name.
-email:
-  type: str
-  default: yourname@esciencecenter.nl
-copyright_holder:
-  type: str
-  default: Netherlands eScience Center
-code_of_conduct_email:
-  type: str
-  default: "{{ email }}"
+---
+# profiles
+!include copier/profiles.yml
 
-# calculated fields
-repository:
-  default: git@github.com:{{ github_organization }}/{{ package_name }}
-  when: false
+---
+# essential questions about the package details
+!include copier/questions/essential.yml
 
-repository_url:
-  default: https://github.com/{{ github_organization }}/{{ package_name }}
-  when: false
+---
+# additional questions about the package details
+!include copier/questions/package_details.yml
 
+---
+# Features
+!include copier/questions/features.yml
 
-# profile selection
-template_profile:
-  type: str
-  default: recommended
-  help: Optional questions (You can use our defaults, or the bare minimum, or decide everything)
-  choices:
-    Recommended (our defaults for research software): "recommended"
-    Minimum (no extra features): "minimum"
-    Let me choose (decide each feature yourself): "ask"
-
-
-# extra questions
-license:
-  type: str
-  choices:
-  - "Apache Software License 2.0"
-  - "MIT license"
-  - "BSD license"
-  - "ISC license"
-  - "GNU General Public License v3 or later"
-  - "GNU Lesser General Public License v3 or later"
-  - "Not open source"
-  default: "MIT license"
-
-AddLinkCheck:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Do you want to add a GitHub action to check broken links?
-
-AddGitHubActions:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: GitHub actions to test the package and the documentation
-
-AddCitation:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Citation file and cffconvert workflow which validates the citation file
-
-AddChangeLog:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Add a change log to keep track of changes in the package
-
-AddOnlineDocumentation:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Online documentation using Read the Docs
-
-AddPreCommit:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Add pre-commit hook to check code style and format on every commit?
-
-AddCodeConduct:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Add code of conduct?
-
-AddZenodo:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Create a GitHub issue on how to enable Zenodo integration?
-
-AddSonarCloud:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Add SonarCloud (code analysis service) integration?
-
-# internal fields
-_subdirectory: template
-
-# user messages
-_message_before_copy: |
-    Thanks for generating a project using our template.
-
-    You'll be asked a series of questions whose answers will be used to
-    generate a tailored project for you.
-
-_message_after_copy: |
-    Your project "{{ package_name }}" has been created successfully!
-
-    Next steps:
-
-    1. Change directory to the project root:
-
-        $ cd {{ _copier_conf.dst_path }}
-
-    2. Read next_steps.md which contains information on next steps.
-
-_message_before_update: |
-    Thanks for updating your project using our template.
-
-    You'll be asked a series of questions whose answers are pre-populated
-    with previously entered values. Feel free to change them as needed.
-
-_message_after_update: |
-    Your project "{{ package_name }}" has been updated successfully!
-    In case there are any conflicts, please resolve them. Then,
-    you're done.
+---
+# User messages
+!include copier/messages.yml
