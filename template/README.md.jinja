@@ -26,7 +26,9 @@
 {% if AddSonarCloud -%}
 | SonarCloud                         | [![sonarcloud]({{repository_url}}/actions/workflows/sonarcloud.yml/badge.svg)]({{repository_url}}/actions/workflows/sonarcloud.yml) |
 {%- endif -%}
-| MarkDown link checker              | [![markdown-link-check]({{repository_url}}/actions/workflows/markdown-link-check.yml/badge.svg)]({{repository_url}}/actions/workflows/markdown-link-check.yml) |
+{% if AddLinkCheck -%}
+| Link checker              | [![link-check]({{repository_url}}/actions/workflows/link-check.yml/badge.svg)]({{repository_url}}/actions/workflows/link-check.yml) |
+{%- endif -%}
 
 ## How to use {{ package_name }}
 
