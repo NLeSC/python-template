@@ -10,7 +10,7 @@ package_name:
         {% endif %}
 version:
   type: str
-  placeholder: 0.1.0
+  default: 0.1.0
   help: Enter the version of the Python package
   validator: >-
         {% if not (version | regex_search('^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$')) %}
