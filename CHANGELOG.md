@@ -4,6 +4,7 @@
 
 ### Added
 
+* New YAML files for copier questions [#529](https://github.com/NLeSC/python-template/pull/529)
 * Make zenodo next step instructions optional [#520](https://github.com/NLeSC/python-template/pull/520)
 * Make SonarCloud optional [#515](https://github.com/NLeSC/python-template/pull/515)
 * Make citation optional [#471](https://github.com/NLeSC/python-template/pull/471)
@@ -33,6 +34,9 @@ Released on August 15, 2024
 
 ### Changed
 
+* Made copier configuration more modular [#529](https://github.com/NLeSC/python-template/pull/529)
+* pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
+* CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
 * Moved to src/ based layout for generated packages
 * Moved from setup.cfg/.py to pyproject.toml [#351](https://github.com/NLeSC/python-template/issues/351)
 * Moved from prospector to ruff [#336](https://github.com/NLeSC/python-template/issues/336)
