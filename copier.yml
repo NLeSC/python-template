@@ -120,6 +120,12 @@ AddSonarCloud:
   default: "{{ template_profile != 'minimum' }}"
   help: Add SonarCloud (code analysis service) integration?
 
+AddContributing:
+  when: "{{ template_profile == 'ask' }}"
+  type: bool
+  default: "{{ template_profile != 'minimum' }}"
+  help: Add contributing guidelines?
+
 # internal fields
 _subdirectory: template
 
