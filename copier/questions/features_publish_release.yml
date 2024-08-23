@@ -1,0 +1,47 @@
+---
+# Questions for publishing and releasing features
+SelectPublishReleaseFeatures:
+  when: "{{ template_profile != 'minimum' }}"
+  type: yaml
+  default: |-
+    {% if template_profile == 'recommended' %}
+      [select_citation_flag, AddZenodo]
+    {%- else -%}
+      []
+    {%- endif %}
+  help: Select publish and release features
+  multiselect: true
+  choices:
+    Citation:
+      value: select_citation_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Changelog:
+      value: AddChangeLog
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Zenodo integration instructions:
+      value: AddZenodo
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Package keywords(NOT_IMPLEMENTED):
+      value: not_implemented_keywords
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+
+
+# split AddCitation --> enable_citation_file and enable_cffconvert
+SelectCitation:
+  when: "{{ 'select_citation_flag' in SelectPublishReleaseFeatures }}"
+  type: yaml
+  default: |-
+    {% if template_profile == 'recommended' %}
+      [enable_citation_file, enable_cffconvert]
+    {%- else -%}
+      []
+    {%- endif %}
+  help: Select GitHub Action workflows
+  multiselect: true
+  choices:
+    CITATION.cff file (NOT_IMPLEMENTED):
+      value: enable_citation_file
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    cffconvert GitHub Action (NOT_IMPLEMENTED):
+      value: enable_cffconvert
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
