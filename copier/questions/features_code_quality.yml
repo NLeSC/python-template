@@ -2,7 +2,7 @@
 # Questions for code quality features
 SelectCodeQualityFeatures:
   when: "{{ template_profile != 'minimum' }}"
-  type: str
+  type: yaml
   default: []
   help: Select code quality features
   multiselect: true
