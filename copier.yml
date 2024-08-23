@@ -11,7 +11,7 @@
 !include copier/questions/essential.yml
 
 ---
-# questions about the package details
+# additional questions about the package details
 !include copier/questions/package_details.yml
 
 ---
