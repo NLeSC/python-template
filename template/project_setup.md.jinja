@@ -73,7 +73,7 @@ help you decide which tool to use for packaging.
 
 - `sonar-project.properties` is the SonarCloud [configuration](https://docs.sonarqube.org/latest/analysis/analysis-parameters/) file
 - `.github/workflows/sonarcloud.yml` is the GitHub action workflow which performs the SonarCloud analysis
-{%- endif -%}
+{%- endif %}
 
 ## Package version number
 
@@ -100,12 +100,14 @@ help you decide which tool to use for packaging.
 - To allow others to cite your software, add a `CITATION.cff` file
 - It only makes sense to do this once there is something to cite (e.g., a software release with a DOI).
 - Follow the [making software citable](https://guide.esciencecenter.nl/#/citable_software/making_software_citable) section in the guide.
-{%- endif -%}
+{%- endif %}
 
+{% if AddCodeConduct -%}
 ## CODE_OF_CONDUCT.md
 
 - Information about how to behave professionally
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=code-of-conduct)
+{%- endif %}
 
 {% if AddContributing -%}
 ## CONTRIBUTING.md

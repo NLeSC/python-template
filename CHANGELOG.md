@@ -1,13 +1,31 @@
 # Change Log
 
-## Unreleased
+## [Unreleased]
 
 ### Added
 * Make contributing guidelines optional [#465]()
+* Make Code of Conduct optional [#464](https://github.com/NLeSC/python-template/pull/530)
+* New YAML files for copier questions [#529](https://github.com/NLeSC/python-template/pull/529)
 * Make zenodo next step instructions optional [#520](https://github.com/NLeSC/python-template/pull/520)
 * Make SonarCloud optional [#515](https://github.com/NLeSC/python-template/pull/515)
 * Make citation optional [#471](https://github.com/NLeSC/python-template/pull/471)
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
+
+### Changed
+
+* pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
+* CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
+
+### Removed
+
+*
+
+## [0.5.0]
+
+Released on August 15, 2024
+
+### Added
+
 * Added Python 3.12 support [#356](https://github.com/NLeSC/python-template/issues/356)
 * Template unit tests for documentation generation, linting and version bumping
 * Docstring for function
@@ -17,6 +35,7 @@
 
 ### Changed
 
+* Made copier configuration more modular [#529](https://github.com/NLeSC/python-template/pull/529)
 * pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
 * CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
 * Moved to src/ based layout for generated packages
@@ -44,7 +63,9 @@
 * Statements in project_setup.md already mentioned in README.dev.md
 * .zenodo.json is no longer necessary, CITATION.cff also works with Zenodo.
 
-## 0.4.0
+## [0.4.0]
+
+Released on May 3, 2021
 
 ### Added
 
@@ -74,7 +95,9 @@
 
 * Automatic publish to PyPi after GitHub release [#196](https://github.com/NLeSC/python-template/issues/196)
 
-## 0.3.0
+## [0.3.0]
+
+Released on Apr 22, 2021
 
 ### Added
 
@@ -105,14 +128,15 @@
 * Updated Code of Conduct for generated package
 * Improved the documentation for the generated package and template itself
 
-## Removed
+### Removed
+
 * Dropped appveyor [#160](https://github.com/NLeSC/python-template/issues/160)
 * Dropped everything Conda related
 * Drop Python 3.5 support
 * Removed unit tests doing the linting
 
 
-## 0.2.0
+## [0.2.0]
 
 Released on July 17, 2019
 
@@ -150,7 +174,7 @@ Released on July 17, 2019
 
 * Python 2 support
 
-## 0.1.0
+## [0.1.0]
 
 Released on July 12, 2018.
 
@@ -170,3 +194,11 @@ Released on July 12, 2018.
 	- README
 	- Requirements.txt
 	- Setup configuration
+
+
+[Unreleased]: https://github.com/NLeSC/python-template//compare/0.5.0...HEAD
+[0.5.0]:      https://github.com/NLeSC/python-template/releases/tag/0.5.0
+[0.4.0]:      https://github.com/NLeSC/python-template/releases/tag/0.4.0
+[0.3.0]:      https://github.com/NLeSC/python-template/releases/tag/0.3.0
+[0.2.0]:      https://github.com/NLeSC/python-template/releases/tag/0.2.0
+[0.1.0]:      https://github.com/NLeSC/python-template/releases/tag/0.1.0

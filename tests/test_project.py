@@ -11,8 +11,24 @@ import pytest
 IS_WINDOWS = platform.startswith('win')
 
 
-def test_project_folder(copie):
-    project = copie.copy()
+@pytest.fixture(scope='session')
+def copier_project_defaults():
+    return {
+            "package_name": "my_python_package",
+            "package_short_description": "Short description of package",
+            "keyword1": "keyword1",
+            "keyword2": "keyword2",
+            "version": "0.1.0",
+            "github_organization": "<my-github-organization>",
+            "full_name": "Jane Smith",
+            "email": "yourname@esciencecenter.nl",
+            "code_of_conduct_email": "yourname@esciencecenter.nl",
+            "copyright_holder": "Netherlands eScience Center"
+        }
+
+def test_project_folder(copie, copier_project_defaults):
+    project_defaults = copier_project_defaults
+    project = copie.copy(extra_answers=project_defaults)
 
     assert project.exit_code == 0
     assert project.exception is None
@@ -42,8 +58,15 @@ def project_env_bin_dir(tmp_path_factory):
 
 
 @pytest.fixture(scope='session')
-def baked_with_development_dependencies(tmp_path_factory, project_env_bin_dir):
-    project = run_copy(src_path=str(here()), dst_path=str(tmp_path_factory.mktemp('projects')), defaults=True, vcs_ref="HEAD")
+def baked_with_development_dependencies(tmp_path_factory, project_env_bin_dir, copier_project_defaults):
+    project_defaults = copier_project_defaults
+    project = run_copy(
+                    src_path=str(here()),
+                    dst_path=str(tmp_path_factory.mktemp('projects')),
+                    defaults=True,
+                    vcs_ref="HEAD",
+                    data=project_defaults
+                    )
     project_dir = project.dst_path
 
     bin_dir = project_env_bin_dir
