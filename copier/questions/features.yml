@@ -50,3 +50,8 @@ AddCodeConduct:
   type: bool
   default: "{{ template_profile != 'minimum' }}"
   help: Add code of conduct?
+AddDevDoc:
+  when: "{{ template_profile == 'ask' }}"
+  type: bool
+  default: "{{ template_profile != 'minimum' }}"
+  help: Add developer documentation?
