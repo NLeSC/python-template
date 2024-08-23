@@ -15,8 +15,20 @@
 !include copier/questions/package_details.yml
 
 ---
-# Features
-!include copier/questions/features.yml
+# code quality
+!include copier/questions/features_code_quality.yml
+
+---
+# publish and release
+!include copier/questions/features_publish_release.yml
+
+---
+# publish and release
+!include copier/questions/features_documentation.yml
+
+---
+# community
+!include copier/questions/features_community.yml
 
 ---
 # User messages
