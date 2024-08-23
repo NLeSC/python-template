@@ -8,7 +8,7 @@ AddPackageDetails:
 package_short_description:
   type: str
   placeholder: Short description
-  help: Short description of package
+  help: Provide a short description of package.
   when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
 keyword1:
   type: str
