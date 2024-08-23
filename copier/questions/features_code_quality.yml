@@ -1,0 +1,24 @@
+---
+# Questions for code quality features
+SelectCodeQualityFeatures:
+  when: "{{ template_profile != 'minimum' }}"
+  type: str
+  default: []
+  help: Select code quality features
+  multiselect: true
+  choices:
+    GitHub Actions:
+      value: select_github_actions_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Linting (using ruff NOT_IMPLEMENTED):
+      value: not_implemented_linting
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Pre-commit:
+      value: AddPreCommit
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Code analysis (using SonarCloud):
+      value: AddSonarCloud
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Editorconfig (NOT_IMPLEMENTED):
+      value: not_implemented_editor_config
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
