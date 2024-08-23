@@ -16,6 +16,10 @@ version:
         {% if not (package_name | regex_search('^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$')) %}
         Package version should use Semantic Versioning 2.0.0 (MAJOR.MINOR.PATCH)
         {% endif %}
+full_name:
+  type: str
+  placeholder: Jane Smith
+  help: Enter your full name
 license:
   type: str
   choices:
