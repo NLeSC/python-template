@@ -7,7 +7,7 @@
 !include copier/profiles.yml
 
 ---
-# questions about the package details
+# essential questions about the package details
 !include copier/questions/essential.yml
 
 ---
