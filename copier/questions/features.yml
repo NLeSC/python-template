@@ -5,21 +5,6 @@ addExtraFeatures:
   default: yes
   help: Do you want to add extra features?
   when: "{{ template_profile == 'ask' }}"
-AddLinkCheck:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Do you want to add a GitHub action to check broken links?
-AddGitHubActions:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Do you want to add GitHub actions to test the package and the documentation?
-AddCitation:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Citation file and cffconvert workflow which validates the citation file
 AddChangeLog:
   when: "{{ template_profile == 'ask' }}"
   type: bool
@@ -30,21 +15,11 @@ AddOnlineDocumentation:
   type: bool
   default: "{{ template_profile != 'minimum' }}"
   help: Online documentation using Read the Docs
-AddPreCommit:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Add pre-commit hook to check code style and format on every commit?
 AddZenodo:
   when: "{{ template_profile == 'ask' }}"
   type: bool
   default: "{{ template_profile != 'minimum' }}"
   help: Create a GitHub issue on how to enable Zenodo integration?
-AddSonarCloud:
-  when: "{{ template_profile == 'ask' }}"
-  type: bool
-  default: "{{ template_profile != 'minimum' }}"
-  help: Add SonarCloud (code analysis service) integration?
 AddCodeConduct:
   when: "{{ template_profile == 'ask' }}"
   type: bool
