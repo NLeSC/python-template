@@ -28,7 +28,7 @@ SelectCodeQualityFeatures:
       value: not_implemented_editor_config
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
-# split AddGitHubActions --> enable_github_actions_build and enable_github_actions_documentation
+# TODO: split AddGitHubActions --> enable_github_actions_build and enable_github_actions_documentation
 SelectGitHubActions:
   when: "{{ 'select_github_actions_flag' in SelectCodeQualityFeatures }}"
   type: yaml
