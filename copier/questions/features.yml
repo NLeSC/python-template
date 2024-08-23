@@ -4,7 +4,7 @@ addExtraFeatures:
   type: bool
   default: yes
   help: Do you want to add extra features?
-  when: "{{ template_profile == 'ask'}}"
+  when: "{{ template_profile == 'ask' }}"
 AddLinkCheck:
   when: "{{ template_profile == 'ask' }}"
   type: bool
