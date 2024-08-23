@@ -45,3 +45,8 @@ AddSonarCloud:
   type: bool
   default: "{{ template_profile != 'minimum' }}"
   help: Add SonarCloud (code analysis service) integration?
+AddCodeConduct:
+  when: "{{ template_profile == 'ask' }}"
+  type: bool
+  default: "{{ template_profile != 'minimum' }}"
+  help: Add code of conduct?

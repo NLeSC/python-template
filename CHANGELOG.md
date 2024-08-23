@@ -4,6 +4,7 @@
 
 ### Added
 
+* Make Code of Conduct optional [#464](https://github.com/NLeSC/python-template/pull/530)
 * New YAML files for copier questions [#529](https://github.com/NLeSC/python-template/pull/529)
 * Make zenodo next step instructions optional [#520](https://github.com/NLeSC/python-template/pull/520)
 * Make SonarCloud optional [#515](https://github.com/NLeSC/python-template/pull/515)
