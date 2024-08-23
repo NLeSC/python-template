@@ -1,0 +1,20 @@
+---
+# Questions for community features
+SelectCommunityFeatures:
+  when: "{{ template_profile != 'minimum' }}"
+  type: yaml
+  default: |-
+    {% if template_profile == 'recommended' %}
+      [AddCodeConduct, AddContributing]
+    {%- else -%}
+      []
+    {%- endif %}
+  help: Select documentation features
+  multiselect: true
+  choices:
+    Code of conduct:
+      value: AddCodeConduct
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Contributing guidelines:
+      value: AddContributing
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
