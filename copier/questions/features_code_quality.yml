@@ -3,7 +3,12 @@
 SelectCodeQualityFeatures:
   when: "{{ template_profile != 'minimum' }}"
   type: yaml
-  default: []
+  default: |-
+    {% if template_profile == 'recommended' %}
+      [select_github_actions_flag, not_implemented_linting, AddSonarCloud, not_implemented_editor_config]
+    {%- else -%}
+      []
+    {%- endif %}
   help: Select code quality features
   multiselect: true
   choices:
