@@ -13,7 +13,7 @@
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
 
 ### Changed
-
+* Fix broken link checker [#546](https://github.com/NLeSC/python-template/pull/546)
 * pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
 * CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
 
