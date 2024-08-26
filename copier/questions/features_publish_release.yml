@@ -7,7 +7,7 @@ SelectPublishReleaseFeatures:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [SelectCitation_flag, AddZenodo]
+      [SelectCitation_flag, AddZenodo_flag]
     {%- else -%}
       []
     {%- endif %}
@@ -35,7 +35,7 @@ SelectCitation:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [enable_citation_file, enable_cffconvert]
+      [AddCitationFile_flag, AddCFFConvert_flag]
     {%- else -%}
       []
     {%- endif %}
