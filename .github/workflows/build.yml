@@ -1,4 +1,4 @@
-name: tests
+name: build
 
 on:
   push:
@@ -28,6 +28,7 @@ jobs:
       run: |
         which python
         python --version
-    - name: Run pytest
+    - name: Install dependencies
       run: |
-        python -m pytest -v --durations=0
+        python -m pip install --upgrade pip setuptools
+        python -m pip install .[dev]
