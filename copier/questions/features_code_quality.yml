@@ -7,7 +7,7 @@ SelectCodeQualityFeatures:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [SelectGitHubActions_flag, not_implemented_linting, AddSonarCloud, not_implemented_editor_config]
+      [SelectGitHubActions_flag, not_implemented_linting, AddSonarCloud_flag, not_implemented_editor_config]
     {%- else -%}
       []
     {%- endif %}
@@ -37,7 +37,7 @@ SelectGitHubActions:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [AddGitHubActionBuild, AddGitHubActionDocumentation]
+      [AddGitHubActionBuild_flag, AddGitHubActionDocumentation_flag]
     {%- else -%}
       []
     {%- endif %}
