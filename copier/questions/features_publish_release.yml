@@ -39,18 +39,28 @@ SelectCitation:
     {%- else -%}
       []
     {%- endif %}
-  help: Select GitHub Action workflows
+  help: Select citation features
   multiselect: true
   choices:
-    CITATION.cff file (NOT_IMPLEMENTED):
+    CITATION.cff file:
       value: AddCitationFile_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-    cffconvert GitHub Action (NOT_IMPLEMENTED):
+    cffconvert GitHub Action (to validate CITATION.cff files):
       value: AddCFFConvert_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
 
 # computed features
+AddCitation:
+  type: bool
+  default: "{{ 'AddCitationFile_flag' in SelectCitation }}"
+  when: false
+
+AddCFFConvert:
+  type: bool
+  default: "{{ 'AddCFFConvert_flag' in SelectCitation }}"
+  when: false
+
 AddChangeLog:
   type: bool
   default: "{{ 'AddChangeLog_flag' in SelectPublishReleaseFeatures }}"
