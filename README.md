@@ -64,20 +64,15 @@ pipx install copier
 
 ### Scenario 1: Create a new package
 
-
-#### Step 1/2: Create the files and directory structure
-
 Run `copier copy` with the template:
 
 ```shell
-# Notes:
-#   1. Make sure that `path/to/destination` is an empty directory
-#   2. See table below for explanation of each question
-#   3. The files will be generated in the specified destination directory
 copier copy https://github.com/nlesc/python-template.git path/to/destination
 ```
 
-Good job! Based on the profile and selected features, a package will be created in `path/to/destination`.
+> [!NOTE]
+> 1. Make sure that `path/to/destination` is an empty directory
+> 1. Based on the profile and selected features, the package will be generated in the specified destination directory
 
 For an explanation of what's there, read on in the `project_setup.md` file.
 
