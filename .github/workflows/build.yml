@@ -9,8 +9,8 @@ on:
     - main
 jobs:
 
-  tests:
-    name: Run template tests
+  build:
+    name: Run pip install
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true
