@@ -3,7 +3,7 @@
 ## [Unreleased]
 
 ### Added
-* Make project_setup optional [553](https://github.com/NLeSC/python-template/pull/553)
+* Make project setup guidelines optional [553](https://github.com/NLeSC/python-template/pull/553)
 * Make contributing guidelines optional [#465]()
 * Make developer documentation optional [#467](https://github.com/NLeSC/python-template/pull/541)
 * Make Code of Conduct optional [#464](https://github.com/NLeSC/python-template/pull/530)
