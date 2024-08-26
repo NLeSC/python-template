@@ -14,12 +14,12 @@
 
 ### Changed
 
+* Droped Python 3.8 and 3.9 support [#551](https://github.com/NLeSC/python-template/pull/551)
 * pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
 * CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
 
 ### Removed
 
-*
 
 ## [0.5.0]
 
