@@ -37,7 +37,7 @@ Use this [Copier](https://copier.readthedocs.io) template to generate an empty P
 | &nbsp;                             | &nbsp; |
 | **GitHub Actions**                 | &nbsp; |
 | Citation metadata consistency      | [![cffconvert](https://github.com/nlesc/python-template/actions/workflows/cffconvert.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/cffconvert.yml) |
-| MarkDown link checker              | [![markdown-link-check](https://github.com/nlesc/python-template/actions/workflows/markdown-link-check.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/markdown-link-check.yml) |
+| Link checker              | [![link-check](https://github.com/nlesc/python-template/actions/workflows/link-check.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/link-check.yml) |
 | Tests                              | [![tests](https://github.com/nlesc/python-template/actions/workflows/tests.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/tests.yml) |
 
 ## How to use

@@ -13,8 +13,8 @@
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
 
 ### Changed
-
 * Droped Python 3.8 and 3.9 support [#551](https://github.com/NLeSC/python-template/pull/551)
+* Fix broken link checker [#546](https://github.com/NLeSC/python-template/pull/546)
 * pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
 * CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
 
