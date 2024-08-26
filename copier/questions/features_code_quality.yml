@@ -5,7 +5,7 @@ SelectCodeQualityFeatures:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [select_github_actions_flag, not_implemented_linting, AddSonarCloud, not_implemented_editor_config]
+      [SelectGitHubActions_flag, not_implemented_linting, AddSonarCloud, not_implemented_editor_config]
     {%- else -%}
       []
     {%- endif %}
@@ -13,7 +13,7 @@ SelectCodeQualityFeatures:
   multiselect: true
   choices:
     GitHub Actions:
-      value: select_github_actions_flag
+      value: SelectGitHubActions_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Linting (using ruff NOT_IMPLEMENTED):
       value: not_implemented_linting
@@ -28,25 +28,37 @@ SelectCodeQualityFeatures:
       value: not_implemented_editor_config
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
-# TODO: split AddGitHubActions --> enable_github_actions_build and enable_github_actions_documentation
+
 SelectGitHubActions:
-  when: "{{ 'select_github_actions_flag' in SelectCodeQualityFeatures }}"
+  when: "{{ 'SelectGitHubActions_flag' in SelectCodeQualityFeatures }}"
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [not_implemented_enable_github_actions_build, not_implemented_enable_github_actions_documentation]
+      [AddGitHubActionBuild, AddGitHubActionDocumentation]
     {%- else -%}
       []
     {%- endif %}
   help: Select GitHub Action workflows
   multiselect: true
   choices:
-    Build (NOT_IMPLEMENTED):
-      value: not_implemented_enable_github_actions_build
+    Build:
+      value: AddGitHubActionBuild_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-    Documentation (NOT_IMPLEMENTED):
-      value: not_implemented_enable_github_actions_documentation
+    Documentation:
+      value: AddGitHubActionDocumentation_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Link checker (reports broken URLs):
       value: AddLinkCheck
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+
+
+# computed features
+AddGitHubActionBuild:
+  type: bool
+  default: "{{ 'AddGitHubActionBuild_flag' in SelectGitHubActions }}"
+  when: false
+
+AddGitHubActionDocumentation:
+  type: bool
+  default: "{{ 'AddGitHubActionDocumentation_flag' in SelectGitHubActions }}"
+  when: false
