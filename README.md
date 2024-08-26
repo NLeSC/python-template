@@ -77,23 +77,6 @@ Run `copier copy` with the template:
 copier copy https://github.com/nlesc/python-template.git path/to/destination
 ```
 
-| Name                      | Default value | Explanation |
-| ------------------------- | ------------- | ----------- |
-| package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. This also will be used as the github repository name.|
-| package_short_description | Short description of package | The information that you enter here will end up in the README, documentation, license, and pyproject.toml, so it may be a good idea to prepare something in advance. |
-| keyword1                  | keyword1          | A term that describes your package. |
-| keyword2                  | keyword2          | Another term that describes your package. |
-| version                   | 0.1.0             | &nbsp; |
-| github_organization       | &lt;my-github-organization&gt; | GitHub organization that will contain this project's repository. This can also be your GitHub user name. |
-| license                   | Apache Software License 2.0 | The software license under which the code is made available.  |
-| full_name                 | Jane Smith        | Your full name, e.g. _Jane Smith_. |
-| email                     | yourname@esciencecenter.nl | Your (work) email address. |
-| copyright_holder          | Netherlands eScience Center | Name(s) of the organization(s) or person(s) who hold the copyright of the software. |
-| code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
-
-Once the project files have been generated, follow the steps outlined in
-[next_steps.md](template/next_steps.md.jinja).
-
 #### Step 2/2: Read about what was just generated
 
 Good job! You have now generated the skeleton for your package:
