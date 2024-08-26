@@ -23,9 +23,6 @@ SelectDocumentationFeatures:
     Project setup description (NOT_IMPLEMENTED):
       value: not_implemented_project_setup
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-    Markdown link checker GitHub Action (NOT_IMPLEMENTED):
-      value: not_implemented_markdown_link_checker
-      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
 # computed features
 AddOnlineDocumentation:
