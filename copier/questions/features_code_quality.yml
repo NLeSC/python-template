@@ -48,7 +48,7 @@ SelectGitHubActions:
       value: AddGitHubActionDocumentation_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Link checker (reports broken URLs):
-      value: AddLinkCheck
+      value: AddLinkCheck_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
 
@@ -61,4 +61,9 @@ AddGitHubActionBuild:
 AddGitHubActionDocumentation:
   type: bool
   default: "{{ 'AddGitHubActionDocumentation_flag' in SelectGitHubActions }}"
+  when: false
+
+AddLinkCheck:
+  type: bool
+  default: "{{ 'AddLinkCheck_flag' in SelectGitHubActions }}"
   when: false
