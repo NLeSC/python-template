@@ -20,6 +20,10 @@ full_name:
   type: str
   placeholder: Jane Smith
   help: Enter your full name
+  validator: >-
+        {% if not full_name %}
+        Name cannot be empty
+        {% endif %}
 license:
   type: str
   choices:
