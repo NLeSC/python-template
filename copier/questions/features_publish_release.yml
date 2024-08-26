@@ -1,11 +1,13 @@
 ---
 # Questions for publishing and releasing features
+
+# the main menu
 SelectPublishReleaseFeatures:
   when: "{{ template_profile != 'minimum' }}"
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [select_citation_flag, AddZenodo]
+      [SelectCitation_flag, AddZenodo]
     {%- else -%}
       []
     {%- endif %}
@@ -13,22 +15,23 @@ SelectPublishReleaseFeatures:
   multiselect: true
   choices:
     Citation:
-      value: select_citation_flag
+      value: SelectCitation_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Changelog:
-      value: AddChangeLog
+      value: AddChangeLog_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Zenodo integration instructions:
-      value: AddZenodo
+      value: AddZenodo_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Package keywords(NOT_IMPLEMENTED):
       value: not_implemented_keywords
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
 
+# Sub-menus
 # split AddCitation --> enable_citation_file and enable_cffconvert
 SelectCitation:
-  when: "{{ 'select_citation_flag' in SelectPublishReleaseFeatures }}"
+  when: "{{ 'SelectCitation_flag' in SelectPublishReleaseFeatures }}"
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
@@ -40,8 +43,20 @@ SelectCitation:
   multiselect: true
   choices:
     CITATION.cff file (NOT_IMPLEMENTED):
-      value: enable_citation_file
+      value: AddCitationFile_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     cffconvert GitHub Action (NOT_IMPLEMENTED):
-      value: enable_cffconvert
+      value: AddCFFConvert_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+
+
+# computed features
+AddChangeLog:
+  type: bool
+  default: "{{ 'AddChangeLog_flag' in SelectPublishReleaseFeatures }}"
+  when: false
+
+AddZenodo:
+  type: bool
+  default: "{{ 'AddZenodo_flag' in SelectPublishReleaseFeatures }}"
+  when: false
