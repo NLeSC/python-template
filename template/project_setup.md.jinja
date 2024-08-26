@@ -11,8 +11,6 @@ checklist](https://guide.esciencecenter.nl/#/best_practices/checklist).
 
 This repository is set up with Python versions:
 
-- 3.8
-- 3.9
 - 3.10
 - 3.11
 - 3.12
