@@ -3,7 +3,9 @@
 AddPackageDetails:
   type: bool
   default: yes
-  help: Do you want to add extra details for the package?
+  help: |-
+    If you are planning to publish the package it is recommended to provide more details.
+       Do you want to provide extra details for the package?
   when: "{{ template_profile != 'minimum'}}"
 package_short_description:
   type: str
