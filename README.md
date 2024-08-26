@@ -77,65 +77,9 @@ Run `copier copy` with the template:
 copier copy https://github.com/nlesc/python-template.git path/to/destination
 ```
 
-#### Step 2/2: Read about what was just generated
+Good job! Based on the profile and selected features, a package will be created in `path/to/destination`.
 
-Good job! You have now generated the skeleton for your package:
-
-```text
-.
-├── CHANGELOG.md
-├── CITATION.cff
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── .copier-answers.yml
-├── docs
-│   ├── conf.py
-│   ├── index.rst
-│   ├── make.bat
-│   ├── Makefile
-│   └── _templates
-│       └── .gitignore
-├── .editorconfig
-├── .githooks
-│   └── pre-commit
-├── .github
-│   ├── next_steps
-│   │   ├── 01_sonarcloud_integration.md
-│   │   ├── 02_citation.md
-│   │   ├── 03_readthedocs.md
-│   │   ├── 04_zenodo_integration.md
-│   │   └── 05_linting.md
-│   └── workflows
-│       ├── build.yml
-│       ├── cffconvert.yml
-│       ├── documentation.yml
-│       ├── markdown-link-check.yml
-│       ├── next_steps.yml
-│       └── sonarcloud.yml
-├── .gitignore
-├── MANIFEST.in
-├── .mlc-config.json
-├── next_steps.md
-├── NOTICE
-├── project_setup.md
-├── pyproject.toml
-├── README.dev.md
-├── README.md
-├── .readthedocs.yaml
-├── sonar-project.properties
-├── src
-│   └── my_python_package
-│       ├── __init__.py
-│       └── my_module.py
-├── tests
-│   ├── __init__.py
-│   ├── test_my_module.py
-│   ├── test_project.py
-│   └── test_values.py
-└── .zenodo.json
-```
-
-For an explanation of what's there, read on in the [project_setup.md](template/project_setup.md.jinja) file.
+For an explanation of what's there, read on in the `project_setup.md` file.
 
 ### Scenario 2: Apply to pre-existing code
 
