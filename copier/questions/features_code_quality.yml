@@ -1,5 +1,7 @@
 ---
 # Questions for code quality features
+
+# the main menu
 SelectCodeQualityFeatures:
   when: "{{ template_profile != 'minimum' }}"
   type: yaml
@@ -19,16 +21,17 @@ SelectCodeQualityFeatures:
       value: not_implemented_linting
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Pre-commit:
-      value: AddPreCommit
+      value: AddPreCommit_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Code analysis (using SonarCloud):
-      value: AddSonarCloud
+      value: AddSonarCloud_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Editorconfig (NOT_IMPLEMENTED):
       value: not_implemented_editor_config
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
 
+# Sub-menus
 SelectGitHubActions:
   when: "{{ 'SelectGitHubActions_flag' in SelectCodeQualityFeatures }}"
   type: yaml
@@ -66,4 +69,14 @@ AddGitHubActionDocumentation:
 AddLinkCheck:
   type: bool
   default: "{{ 'AddLinkCheck_flag' in SelectGitHubActions }}"
+  when: false
+
+AddPreCommit:
+  type: bool
+  default: "{{ 'AddPreCommit_flag' in SelectCodeQualityFeatures }}"
+  when: false
+
+AddSonarCloud:
+  type: bool
+  default: "{{ 'AddSonarCloud_flag' in SelectCodeQualityFeatures }}"
   when: false
