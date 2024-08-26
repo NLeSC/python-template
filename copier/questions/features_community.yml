@@ -9,7 +9,7 @@ SelectCommunityFeatures:
     {%- else -%}
       []
     {%- endif %}
-  help: Select documentation features
+  help: Select community features
   multiselect: true
   choices:
     Code of conduct:
