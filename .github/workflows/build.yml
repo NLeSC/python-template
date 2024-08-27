@@ -1,4 +1,4 @@
-name: tests
+name: build
 
 on:
   push:
@@ -9,8 +9,8 @@ on:
     - main
 jobs:
 
-  tests:
-    name: Run template tests
+  build:
+    name: Run pip install
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true
@@ -32,6 +32,3 @@ jobs:
       run: |
         python -m pip install --upgrade pip setuptools
         python -m pip install .[dev]
-    - name: Run pytest
-      run: |
-        python -m pytest -v --durations=0

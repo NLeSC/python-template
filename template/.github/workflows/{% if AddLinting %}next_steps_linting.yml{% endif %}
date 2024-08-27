@@ -1,0 +1,30 @@
+on: [push]
+permissions:
+  contents: write
+  issues: write
+name: Create issues for linting
+jobs:
+  next_steps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create linting issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/workflows/next_steps_linting_issue.md
+        id: linting
+      - name: List created issues
+        run: |
+          echo 'Created issues that must be completed to have fully working Python package:
+          * Linting fixes ${{ steps.linting.outputs.url }}'
+      - name: Cleanup files needed to create next steps issues
+        run: |
+          git config --global user.name 'NLeSC Python template'
+          git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git pull # other next step workflows may push changes before
+          git rm .github/workflows/next_steps_linting.yml
+          git rm .github/workflows/next_steps_linting_issue.md
+          git commit -am "Cleanup automated next steps issue generator"
+          git push

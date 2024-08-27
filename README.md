@@ -1,30 +1,27 @@
 # Netherlands eScience Center Python Template
 
-Spend less time setting up and configuring your new Python packages and comply with the
-[Netherlands eScience Center Software Development Guide](https://guide.esciencecenter.nl/)
-from the start.
+Spend less time setting up and configuring your new Python packages which includes research software good practices from the start.
 
-Use this [Cookiecutter](https://cookiecutter.readthedocs.io) template to generate
-an empty Python package. Features include:
+Use this [Copier](https://copier.readthedocs.io) template to generate an empty Python package. Features include:
 
 - Boilerplate unit tests and documentation,
-- [Python static setup configuration]({{cookiecutter.directory_name}}/pyproject.toml),
+- [Python static setup configuration](template/pyproject.toml.jinja),
 - Open source software license,
-- Continuous integration with [GitHub action workflows]({{cookiecutter.directory_name}}/.github/workflows) for building, testing, link checking and linting,
+- Continuous integration with [GitHub action workflows](template/.github/workflows) for building, testing, link checking and linting,
 - Code style checking with [ruff](https://beta.ruff.rs/),
-- [Editorconfig]({{cookiecutter.directory_name}}/.editorconfig),
+- [Editorconfig](template/.editorconfig),
 - Usage and contribution documents:
-  - [README.md]({{cookiecutter.directory_name}}/README.md) for package users,
-  - [README.dev.md]({{cookiecutter.directory_name}}/README.dev.md) for package developer,
-  - [project_setup.md]({{cookiecutter.directory_name}}/project_setup.md) with extensive documentation about project setup,
-  - [Change log]({{cookiecutter.directory_name}}/CHANGELOG.md),
-  - [Code of Conduct]({{cookiecutter.directory_name}}/CODE_OF_CONDUCT.md),
-  - [Contributing guidelines]({{cookiecutter.directory_name}}/CONTRIBUTING.md),
+  - [README.md](template/README.md.jinja) for package users,
+  - [README.dev.md](template/README.dev.md.jinja) for package developer,
+  - [project_setup.md](template/project_setup.md.jinja) with extensive documentation about project setup,
+  - [Change log](template/%7B%25%20if%20AddChangeLog%20%25%7DCHANGELOG.md%7B%25%20endif%20%25%7D),
+  - [Code of Conduct](template/CODE_OF_CONDUCT.md.jinja),
+  - [Contributing guidelines](template/CONTRIBUTING.md.jinja),
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/),
-- Automatic creation of [issues]({{cookiecutter.directory_name}}/.github/next_steps) with instructions how to pass all GitHub action workflows and integrate with services like Zenodo and Read the Docs,
-- Instructions how to make package [citable]({{cookiecutter.directory_name}}/.github/next_steps/02_citation.md)
+- Automatic creation of [issues](template/.github/next_steps) with instructions how to pass all GitHub action workflows and integrate with services like Zenodo and Read the Docs,
+- Instructions how to make package [citable](.github/next_steps/%7B%25%20if%20AddCitation%20%25%7D02_citation.md%7B%25%20endif%20%25%7D.jinja)
 - FAIR software recommendation badge,
-- Optional [pre commit hook]({{cookiecutter.directory_name}}/README.dev.md#running-linters-locally) to catch lint errors early
+- Optional [pre commit hook](template/README.dev.md.jinja#running-linters-locally) to catch lint errors early
 
 ## Badges
 
@@ -40,106 +37,91 @@ an empty Python package. Features include:
 | &nbsp;                             | &nbsp; |
 | **GitHub Actions**                 | &nbsp; |
 | Citation metadata consistency      | [![cffconvert](https://github.com/nlesc/python-template/actions/workflows/cffconvert.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/cffconvert.yml) |
-| MarkDown link checker              | [![markdown-link-check](https://github.com/nlesc/python-template/actions/workflows/markdown-link-check.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/markdown-link-check.yml) |
+| Link checker              | [![link-check](https://github.com/nlesc/python-template/actions/workflows/link-check.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/link-check.yml) |
 | Tests                              | [![tests](https://github.com/nlesc/python-template/actions/workflows/tests.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/tests.yml) |
 
 ## How to use
 
-### Step 1/3: Install `cookiecutter`
+There are multiple scenarios to use this template:
 
-We recommend installing `cookiecutter` in user space as per `cookiecutter`'s instructions. This way, you don't have to
-install `cookiecutter` for every new project.
+- [Scenario 1](#scenario-1-create-a-new-package): Generating a new package using template
+- [Scenario 2](#scenario-2-apply-to-pre-existing-code): Applying the template to some pre-existing code
+- [Scenario 3](#scenario-3-updating-a-template-made-package): Updating a package made with the template
+
+In all three scenarios, you will need to install Copier first, which we
+recommend doing with [`pipx`](https://github.com/pypa/pipx):
+```shell
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+pipx install copier
+```
+
+> [!NOTE]
+> Note that it is also possible to install Copier with regular `pip`, but that
+> Copier will then be installed in your common environment and may cause
+> conflicts with its dependencies, while `pipx` will install Copier in a
+> separate and dedicated environment.
+
+### Scenario 1: Create a new package
+
+Run `copier copy` with the template:
 
 ```shell
-python -m pip install --user --upgrade cookiecutter
+copier copy https://github.com/nlesc/python-template.git path/to/destination
 ```
 
-### Step 2/3: Generate the files and directory structure
+> [!NOTE]
+> 1. Make sure that `path/to/destination` is an empty directory
+> 1. Based on the profile and selected features, the package will be generated in the specified destination directory
 
-Run `cookiecutter` with the template:
+For an explanation of what's there, read on in the `project_setup.md` file.
+
+### Scenario 2: Apply to pre-existing code
+
+To apply the template to pre-existing code, you can use the same `copier copy`
+command as when creating a new package, except that you point to the folder
+containing your existing code rather than a new one:
 
 ```shell
-# Notes:
-#   1. See table below for explanation of each question
-#   2. The files will be generated in a new directory
-cookiecutter https://github.com/nlesc/python-template.git
+copier copy https://github.com/nlesc/python-template.git path/to/existing/code
 ```
 
-| Name                      | Default value | Explanation |
-| ------------------------- | ------------- | ----------- |
-| directory_name              | my-python-project | Name of the directory that contains the package. Avoid using spaces or uppercase letters for the best experience across operating systems. To get an impression of what will be generated, see the directory tree [below](https://github.com/NLeSC/python-template#step-33-read-about-what-was-just-generated) |
-| package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. |
-| package_short_description | Short description of package | The information that you enter here will end up in the README, documentation, license, and pyproject.toml, so it may be a good idea to prepare something in advance. |
-| keyword1                  | keyword1          | A term that describes your package. |
-| keyword2                  | keyword2          | Another term that describes your package. |
-| version                   | 0.1.0             | &nbsp; |
-| github_organization       | &lt;my-github-organization&gt; | GitHub organization that will contain this project's repository. This can also be your GitHub user name. |
-| license                   | Apache Software License 2.0 | The software license under which the code is made available.  |
-| full_name                 | Jane Smith        | Your full name, e.g. _Jane Smith_. |
-| email                     | yourname@esciencecenter.nl | Your (work) email address. |
-| copyright_holder          | Netherlands eScience Center | Name(s) of the organization(s) or person(s) who hold the copyright of the software. |
-| code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
+This works because if `path/to/destination` already exists, Copier will
+update what is already there by either adding new files or updating
+existing files. Copier will ask to overwrite any files that resulted in
+conflicts. Especially if your files are already under version control, it is
+recommended to answer 'yes' for all files, you will still be able to review
+the changes suggested by the template.
 
-Once the project files have been generated, follow the steps outlined in
-[{{cookiecutter.directory_name}}/next_steps.md]({{cookiecutter.directory_name}}/next_steps.md).
+### Scenario 3. Updating a template-made package
 
-### Step 3/3: Read about what was just generated
+Copier provides the functionality for re-applying the template to a previously
+created project using the `copier update` command. This has two effects:
 
-Good job! You have now generated the skeleton for your package:
+1. Your project will be updated according to the latest version of the template
+2. You can change any of your previous answers to apply these changes
+   throughout your entire project.
 
-```text
-my-python-project/
-├── .editorconfig
-├── .githooks
-│   └── pre-commit
-├── .github
-│   ├── next_steps
-│   │   ├── 01_sonarcloud_integration.md
-│   │   ├── 02_citation.md
-│   │   ├── 03_readthedocs.md
-│   │   ├── 04_zenodo_integration.md
-│   │   └── 05_linting.md
-│   └── workflows
-│       ├── build.yml
-│       ├── cffconvert.yml
-│       ├── documentation.yml
-│       ├── markdown-link-check.yml
-│       ├── next_steps.yml
-│       └── sonarcloud.yml
-├── .gitignore
-├── .mlc-config.json
-├── .readthedocs.yaml
-├── CHANGELOG.md
-├── CITATION.cff
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── MANIFEST.in
-├── NOTICE
-├── README.dev.md
-├── README.md
-├── docs
-│   ├── Makefile
-│   ├── _templates
-│   │   └── .gitignore
-│   ├── conf.py
-│   ├── index.rst
-│   └── make.bat
-├── next_steps.md
-├── project_setup.md
-├── pyproject.toml
-├── sonar-project.properties
-├── src
-│   └── my_python_package
-│       ├── __init__.py
-│       └── my_module.py
-└── tests
-    ├── __init__.py
-    └── test_my_module.py
+> [!CAUTION]
+> Do not manually update answers in `.copier-answers.yml`,
+> as it will result in unexpected behavior.
+
+```shell
+cd path/to/project
+copier update
 ```
 
-For an explanation of what's there, read on in the [project_setup.md]({{cookiecutter.directory_name}}/project_setup.md) file.
-There are also instructions on how to [apply the template to an existing Python package](ADD_TO_EXISTING_PACKAGE.md).
+If you don't want to change any of your answers, but only want to update your
+project according to the latest template updates, you can provide the
+`--skip-answered` option. This tells Copier to reuse all of your previous
+answers, and simply bring in all updates from the template into
+your current project, such as updating which Python versions are supported.
+You will still be asked to answer any new questions that have been added to
+the template since you last applied it.
+
+```shell
+copier update --skip-answered
+```
 
 ## Examples
 

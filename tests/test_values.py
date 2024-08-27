@@ -1,36 +1,24 @@
-def test_double_quotes_in_name_and_description(cookies):
-    ctx = {
+from test_project import copier_project_defaults
+
+def test_double_quotes_in_name_and_description(copie, copier_project_defaults):
+    project_defaults = copier_project_defaults
+    test_values = {
         "project_short_description": '"double quotes"',
         "full_name": '"name"name'
     }
-    project = cookies.bake(extra_context=ctx)
+    project_defaults.update(test_values)
+    project = copie.copy(extra_answers=project_defaults)
 
     assert project.exit_code == 0
 
 
-def test_single_quotes_in_name_and_description(cookies):
-    ctx = {
+def test_single_quotes_in_name_and_description(copie, copier_project_defaults):
+    project_defaults = copier_project_defaults
+    test_values = {
         "project_short_description": "'single quotes'",
         "full_name": "Mr. O'Keefe"
     }
-    project = cookies.bake(extra_context=ctx)
-
-    assert project.exit_code == 0
-
-
-def test_dash_in_directory_name(cookies):
-    ctx = {
-        "directory_name": "my-python-project"
-    }
-    project = cookies.bake(extra_context=ctx)
-
-    assert project.exit_code == 0
-
-
-def test_space_in_directory_name(cookies):
-    ctx = {
-        "directory_name": "my python project"
-    }
-    project = cookies.bake(extra_context=ctx)
+    project_defaults.update(test_values)
+    project = copie.copy(extra_answers=project_defaults)
 
     assert project.exit_code == 0

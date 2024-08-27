@@ -1,0 +1,69 @@
+---
+# package details
+AddPackageDetails:
+  type: bool
+  default: yes
+  help: |-
+    If you are planning to publish the package it is recommended to provide more details.
+       Do you want to provide extra details for the package?
+  when: "{{ template_profile != 'minimum'}}"
+package_short_description:
+  type: str
+  placeholder: Short description
+  help: Short description of package
+  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
+  validator: >-
+        {% if not package_short_description %}
+        Package description cannot be empty
+        {% endif %}
+keyword1:
+  type: str
+  placeholder: keyword1
+  help: Add keyword1
+  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
+keyword2:
+  type: str
+  placeholder: keyword2
+  help: Add keyword2
+  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
+github_organization:
+  type: str
+  placeholder: "<my-github-organization>"
+  help: Enter the name of your GitHub username or organization
+  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
+  validator: >-
+        {% if not github_organization %}
+        This field cannot be empty
+        {% endif %}
+email:
+  type: str
+  placeholder: yourname@esciencecenter.nl
+  help: What is your email address?
+  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
+  validator: >-
+        {% if not (email | regex_search('([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')) %}
+        Please enter a valid email address
+        {% endif %}
+code_of_conduct_email:
+  type: str
+  placeholder: yourname@esciencecenter.nl
+  help: What is the email address for code of conduct?
+  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
+  validator: >-
+        {% if not (code_of_conduct_email | regex_search('([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')) %}
+        Please enter a valid email address
+        {% endif %}
+copyright_holder:
+  type: str
+  placeholder: Netherlands eScience Center
+  help: Who is the copyright holder?
+  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
+
+# calculated fields for GitHub
+repository:
+  default: git@github.com:{{ github_organization }}/{{ package_name }}
+  when: false
+
+repository_url:
+  default: https://github.com/{{ github_organization }}/{{ package_name }}
+  when: false

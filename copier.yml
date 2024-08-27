@@ -1,0 +1,35 @@
+---
+# General settings for copier
+!include copier/settings.yml
+
+---
+# profiles
+!include copier/profiles.yml
+
+---
+# essential questions about the package details
+!include copier/questions/essential.yml
+
+---
+# additional questions about the package details
+!include copier/questions/package_details.yml
+
+---
+# code quality
+!include copier/questions/features_code_quality.yml
+
+---
+# publish and release
+!include copier/questions/features_publish_release.yml
+
+---
+# publish and release
+!include copier/questions/features_documentation.yml
+
+---
+# community
+!include copier/questions/features_community.yml
+
+---
+# User messages
+!include copier/messages.yml

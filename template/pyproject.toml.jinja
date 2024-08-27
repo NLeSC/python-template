@@ -1,0 +1,158 @@
+# see documentation, e.g.
+# - https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata
+# - https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+# - https://www.python.org/dev/peps/pep-0621/
+
+[build-system]
+requires = ["setuptools>=64.0.0", "setuptools-scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+authors = [
+    { name = "{{ full_name|replace('\"', '\\\"') }}", email = "{{ email }}" }
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "{{ {'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
+        'MIT license': 'License :: OSI Approved :: MIT License',
+        'BSD license': 'License :: OSI Approved :: BSD License',
+        'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
+        'GNU General Public License v3 or later': 'License :: OSI Approved :: GNU General Public License',
+        'Not open source': 'License :: Other/Proprietary License'
+    }[license] }}",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = []
+description = "{{ package_short_description|replace('\"', '\\\"') }}"
+keywords = [
+    "{{ keyword1 }}",
+    "{{ keyword2 }}",
+]
+license = {file = "LICENSE"}
+name = "{{ package_name }}"
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.8"
+version = "{{ version }}"
+
+[project.optional-dependencies]
+dev = [
+    "build",  # build is not only used in publishing (below), but also in the template's test suite
+    "bump-my-version",
+    "coverage [toml]",
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "sphinx",
+    "sphinx_rtd_theme",
+    "sphinx-autoapi",
+    "tox",
+    "myst_parser",
+]
+docs = [
+    "sphinx",
+    "sphinx_rtd_theme",
+    "sphinx-autoapi",
+    "myst_parser",
+]
+publishing = [
+    "build",
+    "twine",
+    "wheel",
+]
+
+[project.urls]
+Repository = "{{ repository_url }}"
+Issues = "{{ repository_url }}/issues"
+{% if AddChangeLog -%}
+Changelog = "{{ repository_url }}/CHANGELOG.md"
+{%- endif %}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["src/{{ package_name }}"]
+command_line = "-m pytest"
+
+[tool.isort]
+lines_after_imports = 2
+force_single_line = 1
+no_lines_before = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+known_first_party = "{{ package_name }}"
+src_paths = ["src/{{ package_name }}", "tests"]
+line_length = 120
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py38,py39,py310,py311,py312
+skip_missing_interpreters = true
+[testenv]
+commands = pytest
+extras = dev
+"""
+
+[tool.ruff]
+line-length = 79
+output-format = "concise"
+extend-exclude = ["docs"]
+
+[tool.ruff.lint]
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Enable Pyflakes `E` and `F` codes by default.
+select = ["ALL"]
+ignore = [
+    "ANN101", # Missing type annotation for `self` in method
+    "ANN102", # Missing type annotation for `cls` in classmethod
+    "ANN204", # Missing return type annotation for special (dunder) method
+    "FBT",    # Using boolean function arguments
+    "TD",     # TODOs
+    "FIX001", # Resolve FIXMEs
+    "FIX002", # Resolve TODOs
+    "B028",   # No explicit `stacklevel` keyword argument found in warning
+    # No docstrings required in the following cases
+    "D100", # Missing module docstring
+    "D104", # Missing public package docstring
+    "D105", # Missing docstring in magic method
+    "D107", # Missing docstring in `__init__`
+]
+pydocstyle.convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+# Tests can ignore a few extra rules
+"tests/**.py" = [
+    "ANN201", # Missing return type annotation for public function
+    "PT011",  # Missing `match` parameter in `pytest.raises()`
+    "S101",   # Use of assert is detected
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["{{ package_name }}"]
+force-single-line = true
+no-lines-before = ["future","standard-library","third-party","first-party","local-folder"]
+
+[tool.bumpversion]
+current_version = "{{ version }}"
+
+[[tool.bumpversion.files]]
+filename = "src/{{ package_name }}/__init__.py"
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+
+{% if AddCitation -%}
+[[tool.bumpversion.files]]
+filename = "CITATION.cff"
+{%- endif %}
+
+[[tool.bumpversion.files]]
+filename = "docs/conf.py"

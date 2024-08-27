@@ -1,6 +1,35 @@
 # Change Log
 
-## Unreleased
+## [Unreleased]
+
+### Added
+* Keep project_setup.md for all the profiles and remove from the menu [#576](https://github.com/NLeSC/python-template/pull/576)
+* Make contributing guidelines optional [#465](https://github.com/NLeSC/python-template/pull/465)
+* Make linting optional [#568](https://github.com/NLeSC/python-template/pull/568)
+* Make editorconfig optional [#571](https://github.com/NLeSC/python-template/pull/571)
+* Make contributing guidelines optional [#465](https://github.com/NLeSC/python-template/pull/465)
+* Make developer documentation optional [#467](https://github.com/NLeSC/python-template/pull/541)
+* Make Code of Conduct optional [#464](https://github.com/NLeSC/python-template/pull/530)
+* New YAML files for copier questions [#529](https://github.com/NLeSC/python-template/pull/529)
+* Make zenodo next step instructions optional [#520](https://github.com/NLeSC/python-template/pull/520)
+* Make SonarCloud optional [#515](https://github.com/NLeSC/python-template/pull/515)
+* Make citation optional [#471](https://github.com/NLeSC/python-template/pull/471)
+* Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
+
+### Changed
+* Updated the user documentation (README.md) of the template [#569](https://github.com/NLeSC/python-template/pull/569)
+* Droped Python 3.8 and 3.9 support [#551](https://github.com/NLeSC/python-template/pull/551)
+* Fix broken link checker [#546](https://github.com/NLeSC/python-template/pull/546)
+* pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
+* CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
+* Restored default line-length of 79 characters, as recommended by [PEP-8](https://peps.python.org/pep-0008/#maximum-line-length) [#389](https://github.com/NLeSC/python-template/pull/389)
+
+### Removed
+
+
+## [0.5.0]
+
+Released on August 15, 2024
 
 ### Added
 
@@ -9,10 +38,13 @@
 * Docstring for function
 * Intersphinx to documentation
 * Coverage and doctest commands for documentation [#97](https://github.com/NLeSC/python-template/issues/97)
+* Added new 'docs' section in extra dependencies [#317](https://github.com/NLeSC/python-template/issues/317)
 
 ### Changed
 
-* Restored default line-length of 79 characters, as recommended by [PEP-8](https://peps.python.org/pep-0008/#maximum-line-length) [#389](https://github.com/NLeSC/python-template/pull/389)
+* Made copier configuration more modular [#529](https://github.com/NLeSC/python-template/pull/529)
+* pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
+* CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
 * Moved to src/ based layout for generated packages
 * Moved from setup.cfg/.py to pyproject.toml [#351](https://github.com/NLeSC/python-template/issues/351)
 * Moved from prospector to ruff [#336](https://github.com/NLeSC/python-template/issues/336)
@@ -28,6 +60,7 @@
 * Regenerated docs/conf.py with sphinx-quickstart v3.5.4 + enabled built-in extensions [#44](https://github.com/NLeSC/python-template/issues/44)
 * Generate api rst files with extension instead of custom function [#95](https://github.com/NLeSC/python-template/issues/95)
 * Change from bump2version (unmaintained) to bump-my-version.
+* Set markdown link checker to quiet mode: only report broken links [#262](https://github.com/NLeSC/python-template/issues/262)
 
 ### Removed
 
@@ -37,7 +70,9 @@
 * Statements in project_setup.md already mentioned in README.dev.md
 * .zenodo.json is no longer necessary, CITATION.cff also works with Zenodo.
 
-## 0.4.0
+## [0.4.0]
+
+Released on May 3, 2021
 
 ### Added
 
@@ -67,7 +102,9 @@
 
 * Automatic publish to PyPi after GitHub release [#196](https://github.com/NLeSC/python-template/issues/196)
 
-## 0.3.0
+## [0.3.0]
+
+Released on Apr 22, 2021
 
 ### Added
 
@@ -98,14 +135,15 @@
 * Updated Code of Conduct for generated package
 * Improved the documentation for the generated package and template itself
 
-## Removed
+### Removed
+
 * Dropped appveyor [#160](https://github.com/NLeSC/python-template/issues/160)
 * Dropped everything Conda related
 * Drop Python 3.5 support
 * Removed unit tests doing the linting
 
 
-## 0.2.0
+## [0.2.0]
 
 Released on July 17, 2019
 
@@ -143,7 +181,7 @@ Released on July 17, 2019
 
 * Python 2 support
 
-## 0.1.0
+## [0.1.0]
 
 Released on July 12, 2018.
 
@@ -163,3 +201,11 @@ Released on July 12, 2018.
 	- README
 	- Requirements.txt
 	- Setup configuration
+
+
+[Unreleased]: https://github.com/NLeSC/python-template//compare/0.5.0...HEAD
+[0.5.0]:      https://github.com/NLeSC/python-template/releases/tag/0.5.0
+[0.4.0]:      https://github.com/NLeSC/python-template/releases/tag/0.4.0
+[0.3.0]:      https://github.com/NLeSC/python-template/releases/tag/0.3.0
+[0.2.0]:      https://github.com/NLeSC/python-template/releases/tag/0.2.0
+[0.1.0]:      https://github.com/NLeSC/python-template/releases/tag/0.1.0

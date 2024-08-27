@@ -1,0 +1,20 @@
+#!/bin/sh
+
+echo "Script $0 triggered ..."
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+echo "Starting ruff analysis..."
+
+# quietly run ruff
+ruff check --fix
+ruff format
+
+# use return code to abort commit if necessary
+if [ $? != "0" ]; then
+    echo "Commit aborted. Fix linter issues found by ruff before committing."
+    exit 1
+fi
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+echo "Pre-commit checks completed successfully."
+exit 0
