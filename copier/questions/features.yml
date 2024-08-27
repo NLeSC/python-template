@@ -64,4 +64,4 @@ AddProjectSetup:
   when: "{{ template_profile == 'ask' }}"
   type: bool
   default: "{{ template_profile != 'minimum' }}"
-  help: Add project setup instructions?
+  help: Add a document to describe project setup?
