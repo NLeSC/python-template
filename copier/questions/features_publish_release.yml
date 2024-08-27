@@ -1,0 +1,72 @@
+---
+# Questions for publishing and releasing features
+
+# the main menu
+SelectPublishReleaseFeatures:
+  when: "{{ template_profile != 'minimum' }}"
+  type: yaml
+  default: |-
+    {% if template_profile == 'recommended' %}
+      [SelectCitation_flag, AddZenodo_flag]
+    {%- else -%}
+      []
+    {%- endif %}
+  help: Select publish and release features
+  multiselect: true
+  choices:
+    Citation:
+      value: SelectCitation_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Changelog:
+      value: AddChangeLog_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Zenodo integration instructions:
+      value: AddZenodo_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Package keywords(NOT_IMPLEMENTED):
+      value: not_implemented_keywords
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+
+
+# Sub-menus
+# split AddCitation --> enable_citation_file and enable_cffconvert
+SelectCitation:
+  when: "{{ 'SelectCitation_flag' in SelectPublishReleaseFeatures }}"
+  type: yaml
+  default: |-
+    {% if template_profile == 'recommended' %}
+      [AddCitationFile_flag, AddCFFConvert_flag]
+    {%- else -%}
+      []
+    {%- endif %}
+  help: Select citation features
+  multiselect: true
+  choices:
+    CITATION.cff file:
+      value: AddCitationFile_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    cffconvert GitHub Action (to validate CITATION.cff files):
+      value: AddCFFConvert_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+
+
+# computed features
+AddCitation:
+  type: bool
+  default: "{{ 'AddCitationFile_flag' in SelectCitation }}"
+  when: false
+
+AddCFFConvert:
+  type: bool
+  default: "{{ 'AddCFFConvert_flag' in SelectCitation }}"
+  when: false
+
+AddChangeLog:
+  type: bool
+  default: "{{ 'AddChangeLog_flag' in SelectPublishReleaseFeatures }}"
+  when: false
+
+AddZenodo:
+  type: bool
+  default: "{{ 'AddZenodo_flag' in SelectPublishReleaseFeatures }}"
+  when: false
