@@ -17,6 +17,7 @@
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
 
 ### Changed
+* next_steps.md is shown as a copier message [#609](https://github.com/NLeSC/python-template/pull/609)
 * Updated the user documentation (README.md) of the template [#569](https://github.com/NLeSC/python-template/pull/569)
 * Droped Python 3.8 and 3.9 support [#551](https://github.com/NLeSC/python-template/pull/551)
 * Fix broken link checker [#546](https://github.com/NLeSC/python-template/pull/546)
