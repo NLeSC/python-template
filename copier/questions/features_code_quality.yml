@@ -7,7 +7,7 @@ SelectCodeQualityFeatures:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [SelectGitHubActions_flag, not_implemented_linting, AddSonarCloud_flag, not_implemented_editor_config]
+      [SelectGitHubActions_flag, not_implemented_linting, AddSonarCloud_flag, AddEditorConfig_flag]
     {%- else -%}
       []
     {%- endif %}
@@ -26,8 +26,8 @@ SelectCodeQualityFeatures:
     Code analysis (using SonarCloud):
       value: AddSonarCloud_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-    Editorconfig (NOT_IMPLEMENTED):
-      value: not_implemented_editor_config
+    Editorconfig:
+      value: AddEditorConfig_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
 
@@ -79,4 +79,9 @@ AddPreCommit:
 AddSonarCloud:
   type: bool
   default: "{{ 'AddSonarCloud_flag' in SelectCodeQualityFeatures }}"
+  when: false
+
+AddEditorConfig:
+  type: bool
+  default: "{{ 'AddEditorConfig_flag' in SelectCodeQualityFeatures }}"
   when: false
