@@ -1,0 +1,36 @@
+---
+# Questions for documentation features
+
+# the main menu
+SelectDocumentationFeatures:
+  when: "{{ template_profile != 'minimum' }}"
+  type: yaml
+  default: |-
+    {% if template_profile == 'recommended' %}
+      [AddOnlineDocumentation_flag, AddDevDoc_flag, not_implemented_project_setup]
+    {%- else -%}
+      []
+    {%- endif %}
+  help: Select documentation features
+  multiselect: true
+  choices:
+    Online documentation (using Read the Docs):
+      value: AddOnlineDocumentation_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Developer documentation:
+      value: AddDevDoc_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Project setup description (NOT_IMPLEMENTED):
+      value: not_implemented_project_setup
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+
+# computed features
+AddOnlineDocumentation:
+  type: bool
+  default: "{{ 'AddOnlineDocumentation_flag' in SelectDocumentationFeatures }}"
+  when: false
+
+AddDevDoc:
+  type: bool
+  default: "{{ 'AddDevDoc_flag' in SelectDocumentationFeatures }}"
+  when: false

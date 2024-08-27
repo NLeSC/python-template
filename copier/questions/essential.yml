@@ -10,16 +10,28 @@ package_name:
         {% endif %}
 version:
   type: str
-  placeholder: 0.1.0
+  default: 0.1.0
   help: Enter the version of the Python package
+  validator: >-
+        {% if not (version | regex_search('^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$')) %}
+        Package version should use Semantic Versioning 2.0.0 (MAJOR.MINOR.PATCH)
+        {% endif %}
+full_name:
+  type: str
+  placeholder: Jane Smith
+  help: Enter your full name
+  validator: >-
+        {% if not full_name %}
+        Name cannot be empty
+        {% endif %}
 license:
   type: str
   choices:
-  - "Apache Software License 2.0"
+  - "Apache-2.0"
   - "MIT license"
   - "BSD license"
   - "ISC license"
   - "GNU General Public License v3 or later"
   - "GNU Lesser General Public License v3 or later"
   - "Not open source"
-  default: "Apache Software License 2.0"
+  default: "Apache-2.0"
