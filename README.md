@@ -1,6 +1,6 @@
 # Netherlands eScience Center Python Template
 
-Spend less time setting up and configuring your new Python packages and comply with the [Netherlands eScience Center Software Development Guide](https://guide.esciencecenter.nl/) from the start.
+Spend less time setting up and configuring your new Python packages which includes research software good practices from the start.
 
 Use this [Copier](https://copier.readthedocs.io) template to generate an empty Python package. Features include:
 
@@ -64,95 +64,17 @@ pipx install copier
 
 ### Scenario 1: Create a new package
 
-
-#### Step 1/2: Create the files and directory structure
-
 Run `copier copy` with the template:
 
 ```shell
-# Notes:
-#   1. Make sure that `path/to/destination` is an empty directory
-#   2. See table below for explanation of each question
-#   3. The files will be generated in the specified destination directory
 copier copy https://github.com/nlesc/python-template.git path/to/destination
 ```
 
-| Name                      | Default value | Explanation |
-| ------------------------- | ------------- | ----------- |
-| package_name              | my_python_package | Name of the package. Avoid using spaces, dashes, or uppercase letters for the best experience across operating systems. This also will be used as the github repository name.|
-| package_short_description | Short description of package | The information that you enter here will end up in the README, documentation, license, and pyproject.toml, so it may be a good idea to prepare something in advance. |
-| keyword1                  | keyword1          | A term that describes your package. |
-| keyword2                  | keyword2          | Another term that describes your package. |
-| version                   | 0.1.0             | &nbsp; |
-| github_organization       | &lt;my-github-organization&gt; | GitHub organization that will contain this project's repository. This can also be your GitHub user name. |
-| license                   | Apache Software License 2.0 | The software license under which the code is made available.  |
-| full_name                 | Jane Smith        | Your full name, e.g. _Jane Smith_. |
-| email                     | yourname@esciencecenter.nl | Your (work) email address. |
-| copyright_holder          | Netherlands eScience Center | Name(s) of the organization(s) or person(s) who hold the copyright of the software. |
-| code_of_conduct_email     | yourname@esciencecenter.nl | Email address of the person who should be contacted in case of violations of the Code of Conduct. |
+> [!NOTE]
+> 1. Make sure that `path/to/destination` is an empty directory
+> 1. Based on the profile and selected features, the package will be generated in the specified destination directory
 
-Once the project files have been generated, follow the steps outlined in
-[next_steps.md](template/next_steps.md.jinja).
-
-#### Step 2/2: Read about what was just generated
-
-Good job! You have now generated the skeleton for your package:
-
-```text
-.
-├── CHANGELOG.md
-├── CITATION.cff
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── .copier-answers.yml
-├── docs
-│   ├── conf.py
-│   ├── index.rst
-│   ├── make.bat
-│   ├── Makefile
-│   └── _templates
-│       └── .gitignore
-├── .editorconfig
-├── .githooks
-│   └── pre-commit
-├── .github
-│   ├── next_steps
-│   │   ├── 01_sonarcloud_integration.md
-│   │   ├── 02_citation.md
-│   │   ├── 03_readthedocs.md
-│   │   ├── 04_zenodo_integration.md
-│   │   └── 05_linting.md
-│   └── workflows
-│       ├── build.yml
-│       ├── cffconvert.yml
-│       ├── documentation.yml
-│       ├── markdown-link-check.yml
-│       ├── next_steps.yml
-│       └── sonarcloud.yml
-├── .gitignore
-├── MANIFEST.in
-├── .mlc-config.json
-├── next_steps.md
-├── NOTICE
-├── project_setup.md
-├── pyproject.toml
-├── README.dev.md
-├── README.md
-├── .readthedocs.yaml
-├── sonar-project.properties
-├── src
-│   └── my_python_package
-│       ├── __init__.py
-│       └── my_module.py
-├── tests
-│   ├── __init__.py
-│   ├── test_my_module.py
-│   ├── test_project.py
-│   └── test_values.py
-└── .zenodo.json
-```
-
-For an explanation of what's there, read on in the [project_setup.md](template/project_setup.md.jinja) file.
+For an explanation of what's there, read on in the `project_setup.md` file.
 
 ### Scenario 2: Apply to pre-existing code
 

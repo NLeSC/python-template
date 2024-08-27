@@ -7,7 +7,7 @@ SelectCodeQualityFeatures:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [SelectGitHubActions_flag, AddLinting_flag, AddSonarCloud_flag, not_implemented_editor_config]
+      [SelectGitHubActions_flag, AddLinting_flag, AddSonarCloud_flag, AddEditorConfig_flag]
     {%- else -%}
       []
     {%- endif %}
@@ -26,8 +26,8 @@ SelectCodeQualityFeatures:
     Code analysis (using SonarCloud):
       value: AddSonarCloud_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-    Editorconfig (NOT_IMPLEMENTED):
-      value: not_implemented_editor_config
+    Editorconfig:
+      value: AddEditorConfig_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
 
@@ -60,28 +60,26 @@ AddGitHubActionBuild:
   type: bool
   default: "{{ 'AddGitHubActionBuild_flag' in SelectGitHubActions }}"
   when: false
-
 AddGitHubActionDocumentation:
   type: bool
   default: "{{ 'AddGitHubActionDocumentation_flag' in SelectGitHubActions }}"
   when: false
-
 AddLinkCheck:
   type: bool
   default: "{{ 'AddLinkCheck_flag' in SelectGitHubActions }}"
   when: false
-
 AddPreCommit:
   type: bool
   default: "{{ 'AddPreCommit_flag' in SelectCodeQualityFeatures }}"
   when: false
-
 AddSonarCloud:
   type: bool
   default: "{{ 'AddSonarCloud_flag' in SelectCodeQualityFeatures }}"
   when: false
-
 AddLinting:
   type: bool
   default: "{{ 'AddLinting_flag' in SelectCodeQualityFeatures }}"
+AddEditorConfig:
+  type: bool
+  default: "{{ 'AddEditorConfig_flag' in SelectCodeQualityFeatures }}"
   when: false

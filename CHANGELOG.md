@@ -4,6 +4,7 @@
 
 ### Added
 * Make linting optional [#568](https://github.com/NLeSC/python-template/pull/568)
+* Make editorconfig optional [#571](https://github.com/NLeSC/python-template/pull/571)
 * Make contributing guidelines optional [#465]()
 * Make developer documentation optional [#467](https://github.com/NLeSC/python-template/pull/541)
 * Make Code of Conduct optional [#464](https://github.com/NLeSC/python-template/pull/530)
@@ -14,6 +15,7 @@
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
 
 ### Changed
+* Updated the user documentation (README.md) of the template [#569](https://github.com/NLeSC/python-template/pull/569)
 * Droped Python 3.8 and 3.9 support [#551](https://github.com/NLeSC/python-template/pull/551)
 * Fix broken link checker [#546](https://github.com/NLeSC/python-template/pull/546)
 * pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
