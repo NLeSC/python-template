@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+* Make editorconfig optional [#571](https://github.com/NLeSC/python-template/pull/571)
 * Make contributing guidelines optional [#465]()
 * Make developer documentation optional [#467](https://github.com/NLeSC/python-template/pull/541)
 * Make Code of Conduct optional [#464](https://github.com/NLeSC/python-template/pull/530)
