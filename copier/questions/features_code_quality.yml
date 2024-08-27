@@ -79,6 +79,7 @@ AddSonarCloud:
 AddLinting:
   type: bool
   default: "{{ 'AddLinting_flag' in SelectCodeQualityFeatures }}"
+  when: false
 AddEditorConfig:
   type: bool
   default: "{{ 'AddEditorConfig_flag' in SelectCodeQualityFeatures }}"
