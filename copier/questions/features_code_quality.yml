@@ -7,7 +7,7 @@ SelectCodeQualityFeatures:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [SelectGitHubActions_flag, not_implemented_linting, AddSonarCloud_flag, AddEditorConfig_flag]
+      [SelectGitHubActions_flag, AddLinting_flag, AddSonarCloud_flag, AddEditorConfig_flag]
     {%- else -%}
       []
     {%- endif %}
@@ -17,8 +17,8 @@ SelectCodeQualityFeatures:
     GitHub Actions:
       value: SelectGitHubActions_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-    Linting (using ruff NOT_IMPLEMENTED):
-      value: not_implemented_linting
+    Linting:
+      value: AddLinting_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Pre-commit:
       value: AddPreCommit_flag
@@ -60,27 +60,26 @@ AddGitHubActionBuild:
   type: bool
   default: "{{ 'AddGitHubActionBuild_flag' in SelectGitHubActions }}"
   when: false
-
 AddGitHubActionDocumentation:
   type: bool
   default: "{{ 'AddGitHubActionDocumentation_flag' in SelectGitHubActions }}"
   when: false
-
 AddLinkCheck:
   type: bool
   default: "{{ 'AddLinkCheck_flag' in SelectGitHubActions }}"
   when: false
-
 AddPreCommit:
   type: bool
   default: "{{ 'AddPreCommit_flag' in SelectCodeQualityFeatures }}"
   when: false
-
 AddSonarCloud:
   type: bool
   default: "{{ 'AddSonarCloud_flag' in SelectCodeQualityFeatures }}"
   when: false
-
+AddLinting:
+  type: bool
+  default: "{{ 'AddLinting_flag' in SelectCodeQualityFeatures }}"
+  when: false
 AddEditorConfig:
   type: bool
   default: "{{ 'AddEditorConfig_flag' in SelectCodeQualityFeatures }}"

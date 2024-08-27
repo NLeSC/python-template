@@ -5,8 +5,9 @@
 ### Added
 * Keep project_setup.md for all the profiles and remove from the menu [#576](https://github.com/NLeSC/python-template/pull/576)
 * Make contributing guidelines optional [#465](https://github.com/NLeSC/python-template/pull/465)
+* Make linting optional [#568](https://github.com/NLeSC/python-template/pull/568)
 * Make editorconfig optional [#571](https://github.com/NLeSC/python-template/pull/571)
-* Make contributing guidelines optional [#465]()
+* Make contributing guidelines optional [#465](https://github.com/NLeSC/python-template/pull/465)
 * Make developer documentation optional [#467](https://github.com/NLeSC/python-template/pull/541)
 * Make Code of Conduct optional [#464](https://github.com/NLeSC/python-template/pull/530)
 * New YAML files for copier questions [#529](https://github.com/NLeSC/python-template/pull/529)

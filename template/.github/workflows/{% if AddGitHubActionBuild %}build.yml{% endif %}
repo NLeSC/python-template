@@ -38,6 +38,7 @@ jobs:
       - name: Verify that we can build the package
         run: python -m build
 
+{%- if AddLinting -%}
   lint:
     name: Linting build
     runs-on: ubuntu-latest
@@ -62,3 +63,4 @@ jobs:
         run: |
           ruff check
           ruff format --check
+{%- endif -%}
