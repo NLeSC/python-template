@@ -1,0 +1,87 @@
+---
+# Questions for code quality features
+
+# the main menu
+SelectCodeQualityFeatures:
+  when: "{{ template_profile != 'minimum' }}"
+  type: yaml
+  default: |-
+    {% if template_profile == 'recommended' %}
+      [SelectGitHubActions_flag, not_implemented_linting, AddSonarCloud_flag, AddEditorConfig_flag]
+    {%- else -%}
+      []
+    {%- endif %}
+  help: Select code quality features
+  multiselect: true
+  choices:
+    GitHub Actions:
+      value: SelectGitHubActions_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Linting (using ruff NOT_IMPLEMENTED):
+      value: not_implemented_linting
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Pre-commit:
+      value: AddPreCommit_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Code analysis (using SonarCloud):
+      value: AddSonarCloud_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Editorconfig:
+      value: AddEditorConfig_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+
+
+# Sub-menus
+SelectGitHubActions:
+  when: "{{ 'SelectGitHubActions_flag' in SelectCodeQualityFeatures }}"
+  type: yaml
+  default: |-
+    {% if template_profile == 'recommended' %}
+      [AddGitHubActionBuild_flag, AddGitHubActionDocumentation_flag]
+    {%- else -%}
+      []
+    {%- endif %}
+  help: Select GitHub Action workflows
+  multiselect: true
+  choices:
+    Build:
+      value: AddGitHubActionBuild_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Documentation:
+      value: AddGitHubActionDocumentation_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Link checker (reports broken URLs):
+      value: AddLinkCheck_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+
+
+# computed features
+AddGitHubActionBuild:
+  type: bool
+  default: "{{ 'AddGitHubActionBuild_flag' in SelectGitHubActions }}"
+  when: false
+
+AddGitHubActionDocumentation:
+  type: bool
+  default: "{{ 'AddGitHubActionDocumentation_flag' in SelectGitHubActions }}"
+  when: false
+
+AddLinkCheck:
+  type: bool
+  default: "{{ 'AddLinkCheck_flag' in SelectGitHubActions }}"
+  when: false
+
+AddPreCommit:
+  type: bool
+  default: "{{ 'AddPreCommit_flag' in SelectCodeQualityFeatures }}"
+  when: false
+
+AddSonarCloud:
+  type: bool
+  default: "{{ 'AddSonarCloud_flag' in SelectCodeQualityFeatures }}"
+  when: false
+
+AddEditorConfig:
+  type: bool
+  default: "{{ 'AddEditorConfig_flag' in SelectCodeQualityFeatures }}"
+  when: false

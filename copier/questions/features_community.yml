@@ -1,0 +1,33 @@
+---
+# Questions for community features
+
+# the main menu
+SelectCommunityFeatures:
+  when: "{{ template_profile != 'minimum' }}"
+  type: yaml
+  default: |-
+    {% if template_profile == 'recommended' %}
+      [AddCodeConduct_flag, AddContributing_flag]
+    {%- else -%}
+      []
+    {%- endif %}
+  help: Select community features
+  multiselect: true
+  choices:
+    Code of conduct:
+      value: AddCodeConduct_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Contributing guidelines:
+      value: AddContributing_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+
+# computed features
+AddCodeConduct:
+  type: bool
+  default: "{{ 'AddCodeConduct_flag' in SelectCommunityFeatures }}"
+  when: false
+
+AddContributing:
+  type: bool
+  default: "{{ 'AddContributing_flag' in SelectCommunityFeatures }}"
+  when: false
