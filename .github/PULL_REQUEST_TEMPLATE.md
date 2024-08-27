@@ -1,35 +1,69 @@
-**Description**
-
+## Checklist before requesting a review
+<!-- partly taken from https://axolo.co/blog/p/part-3-github-pull-request-template -->
 - [ ] I have read the [contribution guidelines](https://github.com/NLeSC/python-template/blob/main/CONTRIBUTING.md)
-- [ ] This update is in line with what is recommended in the [Python chapter of the Guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python)
+- [ ] My code follows the style guidelines of this project
+- [ ] I have performed a self-review of my code
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have made corresponding changes to the documentation
+- [ ] My changes generate no new warnings
+- [ ] I have added tests that prove my fix is effective or that my feature works
+- [ ] New and existing unit tests pass locally with my changes
 - [ ] All user facing changes have been added to CHANGELOG.md
+<!-- - [ ] Any dependent changes have been merged and published in downstream modules -->
 
-<!-- Description of PR -->
+## Type of change
 
-<!--
-**Related issues**:
-- ...
--->
+Please delete options that are not relevant.
+
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] This change requires a documentation update
+
+## List of related issues or pull requests**
+
+<!-- add all related issues to the list below -->
+Refs:
+- #ISSUE_NUMBER_1
+- #ISSUE_NUMBER_2
+
+## Describe the changes made in this pull request
+
+Please include a summary of the changes and the related issue. Please also include relevant motivation and context. List any dependencies that are required for this change.
 
 **Instructions to review the pull request**
 
-<!-- remove what doesn't apply or add more if needed -->
-Create a `python-template-test` repo on GitHub (will be overwritten if existing)
+<!-- remove/update what doesn't apply or add more if needed -->
+
+Install the requirements
+
 ```
-# Create a temporary directory by running the following command. Keep the XXXXXX in the directory name. 
 cd $(mktemp -d --tmpdir py-tmpl-XXXXXX)
-# Use --vcs-ref <pr-branch> to point to the branch you want to test
-copier copy --vcs-ref <pr-branch> https://github.com/<pr-user>/python-template .
-# Fill with python-template-test info
-# Create a local git repo to push to GitHub to trigger CI actions
+pip install pipx
+pipx install copier
+```
+
+Create a new package using the template
+
+```
+copier copy --vcs-ref <YOUR_BRANCH> https://github.com/nlesc/python-template test_package
+```
+
+Create a local git repo to push to GitHub to trigger CI actions
+```
 git init
 git add --all
 git commit -m "First commit"
-git remote add origin git@github.com:<you>/python-template-test.git
+git remote add origin git@github.com:<YOU>/python-template-test.git
 git push -u origin main -f
+```
+
+```
 # Create a local environment to test your generated package locally
 python -m venv env
 source env/bin/activate
 python -m pip install --upgrade pip setuptools
 python -m pip install '.[dev,publishing]'
 ```
+
+<!-- Other steps -->
