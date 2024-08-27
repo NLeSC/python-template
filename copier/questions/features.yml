@@ -60,3 +60,8 @@ AddDevDoc:
   type: bool
   default: "{{ template_profile != 'minimum' }}"
   help: Add developer documentation?
+AddEditorConfig:
+  when: "{{ template_profile == 'ask' }}"
+  type: bool
+  default: "{{ template_profile != 'minimum' }}"
+  help: Add editorconfig file?
