@@ -39,6 +39,10 @@ If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
 
+- Template profile
+  - [ ] recommended
+  - [ ] minimum
+  - [ ] let me choose 
 - OS:
 <!-- run this command: uname -a -->
 - version:
