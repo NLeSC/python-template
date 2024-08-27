@@ -9,15 +9,39 @@ _message_before_copy: |
     input to each of them.
 
 _message_after_copy: |
-    Your project "{{ package_name }}" has been created successfully!
+    Your project "{{ package_name }}" has been successfully created in {{ _copier_conf.dst_path }} folder!
 
-    Next steps:
+    {% if template_profile != 'minimum' -%}
 
-    1. Change directory to the project root:
+        Next steps:
 
-        $ cd {{ _copier_conf.dst_path }}
+            - Below are the commands to put your Python package under using git:
 
-    2. Read next_steps.md which contains information on next steps.
+                cd {{ _copier_conf.dst_path }}
+                git init
+                git add --all
+                git commit -m "first commit"
+                git branch -M main
+                git remote add origin {{ repository }}
+
+            - Push the initial commit to a new repo on GitHub
+
+                Go to https://github.com/organizations/{{github_organization}}/repositories/new
+                and create a new repository named `{{ package_name }}` as an empty repository, then push your commits to GitHub:
+
+                git push --set-upstream origin main
+
+          {% if AddDevDoc -%}
+            - Project development documentation
+
+                The [README.dev.md](README.dev.md) contains developer documentation
+          {%- endif-%}
+
+            - Project layout explained
+
+                For an explanation of what files are there, and what each of these do, please refer to {{ _copier_conf.dst_path }}/project_setup.md
+
+    {%- endif-%}
 
 _message_before_update: |
     Thanks for updating your project using our template.
