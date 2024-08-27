@@ -1,6 +1,6 @@
 # Netherlands eScience Center Python Template
 
-Spend less time setting up and configuring your new Python packages and comply with the [Netherlands eScience Center Software Development Guide](https://guide.esciencecenter.nl/) from the start.
+Spend less time setting up and configuring your new Python packages which includes research software good practices from the start.
 
 Use this [Copier](https://copier.readthedocs.io) template to generate an empty Python package. Features include:
 
