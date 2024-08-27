@@ -31,7 +31,7 @@ _message_after_copy: |
 
                 git push --set-upstream origin main
 
-          {% if AddDevDoc -%}
+          {% if AddDevDoc %}
             - Project development documentation
 
                 The [README.dev.md](README.dev.md) contains developer documentation
