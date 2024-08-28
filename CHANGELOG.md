@@ -17,6 +17,7 @@
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
 
 ### Changed
+* added value field to license options [#617](https://github.com/NLeSC/python-template/pull/617)
 * next_steps.md is shown as a copier message [#609](https://github.com/NLeSC/python-template/pull/609)
 * Change the default profile to 'recommended' [#598](https://github.com/NLeSC/python-template/pull/598)
 * Updated the user documentation (README.md) of the template [#569](https://github.com/NLeSC/python-template/pull/569)
