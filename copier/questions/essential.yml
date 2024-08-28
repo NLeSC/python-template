@@ -33,5 +33,5 @@ license:
   - "ISC license"
   - "GNU General Public License v3 or later"
   - "GNU Lesser General Public License v3 or later"
-  - "Not open source"
+  - "Other (add your own license)"
   default: "Apache-2.0"
