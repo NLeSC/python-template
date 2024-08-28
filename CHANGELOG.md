@@ -17,6 +17,7 @@
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
 
 ### Changed
+* copyright owner is asked in all profiles [#629](https://github.com/NLeSC/python-template/pull/629)
 * license files includes year and copyright owner information [#629](https://github.com/NLeSC/python-template/pull/629)
 * added value field to license options [#617](https://github.com/NLeSC/python-template/pull/617)
 * fix filename typo of githooks [#611](https://github.com/NLeSC/python-template/pull/609)
