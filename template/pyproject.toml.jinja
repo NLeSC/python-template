@@ -31,8 +31,9 @@ classifiers = [
 dependencies = []
 description = "{{ package_short_description|replace('\"', '\\\"') }}"
 keywords = [
-    "{{ keyword1 }}",
-    "{{ keyword2 }}",
+{%- for item in keywords.split(',') -%}
+"{{ item }}"{{ "," if not loop.last }}
+{%- endfor -%}
 ]
 license = {file = "LICENSE"}
 name = "{{ package_name }}"
