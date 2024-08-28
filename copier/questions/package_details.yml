@@ -17,7 +17,7 @@ package_short_description:
         {% endif %}
 keywords:
   type: str
-  placeholder: keywords
+  placeholder: keyword1,second keyword,third keyword
   help: Add keywords to make your package findable on PyPI
 github_organization:
   type: str
