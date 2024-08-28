@@ -4,11 +4,11 @@ Are you writing research software? Save your time on setting up and configuring 
 
 ## User profiles
 - **Minimum**
-  As the name says is the bare minimum to get started with a Python package. 
+  As the name suggests, this profile provides the bare essentials to get started with a Python package.This is a good place to start if this is your first time writing research software. You can always add more features later. 
 - **Recommended**
-  This profile is based on the Minimum and includes set of carefully selected features which we believe the users might want. However, all features can be modified by the user.
+  Building on the Minimum profile, this option includes a carefully selected set of features that we believe users will find useful. However, all features can be customized by the user.
 - **Let me choose**
-  This is a fully customizable profile. You can choose from a list of features to include in your package as you like.
+  This fully customizable profile allows you to select from a list of features to include in your package according to your preferences.
 
 ## Features
 
