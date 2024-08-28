@@ -27,11 +27,18 @@ full_name:
 license:
   type: str
   choices:
-  - "Apache-2.0"
-  - "MIT license"
-  - "BSD license"
-  - "ISC license"
-  - "GNU General Public License v3 or later"
-  - "GNU Lesser General Public License v3 or later"
-  - "Not open source"
-  default: "Apache-2.0"
+    Apache License, Version 2.0:
+      value: Apachev2
+    MIT license:
+      value: MIT
+    BSD license:
+      value: BSD
+    ISC license:
+      value: ISC
+    GNU General Public License v3 or later:
+      value: GNUv3
+    GNU Lesser General Public License v3 or later:
+      value: GNULesserv3
+    Other (add your own license):
+      value: Other
+  default: "Apachev2"

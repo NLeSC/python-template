@@ -38,7 +38,7 @@ email:
 code_of_conduct_email:
   type: str
   default: "{{ email }}"
-  help: What is the email address for code of conduct?
+  help: What is the email address to report code of conduct violations?
   validator: >-
         {% if not (code_of_conduct_email | regex_search('([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')) %}
         Please enter a valid email address
