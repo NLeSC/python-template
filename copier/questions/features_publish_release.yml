@@ -23,10 +23,6 @@ SelectPublishReleaseFeatures:
     Zenodo integration instructions:
       value: AddZenodo_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-    Package keywords(NOT_IMPLEMENTED):
-      value: not_implemented_keywords
-      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-
 
 # Sub-menus
 # split AddCitation --> enable_citation_file and enable_cffconvert
