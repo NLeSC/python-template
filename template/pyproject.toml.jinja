@@ -71,11 +71,10 @@ Repository = "{{ repository_url }}"
 Issues = "{{ repository_url }}/issues"
 {% if AddChangeLog -%}
 Changelog = "{{ repository_url }}/CHANGELOG.md"
-{%- endif %}
+{% endif -%}
 {% if AddOnlineDocumentation -%}
 ReadTheDocs = "https://{{ package_name }}.readthedocs.io"
-{%- endif %}
-
+{% endif %}
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
