@@ -10,6 +10,8 @@
 * Make contributing guidelines optional [#465](https://github.com/NLeSC/python-template/pull/465)
 * Make developer documentation optional [#467](https://github.com/NLeSC/python-template/pull/541)
 * Make Code of Conduct optional [#464](https://github.com/NLeSC/python-template/pull/530)
+* CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
+* pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
 * New YAML files for copier questions [#529](https://github.com/NLeSC/python-template/pull/529)
 * Make zenodo next step instructions optional [#520](https://github.com/NLeSC/python-template/pull/520)
 * Make SonarCloud optional [#515](https://github.com/NLeSC/python-template/pull/515)
@@ -17,6 +19,7 @@
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
 
 ### Changed
+* Made copier configuration more modular [#529](https://github.com/NLeSC/python-template/pull/529)
 * Allow uppercase in package name [#613](https://github.com/NLeSC/python-template/pull/613)
 * next_steps.md is shown as a copier message [#609](https://github.com/NLeSC/python-template/pull/609)
 * Change the default profile to 'recommended' [#598](https://github.com/NLeSC/python-template/pull/598)
@@ -42,9 +45,6 @@ Released on August 15, 2024
 * Added new 'docs' section in extra dependencies [#317](https://github.com/NLeSC/python-template/issues/317)
 
 ### Changed
-* Made copier configuration more modular [#529](https://github.com/NLeSC/python-template/pull/529)
-* pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
-* CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
 * Moved to src/ based layout for generated packages
 * Moved from setup.cfg/.py to pyproject.toml [#351](https://github.com/NLeSC/python-template/issues/351)
 * Moved from prospector to ruff [#336](https://github.com/NLeSC/python-template/issues/336)
