@@ -1,45 +1,36 @@
 ---
 # package details
-AddPackageDetails:
-  type: bool
-  default: yes
-  help: |-
-    If you are planning to publish the package it is recommended to provide more details.
-       Do you want to provide extra details for the package?
-  when: "{{ template_profile != 'minimum'}}"
+# AddPackageDetails:
+#   type: bool
+#   default: yes
+#   help: |-
+#     If you are planning to publish the package it is recommended to provide more details.
+#        Do you want to provide extra details for the package?
+#   when: false
 package_short_description:
   type: str
   placeholder: Short description
   help: Short description of package
-  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
   validator: >-
         {% if not package_short_description %}
         Package description cannot be empty
         {% endif %}
-keyword1:
+keywords:
   type: str
-  placeholder: keyword1
-  help: Add keyword1
-  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
-keyword2:
-  type: str
-  placeholder: keyword2
-  help: Add keyword2
-  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
+  placeholder: keyword1,second keyword,third keyword
+  help: Add keywords to make your package findable on PyPI
 github_organization:
   type: str
-  placeholder: "<my-github-organization>"
+  placeholder: "your-github-username or your-github-organization"
   help: Enter the name of your GitHub username or organization
-  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
   validator: >-
-        {% if not github_organization %}
-        This field cannot be empty
+        {% if not (github_organization | regex_search('^\\S*$')) %}
+        Username or organization cannot include spaces
         {% endif %}
 email:
   type: str
   placeholder: yourname@esciencecenter.nl
   help: What is your email address?
-  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
   validator: >-
         {% if not (email | regex_search('([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')) %}
         Please enter a valid email address
@@ -48,18 +39,21 @@ code_of_conduct_email:
   type: str
   default: "{{ email }}"
   help: What is the email address to report code of conduct violations?
-  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
   validator: >-
         {% if not (code_of_conduct_email | regex_search('([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')) %}
         Please enter a valid email address
         {% endif %}
 copyright_holder:
   type: str
-  placeholder: Netherlands eScience Center
-  help: Who is the copyright holder?
-  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
+  default: "{{ full_name }}"
+  help: Who is the copyright holder (the default is your full name)?
+  validator: >-
+        {% if not copyright_holder %}
+        This field cannot be empty as it will be used in content of the generated files.
+        {% endif %}
 
-# computed fields for GitHub
+
+# computed fields
 repository:
   default: git@github.com:{{ github_organization }}/{{ package_name }}
   when: false
