@@ -17,6 +17,7 @@
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
 
 ### Changed
+* Allow uppercase in package name [#613](https://github.com/NLeSC/python-template/pull/613)
 * next_steps.md is shown as a copier message [#609](https://github.com/NLeSC/python-template/pull/609)
 * Change the default profile to 'recommended' [#598](https://github.com/NLeSC/python-template/pull/598)
 * Updated the user documentation (README.md) of the template [#569](https://github.com/NLeSC/python-template/pull/569)
@@ -33,7 +34,6 @@
 Released on August 15, 2024
 
 ### Added
-
 * Added Python 3.12 support [#356](https://github.com/NLeSC/python-template/issues/356)
 * Template unit tests for documentation generation, linting and version bumping
 * Docstring for function
@@ -42,7 +42,6 @@ Released on August 15, 2024
 * Added new 'docs' section in extra dependencies [#317](https://github.com/NLeSC/python-template/issues/317)
 
 ### Changed
-
 * Made copier configuration more modular [#529](https://github.com/NLeSC/python-template/pull/529)
 * pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
 * CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
