@@ -46,8 +46,8 @@ email:
         {% endif %}
 code_of_conduct_email:
   type: str
-  default: "{{ email }}" 
-  help: What is the email address for code of conduct?
+  default: "{{ email }}"
+  help: What is the email address to report code of conduct violations?
   when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
   validator: >-
         {% if not (code_of_conduct_email | regex_search('([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')) %}
