@@ -15,14 +15,10 @@ package_short_description:
         {% if not package_short_description %}
         Package description cannot be empty
         {% endif %}
-keyword1:
+keywords:
   type: str
-  placeholder: keyword1
-  help: Add keyword1
-keyword2:
-  type: str
-  placeholder: keyword2
-  help: Add keyword2
+  placeholder: keywords
+  help: Add keywords to make your package findable on PyPI
 github_organization:
   type: str
   placeholder: "<my-github-organization>"
