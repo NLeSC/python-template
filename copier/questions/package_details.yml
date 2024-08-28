@@ -59,11 +59,10 @@ copyright_holder:
   help: Who is the copyright holder?
   when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
 
-# calculated fields for GitHub
+# computed fields for GitHub
 repository:
   default: git@github.com:{{ github_organization }}/{{ package_name }}
   when: false
-
 repository_url:
   default: https://github.com/{{ github_organization }}/{{ package_name }}
   when: false
