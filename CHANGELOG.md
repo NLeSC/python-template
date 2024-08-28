@@ -26,7 +26,7 @@
 * CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
 
 ### Removed
-
+* Remove the configuration of isort ([#591](https://github.com/NLeSC/python-template/pull/591)), which is no longer used since [#347](https://github.com/NLeSC/python-template/issues/347).
 
 ## [0.5.0]
 
