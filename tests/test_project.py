@@ -16,8 +16,7 @@ def copier_project_defaults():
     return {
             "package_name": "my_python_package",
             "package_short_description": "Short description of package",
-            "keyword1": "keyword1",
-            "keyword2": "keyword2",
+            "keywords": "keyword1,keyword2",
             "version": "0.1.0",
             "github_organization": "<my-github-organization>",
             "full_name": "Jane Smith",
