@@ -42,3 +42,8 @@ license:
     Other (add your own license):
       value: Other
   default: "Apachev2"
+copyright_holder:
+  type: str
+  placeholder: Netherlands eScience Center
+  help: Who is the copyright holder?
+  when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
