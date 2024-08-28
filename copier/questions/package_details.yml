@@ -45,8 +45,8 @@ code_of_conduct_email:
         {% endif %}
 copyright_holder:
   type: str
-  placeholder: Netherlands eScience Center
-  help: Who is the copyright holder?
+  default: "{{ full_name }}"
+  help: Who is the copyright holder (the default is your full name)?
   validator: >-
         {% if not copyright_holder %}
         This field cannot be empty as it will be used in content of the generated files.
