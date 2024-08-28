@@ -47,7 +47,10 @@ copyright_holder:
   type: str
   placeholder: Netherlands eScience Center
   help: Who is the copyright holder?
-
+  validator: >-
+        {% if not copyright_holder %}
+        This field cannot be empty as it will be used in content of the generated files.
+        {% endif %}
 # calculated fields for GitHub
 repository:
   default: git@github.com:{{ github_organization }}/{{ package_name }}
