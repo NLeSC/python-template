@@ -17,6 +17,8 @@
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
 
 ### Changed
+* next_steps.md is shown as a copier message [#609](https://github.com/NLeSC/python-template/pull/609)
+* Change the default profile to 'recommended' [#598](https://github.com/NLeSC/python-template/pull/598)
 * Updated the user documentation (README.md) of the template [#569](https://github.com/NLeSC/python-template/pull/569)
 * Droped Python 3.8 and 3.9 support [#551](https://github.com/NLeSC/python-template/pull/551)
 * Fix broken link checker [#546](https://github.com/NLeSC/python-template/pull/546)
@@ -25,7 +27,7 @@
 * Restored default line-length of 79 characters, as recommended by [PEP-8](https://peps.python.org/pep-0008/#maximum-line-length) [#389](https://github.com/NLeSC/python-template/pull/389)
 
 ### Removed
-
+* Remove the configuration of isort ([#591](https://github.com/NLeSC/python-template/pull/591)), which is no longer used since [#347](https://github.com/NLeSC/python-template/issues/347).
 
 ## [0.5.0]
 

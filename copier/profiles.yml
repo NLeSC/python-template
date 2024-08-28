@@ -2,7 +2,7 @@
 # profile selection
 template_profile:
   type: str
-  default: ask
+  default: "recommended"
   help: Select a profile
   choices:
     Recommended (our defaults for research software): "recommended"

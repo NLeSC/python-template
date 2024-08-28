@@ -46,7 +46,7 @@ email:
         {% endif %}
 code_of_conduct_email:
   type: str
-  placeholder: yourname@esciencecenter.nl
+  default: "{{ email }}" 
   help: What is the email address for code of conduct?
   when: "{{ template_profile != 'minimum' and AddPackageDetails }}"
   validator: >-

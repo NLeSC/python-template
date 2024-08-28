@@ -81,14 +81,6 @@ branch = true
 source = ["src/{{ package_name }}"]
 command_line = "-m pytest"
 
-[tool.isort]
-lines_after_imports = 2
-force_single_line = 1
-no_lines_before = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
-known_first_party = "{{ package_name }}"
-src_paths = ["src/{{ package_name }}", "tests"]
-line_length = 120
-
 [tool.tox]
 legacy_tox_ini = """
 [tox]
