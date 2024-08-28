@@ -21,11 +21,11 @@ keywords:
   help: Add keywords to make your package findable on PyPI
 github_organization:
   type: str
-  placeholder: "<my-github-organization>"
+  placeholder: "your-github-username or your-github-organization"
   help: Enter the name of your GitHub username or organization
   validator: >-
-        {% if not github_organization %}
-        This field cannot be empty
+        {% if not (github_organization | regex_search('^\\S*$')) %}
+        Username or organization cannot include spaces
         {% endif %}
 email:
   type: str
