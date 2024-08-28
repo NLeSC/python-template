@@ -22,7 +22,7 @@ _message_after_copy: |
                 git add --all
                 git commit -m "first commit"
                 git branch -M main
-                git remote add origin {{ repository }}
+                git remote add origin {{ repository }}.git
 
             - Push the initial commit to a new repo on GitHub
 
