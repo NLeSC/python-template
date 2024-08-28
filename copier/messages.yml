@@ -30,13 +30,11 @@ _message_after_copy: |
                 and create a new repository named `{{ package_name }}` as an empty repository, then push your commits to GitHub:
 
                 git push --set-upstream origin main
-
-          {% if AddDevDoc -%}
+          {% if AddDevDoc %}
             - Project development documentation
 
                 The README.dev.md contains developer documentation
-          {%- endif %}
-
+          {% endif %}
             - Project layout explained
 
                 For an explanation of what files are there, and what each of these do, please refer to {{ _copier_conf.dst_path }}/project_setup.md
