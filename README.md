@@ -1,8 +1,16 @@
 # Netherlands eScience Center Python Template
 
-Spend less time setting up and configuring your new Python packages which includes research software good practices from the start.
+Are you writing research software? Save your time on setting up and configuring your new Python packages by using this template. This [Copier-based](https://copier.readthedocs.io) template includes best practices for research software from the beginning. You can choose from various user profiles, each offering a range of features to suit your needs.
 
-Use this [Copier](https://copier.readthedocs.io) template to generate an empty Python package. Features include:
+## User profiles
+- **Minimum**
+  As the name says is the bare minimum to get started with a Python package. 
+- **Recommended**
+  This profile is based on the Minimum and includes set of carefully selected features which we believe the users might want. However, all features can be modified by the user.
+- **Let me choose**
+  This is a fully customizable profile. You can choose from a list of features to include in your package as you like.
+
+## Features
 
 - Boilerplate unit tests and documentation,
 - [Python static setup configuration](template/pyproject.toml.jinja),
@@ -14,7 +22,7 @@ Use this [Copier](https://copier.readthedocs.io) template to generate an empty P
   - [README.md](template/README.md.jinja) for package users,
   - [README.dev.md](template/README.dev.md.jinja) for package developer,
   - [project_setup.md](template/project_setup.md.jinja) with extensive documentation about project setup,
-  - [Change log](template/%7B%25%20if%20AddChangeLog%20%25%7DCHANGELOG.md%7B%25%20endif%20%25%7D),
+  - [Changelog](template/%7B%25%20if%20AddChangeLog%20%25%7DCHANGELOG.md%7B%25%20endif%20%25%7D),
   - [Code of Conduct](template/CODE_OF_CONDUCT.md.jinja),
   - [Contributing guidelines](template/CONTRIBUTING.md.jinja),
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/),
