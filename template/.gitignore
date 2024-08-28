@@ -1,33 +1,72 @@
+# Byte-compiled / optimized / DLL files
 *.py[cod]
-*.egg-info
-*.eggs
-.ipynb_checkpoints
-
-build
-dist
-.cache
+*$py.class
 __pycache__
 
-htmlcov
-.coverage
-coverage.xml
-.pytest_cache
-.tox
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
+# jupyter notebook
+.ipynb_checkpoints
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+.cache
+.pytest_cache
+.tox/
+
+# Sphinx documentation
 docs/_build
 
 # ide
-.idea
 .eclipse
 .vscode
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#.idea/
+.spyderproject
+.spyproject
 
 # Mac
 .DS_Store
 
 # virtual environments
 env
+.env
 env3
+.env3
 venv
+.venv
 venv3
+.venv3
+ENV/
+env.bak/
+venv.bak/
 
-.swp
+# vim
+*.swp
+*.swo
+*.orig
