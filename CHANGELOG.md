@@ -17,6 +17,7 @@
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
 
 ### Changed
+* Updated .gitignore [#622](https://github.com/NLeSC/python-template/pull/622)
 * add extra info for sub-menus [#628](https://github.com/NLeSC/python-template/pull/628)
 * skip merging CHANGELOG.md and CODE_OF_CONDUCT.md if they exist [#628](https://github.com/NLeSC/python-template/pull/628)
 * added value field to license options [#617](https://github.com/NLeSC/python-template/pull/617)
