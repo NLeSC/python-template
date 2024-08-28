@@ -14,7 +14,7 @@ SelectPublishReleaseFeatures:
   help: Select publish and release features
   multiselect: true
   choices:
-    Citation:
+    Citation (selection on the next menu):
       value: SelectCitation_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Changelog:
@@ -51,17 +51,14 @@ AddCitation:
   type: bool
   default: "{{ 'AddCitationFile_flag' in SelectCitation }}"
   when: false
-
 AddCFFConvert:
   type: bool
   default: "{{ 'AddCFFConvert_flag' in SelectCitation }}"
   when: false
-
 AddChangeLog:
   type: bool
   default: "{{ 'AddChangeLog_flag' in SelectPublishReleaseFeatures }}"
   when: false
-
 AddZenodo:
   type: bool
   default: "{{ 'AddZenodo_flag' in SelectPublishReleaseFeatures }}"

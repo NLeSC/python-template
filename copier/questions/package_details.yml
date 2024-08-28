@@ -51,7 +51,9 @@ copyright_holder:
         {% if not copyright_holder %}
         This field cannot be empty as it will be used in content of the generated files.
         {% endif %}
-# calculated fields for GitHub
+
+
+# computed fields
 repository:
   default: git@github.com:{{ github_organization }}/{{ package_name }}
   when: false
