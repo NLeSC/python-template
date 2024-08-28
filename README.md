@@ -1,6 +1,8 @@
 # Netherlands eScience Center Python Template
 
-Are you writing research software? Save your time on setting up and configuring your new Python packages by using this template. This [Copier-based](https://copier.readthedocs.io) template includes best practices for research software from the beginning. You can choose from various user profiles, each offering a range of features to suit your needs.
+Spend less time setting up and configuring your new Python packages by using this template. This [Copier](https://copier.readthedocs.io) template includes best practices for research software so your new package will include these practices from the start. 
+
+You can choose from various user profiles, each offering a range of features to suit your needs.
 
 ## User profiles
 - **Minimum**
