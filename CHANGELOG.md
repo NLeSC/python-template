@@ -18,6 +18,8 @@
 
 ### Changed
 * Updated .gitignore [#622](https://github.com/NLeSC/python-template/pull/622)
+* add extra info for sub-menus [#628](https://github.com/NLeSC/python-template/pull/628)
+* skip merging CHANGELOG.md and CODE_OF_CONDUCT.md if they exist [#628](https://github.com/NLeSC/python-template/pull/628)
 * added value field to license options [#617](https://github.com/NLeSC/python-template/pull/617)
 * fix filename typo of githooks [#611](https://github.com/NLeSC/python-template/pull/609)
 * next_steps.md is shown as a copier message [#609](https://github.com/NLeSC/python-template/pull/609)

@@ -14,7 +14,7 @@ SelectCodeQualityFeatures:
   help: Select code quality features
   multiselect: true
   choices:
-    GitHub Actions:
+    GitHub Actions (selection on the next menu):
       value: SelectGitHubActions_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Linting:
