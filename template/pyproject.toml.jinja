@@ -31,8 +31,9 @@ classifiers = [
 dependencies = []
 description = "{{ package_short_description|replace('\"', '\\\"') }}"
 keywords = [
-    "{{ keyword1 }}",
-    "{{ keyword2 }}",
+{%- for item in keywords.split(',') -%}
+"{{ item }}"{{ "," if not loop.last }}
+{%- endfor -%}
 ]
 license = {file = "LICENSE"}
 name = "{{ package_name }}"
@@ -71,8 +72,10 @@ Repository = "{{ repository_url }}"
 Issues = "{{ repository_url }}/issues"
 {% if AddChangeLog -%}
 Changelog = "{{ repository_url }}/CHANGELOG.md"
-{%- endif %}
-
+{% endif -%}
+{% if AddOnlineDocumentation -%}
+ReadTheDocs = "https://{{ package_name }}.readthedocs.io"
+{% endif %}
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 

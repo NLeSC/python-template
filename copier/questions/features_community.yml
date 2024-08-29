@@ -26,7 +26,6 @@ AddCodeConduct:
   type: bool
   default: "{{ 'AddCodeConduct_flag' in SelectCommunityFeatures }}"
   when: false
-
 AddContributing:
   type: bool
   default: "{{ 'AddContributing_flag' in SelectCommunityFeatures }}"
