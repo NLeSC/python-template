@@ -34,8 +34,10 @@ The sections below outline the steps in each case.
 {% if AddDevDoc -%}
 1. install dependencies (see the [development documentation](README.dev.md#development_install));
 {%- endif %}
+{% if AddLocalTests -%}
 1. make sure the existing tests still work by running ``pytest``;
 1. add your own tests (if necessary);
+{%- endif %}
 1. update or expand the documentation;
 {% if AddChangeLog -%}
 1. update the `CHANGELOG.md` file with your change;
