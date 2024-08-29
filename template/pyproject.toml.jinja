@@ -51,18 +51,22 @@ dev = [
     "pytest-cov",
     {%- endif %}
     "ruff",
+    {%- if AddLocalDocumentation %}
     "sphinx",
     "sphinx_rtd_theme",
     "sphinx-autoapi",
+    {%- endif %}
     "tox",
     "myst_parser",
 ]
+{%- if AddLocalDocumentation %}
 docs = [
     "sphinx",
     "sphinx_rtd_theme",
     "sphinx-autoapi",
     "myst_parser",
 ]
+{%- endif %}
 publishing = [
     "build",
     "twine",
@@ -105,7 +109,9 @@ extras = dev
 [tool.ruff]
 line-length = 120
 output-format = "concise"
+{%- if AddLocalDocumentation %}
 extend-exclude = ["docs"]
+{%- endif %}
 
 [tool.ruff.lint]
 # Allow unused variables when underscore-prefixed.
@@ -157,5 +163,7 @@ filename = "pyproject.toml"
 filename = "CITATION.cff"
 {%- endif %}
 
+{% if AddLocalDocumentation -%}
 [[tool.bumpversion.files]]
 filename = "docs/conf.py"
+{%- endif %}

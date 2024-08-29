@@ -40,7 +40,7 @@ SelectGitHubActions:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [AddGitHubActionBuild_flag, AddGitHubActionDocumentation_flag]
+      [AddGitHubActionBuild_flag]
     {%- else -%}
       []
     {%- endif %}
@@ -49,9 +49,6 @@ SelectGitHubActions:
   choices:
     Build:
       value: AddGitHubActionBuild_flag
-      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-    Documentation:
-      value: AddGitHubActionDocumentation_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Link checker (reports broken URLs):
       value: AddLinkCheck_flag
@@ -66,10 +63,6 @@ AddLocalTests:
 AddGitHubActionBuild:
   type: bool
   default: "{{ 'AddGitHubActionBuild_flag' in SelectGitHubActions }}"
-  when: false
-AddGitHubActionDocumentation:
-  type: bool
-  default: "{{ 'AddGitHubActionDocumentation_flag' in SelectGitHubActions }}"
   when: false
 AddLinkCheck:
   type: bool
