@@ -15,6 +15,7 @@
 * Make SonarCloud optional [#515](https://github.com/NLeSC/python-template/pull/515)
 * Make citation optional [#471](https://github.com/NLeSC/python-template/pull/471)
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
+* Make local documentation optional [#593](https://github.com/NLeSC/python-template/pull/593)
 
 ### Changed
 * Update the user documentation (README.md) of the template [#575](https://github.com/NLeSC/python-template/pull/623)
