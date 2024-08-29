@@ -51,9 +51,11 @@ dev = [
     "pytest-cov",
     {%- endif %}
     "ruff",
+    {%- if AddLocalDocumentation %}
     "sphinx",
     "sphinx_rtd_theme",
     "sphinx-autoapi",
+    {%- endif %}
     "tox",
     "myst_parser",
 ]
