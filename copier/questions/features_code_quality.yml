@@ -7,13 +7,16 @@ SelectCodeQualityFeatures:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [SelectGitHubActions_flag, AddLinting_flag, AddSonarCloud_flag, AddEditorConfig_flag]
+      [AddLocalTests_flag, SelectGitHubActions_flag, AddLinting_flag, AddSonarCloud_flag, AddEditorConfig_flag]
     {%- else -%}
       []
     {%- endif %}
   help: Select code quality features
   multiselect: true
   choices:
+    Local tests:
+      value: AddLocalTests_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     GitHub Actions (selection on the next menu):
       value: SelectGitHubActions_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
@@ -56,6 +59,10 @@ SelectGitHubActions:
 
 
 # computed features
+AddLocalTests:
+  type: bool
+  default: "{{ 'AddLocalTests_flag' in SelectCodeQualityFeatures or 'AddGitHubActionBuild_flag' in SelectGitHubActions or 'AddSonarCloud_flag' in SelectCodeQualityFeatures }}"
+  when: false
 AddGitHubActionBuild:
   type: bool
   default: "{{ 'AddGitHubActionBuild_flag' in SelectGitHubActions }}"
