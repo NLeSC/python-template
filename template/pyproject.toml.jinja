@@ -45,9 +45,11 @@ version = "{{ version }}"
 dev = [
     "build",  # build is not only used in publishing (below), but also in the template's test suite
     "bump-my-version",
+    {%- if AddLocalTests %}
     "coverage [toml]",
     "pytest",
     "pytest-cov",
+    {%- endif %}
     "ruff",
     "sphinx",
     "sphinx_rtd_theme",
@@ -78,22 +80,28 @@ Changelog = "{{ repository_url }}/CHANGELOG.md"
 {% if AddOnlineDocumentation -%}
 ReadTheDocs = "https://{{ package_name }}.readthedocs.io"
 {% endif %}
+{% if AddLocalTests -%}
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+{% endif %}
 
+{% if AddLocalTests -%}
 [tool.coverage.run]
 branch = true
 source = ["src/{{ package_name }}"]
 command_line = "-m pytest"
+{%- endif %}
 
 [tool.tox]
 legacy_tox_ini = """
 [tox]
 envlist = py38,py39,py310,py311,py312
 skip_missing_interpreters = true
+{% if AddLocalTests -%}
 [testenv]
 commands = pytest
 extras = dev
+{%- endif %}
 """
 
 [tool.ruff]
