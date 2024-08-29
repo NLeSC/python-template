@@ -17,6 +17,7 @@
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
 
 ### Changed
+* Update the user documentation (README.md) of the template [#575](https://github.com/NLeSC/python-template/pull/623)
 * Updated .gitignore [#622](https://github.com/NLeSC/python-template/pull/622)
 * add extra info for sub-menus [#628](https://github.com/NLeSC/python-template/pull/628)
 * skip merging CHANGELOG.md and CODE_OF_CONDUCT.md if they exist [#628](https://github.com/NLeSC/python-template/pull/628)
