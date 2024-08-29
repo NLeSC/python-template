@@ -5,12 +5,20 @@ Spend less time setting up and configuring your new Python packages by using thi
 You can choose from various user profiles, each offering a range of features to suit your needs.
 
 ## User profiles
-- **Minimum**
-  As the name suggests, this profile provides the bare essentials to get started with a Python package.This is a good place to start if this is your first time writing research software. You can always add more features later. 
-- **Recommended**
-  Building on the Minimum profile, this option includes a carefully selected set of features that we believe users will find useful. However, all features can be customized by the user.
-- **Let me choose**
-  This fully customizable profile allows you to select from a list of features to include in your package according to your preferences.
+
+The template profiles for a Python package offer varying levels of customization to cater to different user needs. Below are the profiles the template offers.
+
+### Minimum
+
+This profile offers the essential features to begin developing a Python package, making it ideal for first-time research software developers. Additional features can be added as needed.
+
+### Recommended
+
+This option provides a pre-selected set of features for research software, which users can fully customize.
+
+### Let me choose
+
+This fully customizable profile enables you to selectively include or exclude features in your Python package.
 
 ## Features
 
