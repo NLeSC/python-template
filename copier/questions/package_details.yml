@@ -18,10 +18,10 @@ package_short_description:
 keywords:
   type: str
   placeholder: keyword1,second keyword,third keyword
-  help: Add keywords to make your package findable on PyPI
+  help: Add keywords to make your package findable on PyPI (comma-separated)
 github_organization:
   type: str
-  placeholder: "your-github-username or your-github-organization"
+  placeholder: "your_github_username or your_github_organization"
   help: Enter the name of your GitHub username or organization
   validator: >-
         {% if not (github_organization | regex_search('^\\S*$')) %}
@@ -29,7 +29,7 @@ github_organization:
         {% endif %}
 email:
   type: str
-  placeholder: yourname@esciencecenter.nl
+  placeholder: yourname@universe.com
   help: What is your email address?
   validator: >-
         {% if not (email | regex_search('([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')) %}
@@ -38,7 +38,7 @@ email:
 copyright_holder:
   type: str
   default: "{{ full_name }}"
-  help: Who is the copyright holder (the default is your full name)?
+  help: "Who is the copyright holder (default: full name)?"
   validator: >-
         {% if not copyright_holder %}
         This field cannot be empty as it will be used in content of the generated files.
