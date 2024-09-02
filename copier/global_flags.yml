@@ -1,0 +1,16 @@
+---
+# Computed values that depend on multiple values
+
+HasWorkflows:
+  type: bool
+  default: "{{
+    AddGitHubActionBuild
+    or AddGitHubActionDocumentation
+    or AddLinkCheck
+    or AddCFFConvert
+    or AddCitation
+    or AddOnlineDocumentation
+    or AddSonarCloud
+    or AddZenodo
+    or AddLinting }}"
+  when: false
