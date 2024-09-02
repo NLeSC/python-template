@@ -68,6 +68,22 @@ authors:
     family-names: Tjong Kim Sang
     given-names: Erik
     orcid: "https://orcid.org/0000-0002-8431-081X"
+  - given-names: Abel
+    family-names: Soares Siqueira
+    email: abel.s.siqueira@gmail.com
+    affiliation: Netherlands eScience Center
+    orcid: "https://orcid.org/0000-0003-4451-281X"
+  - given-names: Olga
+    family-names: Lyashevska
+    email: o.lyashevska@esciencecenter.nl
+    affiliation: Netherlands eScience Center
+    orcid: 'https://orcid.org/0000-0002-8686-8550'
+  - given-names: Sander
+    name-particle: van
+    family-names: Rijn
+    email: s.vanrijn@esciencecenter.nl
+    affiliation: Netherlands eScience Center
+    orcid: 'https://orcid.org/0000-0001-6159-041X'
 cff-version: "1.2.0"
 date-released: 2018-07-17
 doi: 10.5281/zenodo.1310751
@@ -79,4 +95,4 @@ license: Apache-2.0
 message: "If you use this software, please cite it using these metadata."
 repository-code: "https://github.com/NLeSC/python-template"
 title: "Netherlands eScience Center Python Template"
-version: "0.4.0"
+version: "0.6.0"

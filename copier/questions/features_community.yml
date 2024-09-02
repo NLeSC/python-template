@@ -21,12 +21,21 @@ SelectCommunityFeatures:
       value: AddContributing_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
+code_of_conduct_email:
+  when: "{{ 'AddCodeConduct_flag' in SelectCommunityFeatures }}"
+  type: str
+  default: "{{ email }}"
+  help: What is the email address to report code of conduct violations?
+  validator: >-
+        {% if not (code_of_conduct_email | regex_search('([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')) %}
+        Please enter a valid email address
+        {% endif %}
+
 # computed features
 AddCodeConduct:
   type: bool
   default: "{{ 'AddCodeConduct_flag' in SelectCommunityFeatures }}"
   when: false
-
 AddContributing:
   type: bool
   default: "{{ 'AddContributing_flag' in SelectCommunityFeatures }}"

@@ -12,8 +12,9 @@ doi: <insert your DOI here>
 version: "{{ version }}"
 repository-code: "{{ repository_url }}"
 keywords:
-  - {{ keyword1 }}
-  - {{ keyword2 }}
+{%- for item in keywords.split(',') %}
+  - "{{ item }}"
+{%- endfor %}
 message: "If you use this software, please cite it using these metadata."
 {{ { "Apache Software License 2.0": "license: Apache-2.0",
     "MIT license": "license: MIT",

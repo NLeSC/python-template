@@ -35,6 +35,7 @@ You can distribute your code using PyPI.
 [The guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=building-and-packaging-code) can
 help you decide which tool to use for packaging.
 
+{% if AddLocalTests -%}
 ## Testing and code coverage
 
 - Tests should be put in the `tests` folder.
@@ -47,7 +48,9 @@ help you decide which tool to use for packaging.
 - The project uses [GitHub action workflows](https://docs.github.com/en/actions) to automatically run tests on GitHub infrastructure against multiple Python versions
   - Workflows can be found in [`.github/workflows`](.github/workflows/)
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=testing)
+{%- endif %}
 
+{% if AddLocalDocumentation -%}
 ## Documentation
 
 - Documentation should be put in the [`docs/`](docs/) directory. The contents have been generated using `sphinx-quickstart` (Sphinx version 1.6.5).
@@ -59,6 +62,7 @@ help you decide which tool to use for packaging.
 - [AutoAPI](https://sphinx-autoapi.readthedocs.io/) is used to generate documentation for the package Python objects.
 {% if AddOnlineDocumentation %}- `.readthedocs.yaml` is the ReadTheDocs configuration file. When ReadTheDocs is building the documentation this package and its development dependencies are installed so the API reference can be rendered.{% endif -%}
 - [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=writingdocumentation)
+{%- endif %}
 
 ## Coding style conventions and code quality
 
