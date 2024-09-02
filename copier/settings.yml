@@ -3,8 +3,8 @@ _subdirectory: template
 
 # Settings like `_skip_if_exists` are merged
 _skip_if_exists:
-  - "pyproject.toml"
-  - CITATION.cff
   - LICENSE
   - CHANGELOG.md
   - CODE_OF_CONDUCT.md
+  - .gitignore
+  - .editorconfig
