@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
 {%- if AddCitation %}
       - name: Create citation data issue
         uses: JasonEtco/create-an-issue@v2
@@ -120,5 +121,16 @@ jobs:
           git rm .github/workflows/next_steps_sonarcloud.yml
           git rm .github/workflows/next_steps_sonarcloud_issue.md
           git commit -am "Cleanup automated next steps issue generator for sonarcloud"
+          git push
+{%- endif %}
+
+{%- if AddCitation or AddLinting or AddOnlineDocumentation or AddZenodo or AddSonarCloud %}
+      - name: Cleanup files needed to create next steps issues
+        run: |
+          git config --global user.name 'NLeSC Python template'
+          git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git pull # other next step workflows may push changes before
+          git rm .github/workflows/next_steps.yml
+          git commit -am "Cleanup automated next steps issue generator"
           git push
 {%- endif %}
