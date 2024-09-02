@@ -19,8 +19,8 @@ jobs:
         id: citation
       - name: List created issues
         run: |
-          echo 'Created issues that must be completed to have fully working Python package:
-          * Citation data ${{ steps.citation.outputs.url }}'
+          echo "Created issues that must be completed to have fully working Python package:
+          * Citation data {{ '${{' }} steps.citation.outputs.url {{ '}}' }}"
       - name: Cleanup files needed to create next steps issues
         run: |
           git config --global user.name 'NLeSC Python template'
@@ -42,8 +42,8 @@ jobs:
         id: linting
       - name: List created issues
         run: |
-          echo 'Created issues that must be completed to have fully working Python package:
-          * Linting fixes ${{ steps.linting.outputs.url }}'
+          echo "Created issues that must be completed to have fully working Python package:
+          * Linting fixes {{ '${{' }} steps.linting.outputs.url {{ '}}' }}"
       - name: Cleanup files needed to create next steps issues
         run: |
           git config --global user.name 'NLeSC Python template'
@@ -65,8 +65,8 @@ jobs:
         id: readthedocs
       - name: List created issues
         run: |
-          echo 'Created issues that must be completed to have fully working Python package:
-          * Read the Docs instructions ${{ steps.readthedocs.outputs.url }}'
+          echo "Created issues that must be completed to have fully working Python package:
+          * Read the Docs instructions {{ '${{' }} steps.readthedocs.outputs.url {{ '}}' }}"
       - name: Cleanup files needed to create next steps issues
         run: |
           git config --global user.name 'NLeSC Python template'
@@ -88,8 +88,8 @@ jobs:
         id: zenodo
       - name: List created issues
         run: |
-          echo 'Created issues that must be completed to have fully working Python package:
-          * Sonarcloud integration ${{ steps.sonarcloud.outputs.url }}'
+          echo "Created issues that must be completed to have fully working Python package:
+          * Sonarcloud integration {{ '${{' }} steps.sonarcloud.outputs.url {{ '}}' }}"
       - name: Cleanup files needed to create next steps issues
         run: |
           git config --global user.name 'NLeSC Python template'
@@ -111,8 +111,8 @@ jobs:
         id: sonarcloud
       - name: List created issues
         run: |
-          echo 'Created issues that must be completed to have fully working Python package:
-          * Sonarcloud integration ${{ steps.sonarcloud.outputs.url }}'
+          echo "Created issues that must be completed to have fully working Python package:
+          * Sonarcloud integration {{ '${{' }} steps.sonarcloud.outputs.url {{ '}}' }}"
       - name: Cleanup files needed to create next steps issues
         run: |
           git config --global user.name 'NLeSC Python template'
