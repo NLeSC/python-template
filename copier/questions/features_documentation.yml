@@ -14,10 +14,10 @@ SelectDocumentationFeatures:
   help: Select documentation features
   multiselect: true
   choices:
-    Local documentation:
+    Local documentation (using sphinx):
       value: AddLocalDocumentation_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-    Online documentation (Read the Docs):
+    Online documentation (using Read the Docs):
       value: AddOnlineDocumentation_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Developer documentation:
