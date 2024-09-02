@@ -4,10 +4,14 @@
 
 ### Added
 
+* Add .gitignore and .editorconfig to the list of files that are not updated if they exist [#655](https://github.com/NLeSC/python-template/pull/655)
+
 ### Changed
 
 ### Removed
 
+* Remove pyproject.toml and CITATION.cff from the list of files that are not updated if they exist [#655](https://github.com/NLeSC/python-template/pull/655)
+  
 ## [0.6.0]
 
 ### Added
