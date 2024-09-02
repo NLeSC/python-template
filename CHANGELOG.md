@@ -3,6 +3,18 @@
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+* copyright owner is asked in all profiles [#629](https://github.com/NLeSC/python-template/pull/629)
+* license files includes year and copyright owner information [#629](https://github.com/NLeSC/python-template/pull/629)
+
+### Removed
+
+## [0.6.0]
+
+### Added
+
 * Keep project_setup.md for all the profiles and remove from the menu [#576](https://github.com/NLeSC/python-template/pull/576)
 * Make contributing guidelines optional [#465](https://github.com/NLeSC/python-template/pull/465)
 * Make linting optional [#568](https://github.com/NLeSC/python-template/pull/568)
@@ -15,10 +27,15 @@
 * Make SonarCloud optional [#515](https://github.com/NLeSC/python-template/pull/515)
 * Make citation optional [#471](https://github.com/NLeSC/python-template/pull/471)
 * Make online documentation optional [#476](https://github.com/NLeSC/python-template/pull/476)
+* Make local documentation optional [#593](https://github.com/NLeSC/python-template/pull/593)
+* Make local test optional [#594](https://github.com/NLeSC/python-template/pull/594)
 
 ### Changed
-* copyright owner is asked in all profiles [#629](https://github.com/NLeSC/python-template/pull/629)
-* license files includes year and copyright owner information [#629](https://github.com/NLeSC/python-template/pull/629)
+
+* Update the user documentation (README.md) of the template [#575](https://github.com/NLeSC/python-template/pull/623)
+* Updated .gitignore [#622](https://github.com/NLeSC/python-template/pull/622)
+* add extra info for sub-menus [#628](https://github.com/NLeSC/python-template/pull/628)
+* skip merging CHANGELOG.md and CODE_OF_CONDUCT.md if they exist [#628](https://github.com/NLeSC/python-template/pull/628)
 * added value field to license options [#617](https://github.com/NLeSC/python-template/pull/617)
 * fix filename typo of githooks [#611](https://github.com/NLeSC/python-template/pull/609)
 * next_steps.md is shown as a copier message [#609](https://github.com/NLeSC/python-template/pull/609)
@@ -30,6 +47,7 @@
 * CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
 
 ### Removed
+
 * Remove the configuration of isort ([#591](https://github.com/NLeSC/python-template/pull/591)), which is no longer used since [#347](https://github.com/NLeSC/python-template/issues/347).
 
 ## [0.5.0]
@@ -147,7 +165,6 @@ Released on Apr 22, 2021
 * Drop Python 3.5 support
 * Removed unit tests doing the linting
 
-
 ## [0.2.0]
 
 Released on July 17, 2019
@@ -173,14 +190,14 @@ Released on July 17, 2019
 * Fix example tests that failed to run (#28)
 * Remove quotes from project name and project description (#27)
 * Update prospector configuration (#26)
-	- Make prospector less strict
-	- Have prospector ignore the docs directory
+ 	* Make prospector less strict
+ 	* Have prospector ignore the docs directory
 * Add `install_requires` to `setup.py` (#21)
 * Improved .gitignore (#22)
 * More detailed documentation about
-	- Project setup
-	- Setup instructions
-	- NOTICE file
+ 	* Project setup
+ 	* Setup instructions
+ 	* NOTICE file
 
 ### Removed
 
@@ -193,20 +210,19 @@ Released on July 12, 2018.
 ### Added
 
 * First version of the Python project template that follows the Netherlands eScience Center software development guide, containing:
-	- Tests,
-	- Documentation,
-	- Code style checking
-	- Editorconfig
-	- Default Travis configuration
-	- Change log
-	- Code of Conduct
-	- Contributing guidelines
-	- License
-	- Manifest.in
-	- README
-	- Requirements.txt
-	- Setup configuration
-
+ 	* Tests,
+ 	* Documentation,
+ 	* Code style checking
+ 	* Editorconfig
+ 	* Default Travis configuration
+ 	* Change log
+ 	* Code of Conduct
+ 	* Contributing guidelines
+ 	* License
+ 	* Manifest.in
+ 	* README
+ 	* Requirements.txt
+ 	* Setup configuration
 
 [Unreleased]: https://github.com/NLeSC/python-template//compare/0.5.0...HEAD
 [0.5.0]:      https://github.com/NLeSC/python-template/releases/tag/0.5.0

@@ -31,8 +31,9 @@ classifiers = [
 dependencies = []
 description = "{{ package_short_description|replace('\"', '\\\"') }}"
 keywords = [
-    "{{ keyword1 }}",
-    "{{ keyword2 }}",
+{%- for item in keywords.split(',') -%}
+"{{ item }}"{{ "," if not loop.last }}
+{%- endfor -%}
 ]
 license = {file = "LICENSE"}
 name = "{{ package_name }}"
@@ -44,22 +45,28 @@ version = "{{ version }}"
 dev = [
     "build",  # build is not only used in publishing (below), but also in the template's test suite
     "bump-my-version",
+    {%- if AddLocalTests %}
     "coverage [toml]",
     "pytest",
     "pytest-cov",
+    {%- endif %}
     "ruff",
+    {%- if AddLocalDocumentation %}
     "sphinx",
     "sphinx_rtd_theme",
     "sphinx-autoapi",
+    {%- endif %}
     "tox",
     "myst_parser",
 ]
+{%- if AddLocalDocumentation %}
 docs = [
     "sphinx",
     "sphinx_rtd_theme",
     "sphinx-autoapi",
     "myst_parser",
 ]
+{%- endif %}
 publishing = [
     "build",
     "twine",
@@ -71,30 +78,40 @@ Repository = "{{ repository_url }}"
 Issues = "{{ repository_url }}/issues"
 {% if AddChangeLog -%}
 Changelog = "{{ repository_url }}/CHANGELOG.md"
-{%- endif %}
-
+{% endif -%}
+{% if AddOnlineDocumentation -%}
+ReadTheDocs = "https://{{ package_name }}.readthedocs.io"
+{% endif %}
+{% if AddLocalTests -%}
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+{% endif %}
 
+{% if AddLocalTests -%}
 [tool.coverage.run]
 branch = true
 source = ["src/{{ package_name }}"]
 command_line = "-m pytest"
+{%- endif %}
 
 [tool.tox]
 legacy_tox_ini = """
 [tox]
 envlist = py38,py39,py310,py311,py312
 skip_missing_interpreters = true
+{% if AddLocalTests -%}
 [testenv]
 commands = pytest
 extras = dev
+{%- endif %}
 """
 
 [tool.ruff]
 line-length = 120
 output-format = "concise"
+{%- if AddLocalDocumentation %}
 extend-exclude = ["docs"]
+{%- endif %}
 
 [tool.ruff.lint]
 # Allow unused variables when underscore-prefixed.
@@ -146,5 +163,7 @@ filename = "pyproject.toml"
 filename = "CITATION.cff"
 {%- endif %}
 
+{% if AddLocalDocumentation -%}
 [[tool.bumpversion.files]]
 filename = "docs/conf.py"
+{%- endif %}

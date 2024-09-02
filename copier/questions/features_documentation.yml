@@ -7,27 +7,40 @@ SelectDocumentationFeatures:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [AddOnlineDocumentation_flag, AddDevDoc_flag]
+      [AddLocalDocumentation_flag, AddOnlineDocumentation_flag, AddDevDoc_flag, AddGitHubActionDocumentation_flag]
     {%- else -%}
       []
     {%- endif %}
   help: Select documentation features
   multiselect: true
   choices:
-    Online documentation (Read the Docs):
+    Local documentation (using sphinx):
+      value: AddLocalDocumentation_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    Online documentation (using Read the Docs):
       value: AddOnlineDocumentation_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Developer documentation:
       value: AddDevDoc_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    GitHub Action to build documentation:
+      value: AddGitHubActionDocumentation_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
 # computed features
+AddLocalDocumentation:
+  type: bool
+  default: "{{ 'AddLocalDocumentation_flag' in SelectDocumentationFeatures or 'AddOnlineDocumentation_flag' in SelectDocumentationFeatures or 'AddGitHubActionDocumentation_flag' in SelectDocumentationFeatures }}"
+  when: false
 AddOnlineDocumentation:
   type: bool
   default: "{{ 'AddOnlineDocumentation_flag' in SelectDocumentationFeatures }}"
   when: false
-
 AddDevDoc:
   type: bool
   default: "{{ 'AddDevDoc_flag' in SelectDocumentationFeatures }}"
+  when: false
+AddGitHubActionDocumentation:
+  type: bool
+  default: "{{ 'AddGitHubActionDocumentation_flag' in SelectDocumentationFeatures }}"
   when: false

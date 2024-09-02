@@ -16,8 +16,7 @@ def copier_project_defaults():
     return {
             "package_name": "my_python_package",
             "package_short_description": "Short description of package",
-            "keyword1": "keyword1",
-            "keyword2": "keyword2",
+            "keywords": "keyword1,keyword2",
             "version": "0.1.0",
             "github_organization": "<my-github-organization>",
             "full_name": "Jane Smith",
@@ -192,7 +191,7 @@ def test_ruff_check(baked_with_development_dependencies, project_env_bin_dir):
     project_dir = baked_with_development_dependencies
     bin_dir = project_env_bin_dir
 
-    result = run([f'{bin_dir}ruff', 'check', '--fix'], project_dir)
+    result = run([f'{bin_dir}ruff', 'check'], project_dir)
     assert result.returncode == 0
     assert '' in result.stdout
 

@@ -6,3 +6,5 @@ _skip_if_exists:
   - "pyproject.toml"
   - CITATION.cff
   - LICENSE
+  - CHANGELOG.md
+  - CODE_OF_CONDUCT.md
