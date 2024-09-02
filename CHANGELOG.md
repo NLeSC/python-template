@@ -8,6 +8,9 @@
 
 ### Changed
 
+* copyright owner is asked in all profiles [#629](https://github.com/NLeSC/python-template/pull/629)
+* license files includes year and copyright owner information [#629](https://github.com/NLeSC/python-template/pull/629)
+
 ### Removed
 
 * Remove pyproject.toml and CITATION.cff from the list of files that are not updated if they exist [#655](https://github.com/NLeSC/python-template/pull/655)
