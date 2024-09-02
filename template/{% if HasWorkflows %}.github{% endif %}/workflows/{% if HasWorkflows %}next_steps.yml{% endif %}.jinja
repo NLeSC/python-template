@@ -13,7 +13,7 @@ jobs:
       - name: Create citation data issue
         uses: JasonEtco/create-an-issue@v2
         env:
-          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+          GITHUB_TOKEN: {{ '${{' }}secrets.GITHUB_TOKEN{{ '}}' }}
         with:
           filename: .github/workflows/next_steps_citation_issue.md
         id: citation
@@ -36,7 +36,7 @@ jobs:
       - name: Create linting issue
         uses: JasonEtco/create-an-issue@v2
         env:
-          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+          GITHUB_TOKEN: {{ '${{' }}secrets.GITHUB_TOKEN{{ '}}' }}
         with:
           filename: .github/workflows/next_steps_linting_issue.md
         id: linting
@@ -59,7 +59,7 @@ jobs:
       - name: Create online documentation issue
         uses: JasonEtco/create-an-issue@v2
         env:
-          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+          GITHUB_TOKEN: {{ '${{' }}secrets.GITHUB_TOKEN{{ '}}' }}
         with:
           filename: .github/workflows/next_steps_online_documentation_issue.md
         id: readthedocs
@@ -82,7 +82,7 @@ jobs:
       - name: Create Zenodo integration issue
         uses: JasonEtco/create-an-issue@v2
         env:
-          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+          GITHUB_TOKEN: {{ '${{' }}secrets.GITHUB_TOKEN{{ '}}' }}
         with:
           filename: .github/workflows/next_steps_zenodo_issue.md
         id: zenodo
@@ -105,7 +105,7 @@ jobs:
       - name: Create Sonarcloud issue
         uses: JasonEtco/create-an-issue@v2
         env:
-          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+          GITHUB_TOKEN: {{ '${{' }}secrets.GITHUB_TOKEN{{ '}}' }}
         with:
           filename: .github/workflows/next_steps_sonarcloud_issue.md
         id: sonarcloud
