@@ -3,12 +3,10 @@
 cff-version: "1.2.0"
 title: "{{ package_name }}"
 authors:
-  -
-    family-names: {{ full_name.replace('\"', '\\\"').split(' ')[-1] }}
+  - family-names: {{ full_name.replace('\"', '\\\"').split(' ')[-1] }}
     given-names: {{ full_name.replace('\"', '\\\"').split(' ')[0] }}
     orcid: "https://orcid.org/0000-0000-0000-0000"
-date-released: 20??-MM-DD
-doi: <insert your DOI here>
+date-released: {{ '%Y-%m-%d' | strftime }}
 version: "{{ version }}"
 repository-code: "{{ repository_url }}"
 keywords:
@@ -16,10 +14,3 @@ keywords:
   - "{{ item }}"
 {%- endfor %}
 message: "If you use this software, please cite it using these metadata."
-{{ { "Apache Software License 2.0": "license: Apache-2.0",
-    "MIT license": "license: MIT",
-    "BSD license": "license: BSD-3-Clause",
-    "ISC license": "license: ISC",
-    "GNU General Public License v3 or later": "license: GPL-3.0-or-later",
-    "Not open source": ""
-}[license] }}
