@@ -2,7 +2,7 @@
 name: Bug report
 about: Create a report to help us improve
 title: ''
-labels: 'bug'
+labels: bug
 assignees: ''
 
 ---
@@ -44,9 +44,7 @@ If applicable, add screenshots to help explain your problem.
   - [ ] minimum
   - [ ] let me choose 
 - OS:
-<!-- run this command: uname -a -->
 - version:
-<!-- run this command: python -c "import kunefe; print(kunefe.__version__)" -->
 
 **Additional context**
 
