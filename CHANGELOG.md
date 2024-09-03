@@ -4,17 +4,27 @@
 
 ### Added
 
+### Changed
+
+### Removed
+
+## 0.6.1
+
+### Added
+
 * Add .gitignore and .editorconfig to the list of files that are not updated if they exist [#655](https://github.com/NLeSC/python-template/pull/655)
 
 ### Changed
 
 * copyright owner is asked in all profiles [#629](https://github.com/NLeSC/python-template/pull/629)
 * license files includes year and copyright owner information [#629](https://github.com/NLeSC/python-template/pull/629)
+* combine all the next step jobs in a single workflow [#657](https://github.com/NLeSC/python-template/pull/657)
+* fix CITATION.cff validation issues which also helps cffconvert workflow to pass [#657](https://github.com/NLeSC/python-template/pull/657)
 
 ### Removed
 
 * Remove pyproject.toml and CITATION.cff from the list of files that are not updated if they exist [#655](https://github.com/NLeSC/python-template/pull/655)
-  
+
 ## [0.6.0]
 
 ### Added
