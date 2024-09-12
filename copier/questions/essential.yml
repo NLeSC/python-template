@@ -43,3 +43,11 @@ license:
       value: GNULesserv3
     Other (add your own license):
       value: Other
+copyright_holder:
+  type: str
+  default: "{{ full_name }}"
+  help: "Who is the copyright holder (default: full name)?"
+  validator: >-
+        {% if not copyright_holder %}
+        This field cannot be empty as it will be used in content of the generated files.
+        {% endif %}
