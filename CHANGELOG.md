@@ -59,6 +59,7 @@
 * Fix broken link checker [#546](https://github.com/NLeSC/python-template/pull/546)
 * pre-commit script is optional ([#457](https://github.com/NLeSC/python-template/issues/457))
 * CHANGELOG.md is now optional ([#462](https://github.com/NLeSC/python-template/issues/462))
+* Restored default line-length of 79 characters, as recommended by [PEP-8](https://peps.python.org/pep-0008/#maximum-line-length) [#389](https://github.com/NLeSC/python-template/pull/389)
 
 ### Removed
 
