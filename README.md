@@ -1,6 +1,6 @@
-<img style="float: right;" width=160 src="logo.png" alt='Python Template logo, created using ChatGPT 4o on 10 September 2024 using prompt "generate a logo of a copier that looks like a snake-scientist"'>
-
 # Netherlands eScience Center Python Template
+
+<img align="right" width="160" src="logo.png" alt='Python Template logo, created using ChatGPT 4o on 10 September 2024 using prompt "generate a logo of a copier that looks like a snake-scientist"'>
 
 Spend less time setting up and configuring your new Python packages by using this template. This [Copier](https://copier.readthedocs.io) template includes best practices for research software so your new package will include these practices from the start. 
 
