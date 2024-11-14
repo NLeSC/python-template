@@ -33,7 +33,7 @@ license:
       value: Apachev2
     MIT license:
       value: MIT
-    BSD license:
+    BSD license (3-clause):
       value: BSD
     ISC license:
       value: ISC
