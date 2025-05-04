@@ -2,12 +2,6 @@ name: link-check
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-    - main
-  pull_request:
-    branches:
-    - main
   schedule:
     - cron: '0 0 1 * *' # first day of every month at midnight
 
