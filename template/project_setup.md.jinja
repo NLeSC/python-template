@@ -5,7 +5,7 @@ Here we provide some details about the project setup. Most of the choices are ex
 text when the development of the software package takes off.
 
 For a quick reference on software development, we refer to [the software guide
-checklist](https://guide.esciencecenter.nl/#/best_practices/checklist).
+checklist](https://guide.esciencecenter.nl/#/best_practices?id=checklist).
 
 ## Python versions
 
@@ -16,7 +16,7 @@ This repository is set up with Python versions:
 - 3.12
 
 Add or remove Python versions based on project requirements. See [the
-guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python) for more information about Python
+guide](https://guide.esciencecenter.nl/#/language_guides/python) for more information about Python
 versions.
 
 ## Package management and dependencies
@@ -24,7 +24,7 @@ versions.
 You can use either pip or conda for installing dependencies and package management. This repository does not force you
 to use one or the other, as project requirements differ. For advice on what to use, please check [the relevant section
 of the
-guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=dependencies-and-package-management).
+guide](https://guide.esciencecenter.nl/#/language_guides/python?id=dependencies-and-package-management).
 
 - Runtime dependencies should be added to `pyproject.toml` in the `dependencies` list under `[project]`.
 - Development dependencies, such as for testing or documentation, should be added to `pyproject.toml` in one of the lists under `[project.optional-dependencies]`.
@@ -32,7 +32,7 @@ guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?i
 ## Packaging/One command install
 
 You can distribute your code using PyPI.
-[The guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=building-and-packaging-code) can
+[The guide](https://guide.esciencecenter.nl/#/language_guides/python?id=building-and-packaging-code) can
 help you decide which tool to use for packaging.
 
 {% if AddLocalTests -%}
@@ -47,7 +47,7 @@ help you decide which tool to use for packaging.
   - This is configured in `pyproject.toml`
 - The project uses [GitHub action workflows](https://docs.github.com/en/actions) to automatically run tests on GitHub infrastructure against multiple Python versions
   - Workflows can be found in [`.github/workflows`](.github/workflows/)
-- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=testing)
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/language_guides/python?id=testing)
 {%- endif %}
 
 {% if AddLocalDocumentation -%}
@@ -61,39 +61,39 @@ help you decide which tool to use for packaging.
   - Check out its [configuration options](https://sphinx-rtd-theme.readthedocs.io/en/latest/).
 - [AutoAPI](https://sphinx-autoapi.readthedocs.io/) is used to generate documentation for the package Python objects.
 {% if AddOnlineDocumentation %}- `.readthedocs.yaml` is the ReadTheDocs configuration file. When ReadTheDocs is building the documentation this package and its development dependencies are installed so the API reference can be rendered.{% endif -%}
-- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=writingdocumentation)
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/language_guides/python?id=documentation)
 {%- endif %}
 
 ## Coding style conventions and code quality
 
-- [Relevant section in the NLeSC guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=coding-style-conventions) and [README.dev.md](README.dev.md).
+- [Relevant section in the NLeSC guide](https://guide.esciencecenter.nl/#/language_guides/python?id=coding-style-conventions) and [README.dev.md](README.dev.md).
 
 {% if AddSonarCloud -%}
 ## Continuous code quality
 
-[Sonarcloud](https://sonarcloud.io/) is used to perform quality analysis and code coverage report
+[Sonarcloud](https://www.sonarsource.com/products/sonarcloud/) is used to perform quality analysis and code coverage report
 
-- `sonar-project.properties` is the SonarCloud [configuration](https://docs.sonarqube.org/latest/analysis/analysis-parameters/) file
+- `sonar-project.properties` is the SonarCloud [configuration](https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/analysis-parameters/) file
 - `.github/workflows/sonarcloud.yml` is the GitHub action workflow which performs the SonarCloud analysis
 {%- endif %}
 
 ## Package version number
 
-- We recommend using [semantic versioning](https://guide.esciencecenter.nl/#/best_practices/releases?id=semantic-versioning).
+- We recommend using [semantic versioning](https://packaging.python.org/en/latest/discussions/versioning/).
 - For convenience, the package version is stored in a single place: `pyproject.toml` under the `tool.bumpversion` header.
-- Don't forget to update the version number before [making a release](https://guide.esciencecenter.nl/#/best_practices/releases)!
+- Don't forget to update the version number before [making a release](https://guide.esciencecenter.nl/#/best_practices?id=releases)!
 
 ## Logging
 
 - We recommend using the logging module for getting useful information from your module (instead of using print).
 - The project is set up with a logging example.
-- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=logging)
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/language_guides/python?id=logging)
 
 {% if AddChangeLog -%}
 ## CHANGELOG.md
 
 - Document changes to your software package
-- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/releases?id=changelogmd)
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices?id=releases)
 {%- endif %}
 
 {% if AddCitation -%}
@@ -101,29 +101,29 @@ help you decide which tool to use for packaging.
 
 - To allow others to cite your software, add a `CITATION.cff` file
 - It only makes sense to do this once there is something to cite (e.g., a software release with a DOI).
-- Follow the [making software citable](https://guide.esciencecenter.nl/#/citable_software/making_software_citable) section in the guide.
+- Follow the [making software citable](https://book.the-turing-way.org/communication/citable/citable-steps) chapter of the Turing Way.
 {%- endif %}
 
 {% if AddCodeConduct -%}
 ## CODE_OF_CONDUCT.md
 
 - Information about how to behave professionally
-- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=code-of-conduct)
+- [Relevant section in the Turing Way](https://book.the-turing-way.org/reproducible-research/code-documentation/code-documentation-project#code-of-conduct)
 {%- endif %}
 
 {% if AddContributing -%}
 ## CONTRIBUTING.md
 
 - Information about how to contribute to this software package
-- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/documentation?id=contribution-guidelines)
+- [Relevant section in the Turing Way](https://book.the-turing-way.org/reproducible-research/code-documentation/code-documentation-project#contributing-guidelines)
 {%- endif %}
 
 ## MANIFEST.in
 
 - List non-Python files that should be included in a source distribution
-- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python?id=building-and-packaging-code)
+- [Relevant section in the guide](https://guide.esciencecenter.nl/#/language_guides/python?id=building-and-packaging-code)
 
 ## NOTICE
 
 - List of attributions of this project and Apache-license dependencies
-- [Relevant section in the guide](https://guide.esciencecenter.nl/#/best_practices/licensing?id=notice)
+- [Relevant section on the Apache License documentation](https://infra.apache.org/licensing-howto.html#mod-notice)
