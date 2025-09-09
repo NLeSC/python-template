@@ -2,8 +2,8 @@
 # Essential questions
 package_name:
   type: str
-  placeholder: my_python_package
-  help: Enter the name of the Python package.
+  placeholder: your_python_package
+  help: Enter the name of the Python package
   validator: >-
         {% if not (package_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
         Package name must start with a letter, followed one or more letters, digits or underscores all lowercase
@@ -22,16 +22,18 @@ full_name:
   help: Enter your full name
   validator: >-
         {% if not full_name %}
-        Name cannot be empty
+        Full name cannot be empty!
         {% endif %}
 license:
   type: str
+  default: "Apachev2"
+  help: "Select a license (see: https://choosealicense.com)"
   choices:
     Apache License, Version 2.0:
       value: Apachev2
     MIT license:
       value: MIT
-    BSD license:
+    BSD license (3-clause):
       value: BSD
     ISC license:
       value: ISC
@@ -41,4 +43,11 @@ license:
       value: GNULesserv3
     Other (add your own license):
       value: Other
-  default: "Apachev2"
+copyright_holder:
+  type: str
+  default: "{{ full_name }}"
+  help: "Who is the copyright holder (default: full name)?"
+  validator: >-
+        {% if not copyright_holder %}
+        This field cannot be empty as it will be used in content of the generated files.
+        {% endif %}

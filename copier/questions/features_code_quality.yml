@@ -7,14 +7,17 @@ SelectCodeQualityFeatures:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [SelectGitHubActions_flag, AddLinting_flag, AddSonarCloud_flag, AddEditorConfig_flag]
+      [AddLocalTests_flag, SelectGitHubActions_flag, AddLinting_flag, AddSonarCloud_flag, AddEditorConfig_flag]
     {%- else -%}
       []
     {%- endif %}
   help: Select code quality features
   multiselect: true
   choices:
-    GitHub Actions (selection on the next menu):
+    Unit tests (using pytest):
+      value: AddLocalTests_flag
+      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
+    GitHub Actions (select in the next step):
       value: SelectGitHubActions_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Linting:
@@ -37,7 +40,7 @@ SelectGitHubActions:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [AddGitHubActionBuild_flag, AddGitHubActionDocumentation_flag]
+      [AddGitHubActionBuild_flag]
     {%- else -%}
       []
     {%- endif %}
@@ -47,22 +50,22 @@ SelectGitHubActions:
     Build:
       value: AddGitHubActionBuild_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-    Documentation:
-      value: AddGitHubActionDocumentation_flag
-      # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Link checker (reports broken URLs):
       value: AddLinkCheck_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
 
 # computed features
+AddLocalTests:
+  type: bool
+  default: "{{
+    'AddLocalTests_flag' in SelectCodeQualityFeatures
+    or 'AddGitHubActionBuild_flag' in SelectGitHubActions
+    or 'AddSonarCloud_flag' in SelectCodeQualityFeatures }}"
+  when: false
 AddGitHubActionBuild:
   type: bool
   default: "{{ 'AddGitHubActionBuild_flag' in SelectGitHubActions }}"
-  when: false
-AddGitHubActionDocumentation:
-  type: bool
-  default: "{{ 'AddGitHubActionDocumentation_flag' in SelectGitHubActions }}"
   when: false
 AddLinkCheck:
   type: bool

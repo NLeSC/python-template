@@ -1,0 +1,131 @@
+on: [push]
+permissions:
+  contents: write
+  issues: write
+name: Create GitHub issues
+jobs:
+  next_steps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+{%- if AddCitation %}
+      - name: Create citation data issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: {{ '${{' }}secrets.GITHUB_TOKEN{{ '}}' }}
+        with:
+          filename: .github/workflows/next_steps_citation_issue.md
+        id: citation
+      - name: List created issues
+        run: |
+          echo "Created issues that must be completed to have fully working Python package:
+          * Citation data {{ '${{' }} steps.citation.outputs.url {{ '}}' }}"
+      - name: Cleanup files needed to create next steps issues
+        run: |
+          git config --global user.name 'NLeSC Python template'
+          git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git pull # other next step workflows may push changes before
+          git rm .github/workflows/next_steps_citation_issue.md
+          git commit -am "Cleanup automated next steps issue generator for citation"
+          git push
+{%- endif %}
+
+{%- if AddLinting %}
+      - name: Create linting issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: {{ '${{' }}secrets.GITHUB_TOKEN{{ '}}' }}
+        with:
+          filename: .github/workflows/next_steps_linting_issue.md
+        id: linting
+      - name: List created issues
+        run: |
+          echo "Created issues that must be completed to have fully working Python package:
+          * Linting fixes {{ '${{' }} steps.linting.outputs.url {{ '}}' }}"
+      - name: Cleanup files needed to create next steps issues
+        run: |
+          git config --global user.name 'NLeSC Python template'
+          git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git pull # other next step workflows may push changes before
+          git rm .github/workflows/next_steps_linting_issue.md
+          git commit -am "Cleanup automated next steps issue generator"
+          git push
+{%- endif %}
+
+{%- if AddOnlineDocumentation %}
+      - name: Create online documentation issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: {{ '${{' }}secrets.GITHUB_TOKEN{{ '}}' }}
+        with:
+          filename: .github/workflows/next_steps_online_documentation_issue.md
+        id: readthedocs
+      - name: List created issues
+        run: |
+          echo "Created issues that must be completed to have fully working Python package:
+          * Read the Docs instructions {{ '${{' }} steps.readthedocs.outputs.url {{ '}}' }}"
+      - name: Cleanup files needed to create next steps issues
+        run: |
+          git config --global user.name 'NLeSC Python template'
+          git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git pull # other next step workflows may push changes before
+          git rm .github/workflows/next_steps_online_documentation_issue.md
+          git commit -am "Cleanup automated next steps issue generator for online documentation"
+          git push
+{%- endif %}
+
+{%- if AddZenodo %}
+      - name: Create Zenodo integration issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: {{ '${{' }}secrets.GITHUB_TOKEN{{ '}}' }}
+        with:
+          filename: .github/workflows/next_steps_zenodo_issue.md
+        id: zenodo
+      - name: List created issues
+        run: |
+          echo "Created issues that must be completed to have fully working Python package:
+          * Sonarcloud integration {{ '${{' }} steps.sonarcloud.outputs.url {{ '}}' }}"
+      - name: Cleanup files needed to create next steps issues
+        run: |
+          git config --global user.name 'NLeSC Python template'
+          git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git pull # other next step workflows may push changes before
+          git rm .github/workflows/next_steps_zenodo_issue.md
+          git commit -am "Cleanup automated next steps issue generator for zenodo"
+          git push
+{%- endif %}
+
+{%- if AddSonarCloud %}
+      - name: Create Sonarcloud issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: {{ '${{' }}secrets.GITHUB_TOKEN{{ '}}' }}
+        with:
+          filename: .github/workflows/next_steps_sonarcloud_issue.md
+        id: sonarcloud
+      - name: List created issues
+        run: |
+          echo "Created issues that must be completed to have fully working Python package:
+          * Sonarcloud integration {{ '${{' }} steps.sonarcloud.outputs.url {{ '}}' }}"
+      - name: Cleanup files needed to create next steps issues
+        run: |
+          git config --global user.name 'NLeSC Python template'
+          git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git pull # other next step workflows may push changes before
+          git rm .github/workflows/next_steps_sonarcloud_issue.md
+          git commit -am "Cleanup automated next steps issue generator for sonarcloud"
+          git push
+{%- endif %}
+
+{%- if AddCitation or AddLinting or AddOnlineDocumentation or AddZenodo or AddSonarCloud %}
+      - name: Cleanup files needed to create next steps issues
+        run: |
+          git config --global user.name 'NLeSC Python template'
+          git config --global user.email 'nlesc-python-template@users.noreply.github.com'
+          git pull # other next step workflows may push changes before
+          git rm .github/workflows/next_steps.yml
+          git commit -am "Cleanup automated next steps issue generator"
+          git push
+{%- endif %}

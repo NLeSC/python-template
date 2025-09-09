@@ -14,7 +14,7 @@ SelectPublishReleaseFeatures:
   help: Select publish and release features
   multiselect: true
   choices:
-    Citation (selection on the next menu):
+    Citation (select in the next step):
       value: SelectCitation_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
     Changelog:

@@ -2,12 +2,6 @@ name: link-check
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-    - main
-  pull_request:
-    branches:
-    - main
   schedule:
     - cron: '0 0 1 * *' # first day of every month at midnight
 
@@ -19,11 +13,11 @@ jobs:
   linkChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Link Checker
         id: lychee
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v2
 
       - name: Set Issue Title
         id: set_title

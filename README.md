@@ -1,8 +1,28 @@
 # Netherlands eScience Center Python Template
 
-Spend less time setting up and configuring your new Python packages which includes research software good practices from the start.
+<img align="right" width="160" src="logo.png" alt='Python Template logo, created using ChatGPT 4o on 10 September 2024 using prompt "generate a logo of a copier that looks like a snake-scientist"'>
 
-Use this [Copier](https://copier.readthedocs.io) template to generate an empty Python package. Features include:
+Spend less time setting up and configuring your new Python packages by using this template. This [Copier](https://copier.readthedocs.io) template includes best practices for research software so your new package will include these practices from the start. 
+
+You can choose from various user profiles, each offering a range of features to suit your needs.
+
+## User profiles
+
+The template profiles for a Python package offer varying levels of customization to cater to different user needs. Below are the profiles the template offers.
+
+### Minimum
+
+This profile offers the essential features to begin developing a Python package, making it ideal for first-time research software developers. Additional features can be added as needed.
+
+### Recommended
+
+This option provides a pre-selected set of features for research software, which users can fully customize.
+
+### Let me choose
+
+This fully customizable profile enables you to selectively include or exclude features in your Python package.
+
+## Features
 
 - Boilerplate unit tests and documentation,
 - [Python static setup configuration](template/pyproject.toml.jinja),
@@ -14,7 +34,7 @@ Use this [Copier](https://copier.readthedocs.io) template to generate an empty P
   - [README.md](template/README.md.jinja) for package users,
   - [README.dev.md](template/README.dev.md.jinja) for package developer,
   - [project_setup.md](template/project_setup.md.jinja) with extensive documentation about project setup,
-  - [Change log](template/%7B%25%20if%20AddChangeLog%20%25%7DCHANGELOG.md%7B%25%20endif%20%25%7D),
+  - [Changelog](template/%7B%25%20if%20AddChangeLog%20%25%7DCHANGELOG.md%7B%25%20endif%20%25%7D),
   - [Code of Conduct](template/CODE_OF_CONDUCT.md.jinja),
   - [Contributing guidelines](template/CONTRIBUTING.md.jinja),
 - Continuous code quality and code coverage reporting using [Sonarcloud](https://sonarcloud.io/),

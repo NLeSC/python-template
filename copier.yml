@@ -15,20 +15,24 @@
 !include copier/questions/package_details.yml
 
 ---
-# code quality
+# code quality features
 !include copier/questions/features_code_quality.yml
 
 ---
-# publish and release
+# publish and release features
 !include copier/questions/features_publish_release.yml
 
 ---
-# publish and release
+# publish and release features
 !include copier/questions/features_documentation.yml
 
 ---
-# community
+# community features
 !include copier/questions/features_community.yml
+
+---
+# global flags
+!include copier/global_flags.yml
 
 ---
 # User messages
