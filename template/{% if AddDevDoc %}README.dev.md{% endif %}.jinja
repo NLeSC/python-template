@@ -87,6 +87,27 @@ git config --local core.hooksPath .githooks
 ```
 {%- endif -%}
 
+{%- if SelectTypeChecker -%}
+## Type checking
+
+{% if SelectTypeChecker == 'pyright' -%}
+We use [pyright](https://microsoft.github.io/pyright/) for type checking.
+
+```shell
+pyright
+```
+
+{% endif -%}
+{% if SelectTypeChecker == 'mypy' -%}
+We use [mypy](http://mypy-lang.org/) for type checking.
+
+```shell
+mypy .
+```
+
+{% endif -%}
+{% endif -%}
+
 ## Generating the API docs
 
 ```shell

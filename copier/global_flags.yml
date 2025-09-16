@@ -12,5 +12,6 @@ HasWorkflows:
     or AddOnlineDocumentation
     or AddSonarCloud
     or AddZenodo
-    or AddLinting }}"
+    or AddLinting
+    or AddGithubActionTypeCheck }}"
   when: false

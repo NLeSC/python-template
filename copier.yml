@@ -31,6 +31,10 @@
 !include copier/questions/features_community.yml
 
 ---
+# typing features
+!include copier/questions/features_typing.yml
+
+---
 # global flags
 !include copier/global_flags.yml
 
