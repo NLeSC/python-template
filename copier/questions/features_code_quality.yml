@@ -55,10 +55,27 @@ SelectGitHubActions:
       value: AddLinkCheck_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
----
-# typing features
-!include copier/questions/features_typing.yml
----
+AddTyping:
+  type: bool
+  default: "{{ 'AddTyping_flag' in SelectCodeQualityFeatures }}"
+  when: false
+
+SelectTypeChecker:
+  when: "{{ template_profile != 'minimum' and AddTyping }}"
+  type: str
+  default: pyright
+  help: Select a type checker
+  choices:
+    Mypy:
+      value: mypy
+    Pyright:
+      value: pyright
+    # TODO add pyrefly https://pyrefly.org/
+    # TODO add ty https://github.com/astral-sh/ty
+
+# TODO add runtime type checking (using pydantic or typeguard)
+
+# TODO ask how strict to typecheck
 
 # computed features
 AddLocalTests:
