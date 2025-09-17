@@ -7,7 +7,7 @@ SelectCodeQualityFeatures:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [AddLocalTests_flag, SelectGitHubActions_flag, AddLinting_flag, AddSonarCloud_flag, AddEditorConfig_flag]
+      [AddLocalTests_flag, SelectGitHubActions_flag, AddLinting_flag, AddSonarCloud_flag, AddEditorConfig_flag, AddTyping_flag]
     {%- else -%}
       []
     {%- endif %}
@@ -32,7 +32,8 @@ SelectCodeQualityFeatures:
     Editorconfig:
       value: AddEditorConfig_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-
+    Typing (select type checker later):
+      value: AddTyping_flag
 
 # Sub-menus
 SelectGitHubActions:
@@ -54,6 +55,10 @@ SelectGitHubActions:
       value: AddLinkCheck_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
+---
+# typing features
+!include copier/questions/features_typing.yml
+---
 
 # computed features
 AddLocalTests:

@@ -58,10 +58,10 @@ dev = [
     {%- endif %}
     "tox",
     "myst_parser",
-    {% if SelectTypeChecker -%}
+    {% if AddTyping and SelectTypeChecker -%}
     "{{ SelectTypeChecker }}",
     {%- endif %}
-    {%- if 'AddTypingInDocs_flag' in SelectTypingFeatures %}
+    {%- if AddTypingInDocs %}
     "sphinx-autodoc-typehints",
     {%- endif %}
 ]
@@ -71,7 +71,7 @@ docs = [
     "sphinx_rtd_theme",
     "sphinx-autoapi",
     "myst_parser",
-    {%- if 'AddTypingInDocs_flag' in SelectTypingFeatures %}
+    {%- if AddTypingInDocs %}
     "sphinx-autodoc-typehints",
     {%- endif %}
 ]
@@ -156,6 +156,7 @@ known-first-party = ["{{ package_name }}"]
 force-single-line = true
 no-lines-before = ["future","standard-library","third-party","first-party","local-folder"]
 
+{% if AddTyping -%}
 {% if SelectTypeChecker == 'pyright' -%}
 [tool.pyright]
 include = ["src"]
@@ -163,6 +164,7 @@ include = ["src"]
 {% if SelectTypeChecker == 'mypy' -%}
 [tool.mypy]
 files = ["src"]
+{%- endif %}
 {%- endif %}
 
 [tool.bumpversion]

@@ -65,12 +65,10 @@ jobs:
           ruff format --check
 {%- endif %}
 
-{%- if AddGitHubActionTypeCheck %}
+{%- if AddTyping %}
   typecheck:
     name: Type checking
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
     steps:
       - uses: actions/checkout@v5
       - name: Set up Python 3.12
@@ -85,8 +83,8 @@ jobs:
         run: |
           {% if SelectTypeChecker == 'pyright' %}
           pyright
-          {% endif %}
+          {% endif -%}
           {% if SelectTypeChecker == 'mypy' %}
           mypy
-          {% endif %}
+          {% endif -%}
 {%- endif %}

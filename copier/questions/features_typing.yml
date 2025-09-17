@@ -1,35 +1,15 @@
 ---
 # Questions for typing features
 
-# the main menu
-SelectTypingFeatures:
-  when: "{{ template_profile != 'minimum' }}"
-  type: yaml
-  default: |-
-    {% if template_profile == 'recommended' %}
-      [AddTyping_flag, AddTypingInDocs_flag, AddGitHubActionTypeCheck_flag]
-    {%- else -%}
-      []
-    {%- endif %}
-  help: Select typing features
-  multiselect: true
-  choices:
-    Support Typing (add py.typed file):
-      value: AddTyping_flag
-    GitHub Action to type check:
-      value: AddGitHubActionTypeCheck_flag
-    Typing in API documentation:
-      value: AddTypingInDocs_flag
-
-# TODO add runtime type checking (using pydantic or typeguard)
+AddTyping:
+  type: bool
+  default: "{{ 'AddTyping_flag' in SelectCodeQualityFeatures }}"
+  when: false
 
 SelectTypeChecker:
-  when: "{{ template_profile != 'minimum' and 'AddTyping_flag' in SelectTypingFeatures }}"
+  when: "{{ template_profile != 'minimum' and AddTyping }}"
   type: str
-  default: |-
-    {%- if template_profile == 'recommended' -%}
-    pyright
-    {%- endif %}
+  default: pyright
   help: Select a type checker
   choices:
     Mypy:
@@ -39,19 +19,6 @@ SelectTypeChecker:
     # TODO add pyrefly https://pyrefly.org/
     # TODO add ty https://github.com/astral-sh/ty
 
-AddPyTyped:
-  type: bool
-  default: "{{ 'AddTyping_flag' in SelectTypingFeatures }}"
-  when: false
-
-AddGithubActionTypeCheck:
-  type: bool
-  default: "{{ 'AddGitHubActionTypeCheck_flag' in SelectTypingFeatures and SelectTypeChecker != '' }}"
-  when: false
-
-AddTypingInDocs:
-  type: bool
-  default: "{{ 'AddTypingInDocs_flag' in SelectTypingFeatures }}"
-  when: false
+# TODO add runtime type checking (using pydantic or typeguard)
 
 # TODO ask how strict to typecheck
