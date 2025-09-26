@@ -15,7 +15,7 @@ _message_after_copy: |
 
         Next steps:
 
-            - Below are the commands to put your Python package under using git:
+            - Below are the commands to put your Python package under version control using git:
 
                 cd {{ _copier_conf.dst_path }}
                 git init
