@@ -81,10 +81,5 @@ jobs:
           python -m pip install .[dev]
       - name: Run {{ SelectTypeChecker }}
         run: |
-          {% if SelectTypeChecker == 'pyright' %}
-          pyright
-          {% endif -%}
-          {% if SelectTypeChecker == 'mypy' %}
-          mypy
-          {% endif -%}
+          {{ SelectTypeChecker }}
 {%- endif %}
