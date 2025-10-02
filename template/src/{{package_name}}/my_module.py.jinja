@@ -8,10 +8,10 @@ def hello(name: str) -> str:
     Function docstring using Google docstring style.
 
     Args:
-        name (str): Name to say hello to
+        name{% if not AddTypingInDocs %} (str){% endif %}: Name to say hello to
 
     Returns:
-        str: Hello message
+        {% if not AddTypingInDocs %}str: {% endif %}Hello message
 
     Raises:
         ValueError: If `name` is equal to `nobody`

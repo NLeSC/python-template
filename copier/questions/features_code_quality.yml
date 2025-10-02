@@ -7,7 +7,7 @@ SelectCodeQualityFeatures:
   type: yaml
   default: |-
     {% if template_profile == 'recommended' %}
-      [AddLocalTests_flag, SelectGitHubActions_flag, AddLinting_flag, AddSonarCloud_flag, AddEditorConfig_flag]
+      [AddLocalTests_flag, SelectGitHubActions_flag, AddLinting_flag, AddSonarCloud_flag, AddEditorConfig_flag, AddTyping_flag]
     {%- else -%}
       []
     {%- endif %}
@@ -32,7 +32,8 @@ SelectCodeQualityFeatures:
     Editorconfig:
       value: AddEditorConfig_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
-
+    Typing (select type checker later):
+      value: AddTyping_flag
 
 # Sub-menus
 SelectGitHubActions:
@@ -54,6 +55,27 @@ SelectGitHubActions:
       value: AddLinkCheck_flag
       # validator: "{% if something != 'AnotherThing' %}BlaBla{% endif %}"
 
+AddTyping:
+  type: bool
+  default: "{{ 'AddTyping_flag' in SelectCodeQualityFeatures }}"
+  when: false
+
+SelectTypeChecker:
+  when: "{{ template_profile != 'minimum' and AddTyping }}"
+  type: str
+  default: pyright
+  help: Select a type checker
+  choices:
+    Mypy:
+      value: mypy
+    Pyright:
+      value: pyright
+    # TODO add pyrefly https://pyrefly.org/
+    # TODO add ty https://github.com/astral-sh/ty
+
+# TODO add runtime type checking (using pydantic or typeguard)
+
+# TODO ask how strict to typecheck
 
 # computed features
 AddLocalTests:
