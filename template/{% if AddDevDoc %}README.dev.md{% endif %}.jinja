@@ -65,7 +65,7 @@ coverage report
 {%- if AddLinting -%}
 ## Running linters locally
 
-For linting and sorting imports we will use [ruff](https://beta.ruff.rs/docs/). Running the linters requires an
+For linting and sorting imports we will use [ruff](https://docs.astral.sh/ruff/). Running the linters requires an
 activated virtual environment with the development tools installed.
 
 ```shell
@@ -76,7 +76,11 @@ ruff check .
 ruff check . --fix
 ```
 
-To fix readability of your code style you can use [yapf](https://github.com/google/yapf).
+It also provides a command to fix readability of your code style:
+
+```shell
+ruff format .
+```
 {%- endif -%}
 
 {%- if AddPreCommit -%}
