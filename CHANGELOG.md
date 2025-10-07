@@ -4,6 +4,8 @@
 
 ### Added
 
+- Typing support. [#698](https://github.com/NLeSC/python-template/pull/698)
+
 ### Changed
 
 ### Removed

@@ -29,6 +29,14 @@
 {% if AddLinkCheck -%}
 | Link checker              | [![link-check]({{repository_url}}/actions/workflows/link-check.yml/badge.svg)]({{repository_url}}/actions/workflows/link-check.yml) |
 {%- endif -%}
+{% if AddTyping -%}
+{% if SelectTypeChecker == 'pyright' -%}
+| Type checker                       | [![Checked with pyright](https://microsoft.github.io/pyright/img/pyright_badge.svg)](https://microsoft.github.io/pyright/) |
+{%- endif -%}
+{% if SelectTypeChecker == 'mypy' -%}
+| Type checker                       | [![Checked with mypy](https://mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/) |
+{%- endif -%}
+{%- endif %}
 
 ## How to use {{ package_name }}
 

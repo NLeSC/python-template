@@ -64,3 +64,22 @@ jobs:
           ruff check
           ruff format --check
 {%- endif %}
+
+{%- if AddTyping %}
+  typecheck:
+    name: Type checking
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v6
+        with:
+          python-version: 3.12
+      - name: Upgrade pip and install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools
+          python -m pip install .[dev]
+      - name: Run {{ SelectTypeChecker }}
+        run: |
+          {{ SelectTypeChecker }}
+{%- endif %}

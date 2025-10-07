@@ -58,6 +58,12 @@ dev = [
     {%- endif %}
     "tox",
     "myst_parser",
+    {% if AddTyping and SelectTypeChecker -%}
+    "{{ SelectTypeChecker }}",
+    {%- endif %}
+    {%- if AddTypingInDocs %}
+    "sphinx-autodoc-typehints",
+    {%- endif %}
 ]
 {%- if AddLocalDocumentation %}
 docs = [
@@ -65,6 +71,9 @@ docs = [
     "sphinx_rtd_theme",
     "sphinx-autoapi",
     "myst_parser",
+    {%- if AddTypingInDocs %}
+    "sphinx-autodoc-typehints",
+    {%- endif %}
 ]
 {%- endif %}
 publishing = [
@@ -146,6 +155,17 @@ pydocstyle.convention = "google"
 known-first-party = ["{{ package_name }}"]
 force-single-line = true
 no-lines-before = ["future","standard-library","third-party","first-party","local-folder"]
+
+{% if AddTyping -%}
+{% if SelectTypeChecker == 'pyright' -%}
+[tool.pyright]
+include = ["src"]
+{%- endif %}
+{% if SelectTypeChecker == 'mypy' -%}
+[tool.mypy]
+files = ["src"]
+{%- endif %}
+{%- endif %}
 
 [tool.bumpversion]
 current_version = "{{ version }}"

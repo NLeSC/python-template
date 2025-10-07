@@ -44,3 +44,7 @@ AddGitHubActionDocumentation:
   type: bool
   default: "{{ 'AddGitHubActionDocumentation_flag' in SelectDocumentationFeatures }}"
   when: false
+AddTypingInDocs:
+  type: bool
+  default: "{{ AddTyping and AddLocalDocumentation }}"
+  when: false

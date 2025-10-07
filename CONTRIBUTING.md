@@ -33,7 +33,7 @@ in line with what is recommended there. If not, please [contribute to the guide]
 1. (**important**) wait until some kind of consensus is reached about your idea being a good idea;
 1. if needed, fork the repository to your own Github profile and create your own feature branch off of the latest main commit. While working on your feature branch, make sure to stay up to date with the main branch by pulling in changes, possibly from the 'upstream' repository (follow the instructions [here](https://help.github.com/articles/configuring-a-remote-for-a-fork/) and [here](https://help.github.com/articles/syncing-a-fork/));
 1. install dependencies (see the [development documentation](README.dev.md#create-a-virtual-environment));
-1. make sure the existing tests still work by running ``pytest``. If project tests fail use ``pytest --keep-baked-projects`` to keep generated project files in `/tmp/pytest-*` and investigate;
+1. make sure the existing tests still work by running ``pytest``. If project tests fail use ``pytest --keep-copied-projects`` to keep generated project files in `/tmp/pytest-*` and investigate;
 1. add your own tests (if necessary);
 1. update or expand the documentation;
 1. update the `CHANGELOG.md` file with your change;
