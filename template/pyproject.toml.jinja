@@ -24,9 +24,9 @@ classifiers = [
     }[license] }}",
     "Natural Language :: English",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 dependencies = []
 description = "{{ package_short_description|replace('\"', '\\\"') }}"
@@ -38,7 +38,7 @@ keywords = [
 license = {file = "LICENSE"}
 name = "{{ package_name }}"
 readme = {file = "README.md", content-type = "text/markdown"}
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 version = "{{ version }}"
 
 [dependency-groups]
@@ -105,7 +105,7 @@ command_line = "-m pytest"
 
 [tool.tox]
 requires = ["tox>=4.22"]
-env_list = [ "py310", "py311", "py312" ]
+env_list = [ "py312", "py313", "py314" ]
 skip_missing_interpreters = true
 {% if AddLocalTests -%}
 [tool.box.testenv]

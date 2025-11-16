@@ -13,6 +13,8 @@
 
 ### Removed
 
+* Removed Python 3.10 and 3.11 support
+
 ## 0.6.1
 
 ### Added
