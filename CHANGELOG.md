@@ -8,6 +8,8 @@
 
 ### Changed
 
+* Recommend `ruff format` instead of `yapf` for fixing code style readability [#695](https://github.com/NLeSC/python-template/pull/695)
+
 ### Removed
 
 ## 0.6.1
