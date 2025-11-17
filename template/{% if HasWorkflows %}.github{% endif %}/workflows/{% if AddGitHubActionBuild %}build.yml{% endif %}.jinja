@@ -61,8 +61,8 @@ jobs:
           python -m pip install .[dev,publishing]
       - name: Check style against standards using ruff
         run: |
-          ruff check
-          ruff format --check
+          ruff check .
+          ruff format --check .
 {%- endif %}
 
 {%- if AddTyping %}
