@@ -4,10 +4,12 @@
 
 ### Added
 
-- Typing support. [#698](https://github.com/NLeSC/python-template/pull/698)
+* Add Python 3.13 and 3.14 support [#703](https://github.com/NLeSC/python-template/pull/703)
+* Typing support. [#698](https://github.com/NLeSC/python-template/pull/698)
 
 ### Changed
 
+* Update CI actions to use Python 3.14 instead of 3.12 [#703](https://github.com/NLeSC/python-template/pull/703)
 * Recommend `ruff format` instead of `yapf` for fixing code style readability [#695](https://github.com/NLeSC/python-template/pull/695)
 
 ### Removed
