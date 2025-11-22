@@ -14,7 +14,7 @@ jobs:
     name: "cffconvert"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         name: Check out a copy of the repository
 
       - name: Check whether the citation metadata from CITATION.cff is valid
