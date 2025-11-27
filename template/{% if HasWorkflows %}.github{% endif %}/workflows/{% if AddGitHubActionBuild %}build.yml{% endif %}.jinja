@@ -32,7 +32,7 @@ jobs:
       - name: Upgrade pip and install dependencies
         run: |
           python -m pip install --upgrade pip setuptools
-          python -m pip install .[dev,publishing]
+          python -m pip install . --group dev --group publishing
       - name: Run unit tests
         run: python -m pytest -v
       - name: Verify that we can build the package
@@ -58,7 +58,7 @@ jobs:
       - name: Upgrade pip and install dependencies
         run: |
           python -m pip install --upgrade pip setuptools
-          python -m pip install .[dev,publishing]
+          python -m pip install . --group dev
       - name: Check style against standards using ruff
         run: |
           ruff check .
@@ -78,7 +78,7 @@ jobs:
       - name: Upgrade pip and install dependencies
         run: |
           python -m pip install --upgrade pip setuptools
-          python -m pip install .[dev]
+          python -m pip install . --group dev
       - name: Run {{ SelectTypeChecker }}
         run: |
           {{ SelectTypeChecker }}

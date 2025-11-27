@@ -41,7 +41,7 @@ readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.10"
 version = "{{ version }}"
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
     "build",  # build is not only used in publishing (below), but also in the template's test suite
     "bump-my-version",
@@ -111,7 +111,10 @@ skip_missing_interpreters = true
 {% if AddLocalTests -%}
 [testenv]
 commands = pytest
-extras = dev
+[tool.tox.env_run_base]
+dependency_groups = [
+  "dev",
+]
 {%- endif %}
 """
 

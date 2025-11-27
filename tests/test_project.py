@@ -64,7 +64,7 @@ def baked_with_development_dependencies(copie_session, project_env_bin_dir, copi
     bin_dir = project_env_bin_dir
     latest_pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--upgrade', 'pip', 'setuptools'], project_dir)
     assert latest_pip_output.returncode == 0
-    pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--editable', '.[dev]'], project_dir)
+    pip_output = run([f'{bin_dir}python', '-m', 'pip', 'install', '--editable', '.', '--group', 'dev'], project_dir)
     assert pip_output.returncode == 0
     return project_dir
 
