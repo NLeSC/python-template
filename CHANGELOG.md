@@ -4,11 +4,12 @@
 
 ### Added
 
-- Typing support. [#698](https://github.com/NLeSC/python-template/pull/698)
+* Typing support. [#698](https://github.com/NLeSC/python-template/pull/698)
 
 ### Changed
 
 * Recommend `ruff format` instead of `yapf` for fixing code style readability [#695](https://github.com/NLeSC/python-template/pull/695)
+* Replace optional dependencies with dependency groups in template [#705](https://github.com/NLeSC/python-template/pull/705)
 
 ### Removed
 

@@ -41,7 +41,7 @@ readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.10"
 version = "{{ version }}"
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
     "build",  # build is not only used in publishing (below), but also in the template's test suite
     "bump-my-version",
@@ -104,16 +104,16 @@ command_line = "-m pytest"
 {%- endif %}
 
 [tool.tox]
-legacy_tox_ini = """
-[tox]
-envlist = py310,py311,py312
+requires = ["tox>=4.22"]
+env_list = [ "py310", "py311", "py312" ]
 skip_missing_interpreters = true
 {% if AddLocalTests -%}
-[testenv]
-commands = pytest
-extras = dev
+[tool.box.testenv]
+description = "Run test under {base_python}"
+commands = [["pytest"]]
+[tool.tox.env_run_base]
+dependency_groups = [ "dev" ]
 {%- endif %}
-"""
 
 [tool.ruff]
 line-length = 79
