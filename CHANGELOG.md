@@ -8,6 +8,7 @@
 
 ### Changed
 
+* Following [PEP 639](https://peps.python.org/pep-0639/#specification), updated `license` and `license-files` keys in `pyproject.toml` [#707](https://github.com/NLeSC/python-template/pull/707)
 * Recommend `ruff format` instead of `yapf` for fixing code style readability [#695](https://github.com/NLeSC/python-template/pull/695)
 
 ### Removed
