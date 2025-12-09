@@ -1,4 +1,8 @@
-{% if AddCitation -%}include CITATION.cff{%- endif %}
+{%- if AddCitation %}
+include CITATION.cff
+{%- endif %}
 include LICENSE
+{%- if license == "Apachev2" %}
 include NOTICE
+{%- endif %}
 include README.md
