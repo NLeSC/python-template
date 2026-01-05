@@ -18,9 +18,9 @@ python -m pip install --upgrade pip setuptools
 # install {{ package_name }} as an editable package
 python -m pip install --no-cache-dir --editable .
 # install development dependencies
-python -m pip install --no-cache-dir --editable .[dev]
+python -m pip install --no-cache-dir --editable . --group dev
 # install documentation dependencies only
-python -m pip install --no-cache-dir --editable .[docs]
+python -m pip install --no-cache-dir --editable . --group docs
 ```
 
 Afterwards check that the install directory is present in the `PATH` environment variable.
