@@ -26,6 +26,7 @@ This fully customizable profile enables you to selectively include or exclude fe
 
 - Boilerplate unit tests and documentation,
 - [Python static setup configuration](template/pyproject.toml.jinja),
+  - Supporting the 3 most recent Python version, following [SPEC 0]
 - Open source software license,
 - Continuous integration with [GitHub action workflows](template/.github/workflows) for building, testing, link checking and linting,
 - Code style checking with [ruff](https://beta.ruff.rs/),
@@ -45,20 +46,20 @@ This fully customizable profile enables you to selectively include or exclude fe
 
 ## Badges
 
-| fair-software.nl recommendations | |
-| :-- | :--  |
-| (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)](https://github.com/nlesc/python-template) |
-| (2/5) license                      | [![github license badge](https://img.shields.io/github/license/nlesc/python-template)](https://github.com/nlesc/python-template) |
-| (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-python--template-00a3e3.svg)](https://research-software.nl/software/nlesc-python-template) |
-| (4/5) citation                     | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310751.svg)](https://doi.org/10.5281/zenodo.1310751) |
-| (5/5) checklist                    | &nbsp; |
-| overall                            | [![fair-software badge](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu) |
-| **Other best practices**           | &nbsp; |
-| &nbsp;                             | &nbsp; |
-| **GitHub Actions**                 | &nbsp; |
-| Citation metadata consistency      | [![cffconvert](https://github.com/nlesc/python-template/actions/workflows/cffconvert.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/cffconvert.yml) |
-| Link checker              | [![link-check](https://github.com/nlesc/python-template/actions/workflows/link-check.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/link-check.yml) |
-| Tests                              | [![tests](https://github.com/nlesc/python-template/actions/workflows/tests.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/tests.yml) |
+| fair-software.nl recommendations |                                                                                                                                                                                 |
+|:---------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| (1/5) code repository            | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)](https://github.com/nlesc/python-template)                       |
+| (2/5) license                    | [![github license badge](https://img.shields.io/github/license/nlesc/python-template)](https://github.com/nlesc/python-template)                                                |
+| (3/5) community registry         | [![RSD](https://img.shields.io/badge/rsd-python--template-00a3e3.svg)](https://research-software.nl/software/nlesc-python-template)                                             |
+| (4/5) citation                   | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310751.svg)](https://doi.org/10.5281/zenodo.1310751)                                                                       |
+| (5/5) checklist                  | &nbsp;                                                                                                                                                                          |
+| overall                          | [![fair-software badge](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu) |
+| **Other best practices**         | &nbsp;                                                                                                                                                                          |
+| Dependency support               | [![SPEC 0 — Minimum Supported Dependencies][badge-SPEC0]][SPEC 0]                                                                                                               |
+| **GitHub Actions**               | &nbsp;                                                                                                                                                                          |
+| Citation metadata consistency    | [![cffconvert](https://github.com/nlesc/python-template/actions/workflows/cffconvert.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/cffconvert.yml) |
+| Link checker                     | [![link-check](https://github.com/nlesc/python-template/actions/workflows/link-check.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/link-check.yml) |
+| Tests                            | [![tests](https://github.com/nlesc/python-template/actions/workflows/tests.yml/badge.svg)](https://github.com/nlesc/python-template/actions/workflows/tests.yml)                |
 
 ## How to use
 
@@ -164,3 +165,10 @@ list below:
 ## How to contribute
 
 Suggestions/improvements/edits are most welcome. Please read the [contribution guidelines](CONTRIBUTING.md) before creating an issue or a pull request.
+
+
+<!-- References -->
+
+[badge-SPEC0]:  https://img.shields.io/badge/SPEC-0-green?labelColor=%23004811&color=%235CA038
+
+[SPEC 0]:  https://scientific-python.org/specs/spec-0000/

@@ -131,8 +131,6 @@ def test_generate_api_docs(baked_with_development_dependencies, project_env_bin_
     assert (project_dir / 'docs' / '_build' / 'html' / 'index.html').exists()
 
 
-@pytest.mark.skipif(sys.version_info < (3, 9), reason=
-"requires python 3.9 or higher, see https://github.com/NLeSC/python-template/pull/347#issuecomment-1710684574")
 def test_coverage_api_docs(baked_with_development_dependencies, project_env_bin_dir):
     project_dir = baked_with_development_dependencies
     bin_dir = project_env_bin_dir

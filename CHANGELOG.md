@@ -4,16 +4,20 @@
 
 ### Added
 
+* Now explicitly following [SPEC 0](https://scientific-python.org/specs/spec-0000/), add Python 3.13 and 3.14 support [#703](https://github.com/NLeSC/python-template/pull/703)
 * Typing support. [#698](https://github.com/NLeSC/python-template/pull/698)
 
 ### Changed
 
+* Update CI actions to use Python 3.14 instead of 3.12 [#703](https://github.com/NLeSC/python-template/pull/703)
 * Recommend `ruff format` instead of `yapf` for fixing code style readability [#695](https://github.com/NLeSC/python-template/pull/695)
 * Replace optional dependencies with dependency groups in template [#705](https://github.com/NLeSC/python-template/pull/705)
 
 ### Removed
 
-## 0.6.1
+* Removed Python 3.10 and 3.11 support
+
+## [0.6.1]
 
 ### Added
 
@@ -244,7 +248,9 @@ Released on July 12, 2018.
  	* Requirements.txt
  	* Setup configuration
 
-[Unreleased]: https://github.com/NLeSC/python-template//compare/0.5.0...HEAD
+[Unreleased]: https://github.com/NLeSC/python-template//compare/0.6.1...HEAD
+[0.5.0]:      https://github.com/NLeSC/python-template/releases/tag/0.6.1
+[0.5.0]:      https://github.com/NLeSC/python-template/releases/tag/0.6.0
 [0.5.0]:      https://github.com/NLeSC/python-template/releases/tag/0.5.0
 [0.4.0]:      https://github.com/NLeSC/python-template/releases/tag/0.4.0
 [0.3.0]:      https://github.com/NLeSC/python-template/releases/tag/0.3.0
