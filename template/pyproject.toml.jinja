@@ -4,7 +4,7 @@
 # - https://www.python.org/dev/peps/pep-0621/
 
 [build-system]
-requires = ["setuptools>=64.0.0", "setuptools-scm", "wheel"]
+requires = ["setuptools>=77.0.3", "setuptools-scm", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -15,13 +15,6 @@ classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
-    "{{ {'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
-        'MIT license': 'License :: OSI Approved :: MIT License',
-        'BSD license': 'License :: OSI Approved :: BSD License',
-        'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
-        'GNU General Public License v3 or later': 'License :: OSI Approved :: GNU General Public License',
-        'Not open source': 'License :: Other/Proprietary License'
-    }[license] }}",
     "Natural Language :: English",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
@@ -35,7 +28,17 @@ keywords = [
 "{{ item }}"{{ "," if not loop.last }}
 {%- endfor -%}
 ]
-license = {file = "LICENSE"}
+{% if license != "Other" -%}
+license = "{{ {'Apachev2': 'Apache-2.0',
+    'MIT': 'MIT',
+    'BSD': 'BSD-3-Clause',
+    'ISC': 'ISC',
+    'GNUv3': 'GPL-3.0-or-later',
+    'GNULesserv3': 'LGPL-3.0-or-later',
+}[license] }}"
+{% endif -%}
+{#- NOTICE file is only present for Apache -#}
+license-files = ["LICENSE"{% if license == "Apachev2" %}, "NOTICE"{% endif %}]
 name = "{{ package_name }}"
 readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.12"
