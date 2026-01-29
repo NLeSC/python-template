@@ -80,6 +80,7 @@ Released on August 15, 2024
 
 ### Added
 
+* Added `gitlab-ci.yml` file for GitLab alternative to GitHub Actions [#452](https://github.com/NLeSC/python-template/issues/452)
 * Added Python 3.12 support [#356](https://github.com/NLeSC/python-template/issues/356)
 * Template unit tests for documentation generation, linting and version bumping
 * Docstring for function
