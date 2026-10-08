@@ -18,6 +18,10 @@
 
 * Removed Python 3.10 and 3.11 support
 
+### Fixed
+
+* `tox` in a generated package now runs the tests: its table was misspelled `tool.box.testenv`
+
 ## [0.6.1]
 
 ### Added
