@@ -24,7 +24,7 @@ classifiers = [
 dependencies = []
 description = "{{ package_short_description|replace('\"', '\\\"') }}"
 keywords = [
-{%- for item in keywords.split(',') -%}
+{%- for item in keywords.split(',') | map('trim') | reject('equalto', '') -%}
 "{{ item }}"{{ "," if not loop.last }}
 {%- endfor -%}
 ]

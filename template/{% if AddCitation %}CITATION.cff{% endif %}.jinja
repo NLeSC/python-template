@@ -9,8 +9,11 @@ authors:
 date-released: {{ '%Y-%m-%d' | strftime }}
 version: "{{ version }}"
 repository-code: "{{ repository_url }}"
+{%- set keyword_list = keywords.split(',') | map('trim') | reject('equalto', '') | list %}
+{%- if keyword_list %}
 keywords:
-{%- for item in keywords.split(',') %}
+{%- for item in keyword_list %}
   - "{{ item }}"
 {%- endfor %}
+{%- endif %}
 message: "If you use this software, please cite it using these metadata."
