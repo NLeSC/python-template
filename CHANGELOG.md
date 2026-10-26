@@ -20,7 +20,7 @@
 
 ### Fixed
 
-* `tox` in a generated package now runs the tests: its table was misspelled `tool.box.testenv`
+* `tox` in a generated package now runs the tests: its table was misspelled `tool.box.testenv` [#716](https://github.com/NLeSC/python-template/pull/716)
 
 ## [0.6.1]
 
