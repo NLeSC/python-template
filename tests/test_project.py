@@ -1,10 +1,8 @@
 import os
 import subprocess
-import sys
 from sys import platform
 from typing import Sequence
 
-from copier import run_copy
 import pytest
 
 IS_WINDOWS = platform.startswith('win')
