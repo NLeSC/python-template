@@ -4,7 +4,7 @@
 # - https://www.python.org/dev/peps/pep-0621/
 
 [build-system]
-requires = ["setuptools>=77.0.3", "setuptools-scm", "wheel"]
+requires = ["setuptools>=77.0.3", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -111,10 +111,9 @@ requires = ["tox>=4.22"]
 env_list = [ "py312", "py313", "py314" ]
 skip_missing_interpreters = true
 {% if AddLocalTests -%}
-[tool.box.testenv]
+[tool.tox.env_run_base]
 description = "Run test under {base_python}"
 commands = [["pytest"]]
-[tool.tox.env_run_base]
 dependency_groups = [ "dev" ]
 {%- endif %}
 
@@ -132,6 +131,7 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 # Enable Pyflakes `E` and `F` codes by default.
 select = ["ALL"]
 ignore = [
+    "CPY001", # Missing copyright notice
     "ANN204", # Missing return type annotation for special (dunder) method
     "FBT",    # Using boolean function arguments
     "TD",     # TODOs
