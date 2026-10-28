@@ -17,6 +17,7 @@
 ### Removed
 
 * Removed Python 3.10 and 3.11 support
+* Removed `setuptools-scm` from the build-system requirements: Files committed into the generated project's repository are no longer automatically included in releases [#713](https://github.com/NLeSC/python-template/pull/713)
 
 ## [0.6.1]
 
